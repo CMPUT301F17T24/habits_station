@@ -20,6 +20,8 @@ public class Habit implements Comparable<Habit> {
     private  String title;
     private String reason;
     private Calendar startDate;
+    private ArrayList<HabitEvent> events;
+
     // "Monday" 2, "Tuesday" 3, "Wednesday" 4, "Thursday" 5, "Friday" 6, "Saturday" 7, "Sunday" 1
     private HashSet<Integer> repeatWeekOfDay;
     SimpleDateFormat formatter = new SimpleDateFormat("M, yyyy-MM-dd");
@@ -80,4 +82,14 @@ public class Habit implements Comparable<Habit> {
     public int compareTo(Habit habit) {
         return habit.getStartDate().compareTo(startDate);
     }
+
+
+    public ArrayList<HabitEvent> getEvents(){
+        return events;
+    }
+
+    public void addEvent(HabitEvent event){
+        this.events.add(event);
+    }
+
 }

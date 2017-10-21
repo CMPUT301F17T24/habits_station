@@ -25,14 +25,14 @@ public class User {
         this.name = name;
     }
 
-    public int getUid() {
+   /* public int getUid() {
         return uid;
     }
 
     public void setUid(int uid) {
         this.uid = uid;
     }
-
+*/
     public String getName() {
         return name;
     }
