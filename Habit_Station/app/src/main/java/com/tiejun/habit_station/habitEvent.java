@@ -27,6 +27,8 @@ public class habitEvent {
 
     public String eReason;
 
+    public String eComment;
+
     public Image ePhoto;
 
     public Location eLocation;
@@ -58,6 +60,12 @@ public class habitEvent {
     public String geteReason(){
 
         return this.eReason;
+
+    }
+
+    public String geteComment(){
+
+        return this.eComment;
 
     }
 
@@ -104,6 +112,10 @@ public class habitEvent {
     public void setStatus(boolean status){
         this.status = status;
 
+    }
+
+    public void seteComment(String comment){
+        this.eComment = comment;
     }
 
     @Override

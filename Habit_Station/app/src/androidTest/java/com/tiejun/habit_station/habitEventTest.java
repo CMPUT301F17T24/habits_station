@@ -82,6 +82,14 @@ public class habitEventTest extends ActivityInstrumentationTestCase2 {
         assertTrue( false == habitevent.getStatus());
     }
 
+    public void testgetComment() {
+        Date date = new Date();
+
+        habitEvent habitevent = new habitEvent("test1", date, "test reason" );
+
+        assertTrue( null == habitevent.geteComment());
+    }
+
     public void testsetName() {
         Date date = new Date();
 
@@ -112,6 +120,16 @@ public class habitEventTest extends ActivityInstrumentationTestCase2 {
         habitevent.seteReason("new test reason");
 
         assertTrue("new test reason" == habitevent.geteReason());
+    }
+
+    public void testsetComment() {
+        Date date = new Date();
+
+        habitEvent habitevent = new habitEvent("test1", date, "test reason" );
+
+        habitevent.seteComment("new test comment");
+
+        assertTrue("new test comment" == habitevent.geteComment());
     }
 
     public void testsetPhoto() {
