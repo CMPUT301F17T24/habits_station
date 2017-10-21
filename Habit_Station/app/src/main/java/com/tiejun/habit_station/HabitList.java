@@ -6,9 +6,12 @@
 
 package com.tiejun.habit_station;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -50,7 +53,6 @@ public class HabitList{
             if (habit.getStartDate().after(t1.getStartDate()))
                 return -1;
             return 0;
-
         }
     }
 
@@ -60,4 +62,15 @@ public class HabitList{
         return habits;
     }
 
+    public ArrayList<Habit> getTodayHabits() {
+        ArrayList<Habit> todayList = new ArrayList<Habit>();
+        Calendar today = Calendar.getInstance();
+        int weekDay = today.get(Calendar.DAY_OF_WEEK);
+
+        for (Habit h : habits) {
+            if (h.getRepeatWeekOfDay().contains(weekDay))
+                todayList.add(h);
+        }
+        return todayList;
+    }
 }
