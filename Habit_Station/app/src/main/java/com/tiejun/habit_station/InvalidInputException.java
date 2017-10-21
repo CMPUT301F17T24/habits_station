@@ -10,5 +10,8 @@ package com.tiejun.habit_station;
  * Created by tiejun on 2017-10-13.
  */
 
-public class ArgTooLongException extends Exception{
+public class InvalidInputException extends Exception {
+   public InvalidInputException() {
+       super("Invalid Habit Input!");
+   }
 }
