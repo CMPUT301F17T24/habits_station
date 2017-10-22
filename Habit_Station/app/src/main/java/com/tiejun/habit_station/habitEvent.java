@@ -13,17 +13,18 @@ package com.tiejun.habit_station;
 import android.location.Location;
 import android.media.Image;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 /**
  * a class for habit events
  */
-public class habitEvent {
+public class HabitEvent {
 
     public String eName;
 
-    public Date eTime;
+    public Calendar eTime;
 
     public String eReason;
 
@@ -35,7 +36,7 @@ public class habitEvent {
 
     public boolean status;
 
-    public habitEvent(String name, Date time, String reason){
+    public HabitEvent(String name, Calendar time, String reason){
 
         this.eName = name;
         this.eTime = time;
@@ -51,7 +52,7 @@ public class habitEvent {
         return this.eName;
     }
 
-    public Date geteTime(){
+    public Calendar geteTime(){
 
         return this.eTime;
 
@@ -91,7 +92,7 @@ public class habitEvent {
 
     }
 
-    public void seteTime(Date time){
+    public void seteTime(Calendar time){
         this.eTime = time;
     }
 
@@ -124,6 +125,7 @@ public class habitEvent {
         return str;
 
     }
+
 
 
 }

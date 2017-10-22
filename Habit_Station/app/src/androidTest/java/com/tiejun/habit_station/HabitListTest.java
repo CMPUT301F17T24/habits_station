@@ -36,12 +36,38 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         habitList.add(habit);
         assertTrue(habitList.hasHabit(habit));
 
-        try {
-            habitList.add(habit);
-        }catch (IllegalArgumentException e) {
-            // duplicate habits
-            assertTrue(true);
+        Habit habit2 = new Habit("TEST","",startDate, weekDay);
+        if (habitList.check_dup(habit2)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
         }
+        else{
+            assertTrue(habitList.hasHabit(habit2));
+        }
+
+
+        Habit habit3 = new Habit("TEST3","",startDate, weekDay);
+        if (habitList.check_dup(habit3)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
+        }
+        else{
+            habitList.add(habit3);
+            assertTrue(habitList.hasHabit(habit3));
+        }
+
+
+
     }
 
     public void testDelete() {
