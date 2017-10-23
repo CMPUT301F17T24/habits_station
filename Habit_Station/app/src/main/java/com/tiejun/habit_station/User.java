@@ -19,6 +19,7 @@ public class User {
     private String name;
     private ArrayList<Integer> follower;
     private ArrayList<Integer> followee;
+    private HabitList habits;
 
     public User(int uid, String name) {
         this.uid = uid;
@@ -70,6 +71,16 @@ public class User {
     public void setFollowee(ArrayList<Integer> followee) {
         this.followee = followee;
     }
+
+
+    public void setHabitList(HabitList habits){
+        this.habits = habits;
+    }
+
+    public HabitList getHabitList(){
+        return this.habits;
+    }
+
 
     //    @Override
 //    public int hashCode() {

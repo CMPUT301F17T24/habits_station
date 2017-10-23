@@ -20,7 +20,7 @@ public class Habit implements Comparable<Habit> {
     private  String title;
     private String reason;
     private Calendar startDate;
-    //private ArrayList<HabitEvent> events;
+    private HabitEventList events;
 
     // "Monday" 2, "Tuesday" 3, "Wednesday" 4, "Thursday" 5, "Friday" 6, "Saturday" 7, "Sunday" 1
     private HashSet<Integer> repeatWeekOfDay;
@@ -82,5 +82,14 @@ public class Habit implements Comparable<Habit> {
     public int compareTo(Habit habit) {
         return habit.getStartDate().compareTo(startDate);
     }
+
+    public void setHabitEventList(HabitEventList events){
+        this.events = events;
+    }
+
+    public HabitEventList getHabitEventList(){
+        return this.events;
+    }
+
 
 }
