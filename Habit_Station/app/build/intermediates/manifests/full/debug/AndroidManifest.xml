@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.tiejun.habit_station.MainActivity"
+            android:name="com.tiejun.habit_station.SignInActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -34,6 +34,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.tiejun.habit_station.SignUpActivity" />
+        <activity android:name="com.tiejun.habit_station.MainPageActivity" />
+        <activity android:name="com.tiejun.habit_station.ViewTodayPlanActivity" />
+        <activity android:name="com.tiejun.habit_station.HabitLibraryActivity" />
+        <activity android:name="com.tiejun.habit_station.AddHabitActivity" />
+        <activity android:name="com.tiejun.habit_station.ViewHabitActivity" />
+        <activity android:name="com.tiejun.habit_station.StatusActivity" />
+        <activity android:name="com.tiejun.habit_station.EditHabitActivity" />
+        <activity android:name="com.tiejun.habit_station.HabitEventLibraryActivity" />
+        <activity android:name="com.tiejun.habit_station.EditHabitEventActivity" />
+        <activity android:name="com.tiejun.habit_station.PhotoGalleryActivity" />
+        <activity android:name="com.tiejun.habit_station.MyProfileActivity" />
+        <activity android:name="com.tiejun.habit_station.NearbyActivity" />
+        <activity android:name="com.tiejun.habit_station.LifeCircleActivity" />
+        <activity android:name="com.tiejun.habit_station.AddFriendActivity" />
+        <activity android:name="com.tiejun.habit_station.FriendsActivity" />
+        <activity android:name="com.tiejun.habit_station.FriendsStatusActivity" />
+        <activity android:name="com.tiejun.habit_station.FriendsMapActivity" />
+        <activity android:name="com.tiejun.habit_station.HabitHistoryActivity" />
+        <activity android:name="com.tiejun.habit_station.MyEventMapActivity" />
     </application>
 
 </manifest>
