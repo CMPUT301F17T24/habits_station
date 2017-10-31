@@ -497,7 +497,11 @@
         ]
     },
     {
+<<<<<<< HEAD
         "outputFile": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+=======
+        "outputFile": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+>>>>>>> origin/test
         "map": [
             {
                 "to": {
@@ -509,7 +513,11 @@
                     "endOffset": 469
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -530,7 +538,11 @@
                     "endOffset": 894
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -551,7 +563,11 @@
                     "endOffset": 1322
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -572,7 +588,11 @@
                     "endOffset": 1748
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -593,7 +613,11 @@
                     "endOffset": 2175
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -614,7 +638,11 @@
                     "endOffset": 2600
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -634,7 +662,11 @@
                     "endOffset": 2689
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -654,7 +686,11 @@
                     "endOffset": 2935
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -675,7 +711,11 @@
                     "endOffset": 3184
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -695,7 +735,11 @@
                     "endOffset": 3285
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -715,7 +759,11 @@
                     "endOffset": 3537
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -736,7 +784,11 @@
                     "endOffset": 3792
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 52,
                         "startColumn": 4,
@@ -756,7 +808,11 @@
                     "endOffset": 3895
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -776,7 +832,11 @@
                     "endOffset": 4148
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 57,
                         "startColumn": 4,
@@ -797,7 +857,11 @@
                     "endOffset": 4556
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 61,
                         "startColumn": 4,
@@ -818,7 +882,11 @@
                     "endOffset": 4976
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 66,
                         "startColumn": 4,
@@ -839,7 +907,11 @@
                     "endOffset": 5398
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 71,
                         "startColumn": 4,
@@ -860,7 +932,11 @@
                     "endOffset": 5505
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 76,
                         "startColumn": 4,
@@ -881,7 +957,11 @@
                     "endOffset": 5634
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 78,
                         "startColumn": 4,
@@ -901,7 +981,11 @@
                     "endOffset": 5705
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 80,
                         "startColumn": 4,
@@ -920,7 +1004,11 @@
                     "endOffset": 5788
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 81,
                         "startColumn": 4,
@@ -940,7 +1028,11 @@
                     "endOffset": 9813
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 82,
                         "startColumn": 4,
@@ -961,7 +1053,11 @@
                     "endOffset": 13981
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 136,
                         "startColumn": 4,
@@ -981,7 +1077,11 @@
                     "endOffset": 14072
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v11/values-v11.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v11/values-v11.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 191,
                         "startColumn": 4,

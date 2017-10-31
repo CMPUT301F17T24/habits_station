@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+=======
+        "outputFile": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+>>>>>>> origin/test
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 121
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v25/values-v25.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v25/values-v25.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +38,11 @@
                     "endOffset": 204
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v25/values-v25.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v25/values-v25.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -50,7 +62,11 @@
                     "endOffset": 303
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v25/values-v25.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v25/values-v25.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -71,7 +87,11 @@
                     "endOffset": 414
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-v25/values-v25.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-v25/values-v25.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

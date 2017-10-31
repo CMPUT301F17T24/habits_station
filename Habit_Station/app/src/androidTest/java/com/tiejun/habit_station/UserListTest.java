@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class UserListTest extends ActivityInstrumentationTestCase2 {
 
     public UserListTest() {
-        super(MainActivity.class);
+        super(SignInActivity.class);
     }
 
     public void testAddUser() {

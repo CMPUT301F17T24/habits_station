@@ -1,4 +1,5 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Mon Oct 23 12:41:05 MDT 2017
 2.base=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar
 5.file=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar/LICENSE-junit.txt
@@ -19,3 +20,25 @@ count=6
 1.base=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_
 4.file=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_/AndroidManifest.xml
 0.set=JAVA_RESOURCE
+=======
+#Wed Oct 25 18:16:50 MDT 2017
+2.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar
+5.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar/LICENSE-junit.txt
+5.set=JAVA_RESOURCE
+3.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/dex/androidTest/debug/folders/1000/1f/main
+2.set=JAVA_RESOURCE
+4.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar
+count=6
+0.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_/resources.arsc
+5.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar
+4.set=JAVA_RESOURCE
+1.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_/AndroidManifest.xml
+1.set=ANDROID_RESOURCE
+2.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar/junit/runner/logo.gif
+0.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_
+3.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/dex/androidTest/debug/folders/1000/1f/main/classes.dex
+3.set=DEX
+1.base=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/resources-debug-androidTest.ap_
+4.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/mergeJavaRes/androidTest/debug/jars/2/1f/main.jar/junit/runner/smalllogo.gif
+0.set=ANDROID_RESOURCE
+>>>>>>> origin/test

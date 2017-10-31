@@ -24,7 +24,11 @@
         ]
     },
     {
+<<<<<<< HEAD
         "outputFile": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+=======
+        "outputFile": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+>>>>>>> origin/test
         "map": [
             {
                 "to": {
@@ -35,7 +39,11 @@
                     "endOffset": 117
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/values-h720dp-v13/values-h720dp-v13.xml",
+=======
+                    "file": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/values-h720dp-v13/values-h720dp-v13.xml",
+>>>>>>> origin/test
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

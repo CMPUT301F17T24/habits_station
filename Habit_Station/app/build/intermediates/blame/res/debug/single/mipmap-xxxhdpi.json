@@ -1,7 +1,16 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+=======
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+>>>>>>> origin/test
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
