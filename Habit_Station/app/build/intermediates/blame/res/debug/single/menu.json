@@ -1,10 +1,6 @@
 [
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/menu/menu_main.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/src/main/res/menu/menu_main.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/src/main/res/menu/menu_main.xml"
     }
 ]

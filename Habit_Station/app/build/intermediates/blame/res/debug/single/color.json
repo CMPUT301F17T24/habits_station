@@ -1,178 +1,90 @@
 [
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_hint_foreground_material_dark.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/switch_thumb_material_light.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/color/design_tint_password_toggle.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_primary_text_material_dark.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/switch_thumb_material_light.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_switch_track.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_default.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/color/design_tint_password_toggle.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_switch_thumb.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
+        "source": "/Users/onepunch/.android/build-cache/4ee9be9f30b73edec3781316ba3c50aec0bbf96e/output/res/color/design_tint_password_toggle.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_seek_thumb.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_secondary_text_material_light.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_search_url_text.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_edittext.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_btn_colored_text_material.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_error.xml",
+        "source": "/Users/onepunch/.android/build-cache/4ee9be9f30b73edec3781316ba3c50aec0bbf96e/output/res/color/design_error.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_switch_track.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_search_url_text.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_search_url_text.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_seek_thumb.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_edittext.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_spinner.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_default.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_hint_foreground_material_light.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_tint_default.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_error.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/color/design_error.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_hint_foreground_material_light.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_error.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/color/design_error.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_btn_colored_borderless_text_material.xml"
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/color/abc_btn_colored_borderless_text_material.xml"
     }
 ]
