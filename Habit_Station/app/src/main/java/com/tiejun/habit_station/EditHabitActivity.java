@@ -7,9 +7,11 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.text.ParseException;
@@ -25,8 +27,8 @@ public class EditHabitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_habit);
 
-        /*
-        set a click listener for edit title
+        /**
+         * set a click listener for edit title
          */
         final EditText editTitle = (EditText) findViewById(R.id.editTitle);
         editTitle.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +40,8 @@ public class EditHabitActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        set a click listener for edit date
+        /**
+         * set a click listener for edit date
          */
         final EditText editDate = (EditText) findViewById(R.id.editDate);
         editDate.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +59,8 @@ public class EditHabitActivity extends AppCompatActivity {
             }
         });
 
-        /*
-        set a click listener for edit reason
+        /**
+         * set a click listener for edit reason
          */
         final EditText editReason = (EditText) findViewById(R.id.editReason);
         editReason.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +69,42 @@ public class EditHabitActivity extends AppCompatActivity {
 
                 String newReason = editReason.getText().toString();// get the new title
 
+            }
+        });
+
+        /**
+         *  set a click listener for delete
+         *
+         *  the back intent send back a signal 1, indicate the delete
+         */
+        final Button delete = (Button) findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+
+                Intent backIntent = new Intent();
+                backIntent.putExtra("delSig", 1); //
+
+                setResult(RESULT_OK, backIntent);
+                finish();
+            }
+        });
+
+        /**
+         *  set a click listener for edit
+         *
+         *  the back intent send back a signal 0, indicate the edit
+         */
+        final Button ok = (Button) findViewById(R.id.ok);
+        ok.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+
+                Intent backIntent = new Intent();
+                backIntent.putExtra("delSig", 0);
+
+                setResult(RESULT_OK, backIntent);
+                finish();
             }
         });
 
