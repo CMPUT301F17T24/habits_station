@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
   ~ You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
   ~ You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tiejun.habit_station">
 
@@ -16,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".SignInActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,6 +23,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainPageActivity" />
+        <activity android:name=".ViewTodayPlanActivity" />
+        <activity android:name=".HabitLibraryActivity" />
+        <activity android:name=".AddHabitActivity" />
+        <activity android:name=".ViewHabitActivity" />
+        <activity android:name=".StatusActivity" />
+        <activity android:name=".EditHabitActivity" />
+        <activity android:name=".HabitEventLibraryActivity" />
+        <activity android:name=".EditHabitEventActivity" />
+        <activity android:name=".PhotoGalleryActivity" />
+        <activity android:name=".MyProfileActivity" />
+        <activity android:name=".NearbyActivity" />
+        <activity android:name=".LifeCircleActivity" />
+        <activity android:name=".AddFriendActivity" />
+        <activity android:name=".FriendsActivity" />
+        <activity android:name=".FriendsStatusActivity" />
+        <activity android:name=".FriendsMapActivity" />
+        <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".MyEventMapActivity"></activity>
     </application>
 
 </manifest>

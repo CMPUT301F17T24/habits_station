@@ -7,13 +7,10 @@
 package com.tiejun.habit_station;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.FormatFlagsConversionMismatchException;
 import java.util.HashSet;
-import java.util.List;
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -22,7 +19,7 @@ import java.util.List;
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitListTest() {
-        super(MainActivity.class);
+        super(SignInActivity.class);
     }
 
     public void testAdd() {
@@ -36,12 +33,38 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         habitList.add(habit);
         assertTrue(habitList.hasHabit(habit));
 
-        try {
-            habitList.add(habit);
-        }catch (IllegalArgumentException e) {
-            // duplicate habits
-            assertTrue(true);
+        Habit habit2 = new Habit("TEST","",startDate, weekDay);
+        if (habitList.check_dup(habit2)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
         }
+        else{
+            assertTrue(habitList.hasHabit(habit2));
+        }
+
+
+        Habit habit3 = new Habit("TEST3","",startDate, weekDay);
+        if (habitList.check_dup(habit3)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
+        }
+        else{
+            habitList.add(habit3);
+            assertTrue(habitList.hasHabit(habit3));
+        }
+
+
+
     }
 
     public void testDelete() {

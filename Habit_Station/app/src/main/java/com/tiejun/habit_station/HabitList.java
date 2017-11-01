@@ -73,4 +73,19 @@ public class HabitList{
         }
         return todayList;
     }
+
+
+    public boolean check_dup (Habit habit){
+        for (Habit element: habits){
+            if (element.getTitle().equals(habit.getTitle())){
+                return true ;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 }
