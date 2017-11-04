@@ -4,6 +4,10 @@
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
@@ -14,5 +18,9 @@
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

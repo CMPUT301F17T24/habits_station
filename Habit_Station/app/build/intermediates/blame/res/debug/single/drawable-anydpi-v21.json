@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
     },
@@ -14,5 +18,9 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
     }
 ]
