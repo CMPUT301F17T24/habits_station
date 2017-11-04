@@ -8,12 +8,16 @@ package com.tiejun.habit_station;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import io.searchbox.annotations.JestId;
 
 /**
  * Created by tiejun on 2017-10-21.
  */
 
 public class User {
+
+    @JestId
+    private String Aid;
 
     private int uid;
     private String name;
@@ -26,13 +30,23 @@ public class User {
         this.name = name;
     }
 
+    public String getAid() {
+        return Aid;
+    }
+
+    public void setAid(String aid) {
+        Aid = aid;
+    }
+
+    public User() {}
+
    public int getUid() {
         return uid;
     }
 
-    /*public void setUid(int uid) {
+    public void setUid(int uid) {
         this.uid = uid;
-    }*/
+    }
 
 
     public String getName() {

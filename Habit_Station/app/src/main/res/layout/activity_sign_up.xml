@@ -40,20 +40,10 @@
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/username"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="46dp"
         android:text="Sign Up"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sign In"
         android:textSize="18sp"
-        android:layout_alignBaseline="@+id/signup"
-        android:layout_alignBottom="@+id/signup"
-        android:layout_alignEnd="@+id/username" />
+        android:layout_below="@+id/username"
+        android:layout_centerHorizontal="true" />
 
 </android.widget.RelativeLayout>

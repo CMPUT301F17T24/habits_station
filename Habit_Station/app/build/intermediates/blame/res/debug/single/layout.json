@@ -16,12 +16,12 @@
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_habit_history.xml",
@@ -48,12 +48,12 @@
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/layout/design_navigation_item_header.xml"
-    },
-    {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/layout/design_navigation_item_header.xml"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
@@ -84,12 +84,12 @@
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_navigation_item_separator.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_edit_habit_event.xml",
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/layout/activity_edit_habit_event.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_view_habit.xml",
@@ -104,12 +104,12 @@
         "source": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/res/layout/activity_life_circle.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_sign_up.xml",
-        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/layout/activity_sign_up.xml"
-    },
-    {
         "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_status.xml",
         "source": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/res/layout/activity_status.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_sign_up.xml",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/layout/activity_sign_up.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
@@ -192,12 +192,12 @@
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_popup_menu_header_item_layout.xml"
-    },
-    {
         "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
@@ -328,12 +328,12 @@
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_layout_tab_text.xml"
-    },
-    {
         "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",

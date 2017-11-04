@@ -14,10 +14,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends SignInActivity {
     protected EditText username;
     private String userName;
+    int uid;
+    //public UserList userList = new UserList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,27 +28,48 @@ public class SignUpActivity extends AppCompatActivity {
 
        username = (EditText) findViewById(R.id.username);
 
-        Button signIn = (Button) findViewById(R.id.signin);
-        signIn.setOnClickListener( new View.OnClickListener (){
-
-            public void onClick(View v) {
-                userName = username.getText().toString();
-                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                intent.putExtra("test", userName);
-                startActivity(intent);
-            }
-        });
-
         Button signUp = (Button) findViewById(R.id.signup);
         signUp.setOnClickListener( new View.OnClickListener (){
-
             public void onClick(View v) {
-                Log.d("sign up", userName);
+                userName = username.getText().toString();
+                //uid = userList.getSize();
+                uid = 0;
+                User user = new User(uid,userName);
+                if (existedUser(userName)) {
+                    try{
+                        Toast.makeText(getApplicationContext(),"Duplicate user name!",Toast.LENGTH_LONG).show();
+                        throw new IllegalArgumentException("Duplicate user");
+                    }catch(IllegalArgumentException e){
+
+                    }
+                }
+
+                else {
+                    userList.addUser(user);
+                    ElasticSearchUserController.AddUserTask addUserTask
+                        = new ElasticSearchUserController.AddUserTask();
+                    addUserTask.execute(user);
+                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
 
+    private boolean existedUser (String name) {
+        ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
+        isExist.execute(name);
 
+        try {
+            if (isExist.get()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 
 
