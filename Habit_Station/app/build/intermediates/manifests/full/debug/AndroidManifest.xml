@@ -37,7 +37,13 @@
         <activity android:name="com.tiejun.habit_station.SignUpActivity" />
         <activity android:name="com.tiejun.habit_station.MainPageActivity" />
         <activity android:name="com.tiejun.habit_station.ViewTodayPlanActivity" />
-        <activity android:name="com.tiejun.habit_station.HabitLibraryActivity" />
+        <activity android:name="com.tiejun.habit_station.HabitLibraryActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.tiejun.habit_station.AddHabitActivity" />
         <activity android:name="com.tiejun.habit_station.ViewHabitActivity" />
         <activity android:name="com.tiejun.habit_station.StatusActivity" />

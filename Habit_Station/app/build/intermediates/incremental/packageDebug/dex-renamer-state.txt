@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-#Mon Oct 23 12:41:02 MDT 2017
+#Sat Nov 04 12:50:07 MDT 2017
 base.0=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
 file.0=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
-=======
-#Wed Oct 25 18:45:28 MDT 2017
-base.0=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
-renamed.0=classes.dex
-file.0=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
->>>>>>> origin/test
