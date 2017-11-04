@@ -23,19 +23,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainPageActivity" />
-        <activity android:name=".ViewTodayPlanActivity" />
-        <activity
-            android:name=".HabitLibraryActivity" >
-        <intent-filter>
+        <activity android:name=".MainPageActivity" >
+            <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            </intent-filter>
+        </activity>>
 
-         </activity>
 
 
+        <activity android:name=".ViewTodayPlanActivity" />
+        <activity android:name=".HabitLibraryActivity" />
         <activity android:name=".AddHabitActivity" />
         <activity android:name=".ViewHabitActivity" />
         <activity android:name=".StatusActivity" />
