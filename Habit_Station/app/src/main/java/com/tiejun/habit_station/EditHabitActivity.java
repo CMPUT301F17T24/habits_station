@@ -31,6 +31,7 @@ public class EditHabitActivity extends AppCompatActivity {
          * set a click listener for edit title
          */
         final EditText editTitle = (EditText) findViewById(R.id.editTitle);
+        editTitle.setHint("old title");
         editTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
@@ -44,6 +45,7 @@ public class EditHabitActivity extends AppCompatActivity {
          * set a click listener for edit date
          */
         final EditText editDate = (EditText) findViewById(R.id.editDate);
+        editDate.setHint("old date");
         editDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
@@ -63,6 +65,7 @@ public class EditHabitActivity extends AppCompatActivity {
          * set a click listener for edit reason
          */
         final EditText editReason = (EditText) findViewById(R.id.editReason);
+        editReason.setHint("old reason");
         editReason.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);

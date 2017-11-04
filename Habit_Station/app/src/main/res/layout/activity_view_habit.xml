@@ -77,14 +77,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status"
-        tools:layout_editor_absoluteX="40dp"
-        tools:layout_editor_absoluteY="435dp" />
+        android:layout_marginLeft="51dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="28dp" />
 
     <Button
         android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="435dp" />
+        android:layout_marginRight="59dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="28dp" />
 </android.support.constraint.ConstraintLayout>

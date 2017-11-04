@@ -28,7 +28,7 @@ public class ViewHabitActivity extends AppCompatActivity {
      *
      * modified to start a new intent of edit habit
      *
-     * requestcode 1 for edit and delte
+     * requestcode 1 for edit and delete
      *
      *
      */
@@ -70,6 +70,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 
                 Intent onClickIntent = new Intent(getApplicationContext(), EditHabitActivity.class);
                 // put extra here
+                onClickIntent.putExtra("habitName", );
 
                 startActivityForResult(onClickIntent,1);
 
