@@ -116,6 +116,10 @@
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_logo_2x.png",
+        "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/habit_logo_2x.png"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_btn_check_material.xml"
     },

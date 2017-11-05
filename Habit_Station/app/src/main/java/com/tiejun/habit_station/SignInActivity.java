@@ -6,21 +6,71 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignInActivity extends AppCompatActivity {
+    public UserList userList;
+    private String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_activity);
+        userList = new UserList();
+
+        //TextView testView = (TextView) findViewById(R.id.username);
+        Button signIn = (Button) findViewById(R.id.signin);
+        Button signUp = (Button) findViewById(R.id.signup);
+        //userName = testView.getText().toString();
+//        Log.d("username", userName);
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView testView = (TextView) findViewById(R.id.username);
+                userName = testView.getText().toString();
+                Log.d("username", userName);
+                if (existedUser(userName)) {
+                    Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
+    private boolean existedUser (String name) {
+        ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
+        isExist.execute(name);
+
+        try {
+            if (isExist.get()) {
+                return true;
+            } else {
+                Toast.makeText(getApplicationContext(), name + " does not exist.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
