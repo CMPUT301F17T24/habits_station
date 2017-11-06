@@ -9,9 +9,18 @@ package com.tiejun.habit_station;
 import android.location.Location;
 import android.media.Image;
 import android.test.ActivityInstrumentationTestCase2;
+<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.Calendar;
+=======
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+>>>>>>> origin
 
 /**
  * Created by yfeng3 2017-10-21.
@@ -20,7 +29,11 @@ import java.util.Calendar;
 public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitEventListTest() {
+<<<<<<< HEAD
         super(SignInActivity.class);
+=======
+        super(com.tiejun.habit_station.MainActivity.class);
+>>>>>>> origin
     }
 
 

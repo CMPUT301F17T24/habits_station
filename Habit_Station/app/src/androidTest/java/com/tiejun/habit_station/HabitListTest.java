@@ -7,10 +7,20 @@
 package com.tiejun.habit_station;
 
 import android.test.ActivityInstrumentationTestCase2;
+<<<<<<< HEAD
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
+=======
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.FormatFlagsConversionMismatchException;
+import java.util.HashSet;
+import java.util.List;
+>>>>>>> origin
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -19,7 +29,11 @@ import java.util.HashSet;
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitListTest() {
+<<<<<<< HEAD
         super(SignInActivity.class);
+=======
+        super(MainActivity.class);
+>>>>>>> origin
     }
 
     public void testAdd() {

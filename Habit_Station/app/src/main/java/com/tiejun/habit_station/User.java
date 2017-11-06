@@ -8,7 +8,10 @@ package com.tiejun.habit_station;
 
 import java.util.ArrayList;
 import java.util.Objects;
+<<<<<<< HEAD
 import io.searchbox.annotations.JestId;
+=======
+>>>>>>> origin
 
 /**
  * Created by tiejun on 2017-10-21.
@@ -16,9 +19,12 @@ import io.searchbox.annotations.JestId;
 
 public class User {
 
+<<<<<<< HEAD
     @JestId
     private String Aid;
 
+=======
+>>>>>>> origin
     private int uid;
     private String name;
     private ArrayList<Integer> follower;
@@ -30,6 +36,7 @@ public class User {
         this.name = name;
     }
 
+<<<<<<< HEAD
     public String getAid() {
         return Aid;
     }
@@ -40,13 +47,21 @@ public class User {
 
     public User() {}
 
+=======
+>>>>>>> origin
    public int getUid() {
         return uid;
     }
 
+<<<<<<< HEAD
     public void setUid(int uid) {
         this.uid = uid;
     }
+=======
+    /*public void setUid(int uid) {
+        this.uid = uid;
+    }*/
+>>>>>>> origin
 
 
     public String getName() {
