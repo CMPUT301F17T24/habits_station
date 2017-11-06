@@ -12,15 +12,19 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class HabitLibraryActivity extends MainPageActivity {
+public class HabitLibraryActivity extends AppCompatActivity {
 
     private ListView habitList;
 
@@ -28,6 +32,7 @@ public class HabitLibraryActivity extends MainPageActivity {
 
     protected ArrayAdapter<Habit> adapter;
 
+    private int click_item_index;
 
 
     @Override
@@ -52,8 +57,73 @@ public class HabitLibraryActivity extends MainPageActivity {
             }
         });
 
+
+        registerForContextMenu(habitList);
+        habitList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
+                click_item_index=position;
+                return false;
+            }
+        });
+
     }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Context Menu");
+        menu.add(0, v.getId(), 0, "View Habit details");
+        menu.add(0, v.getId(), 0, "View Habit Events");
+        menu.add(0, v.getId(), 0, "Delete");
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        int position = info.position;
+        if (item.getTitle().equals("View Habit details")) {
+            Intent i = new Intent(HabitLibraryActivity.this, ViewHabitActivity .class);
+            i.putExtra("habit index", position);
+            startActivity(i);
+        }
+        else if (item.getTitle().equals("View Habit Events")) {
+            Intent i = new Intent(HabitLibraryActivity.this, HabitEventLibraryActivity .class);
+            i.putExtra("habit index", position);
+            startActivity(i);
+        }
+
+        else if (item.getTitle() == "Delete") {
+            Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
+
+            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+            String userName = pref.getString("currentUser", "");
+            User user = new User();
+            ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+            getUserTask.execute(userName);
+            try {
+                user = getUserTask.get();
+            } catch (Exception e) {
+                Log.i("Error", "Failed to get the User out of the async object");
+            }
+
+            habits = user.getHabitList();
+            habits.delete(habits.getHabit(click_item_index));
+
+            ElasticSearchUserController.AddUserTask addUserTask
+                    = new ElasticSearchUserController.AddUserTask();
+            addUserTask.execute(user);
+            onStart();
+        }
+
+
+        else {
+            return false;
+        }
+        return true;
+    }
 
 
 
@@ -65,7 +135,7 @@ public class HabitLibraryActivity extends MainPageActivity {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
 
-        Log.d("user_habL_start",userName);
+        //Log.d("user_habL_start",userName);
 
         User user = new User();
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
@@ -76,15 +146,18 @@ public class HabitLibraryActivity extends MainPageActivity {
             Log.i("Error", "Failed to get the User out of the async object");
         }
 
-
         habits = user.getHabitList();
-        //Log.d("CC",String.valueOf(habits.getCount()));
-
         adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, habits.getHabits());
         habitList.setAdapter(adapter);
 
 
     }
+
+
+
+
+
+
 
 
 

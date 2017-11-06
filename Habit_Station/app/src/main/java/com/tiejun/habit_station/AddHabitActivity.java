@@ -119,10 +119,11 @@ public class AddHabitActivity extends AppCompatActivity {
                 Calendar startDate = Calendar.getInstance();
                 if (set_year == 0 && set_month == 0 && set_day == 0){
                     //
+                    set_year = startDate.get(Calendar.YEAR);
+                    set_month = startDate.get(Calendar.MONTH)+1;
+                    set_day = startDate.get(Calendar.DAY_OF_MONTH);
                 }
-                else {
-                    startDate.set(set_year, set_month, set_day);
-                }
+                startDate.set(set_year, set_month, set_day);
 
                 if ((sTitle.length() == 0) || sTitle.length() > 20){
                     title.setError("Title should not be empty and should be at most 20 words");
@@ -134,29 +135,10 @@ public class AddHabitActivity extends AppCompatActivity {
                 }
 
 
-                //Habit habit = new Habit(sTitle,sReason,startDate,weekDay);
-                //habits.add(habit);
-
-              //  setHabit(habit, userName);
                setHabit(userName , sTitle, sReason, startDate, weekDay);
 
-               // Log.e("AA",userName);
 
                 Log.e("Add_user",userName);
-
-               // Log.e("CCC", habits.getHabit(0).toString());
-//                Log.e("AAA", habit.getTitle());
-//
-//                Log.e("AAA", toString().valueOf(set_year));
-//                Log.e("AAA", toString().valueOf(set_month));
-//                Log.e("AAA", toString().valueOf(set_day));
-//                Log.e("AAA",startDate.toString());
-
-                //Log.e("AAA", String.valueOf(habit.getRepeatWeekOfDay().size()));
-
-
-                //adapter.notifyDataSetChanged();
-
 
                 Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
                 startActivity(intent);
@@ -180,48 +162,15 @@ public class AddHabitActivity extends AppCompatActivity {
                     }
                 });
 
-
-
     }
 
 
-   /* public void setHabit(Habit habit, String current_user){
-        User user = new User();
-        String query = current_user;
-        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute(query);
-        try {
-            user = getUserTask.get();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the User out of the async object");
-        }
-
-
-        //Log.d("CCC",habit.getTitle());
-
-       // Habit habit1 = habit;
-
-        HabitList list = user.getHabitList();
-        list.add(habit);
-
-
-        //Log.d("AAA",user.getName());
-
-        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
-        addUserTask.execute(user);
-
-        HabitList list11 = user.getHabitList();
-
-        Log.d("CCC",list11.getHabit(list11.getCount()-1).toString());
-    }
-
-*/
-    public void setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet weekDay)
+    public void setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
         User user = new User();
-        String query = current_user;
+        //String query = current_user;
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute(query);
+        getUserTask.execute(current_user);
         try {
             user = getUserTask.get();
         } catch (Exception e) {
@@ -231,27 +180,26 @@ public class AddHabitActivity extends AppCompatActivity {
 
         //Log.d("CCC",habit.getTitle());
 
-        Habit habit = new Habit(sTitle,sReason,startDate,weekDay);
+        Habit habit1 = new Habit(sTitle,sReason,startDate,weekDay);
+
+        HabitEventList events = new HabitEventList();
+        habit1.setHabitEventList(events);
 
         HabitList list = user.getHabitList();
         Log.d("CC",String.valueOf(list.getCount()));
 
 
-        list.add(habit);
-        user.setHabitList(list);
+        list.add(habit1);
+        HabitList list2 = new HabitList(list.getHabits());
+        user.setHabitList(list2);
+
 
         Log.d("CCC",String.valueOf(list.getCount()));
-
-        //Log.d("AAA",user.getName());
 
         ElasticSearchUserController.AddUserTask addUserTask
                 = new ElasticSearchUserController.AddUserTask();
         addUserTask.execute(user);
 
-
-        HabitList list11 = user.getHabitList();
-
-        Log.d("CCC",String.valueOf(list11.getCount()));
     }
 
 
