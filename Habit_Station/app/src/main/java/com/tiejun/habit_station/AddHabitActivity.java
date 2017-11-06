@@ -8,6 +8,7 @@
 package com.tiejun.habit_station;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,7 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.HashSet;
 
-public class AddHabitActivity extends HabitLibraryActivity {
+public class AddHabitActivity extends AppCompatActivity {
     private EditText title;
     //private EditText date;
     private DatePicker simpleDatePicker;
@@ -34,13 +35,15 @@ public class AddHabitActivity extends HabitLibraryActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_habit);
 
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        final String userName = pref.getString("currentUser", "");
+
         title = (EditText) findViewById(R.id.title);
-        //date = (EditText) findViewById(R.id.date);
         reason = (EditText) findViewById(R.id.reason);
         simpleDatePicker = (DatePicker)findViewById(R.id.datePicker);
 
-
         final HashSet<Integer> weekDay = new HashSet<Integer>();
+
 
         final Button MBtn = (Button) findViewById(R.id.M);                        //  click the button Monday
         MBtn.setOnClickListener(new View.OnClickListener() {
@@ -114,31 +117,45 @@ public class AddHabitActivity extends HabitLibraryActivity {
                 String sReason = reason.getText().toString();
 
                 Calendar startDate = Calendar.getInstance();
-                startDate.set(set_year,set_month,set_day);
+                if (set_year == 0 && set_month == 0 && set_day == 0){
+                    //
+                }
+                else {
+                    startDate.set(set_year, set_month, set_day);
+                }
 
                 if ((sTitle.length() == 0) || sTitle.length() > 20){
                     title.setError("Title should not be empty and should be at most 20 words");
                 }
 
-                /////// if Date /////
 
                 if (sReason.length() > 30){
                     reason.setError("Reason should be at most 30 words");
                 }
 
 
-                Habit habit = new Habit(sTitle,sReason,startDate,weekDay);
-                habits.add(habit);
+                //Habit habit = new Habit(sTitle,sReason,startDate,weekDay);
+                //habits.add(habit);
 
-                Log.e("AAA", habits.getHabit(0).toString());
-                Log.e("AAA", toString().valueOf(set_year));
-                Log.e("AAA", toString().valueOf(set_month));
-                Log.e("AAA", toString().valueOf(set_day));
+              //  setHabit(habit, userName);
+               setHabit(userName , sTitle, sReason, startDate, weekDay);
+
+               // Log.e("AA",userName);
+
+                Log.e("Add_user",userName);
+
+               // Log.e("CCC", habits.getHabit(0).toString());
+//                Log.e("AAA", habit.getTitle());
+//
+//                Log.e("AAA", toString().valueOf(set_year));
+//                Log.e("AAA", toString().valueOf(set_month));
+//                Log.e("AAA", toString().valueOf(set_day));
+//                Log.e("AAA",startDate.toString());
 
                 //Log.e("AAA", String.valueOf(habit.getRepeatWeekOfDay().size()));
 
 
-                adapter.notifyDataSetChanged();
+                //adapter.notifyDataSetChanged();
 
 
                 Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
@@ -166,4 +183,82 @@ public class AddHabitActivity extends HabitLibraryActivity {
 
 
     }
+
+
+   /* public void setHabit(Habit habit, String current_user){
+        User user = new User();
+        String query = current_user;
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(query);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+
+
+        //Log.d("CCC",habit.getTitle());
+
+       // Habit habit1 = habit;
+
+        HabitList list = user.getHabitList();
+        list.add(habit);
+
+
+        //Log.d("AAA",user.getName());
+
+        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
+        addUserTask.execute(user);
+
+        HabitList list11 = user.getHabitList();
+
+        Log.d("CCC",list11.getHabit(list11.getCount()-1).toString());
+    }
+
+*/
+    public void setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet weekDay)
+    {
+        User user = new User();
+        String query = current_user;
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(query);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+
+
+        //Log.d("CCC",habit.getTitle());
+
+        Habit habit = new Habit(sTitle,sReason,startDate,weekDay);
+
+        HabitList list = user.getHabitList();
+        Log.d("CC",String.valueOf(list.getCount()));
+
+
+        list.add(habit);
+        user.setHabitList(list);
+
+        Log.d("CCC",String.valueOf(list.getCount()));
+
+        //Log.d("AAA",user.getName());
+
+        ElasticSearchUserController.AddUserTask addUserTask
+                = new ElasticSearchUserController.AddUserTask();
+        addUserTask.execute(user);
+
+
+        HabitList list11 = user.getHabitList();
+
+        Log.d("CCC",String.valueOf(list11.getCount()));
+    }
+
+
+
+
+
+
+
+
 }

@@ -32,8 +32,8 @@ public class SignUpActivity extends SignInActivity {
         signUp.setOnClickListener( new View.OnClickListener (){
             public void onClick(View v) {
                 userName = username.getText().toString();
-                //uid = userList.getSize();
-                uid = 0;
+                uid = userList.getCount();
+                //uid = 0;
                 User user = new User(uid,userName);
                 if (existedUser(userName)) {
                     try{

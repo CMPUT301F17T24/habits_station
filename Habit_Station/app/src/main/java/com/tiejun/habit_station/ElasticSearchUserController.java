@@ -45,7 +45,7 @@ public class ElasticSearchUserController {
                     DocumentResult result = client.execute(index);
                     if (result.isSucceeded()) {
                         Log.d("In AsyncTask ID", result.getId());
-                        user.setAid(result.getId());
+                        //user.setAid(result.getId());
                     } else {
                         Log.i("Error", "Elasticsearch was not able to add the user.");
                     }
@@ -68,7 +68,7 @@ public class ElasticSearchUserController {
             verifySettings();
 
             User user = new User();
-            Get get = new Get.Builder("cmput301f17t24", params[0]).type("user").id(user.getName()).build();
+            Get get = new Get.Builder("cmput301f17t24", params[0]).type("user").build();
 
             try{
                 JestResult result = client.execute(get);
@@ -78,6 +78,7 @@ public class ElasticSearchUserController {
             }
             return user;
         }
+
     }
 
     /**
