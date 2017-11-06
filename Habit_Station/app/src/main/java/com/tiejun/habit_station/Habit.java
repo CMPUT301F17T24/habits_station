@@ -76,7 +76,7 @@ public class Habit implements Comparable<Habit> {
 
     @Override
     public String toString() {
-        return this.title;// + " starts on " + formatter.format(startDate) + ".";
+        return this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + startDate.get(Calendar.MONTH) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
     }
 
     public int compareTo(Habit habit) {
