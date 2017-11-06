@@ -1,10 +1,6 @@
 [
     {
-        "merged": "/Users/XuanyiWu/Desktop/Test/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]

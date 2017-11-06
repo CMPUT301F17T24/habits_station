@@ -19,15 +19,21 @@ import java.util.Date;
 
 public class HabitList{
     // list of all habits created
-    private ArrayList<Habit> habits = new ArrayList<Habit>();
+    public ArrayList<Habit> habits;
 
-    public HabitList() {}
+    public HabitList() {
+        this.habits = new ArrayList<Habit>();
+    }
+
+    public HabitList(ArrayList<Habit> habitList) {
+        this.habits = habitList;
+    }
 
     public void add(Habit habit) {
         if (this.hasHabit(habit)) {
             throw new IllegalArgumentException("Duplicate habits.");
         }
-        habits.add(habit);
+        this.habits.add(habit);
     }
 
     public boolean hasHabit(Habit habit) {
