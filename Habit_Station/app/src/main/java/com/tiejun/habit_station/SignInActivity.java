@@ -7,6 +7,7 @@
 package com.tiejun.habit_station;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,7 +23,7 @@ import android.widget.Toast;
 
 public class SignInActivity extends AppCompatActivity {
     public UserList userList;
-    private String userName;
+    public String userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,11 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView testView = (TextView) findViewById(R.id.username);
                 userName = testView.getText().toString();
-                Log.d("username", userName);
+                //Log.d("username", userName);
                 if (existedUser(userName)) {
                     Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                    Log.d("username", userName);
+                    storePreference(userName);
                     startActivity(intent);
                 }
             }
@@ -73,4 +76,19 @@ public class SignInActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
+    /**
+     * This method stored the successfully login user's name in a local file
+     * File explorer -> data -> data -> com.example.mac.bugfree -> sharef_prefs -> data.xml
+     * @param name String of user name to be stored
+     */
+    private void storePreference(String name){
+        SharedPreferences.Editor editor = getSharedPreferences("data",MODE_PRIVATE).edit();
+        editor.putString("currentUser",name);
+        editor.apply();
+    }
+
+
+
 }
