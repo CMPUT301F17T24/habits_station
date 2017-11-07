@@ -9,6 +9,7 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
@@ -36,7 +37,21 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
         Activity activity = getActivity();
     }
 
+    public void testSignIn() {
+        solo.assertCurrentActivity("Wrong Activity", SignInActivity.class);
 
+        // create a new user
+        User user = new User(255, "testUser");
+        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
+        addUserTask.execute(user);
+        ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
+        isExist.execute("testUser");
+
+        // attempt to log in
+        solo.enterText((EditText) solo.getView(R.id.username), "testUser");
+        solo.clickOnButton("Sign In");
+        solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
+    }
 
     /**
      * Runs at the end of the tests
