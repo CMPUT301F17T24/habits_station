@@ -29,7 +29,7 @@ public class User {
     private String name;
     private ArrayList<Integer> follower;
     private ArrayList<Integer> followee;
-    private HabitList habits;
+    private HabitList habits = new HabitList();
 
     public User(int uid, String name) {
         this.uid = uid;
@@ -107,7 +107,7 @@ public class User {
     }
 
     public HabitList getHabitList(){
-        return this.habits;
+        return habits;
     }
 
 

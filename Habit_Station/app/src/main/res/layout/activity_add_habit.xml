@@ -13,4 +13,188 @@
     android:layout_height="match_parent"
     tools:context="com.tiejun.habit_station.AddHabitActivity">
 
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <EditText
+        android:id="@+id/reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="reason"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="245dp"
+        app:layout_constraintTop_toTopOf="@+id/datePicker"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="40dp"
+        android:text="Frequency"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reason"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <Button
+        android:id="@+id/M"
+        android:layout_width="37dp"
+        android:layout_height="51dp"
+        android:layout_marginLeft="32dp"
+        android:text="M"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="99dp"
+        android:layout_marginStart="32dp"
+        tools:layout_editor_absoluteY="361dp"
+        tools:layout_editor_absoluteX="34dp" />
+
+    <Button
+        android:id="@+id/T"
+        android:layout_width="44dp"
+        android:layout_height="50dp"
+        android:text="T"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/M"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp" />
+
+    <Button
+        android:id="@+id/W"
+        android:layout_width="46dp"
+        android:layout_height="49dp"
+        android:text="W"
+        app:layout_constraintLeft_toRightOf="@+id/T"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="0dp" />
+
+    <Button
+        android:id="@+id/R"
+        android:layout_width="47dp"
+        android:layout_height="49dp"
+        android:text="R"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/W"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp" />
+
+    <Button
+        android:id="@+id/F"
+        android:layout_width="48dp"
+        android:layout_height="50dp"
+        android:text="F"
+        app:layout_constraintLeft_toRightOf="@+id/R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="0dp" />
+
+    <Button
+        android:id="@+id/SAT"
+        android:layout_width="51dp"
+        android:layout_height="49dp"
+        android:layout_marginRight="16dp"
+        android:text="SAT"
+        app:layout_constraintLeft_toRightOf="@+id/F"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/SUN"
+        android:layout_width="53dp"
+        android:layout_height="52dp"
+        android:text="SUN"
+        app:layout_constraintLeft_toRightOf="@+id/SAT"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <Button
+        android:id="@+id/OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="OK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <ScrollView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.16"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="156dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginRight="-40dp"
+                android:layout_marginTop="-50dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:scaleX="0.75"
+                android:scaleY="0.75" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -163,7 +163,14 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         startDate.set(2017,9,28);
         Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
-        assertEquals(habitList.getCount(), 1);
+
+        Calendar startDate1 = Calendar.getInstance();
+        startDate1.set(2017,10,11);
+        Habit habit1 = new Habit("TEST1","",startDate1, weekDay);
+        habitList.add(habit1);
+
+
+        assertEquals(habitList.getCount(), 2);
     }
 
     public void testGetTodayHabits() {

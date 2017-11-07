@@ -18,13 +18,43 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar">
+=======
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".SignInActivity" >
+>>>>>>> origin/test
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+
+
+        <activity android:name=".MainPageActivity" />
+        <activity android:name=".ViewTodayPlanActivity" />
+        <activity android:name=".HabitLibraryActivity" />
+        <activity android:name=".AddHabitActivity" />
+        <activity android:name=".ViewHabitActivity" />
+        <activity android:name=".StatusActivity" />
+        <activity android:name=".EditHabitActivity" />
+        <activity android:name=".HabitEventLibraryActivity" />
+        <activity android:name=".EditHabitEventActivity" />
+        <activity android:name=".PhotoGalleryActivity" />
+        <activity android:name=".MyProfileActivity" />
+        <activity android:name=".NearbyActivity" />
+        <activity android:name=".LifeCircleActivity" />
+        <activity android:name=".AddFriendActivity" />
+        <activity android:name=".FriendsActivity" />
+        <activity android:name=".FriendsStatusActivity" />
+        <activity android:name=".FriendsMapActivity" />
+        <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".MyEventMapActivity"></activity>
+>>>>>>> origin/test
     </application>
 
 </manifest>
