@@ -3213,7 +3213,7 @@ containing a value of this type.
         public static final int design_navigation_view=0x7f0d00a2;
         public static final int disableHome=0x7f0d001c;
         public static final int edit=0x7f0d009a;
-        public static final int editDate=0x7f0d0088;
+        public static final int editDate=0x7f0d0089;
         public static final int editReason=0x7f0d008a;
         public static final int editTitle=0x7f0d0087;
         public static final int edit_query=0x7f0d006e;
@@ -3318,7 +3318,7 @@ containing a value of this type.
         public static final int text2=0x7f0d00ba;
         public static final int textSpacerNoButtons=0x7f0d005a;
         public static final int textSpacerNoTitle=0x7f0d0059;
-        public static final int textView=0x7f0d0089;
+        public static final int textView=0x7f0d0088;
         public static final int textView2=0x7f0d007d;
         public static final int textView3=0x7f0d008e;
         public static final int text_input_password_toggle=0x7f0d00a6;

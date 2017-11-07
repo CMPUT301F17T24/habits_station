@@ -20,23 +20,29 @@ import java.util.Date;
 
 import static android.R.attr.format;
 
+/**
+ * a activity when click edit, implemented by back intent to update information
+ */
 public class EditHabitActivity extends AppCompatActivity {
+    private String oldTitle;
+    private String oldReason;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_habit);
+        Intent i = getIntent();
+        oldTitle = i.getStringExtra("habitTitle");
+        oldReason = i.getStringExtra("habitReason");
 
         /**
          * set a click listener for edit title
          */
         final EditText editTitle = (EditText) findViewById(R.id.editTitle);
-        editTitle.setHint("old title");
+        editTitle.setHint(oldTitle);
         editTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-                String newTitle = editTitle.getText().toString();// get the new title
 
             }
         });
@@ -52,7 +58,6 @@ public class EditHabitActivity extends AppCompatActivity {
 
                 try {
                     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
                     Date newDate = format.parse(editDate.getText().toString());// get the new title
                 }catch (ParseException ex){
                     Date newDate = new Date(); // handle the exception by assign current date
@@ -65,12 +70,10 @@ public class EditHabitActivity extends AppCompatActivity {
          * set a click listener for edit reason
          */
         final EditText editReason = (EditText) findViewById(R.id.editReason);
-        editReason.setHint("old reason");
+        editReason.setHint(oldReason);
         editReason.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-                String newReason = editReason.getText().toString();// get the new title
 
             }
         });
@@ -105,6 +108,10 @@ public class EditHabitActivity extends AppCompatActivity {
 
                 Intent backIntent = new Intent();
                 backIntent.putExtra("delSig", 0);
+                String newTitle = editTitle.getText().toString();// get the new title
+                String newReason = editReason.getText().toString();// get the new reason
+                backIntent.putExtra("newTitle",newTitle);
+                backIntent.putExtra("newReason",newReason);
 
                 setResult(RESULT_OK, backIntent);
                 finish();

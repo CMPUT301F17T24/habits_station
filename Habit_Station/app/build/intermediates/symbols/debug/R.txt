@@ -799,7 +799,7 @@ int id design_menu_item_text 0x7f0d00a3
 int id design_navigation_view 0x7f0d00a2
 int id disableHome 0x7f0d001c
 int id edit 0x7f0d009a
-int id editDate 0x7f0d0088
+int id editDate 0x7f0d0089
 int id editReason 0x7f0d008a
 int id editTitle 0x7f0d0087
 int id edit_query 0x7f0d006e
@@ -904,7 +904,7 @@ int id text 0x7f0d00bc
 int id text2 0x7f0d00ba
 int id textSpacerNoButtons 0x7f0d005a
 int id textSpacerNoTitle 0x7f0d0059
-int id textView 0x7f0d0089
+int id textView 0x7f0d0088
 int id textView2 0x7f0d007d
 int id textView3 0x7f0d008e
 int id text_input_password_toggle 0x7f0d00a6

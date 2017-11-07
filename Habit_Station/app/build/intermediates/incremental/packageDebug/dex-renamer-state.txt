@@ -1,4 +1,4 @@
-#Tue Nov 07 00:16:56 MST 2017
+#Tue Nov 07 09:44:37 MST 2017
 base.0=/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_47f63f6b1133dd60656f04e8df753e2a924d6c3a
 renamed.1=classes2.dex
 renamed.0=classes.dex

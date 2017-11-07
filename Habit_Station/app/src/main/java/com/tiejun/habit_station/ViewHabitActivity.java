@@ -27,12 +27,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import static com.tiejun.habit_station.R.id.date;
+import static com.tiejun.habit_station.R.id.habits;
 
 /**
+ *
  * this activity shows details about a habit
  * with button to start new intent to edit or show the status
  * fulfilled by using start for result
- *
  */
 public class ViewHabitActivity extends AppCompatActivity {
 
@@ -43,6 +44,7 @@ public class ViewHabitActivity extends AppCompatActivity {
     private TextView theDate;
     private Habit habit;
     private int index;
+    User user = new User();
 
 
     /**
@@ -51,8 +53,8 @@ public class ViewHabitActivity extends AppCompatActivity {
      * modified to start a new intent of edit habit
      *
      * requestcode 1 for edit and delete
-     *
-     *
+     * if delete go back to the library
+     *  if edit, update the content
      */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -62,7 +64,20 @@ public class ViewHabitActivity extends AppCompatActivity {
                 // set variable of edited data here
                 int delSig =data.getIntExtra("delSig",0); //get signal of delete
                 if( delSig == 1 ){
-                    //delete the habit
+                    //delete the habit, tested and passed
+                    habitsList.delete(habitsList.getHabit(index));
+                    ElasticSearchUserController.AddUserTask addUserTask
+                            = new ElasticSearchUserController.AddUserTask();
+                    addUserTask.execute(user);
+                    Intent delteBackIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
+                    startActivity(delteBackIntent);
+                }
+                if( delSig == 0){// edit
+                    try{
+                        habit.setTitle(data.getStringExtra(""));
+                    }catch (Exception e){
+                        Log.i("Error", "failed to change title");
+                    }
                 }
                 
             }
@@ -86,7 +101,7 @@ public class ViewHabitActivity extends AppCompatActivity {
         index = i.getIntExtra("habit index", 0); // get index of specific habit
 
 
-        User user = new User();
+
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
         getUserTask.execute(tempName);
         try {
@@ -126,8 +141,9 @@ public class ViewHabitActivity extends AppCompatActivity {
                 setResult(RESULT_OK);
 
                 Intent onClickIntent = new Intent(getApplicationContext(), EditHabitActivity.class);
-                // put extra here
-                //onClickIntent.putExtra("habitName", );
+
+                onClickIntent.putExtra("habitTitle", habit.getTitle()); //title
+                onClickIntent.putExtra("habitReason", habit.getReason()); //title
 
                 startActivityForResult(onClickIntent,1);
 
