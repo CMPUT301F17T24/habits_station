@@ -15,7 +15,8 @@ import java.util.ArrayList;
 public class UserList {
     private ArrayList<User> users = new ArrayList<>();
 
-    public UserList (){}
+    public UserList() {
+    }
 
     public void addUser(User user) {
         if (hasUser(user))
@@ -42,4 +43,15 @@ public class UserList {
     public int getCount() {
         return users.size();
     }
+
+    public boolean duplicate(User user){
+
+        for (User element: users){
+            if (element.getName().equals(user.getName())){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

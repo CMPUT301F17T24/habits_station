@@ -7,11 +7,10 @@
 package com.tiejun.habit_station;
 
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashSet;
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -20,29 +19,61 @@ import java.util.Date;
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitListTest() {
-        super(com.tiejun.habit_station.MainActivity.class);
+        super(SignInActivity.class);
     }
 
     public void testAdd() {
         HabitList habitList = new HabitList();
+
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST","",startDate);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
         assertTrue(habitList.hasHabit(habit));
 
-        try {
-            habitList.add(habit);
-        }catch (IllegalArgumentException e) {
-            assertTrue(true);
+        Habit habit2 = new Habit("TEST","",startDate, weekDay);
+        if (habitList.check_dup(habit2)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
         }
+        else{
+            assertTrue(habitList.hasHabit(habit2));
+        }
+
+
+        Habit habit3 = new Habit("TEST3","",startDate, weekDay);
+        if (habitList.check_dup(habit3)) {
+            boolean thrown  = false;
+            try {
+                throw new IllegalArgumentException("Duplicate Habit");
+            } catch(IllegalArgumentException e) {
+                thrown = true;
+                assertTrue(thrown);
+            }
+        }
+        else{
+            habitList.add(habit3);
+            assertTrue(habitList.hasHabit(habit3));
+        }
+
+
+
     }
 
     public void testDelete() {
         HabitList habitList = new HabitList();
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST","",startDate);
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
         habitList.delete(habit);
         assertFalse(habitList.hasHabit(habit));
@@ -50,41 +81,47 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public void testHasHabit() {
         HabitList habitList = new HabitList();
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST","",startDate);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
         assertTrue(habitList.hasHabit(habit));
     }
 
     public void testGetHabit() {
         HabitList habitList = new HabitList();
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST","",startDate);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
         Habit returnHabit = habitList.getHabit(0);
         assertEquals(habit.getTitle(), returnHabit.getTitle());
         assertEquals(habit.getReason(), returnHabit.getReason());
         assertEquals(habit.getStartDate(), returnHabit.getStartDate());
+        assertEquals(habit.getRepeatWeekOfDay(), weekDay);
     }
 
     public void testGetHabits() {
         HabitList habitList = new HabitList();
-
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST0","",startDate);
+        Habit habit = new Habit("TEST0","",startDate, weekDay);
         habitList.add(habit);
 
         Calendar startDate1 = Calendar.getInstance();
         startDate1.set(2017,10,11);
-        Habit habit1 = new Habit("TEST1","",startDate1);
+        Habit habit1 = new Habit("TEST1","",startDate1, weekDay);
         habitList.add(habit1);
 
         Calendar startDate2 = Calendar.getInstance();
         startDate2.set(2016,1,2);
-        Habit habit2 = new Habit("TEST2","",startDate2);
+        Habit habit2 = new Habit("TEST2","",startDate2, weekDay);
         habitList.add(habit2);
 
         ArrayList<Habit> test = habitList.getHabits();
@@ -106,12 +143,58 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public void testGetCount() {
         HabitList habitList = new HabitList();
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+        weekDay.add(6);
         Calendar startDate = Calendar.getInstance();
         startDate.set(2017,9,28);
-        Habit habit = new Habit("TEST","",startDate);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
         habitList.add(habit);
-        assertEquals(habitList.getCount(), 1);
+
+        Calendar startDate1 = Calendar.getInstance();
+        startDate1.set(2017,10,11);
+        Habit habit1 = new Habit("TEST1","",startDate1, weekDay);
+        habitList.add(habit1);
+
+
+        assertEquals(habitList.getCount(), 2);
     }
 
+    public void testGetTodayHabits() {
+        HabitList habitList = new HabitList();
+        HashSet<Integer> weekDay = new HashSet<Integer>();
+
+        Calendar startDate = Calendar.getInstance();
+        int weekToday = startDate.get(Calendar.DAY_OF_WEEK);
+        weekDay.add(weekToday);
+        weekDay.add(7);
+        Habit habit = new Habit("TEST","",startDate, weekDay);
+        habitList.add(habit);
+
+        // test whether the weekday has been added to the habit object
+        if (habitList.getHabit(0).getRepeatWeekOfDay().contains(weekToday)) {
+            assertTrue(true);
+        }
+        else {
+            assertTrue(false);
+        }
+
+        // test whether the habits of today has the right habit in it
+        ArrayList<Habit> todayToDo = habitList.getTodayHabits();
+        if (todayToDo.contains(habit)) {
+            assertTrue(true);
+        }
+        else {
+            assertTrue(false);
+        }
+
+        // test whether the today's schedule has removed after change weekday
+        weekDay.remove(startDate.get(Calendar.DAY_OF_WEEK));
+        habit.setRepeatWeekOfDay(weekDay);
+        todayToDo = habitList.getTodayHabits();
+        if (todayToDo.contains(habit))
+            assertTrue(false);
+        else
+            assertTrue(true);
+    }
 }
 

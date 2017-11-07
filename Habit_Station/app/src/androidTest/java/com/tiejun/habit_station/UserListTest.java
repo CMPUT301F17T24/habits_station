@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class UserListTest extends ActivityInstrumentationTestCase2 {
 
     public UserListTest() {
-        super(MainActivity.class);
+        super(SignInActivity.class);
     }
 
     public void testAddUser() {
@@ -91,7 +91,6 @@ public class UserListTest extends ActivityInstrumentationTestCase2 {
         User user2 = new User(3, "test1");
 
         ArrayList<Integer> followees = new ArrayList<>();
-        followees.add(user.getUid());
         followees.add(user1.getUid());
         followees.add(user2.getUid());
         user.setFollowee(followees);
@@ -104,7 +103,6 @@ public class UserListTest extends ActivityInstrumentationTestCase2 {
         User user2 = new User(3, "test1");
 
         ArrayList<Integer> followers = new ArrayList<>();
-        followers.add(user.getUid());
         followers.add(user1.getUid());
         followers.add(user2.getUid());
         user.setFollower(followers);

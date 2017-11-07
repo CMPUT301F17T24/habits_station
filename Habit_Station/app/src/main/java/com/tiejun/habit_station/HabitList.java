@@ -6,9 +6,12 @@
 
 package com.tiejun.habit_station;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -16,15 +19,21 @@ import java.util.Comparator;
 
 public class HabitList{
     // list of all habits created
-    private ArrayList<Habit> habits = new ArrayList<Habit>();
+    public ArrayList<Habit> habits;
 
-    public HabitList() {}
+    public HabitList() {
+        this.habits = new ArrayList<Habit>();
+    }
+
+    public HabitList(ArrayList<Habit> habitList) {
+        this.habits = habitList;
+    }
 
     public void add(Habit habit) {
         if (this.hasHabit(habit)) {
             throw new IllegalArgumentException("Duplicate habits.");
         }
-        habits.add(habit);
+        this.habits.add(habit);
     }
 
     public boolean hasHabit(Habit habit) {
@@ -58,4 +67,31 @@ public class HabitList{
         Collections.sort(habits, compare);
         return habits;
     }
+
+    public ArrayList<Habit> getTodayHabits() {
+        ArrayList<Habit> todayList = new ArrayList<Habit>();
+        Calendar today = Calendar.getInstance();
+        int weekDay = today.get(Calendar.DAY_OF_WEEK);
+
+        for (Habit h : habits) {
+            if (h.getRepeatWeekOfDay().contains(weekDay))
+                todayList.add(h);
+        }
+        return todayList;
+    }
+
+
+    public boolean check_dup (Habit habit){
+        for (Habit element: habits){
+            if (element.getTitle().equals(habit.getTitle())){
+                return true ;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 }

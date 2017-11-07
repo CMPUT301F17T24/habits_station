@@ -7,6 +7,8 @@
 package com.tiejun.habit_station;
 
 import java.util.ArrayList;
+import java.util.Objects;
+import io.searchbox.annotations.JestId;
 
 /**
  * Created by tiejun on 2017-10-21.
@@ -14,23 +16,38 @@ import java.util.ArrayList;
 
 public class User {
 
+    @JestId
+    private String Aid;
+
     private int uid;
     private String name;
     private ArrayList<Integer> follower;
     private ArrayList<Integer> followee;
+    private HabitList habits = new HabitList();
 
     public User(int uid, String name) {
         this.uid = uid;
         this.name = name;
     }
 
+    public String getAid() {
+        return Aid;
+    }
+
+    public void setAid(String aid) {
+        Aid = aid;
+    }
+
+    public User() {}
+
    public int getUid() {
         return uid;
     }
 
-    /*public void setUid(int uid) {
+    public void setUid(int uid) {
         this.uid = uid;
-    }*/
+    }
+
 
     public String getName() {
         return name;
@@ -68,6 +85,16 @@ public class User {
     public void setFollowee(ArrayList<Integer> followee) {
         this.followee = followee;
     }
+
+
+    public void setHabitList(HabitList habits){
+        this.habits = habits;
+    }
+
+    public HabitList getHabitList(){
+        return habits;
+    }
+
 
     //    @Override
 //    public int hashCode() {
