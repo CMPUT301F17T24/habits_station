@@ -15,12 +15,7 @@ import java.util.ArrayList;
 public class UserList {
     private ArrayList<User> users = new ArrayList<>();
 
-<<<<<<< HEAD
-    public UserList() {
-    }
-=======
     public UserList (){}
->>>>>>> origin
 
     public void addUser(User user) {
         if (hasUser(user))
@@ -48,7 +43,6 @@ public class UserList {
         return users.size();
     }
 
-<<<<<<< HEAD
     public boolean duplicate(User user){
 
         for (User element: users){
@@ -58,8 +52,5 @@ public class UserList {
         }
         return false;
     }
-=======
-
->>>>>>> origin
 
 }

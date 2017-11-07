@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
   ~ You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
   ~ You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
-  -->
-
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tiejun.habit_station">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -16,23 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".SignUpActivity"
             android:label="@string/app_name"
-<<<<<<< HEAD
-            android:theme="@style/AppTheme.NoActionBar">
-=======
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".SignInActivity" >
->>>>>>> origin/test
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
 
 
         <activity android:name=".MainPageActivity" />
@@ -54,7 +48,6 @@
         <activity android:name=".FriendsMapActivity" />
         <activity android:name=".HabitHistoryActivity" />
         <activity android:name=".MyEventMapActivity"></activity>
->>>>>>> origin/test
     </application>
 
 </manifest>
