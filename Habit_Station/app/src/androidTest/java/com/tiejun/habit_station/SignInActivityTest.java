@@ -53,6 +53,13 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
     }
 
+    public void testSignUp() {
+        // test if the sign up button directs to sign up page
+        solo.assertCurrentActivity("Wrong Activity", SignInActivity.class);
+        solo.clickOnButton("Sign Up");
+        solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
+    }
+
     /**
      * Runs at the end of the tests
      * @throws Exception
