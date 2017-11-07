@@ -101,7 +101,7 @@ public class AddHabitActivity extends AppCompatActivity {
         SUNBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                weekDay.add(7);
+                weekDay.add(0);
             }
         });
  //////////////////////////////////////////////////////////////////////////

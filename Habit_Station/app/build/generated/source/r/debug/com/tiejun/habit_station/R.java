@@ -3186,7 +3186,6 @@ containing a value of this type.
         public static final int basic=0x7f0d0016;
         public static final int beginning=0x7f0d0040;
         public static final int bottom=0x7f0d002f;
-        public static final int button=0x7f0d008a;
         public static final int buttonPanel=0x7f0d0053;
         public static final int cancel_action=0x7f0d00a5;
         public static final int center=0x7f0d0030;
@@ -3267,6 +3266,7 @@ containing a value of this type.
         public static final int right=0x7f0d0036;
         public static final int right_icon=0x7f0d00af;
         public static final int right_side=0x7f0d00ab;
+        public static final int save=0x7f0d008a;
         public static final int screen=0x7f0d0029;
         public static final int scroll=0x7f0d0025;
         public static final int scrollIndicatorDown=0x7f0d005b;

@@ -21,6 +21,11 @@ public class HabitEventList {
 
     public HabitEventList() {}
 
+    public HabitEventList(ArrayList<HabitEvent> events) {
+        this.events = events;
+    }
+
+
     public void add(HabitEvent event) {
         events.add(event);
     }
@@ -45,7 +50,7 @@ public class HabitEventList {
         public int compare(HabitEvent event, HabitEvent e1) {
             if (event.geteTime().before(e1.geteTime()))
                 return 1;
-            if (event.geteTime().before(e1.geteTime()))
+            if (event.geteTime().after(e1.geteTime()))
                 return -1;
             return 0;
         }
@@ -56,6 +61,16 @@ public class HabitEventList {
         Collections.sort(events, compare);
         return events;
     }
+
+    public boolean check_duplicate (HabitEvent event){
+        for (HabitEvent element: events){
+            if (element.geteTime().equals(event.geteTime())){
+                return true ;
+            }
+        }
+        return false;
+    }
+
 
 
 }

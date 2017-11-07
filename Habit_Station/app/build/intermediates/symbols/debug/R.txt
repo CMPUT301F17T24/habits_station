@@ -772,7 +772,6 @@ int id auto 0x7f0d002e
 int id basic 0x7f0d0016
 int id beginning 0x7f0d0040
 int id bottom 0x7f0d002f
-int id button 0x7f0d008a
 int id buttonPanel 0x7f0d0053
 int id cancel_action 0x7f0d00a5
 int id center 0x7f0d0030
@@ -853,6 +852,7 @@ int id reason 0x7f0d007b
 int id right 0x7f0d0036
 int id right_icon 0x7f0d00af
 int id right_side 0x7f0d00ab
+int id save 0x7f0d008a
 int id screen 0x7f0d0029
 int id scroll 0x7f0d0025
 int id scrollIndicatorDown 0x7f0d005b

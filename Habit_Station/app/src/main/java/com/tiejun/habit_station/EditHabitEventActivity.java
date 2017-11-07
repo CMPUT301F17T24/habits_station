@@ -12,11 +12,17 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.HashSet;
 
 public class EditHabitEventActivity extends AppCompatActivity {
 
@@ -37,19 +43,114 @@ public class EditHabitEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_habit_event);
+
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        final String userName = pref.getString("currentUser", "");
+        Intent intent = getIntent();
+        final int habitIndex = intent.getIntExtra("habit index", 0);
+        int eventIndex = intent.getIntExtra("select",0);
+
+
+        User user = new User();
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(userName);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+
+
+        final Habit habit = user.getHabitList().getHabit(habitIndex);
+        comment = (EditText)findViewById(R.id.comment);
+        simpleDatePicker = (DatePicker)findViewById(R.id.datePicker);
+
+        final Calendar startDate = habit.getStartDate();
+        final HashSet<Integer> weekDay = habit.getRepeatWeekOfDay();
+
+        final Calendar doDate = Calendar.getInstance();
+        if (do_year == 0 && do_month == 0 && do_day == 0){
+            //
+            do_year = doDate.get(Calendar.YEAR);
+            do_month = doDate.get(Calendar.MONTH)+1;
+            do_day = doDate.get(Calendar.DAY_OF_MONTH);
+        }
+//        doDate.set(do_year, do_month, do_day);
+
+
+        final Button confirmBtn = (Button) findViewById(R.id.save);                        //  click the button to save the information
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                boolean added = true;
+                String sComment = comment.getText().toString();
+
+                if (sComment.length() > 20){
+                    comment.setError("Title should not be empty and should be at most 20 words");
+                    added = false;
+                }
+
+
+                doDate.set(do_year, do_month, do_day);
+                Calendar fakeDate = Calendar.getInstance();
+                fakeDate.set(do_year, do_month-1, do_day);
+                Log.d("TTT","Week day is"+String.valueOf(fakeDate.get(Calendar.DAY_OF_WEEK)-1));
+                int day_of_week = fakeDate.get(Calendar.DAY_OF_WEEK)-1;
+                if (! weekDay.contains(day_of_week)){
+                    Toast.makeText(getApplicationContext(), "Not in the plan.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+
+                if (startDate.after(doDate)){
+                    Toast.makeText(getApplicationContext(), "Should after startDate.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+
+                if(added){
+                    added = setEvent(userName,habit.getTitle(),sComment,doDate, habitIndex );
+                }
+                if (added) {
+                    Intent intent = new Intent(EditHabitEventActivity.this, HabitEventLibraryActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
+
+///////////////////////////////////////////////////////
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        simpleDatePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH), new DatePicker.OnDateChangedListener() {
+                    @Override
+                    public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
+
+                        do_year = simpleDatePicker.getYear();
+                        do_month = simpleDatePicker.getMonth()+1;
+                        do_day =  simpleDatePicker.getDayOfMonth();
+
+                    }
+                });
+
+
     }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
 
+        Log.d("TTT","start");
+
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
-
         Intent intent = getIntent();
-        final int habitIndex = intent.getIntExtra("habit index", 0);
+        int habitIndex = intent.getIntExtra("habit index", 0);
+        int eventIndex = intent.getIntExtra("select",0);
 
 
         User user = new User();
@@ -69,13 +170,74 @@ public class EditHabitEventActivity extends AppCompatActivity {
         info = (TextView) findViewById(R.id.info);
         Habit habit = user.getHabitList().getHabit(habitIndex);
         //String habit_name  = habit.getTitle();
-        info.setText(habit.toString() +"\n"+habit.getReason()+"\n"+habit.getRepeatWeekOfDay());
-        Log.d("TTT", String.valueOf(intent.getIntExtra("select",0)));
+        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+habit.getRepeatWeekOfDay());
 
+        if (eventIndex >=0){
+
+            Log.d("TTT",String.valueOf(eventIndex));
+// if the event already exists, show its old info
+            habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
+            HabitEvent event = habitEventList.getEvent(eventIndex);
+            comment = (EditText)findViewById(R.id.comment);
+            comment.setText(event.geteComment());
+
+            simpleDatePicker = (DatePicker)findViewById(R.id.datePicker);
+            simpleDatePicker.updateDate(event.geteTime().get(Calendar.YEAR),event.geteTime().get(Calendar.MONTH)-1,event.geteTime().get(Calendar.DAY_OF_MONTH));
+
+        }
+        else{
+            Log.d("TTT","event haven't been created");
+        }
 
 
     }
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public boolean setEvent(String current_user,String sName,String sComment,Calendar doDate, int index )
+    {
+
+        User user = new User();
+        //String query = current_user;
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(current_user);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+
+        //Log.d("CCC",habit.getTitle());
+
+        HabitEvent event1 = new HabitEvent(sName, doDate, sComment);
+        Habit habit = user.getHabitList().getHabit(index);
+        HabitEventList events = habit.getHabitEventList();
+
+
+        if (events.check_duplicate(event1)){
+            Toast.makeText(this, "The event for that day already exists!!!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+
+            events.add(event1);
+
+            HabitEventList events2 = new HabitEventList(events.sortEvents());
+            habit.setHabitEventList(events2);
+            //user.setHabitList(list2);
+
+
+
+            ElasticSearchUserController.AddUserTask addUserTask
+                    = new ElasticSearchUserController.AddUserTask();
+            addUserTask.execute(user);
+            return true;
+        }
+
+    }
 
 
 
