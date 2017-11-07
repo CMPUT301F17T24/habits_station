@@ -19,7 +19,7 @@ import java.util.HashSet;
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitListTest() {
-        super(SignInActivity.class);
+        super(SignInActivityTest.class);
     }
 
     public void testAdd() {
