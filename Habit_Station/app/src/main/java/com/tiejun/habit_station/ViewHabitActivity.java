@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,14 +70,18 @@ public class ViewHabitActivity extends AppCompatActivity {
                     ElasticSearchUserController.AddUserTask addUserTask
                             = new ElasticSearchUserController.AddUserTask();
                     addUserTask.execute(user);
-                    Intent delteBackIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
-                    startActivity(delteBackIntent);
+                    Intent deleteBackIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
+                    startActivity(deleteBackIntent);
                 }
                 if( delSig == 0){// edit
                     try{
-                        habit.setTitle(data.getStringExtra(""));
+                        habit.setTitle(data.getStringExtra("newTitle"));
+                        habit.setReason(data.getStringExtra("newReason"));
+                        ElasticSearchUserController.AddUserTask addUserTask
+                                = new ElasticSearchUserController.AddUserTask();
+                        addUserTask.execute(user);
                     }catch (Exception e){
-                        Log.i("Error", "failed to change title");
+                        Log.i("Error", "failed to change");
                     }
                 }
                 
@@ -120,15 +125,14 @@ public class ViewHabitActivity extends AppCompatActivity {
         theReason.setText(habit.getReason());
 
         /**
-         * this method convert date to string,
-         * use online resource from stack overflow:
-         * https://stackoverflow.com/questions/5683728/convert-java-util-date-to-string
+         * a tostring method to show date
          */
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); //Or whatever format fits best your needs.
-//        String dateStr = sdf.format(habit.getStartDate());
-
         theDate = (TextView) findViewById(R.id.showDate);// reason
-        theDate.setText(habit.getStartDate().toString());
+        int year = habit.getStartDate().get(Calendar.YEAR);
+        int month = habit.getStartDate().get(Calendar.MONTH);
+        int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
+
+        theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
 
         /**
          * a listener when edit button clicked,
