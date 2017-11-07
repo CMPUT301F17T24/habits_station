@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Habit_Station</string>
     <string name="action_settings">Settings</string>
+    <string name="title">Title</string>
+    <string name="reason">Reason</string>
+    <string name="Comment">Comment</string>
 </resources>

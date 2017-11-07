@@ -113,9 +113,12 @@ public class AddHabitActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                boolean added = true;
+
                 String sTitle = title.getText().toString();
                 //String sDate = date.getText().toString();
                 String sReason = reason.getText().toString();
+
 
                 Calendar startDate = Calendar.getInstance();
                 if (set_year == 0 && set_month == 0 && set_day == 0){
@@ -128,15 +131,23 @@ public class AddHabitActivity extends AppCompatActivity {
 
                 if ((sTitle.length() == 0) || sTitle.length() > 20){
                     title.setError("Title should not be empty and should be at most 20 words");
+                    added = false;
                 }
 
 
-                if (sReason.length() > 30){
-                    reason.setError("Reason should be at most 30 words");
+                if ((sReason.length() == 0) || sReason.length() > 30){
+                    reason.setError("Reason should not be empty and should be at most 30 words");
+                    added = false;
                 }
 
+                if (weekDay.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "The plan cannot be empty, select the days of a week.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
 
-               boolean added = setHabit(userName , sTitle, sReason, startDate, weekDay);
+                if (added){
+                    added = setHabit(userName , sTitle, sReason, startDate, weekDay);
+                }
 
 
                 //Log.e("Add_user",userName);
