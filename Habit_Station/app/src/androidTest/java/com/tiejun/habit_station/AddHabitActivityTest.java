@@ -16,12 +16,12 @@ import com.robotium.solo.Solo;
  * Created by CBB on 2017/11/7.
  */
 
-public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
+public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
 
     private Solo solo;
 
-    public SignInActivityTest() {
-        super(com.tiejun.habit_station.SignInActivity.class);
+    public AddHabitActivityTest() {
+        super(com.tiejun.habit_station.AddHabitActivity.class);
     }
 
     /**
