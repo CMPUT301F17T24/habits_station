@@ -112,6 +112,10 @@
         "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_logo_2x.png",
+        "source": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/src/main/res/drawable/habit_logo_2x.png"
+    },
+    {
         "merged": "/Users/onepunch/Desktop/habitsStation/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/onepunch/.android/build-cache/a1782bfdd32b470984a3d940cb8fe746442e5acd/output/res/drawable/abc_switch_thumb_material.xml"
     },

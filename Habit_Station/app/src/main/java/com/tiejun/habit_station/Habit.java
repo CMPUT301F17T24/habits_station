@@ -24,7 +24,7 @@ public class Habit implements Comparable<Habit> {
 
     // "Monday" 2, "Tuesday" 3, "Wednesday" 4, "Thursday" 5, "Friday" 6, "Saturday" 7, "Sunday" 1
     private HashSet<Integer> repeatWeekOfDay;
-    SimpleDateFormat formatter = new SimpleDateFormat("M, yyyy-MM-dd");
+    static SimpleDateFormat formatter = new SimpleDateFormat("M, yyyy-MM-dd");
 
     public Habit(String title, String reason, Calendar startDate, HashSet<Integer> repeatWeekOfDay) {
         this.title = title;
@@ -76,7 +76,7 @@ public class Habit implements Comparable<Habit> {
 
     @Override
     public String toString() {
-        return title + " starts on " + formatter.format(startDate) + ".";
+        return this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + startDate.get(Calendar.MONTH) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
     }
 
     public int compareTo(Habit habit) {

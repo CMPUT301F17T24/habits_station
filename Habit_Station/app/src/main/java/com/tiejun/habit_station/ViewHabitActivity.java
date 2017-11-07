@@ -8,20 +8,28 @@
 package com.tiejun.habit_station;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * this activity shows details about a habit
  * with button to start new intent to edit or show the status
  * fulfilled by using start for result
  *
- * so far not sure the implementation of habit list, therefore, the code
- * is not working, should be fixed when combine all the codes
  */
 public class ViewHabitActivity extends AppCompatActivity {
+
+    protected HabitList habits =new HabitList();
+    private TextView theTitle;
+    private TextView theName;
+
 
     /**
      * online resource from stack overflow of pass variable back to main activity
@@ -42,9 +50,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                 if( delSig == 1 ){
                     //delete the habit
                 }
-                if( delSig == 0 ){
-                    //update the habit information
-                }
                 
             }
         }
@@ -57,6 +62,31 @@ public class ViewHabitActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_habit);
 
         // my code start here
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        final String tempName = pref.getString("currentUser", "");
+
+        theName = (TextView) findViewById(R.id.name);
+        theName.setText(tempName);
+
+        Intent i = getIntent();
+        i.getIntExtra("habit index", 0); // get index of specific habit
+
+
+        User user = new User();
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(tempName);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+
+        habits = user.getHabitList();
+
+        theTitle = (TextView) findViewById(R.id.showTitle);
+        //theTitle.setText(habits.habits[i]);
+
+
 
         /**
          * a listener when edit button clicked,
@@ -70,7 +100,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 
                 Intent onClickIntent = new Intent(getApplicationContext(), EditHabitActivity.class);
                 // put extra here
-                onClickIntent.putExtra("habitName", );
+                //onClickIntent.putExtra("habitName", );
 
                 startActivityForResult(onClickIntent,1);
 
