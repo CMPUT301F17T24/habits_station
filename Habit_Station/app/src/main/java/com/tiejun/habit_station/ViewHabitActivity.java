@@ -9,6 +9,7 @@ package com.tiejun.habit_station;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.icu.text.DateFormat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,15 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.tiejun.habit_station.R.id.date;
+
 /**
  * this activity shows details about a habit
  * with button to start new intent to edit or show the status
@@ -26,9 +36,13 @@ import org.w3c.dom.Text;
  */
 public class ViewHabitActivity extends AppCompatActivity {
 
-    protected HabitList habits =new HabitList();
+    protected HabitList habitsList =new HabitList();
     private TextView theTitle;
     private TextView theName;
+    private TextView theReason;
+    private TextView theDate;
+    private Habit habit;
+    private int index;
 
 
     /**
@@ -69,7 +83,7 @@ public class ViewHabitActivity extends AppCompatActivity {
         theName.setText(tempName);
 
         Intent i = getIntent();
-        i.getIntExtra("habit index", 0); // get index of specific habit
+        index = i.getIntExtra("habit index", 0); // get index of specific habit
 
 
         User user = new User();
@@ -81,12 +95,25 @@ public class ViewHabitActivity extends AppCompatActivity {
             Log.i("Error", "Failed to get the User out of the async object");
         }
 
-        habits = user.getHabitList();
+        habitsList = user.getHabitList();
+        habit = habitsList.getHabit(index); // get the specific habit
 
-        theTitle = (TextView) findViewById(R.id.showTitle);
-        //theTitle.setText(habits.habits[i]);
+        theTitle = (TextView) findViewById(R.id.showTitle);//title
+        theTitle.setText(habit.getTitle());
 
+        theReason = (TextView) findViewById(R.id.showReason);// reason
+        theReason.setText(habit.getReason());
 
+        /**
+         * this method convert date to string,
+         * use online resource from stack overflow:
+         * https://stackoverflow.com/questions/5683728/convert-java-util-date-to-string
+         */
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); //Or whatever format fits best your needs.
+//        String dateStr = sdf.format(habit.getStartDate());
+
+        theDate = (TextView) findViewById(R.id.showDate);// reason
+        theDate.setText(habit.getStartDate().toString());
 
         /**
          * a listener when edit button clicked,
