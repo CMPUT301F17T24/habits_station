@@ -10,6 +10,7 @@ package com.tiejun.habit_station;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,7 +53,6 @@ public class EditHabitActivity extends AppCompatActivity {
         editTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                newTitle = editTitle.getText().toString();// get the new title
             }
         });
 
@@ -64,7 +64,7 @@ public class EditHabitActivity extends AppCompatActivity {
         editDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                newDate = editDate.getText().toString();
+                newDate = editDate.getText().toString(); // get new date
             }
         });
 
@@ -76,7 +76,6 @@ public class EditHabitActivity extends AppCompatActivity {
         editReason.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                newReason = editReason.getText().toString();// get the new reason
             }
         });
 
@@ -110,10 +109,16 @@ public class EditHabitActivity extends AppCompatActivity {
 
                 Intent backIntent = new Intent();
                 backIntent.putExtra("delSig", 0);
-                backIntent.putExtra("newTitle",newTitle);
+                newReason = editReason.getText().toString();// get the new reason
+                newTitle = editTitle.getText().toString();// get the new title
+                //Log.i("Error",newReason);
+                if( newTitle.length() == 0){
+                    newTitle = oldTitle;
+                }
                 backIntent.putExtra("newReason",newReason);
-                backIntent.putExtra("newDate",newDate);
+                backIntent.putExtra("newTitle",newTitle);
 
+                backIntent.putExtra("newDate",newDate);
                 setResult(RESULT_OK, backIntent);
                 finish();
             }

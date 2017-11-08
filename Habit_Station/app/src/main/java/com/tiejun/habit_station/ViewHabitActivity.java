@@ -78,10 +78,9 @@ public class ViewHabitActivity extends AppCompatActivity {
                 }
                 if( delSig == 0){// edit
                     try{
-                        if(data.getStringExtra("newTitle") != null)
-                            habit.setTitle(data.getStringExtra("newTitle"));
-                        if(data.getStringExtra("newReason") != null);
-                            habit.setReason(data.getStringExtra("newReason"));
+                        habit.setReason(data.getStringExtra("newReason"));
+                        habit.setTitle(data.getStringExtra("newTitle"));
+
                         // update date here, no suitable method
                         ElasticSearchUserController.AddUserTask addUserTask
                                 = new ElasticSearchUserController.AddUserTask();
@@ -179,11 +178,6 @@ public class ViewHabitActivity extends AppCompatActivity {
 
         theName = (TextView) findViewById(R.id.name);
         theName.setText(tempName);
-
-//        Intent i = getIntent();
-//        index = i.getIntExtra("habit index", 0); // get index of specific habit
-
-
 
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
         getUserTask.execute(tempName);
