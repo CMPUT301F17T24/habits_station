@@ -118,10 +118,10 @@ public class HabitLibraryActivity extends AppCompatActivity {
             onStart();
         }
 
-
         else {
             return false;
         }
+
         return true;
     }
 
@@ -149,7 +149,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
         habits = user.getHabitList();
         adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, habits.getHabits());
         habitList.setAdapter(adapter);
-
 
     }
 
