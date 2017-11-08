@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -45,7 +46,7 @@ public class ViewHabitActivity extends AppCompatActivity {
     private TextView theDate;
     private Habit habit;
     private int index;
-    User user = new User();
+    private User user = new User();
 
 
     /**
@@ -80,6 +81,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                         ElasticSearchUserController.AddUserTask addUserTask
                                 = new ElasticSearchUserController.AddUserTask();
                         addUserTask.execute(user);
+                        onStart();
                     }catch (Exception e){
                         Log.i("Error", "failed to change");
                     }
@@ -154,10 +156,53 @@ public class ViewHabitActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    /**
+     * update the content
+     */
+    protected void onStart() {
+        // TODO Auto-generated method stub
+        super.onStart();
+
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        final String tempName = pref.getString("currentUser", "");
+
+        theName = (TextView) findViewById(R.id.name);
+        theName.setText(tempName);
+
+//        Intent i = getIntent();
+//        index = i.getIntExtra("habit index", 0); // get index of specific habit
 
 
 
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(tempName);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
 
+        habitsList = user.getHabitList();
+        habit = habitsList.getHabit(index); // get the specific habit
+
+        theTitle = (TextView) findViewById(R.id.showTitle);//title
+        theTitle.setText(habit.getTitle());
+
+        theReason = (TextView) findViewById(R.id.showReason);// reason
+        theReason.setText(habit.getReason());
+
+        /**
+         * a tostring method to show date
+         */
+        theDate = (TextView) findViewById(R.id.showDate);// reason
+        int year = habit.getStartDate().get(Calendar.YEAR);
+        int month = habit.getStartDate().get(Calendar.MONTH);
+        int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
+
+        theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
 
 
     }
