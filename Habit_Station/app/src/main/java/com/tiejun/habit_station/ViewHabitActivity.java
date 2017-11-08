@@ -149,7 +149,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                 Intent onClickIntent = new Intent(getApplicationContext(), EditHabitActivity.class);
 
                 onClickIntent.putExtra("habitTitle", habit.getTitle()); //title
-                onClickIntent.putExtra("habitReason", habit.getReason()); //title
+                onClickIntent.putExtra("habitReason", habit.getReason()); //reason
+                onClickIntent.putExtra("year", habit.getStartDate().get(Calendar.YEAR)); //year
+                onClickIntent.putExtra("month", habit.getStartDate().get(Calendar.MONTH)); //month
+                onClickIntent.putExtra("day", habit.getStartDate().get(Calendar.DAY_OF_MONTH)); //day
 
                 startActivityForResult(onClickIntent,1);
 
