@@ -9,6 +9,8 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
@@ -36,7 +38,24 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
         Activity activity = getActivity();
     }
 
+    public void testSignUp() {
+        solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
 
+        // create a new user
+        User user = new User(255, "testUser");
+        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
+        addUserTask.execute(user);
+        solo.enterText((EditText) solo.getView(R.id.signup), "testUser");
+        solo.clickOnButton("Sign up");
+
+        ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
+        isExist.execute("testUser");
+        try {
+            assertTrue(isExist.get());
+        } catch (Exception e){
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+    }
 
     /**
      * Runs at the end of the tests
