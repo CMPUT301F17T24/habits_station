@@ -38,6 +38,12 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
 
 
 
+    public void testAddHabit() {
+        solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
+        solo.clickOnButton("Add");
+        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+    }
+
     /**
      * Runs at the end of the tests
      * @throws Exception
