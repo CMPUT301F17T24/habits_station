@@ -48,7 +48,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         final String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
         final int habitIndex = intent.getIntExtra("habit index", 0);
-        int eventIndex = intent.getIntExtra("select",0);
+        final int eventIndex = intent.getIntExtra("select",0);
 
 
         User user = new User();
@@ -107,11 +107,29 @@ public class EditHabitEventActivity extends AppCompatActivity {
                     added = false;
                 }
 
+//////////////////////// fix time comparison bug /////////////////
+                if(  (startDate.get(Calendar.YEAR) == doDate.get(Calendar.YEAR) )
+                        && ( (startDate.get(Calendar.MONTH) == doDate.get(Calendar.MONTH)))
+                        && ( (startDate.get(Calendar.DAY_OF_MONTH) == doDate.get(Calendar.DAY_OF_MONTH))))
+                {
+                    added = true;
+                }
+                else{
+                    if (startDate.after(doDate)){
+                        Toast.makeText(getApplicationContext(), "Should after startDate.", Toast.LENGTH_SHORT).show();
+                        added = false;
+                    }
+                }
+////////////////////////////////////////////////////
+
+
                 if(added){
-                    added = setEvent(userName,habit.getTitle(),sComment,doDate, habitIndex );
+                    added = setEvent(userName,habit.getTitle(),sComment,doDate, habitIndex, eventIndex);
                 }
                 if (added) {
                     Intent intent = new Intent(EditHabitEventActivity.this, HabitEventLibraryActivity.class);
+                    intent.putExtra("habit index", habitIndex);
+
                     startActivity(intent);
                 }
 
@@ -197,7 +215,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    public boolean setEvent(String current_user,String sName,String sComment,Calendar doDate, int index )
+    public boolean setEvent(String current_user,String sName,String sComment,Calendar doDate, int habitIndex,int eventIndex )
     {
 
         User user = new User();
@@ -212,19 +230,38 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         //Log.d("CCC",habit.getTitle());
 
-        HabitEvent event1 = new HabitEvent(sName, doDate, sComment);
-        Habit habit = user.getHabitList().getHabit(index);
+        Habit habit = user.getHabitList().getHabit(habitIndex);
         HabitEventList events = habit.getHabitEventList();
 
+
+
+
+        HabitEvent event1 = new HabitEvent(sName, doDate, sComment);
 
         if (events.check_duplicate(event1)){
             Toast.makeText(this, "The event for that day already exists!!!", Toast.LENGTH_SHORT).show();
             return false;
         }
-        else {
+        else{
 
-            events.add(event1);
+            if (eventIndex >=0 ){
+                HabitEvent old_event = events.getEvent(eventIndex);
+                old_event.seteComment(sComment);
+                old_event.seteTime(doDate);
+                //old_event.setePhoto();
+                //old_event.seteLocation();
 
+                ElasticSearchUserController.AddUserTask addUserTask
+                        = new ElasticSearchUserController.AddUserTask();
+                addUserTask.execute(user);
+                return true;
+
+            }
+
+
+            else {
+                events.add(event1);
+            }
             HabitEventList events2 = new HabitEventList(events.sortEvents());
             habit.setHabitEventList(events2);
             //user.setHabitList(list2);

@@ -54,7 +54,7 @@ public class HabitEvent {
 
     public Calendar geteTime(){
 
-        return this.eTime;
+        return eTime;
 
     }
 

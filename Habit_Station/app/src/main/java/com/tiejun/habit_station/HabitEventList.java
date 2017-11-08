@@ -64,7 +64,12 @@ public class HabitEventList {
 
     public boolean check_duplicate (HabitEvent event){
         for (HabitEvent element: events){
-            if (element.geteTime().equals(event.geteTime())){
+            //if (element.geteTime().equals(event.geteTime())){
+            if(  (element.geteTime().get(Calendar.YEAR) == event.geteTime().get(Calendar.YEAR) )
+                    && ( (element.geteTime().get(Calendar.MONTH) == event.geteTime().get(Calendar.MONTH)))
+                    && ( (element.geteTime().get(Calendar.DAY_OF_MONTH) == event.geteTime().get(Calendar.DAY_OF_MONTH))))
+            {
+
                 return true ;
             }
         }
