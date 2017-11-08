@@ -7,20 +7,11 @@
 package com.tiejun.habit_station;
 
 import android.test.ActivityInstrumentationTestCase2;
-<<<<<<< HEAD
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
-=======
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.FormatFlagsConversionMismatchException;
 import java.util.HashSet;
-import java.util.List;
->>>>>>> origin
 
 /**
  * Created by tiejun on 2017-10-13.
@@ -29,11 +20,7 @@ import java.util.List;
 public class HabitListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitListTest() {
-<<<<<<< HEAD
         super(SignInActivity.class);
-=======
-        super(MainActivity.class);
->>>>>>> origin
     }
 
     public void testAdd() {
@@ -47,10 +34,11 @@ public class HabitListTest extends ActivityInstrumentationTestCase2 {
         habitList.add(habit);
         assertTrue(habitList.hasHabit(habit));
 
-        Habit habit2 = new Habit("TEST","",startDate, weekDay);
+        Habit habit2 = new Habit("Test","",startDate, weekDay);
         if (habitList.check_dup(habit2)) {
             boolean thrown  = false;
             try {
+                Log.d("DD", "duplicate");
                 throw new IllegalArgumentException("Duplicate Habit");
             } catch(IllegalArgumentException e) {
                 thrown = true;
