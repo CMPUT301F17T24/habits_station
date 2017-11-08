@@ -121,7 +121,7 @@ public class HabitEvent {
 
     @Override
     public String toString(){
-        return this.eName +":"+ eTime.get(Calendar.YEAR)+"/" + eTime.get(Calendar.MONTH) + "/" + eTime.get(Calendar.DAY_OF_MONTH);
+        return this.eName +":"+ eTime.get(Calendar.YEAR)+"/" + String.valueOf(eTime.get(Calendar.MONTH)+1) + "/" + eTime.get(Calendar.DAY_OF_MONTH);
     }
 
     ///

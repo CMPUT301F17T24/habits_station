@@ -6,7 +6,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tiejun.habit_station">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,17 +18,14 @@
         <activity
             android:name=".SignUpActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".SignInActivity" >
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".MainPageActivity" />
         <activity android:name=".ViewTodayPlanActivity" />
         <activity android:name=".HabitLibraryActivity" />
@@ -47,7 +44,8 @@
         <activity android:name=".FriendsStatusActivity" />
         <activity android:name=".FriendsMapActivity" />
         <activity android:name=".HabitHistoryActivity" />
-        <activity android:name=".MyEventMapActivity"></activity>
+        <activity android:name=".MyEventMapActivity" />
+        <activity android:name=".ViewEventActivity"></activity>
     </application>
 
 </manifest>

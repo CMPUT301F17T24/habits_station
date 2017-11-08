@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +30,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     protected HabitEventList habitEventList = new HabitEventList();
     protected ArrayAdapter<HabitEvent> adapter;
     private int click_item_index=-1;
-    int habitIndex;
+    int habitIndex=-1;
 
 
     @Override
@@ -41,7 +42,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
-        final int habitIndex = intent.getIntExtra("habit index", 0);
+        //final int habitIndex = intent.getIntExtra("habit index", 0);
+        habitIndex = intent.getIntExtra("habit index", 0);
 
         //title = (TextView) findViewById(R.id.title);
 
@@ -71,6 +73,32 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             }
         });
 
+
+
+        ImageView home_tab = (ImageView) findViewById(R.id.home);
+        home_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HabitEventLibraryActivity.this,  MainPageActivity.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+
+        ImageView lib_tab = (ImageView) findViewById(R.id.library);
+        lib_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HabitEventLibraryActivity.this,  HabitLibraryActivity.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
 
 
@@ -93,9 +121,9 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         int position = info.position;
         if (item.getTitle().equals("View Event details")) {
-            /*Intent i = new Intent(HabitEventLibraryActivity.this, ViewHabitActivity .class);
+            Intent i = new Intent(HabitEventLibraryActivity.this, ViewEventActivity .class);
             i.putExtra("event index", position);
-            startActivity(i);*/
+            startActivity(i);
         }
         else if (item.getTitle().equals("Edit Events")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, EditHabitEventActivity .class);
@@ -145,7 +173,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         String userName = pref.getString("currentUser", "");
 
         Intent intent = getIntent();
-        final int habitIndex = intent.getIntExtra("habit index", 0);
+        habitIndex = intent.getIntExtra("habit index", 0);
 
         //Log.d("user_habL_start",userName);
 

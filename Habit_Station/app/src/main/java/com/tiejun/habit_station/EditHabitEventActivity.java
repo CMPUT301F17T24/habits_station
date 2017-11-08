@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
 
@@ -72,7 +73,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         if (do_year == 0 && do_month == 0 && do_day == 0){
             //
             do_year = doDate.get(Calendar.YEAR);
-            do_month = doDate.get(Calendar.MONTH)+1;
+            do_month = doDate.get(Calendar.MONTH);
             do_day = doDate.get(Calendar.DAY_OF_MONTH);
         }
 //        doDate.set(do_year, do_month, do_day);
@@ -86,28 +87,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 boolean added = true;
                 String sComment = comment.getText().toString();
 
-                if (sComment.length() > 20){
-                    comment.setError("Title should not be empty and should be at most 20 words");
-                    added = false;
-                }
-
-
-                doDate.set(do_year, do_month, do_day);
-                Calendar fakeDate = Calendar.getInstance();
-                fakeDate.set(do_year, do_month-1, do_day);
-                Log.d("TTT","Week day is"+String.valueOf(fakeDate.get(Calendar.DAY_OF_WEEK)-1));
-                int day_of_week = fakeDate.get(Calendar.DAY_OF_WEEK)-1;
-                if (! weekDay.contains(day_of_week)){
-                    Toast.makeText(getApplicationContext(), "Not in the plan.", Toast.LENGTH_SHORT).show();
-                    added = false;
-                }
-
-                if (startDate.after(doDate)){
-                    Toast.makeText(getApplicationContext(), "Should after startDate.", Toast.LENGTH_SHORT).show();
-                    added = false;
-                }
-
-//////////////////////// fix time comparison bug /////////////////
+////////////////////////////////////// fix time comparison bug /////////////////
                 if(  (startDate.get(Calendar.YEAR) == doDate.get(Calendar.YEAR) )
                         && ( (startDate.get(Calendar.MONTH) == doDate.get(Calendar.MONTH)))
                         && ( (startDate.get(Calendar.DAY_OF_MONTH) == doDate.get(Calendar.DAY_OF_MONTH))))
@@ -122,6 +102,27 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 }
 ////////////////////////////////////////////////////
 
+                if (sComment.length() > 20){
+                    comment.setError("Title should not be empty and should be at most 20 words");
+                    added = false;
+                }
+
+
+                doDate.set(do_year, do_month, do_day);
+                /*Calendar fakeDate = Calendar.getInstance();
+                fakeDate.set(do_year, do_month, do_day);*/
+                Log.d("TTT","Week day is"+String.valueOf(doDate.get(Calendar.DAY_OF_WEEK)-1));
+                int day_of_week = doDate.get(Calendar.DAY_OF_WEEK)-1;
+                if (! weekDay.contains(day_of_week)){
+                    Toast.makeText(getApplicationContext(), "Not in the plan.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+
+        /*        if (startDate.after(doDate)){
+                    Toast.makeText(getApplicationContext(), "Should after startDate.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+*/
 
                 if(added){
                     added = setEvent(userName,habit.getTitle(),sComment,doDate, habitIndex, eventIndex);
@@ -146,7 +147,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
                     public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
 
                         do_year = simpleDatePicker.getYear();
-                        do_month = simpleDatePicker.getMonth()+1;
+                        do_month = simpleDatePicker.getMonth();
                         do_day =  simpleDatePicker.getDayOfMonth();
 
                     }
@@ -188,7 +189,31 @@ public class EditHabitEventActivity extends AppCompatActivity {
         info = (TextView) findViewById(R.id.info);
         Habit habit = user.getHabitList().getHabit(habitIndex);
         //String habit_name  = habit.getTitle();
-        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+habit.getRepeatWeekOfDay());
+        HashSet<Integer> days = habit.getRepeatWeekOfDay();
+        ArrayList<String> sdays = new ArrayList<String>();
+        if (days.contains(1)){
+            sdays.add("M");
+        }
+        if (days.contains(2)){
+            sdays.add("T");
+        }
+        if (days.contains(3)){
+            sdays.add("W");
+        }
+        if (days.contains(4)){
+            sdays.add("R");
+        }
+        if (days.contains(5)){
+            sdays.add("F");
+        }
+        if (days.contains(6)){
+            sdays.add("SAT");
+        }
+        if (days.contains(0)){
+            sdays.add("SUN");
+        }
+
+        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays);
 
         if (eventIndex >=0){
 
@@ -200,7 +225,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
             comment.setText(event.geteComment());
 
             simpleDatePicker = (DatePicker)findViewById(R.id.datePicker);
-            simpleDatePicker.updateDate(event.geteTime().get(Calendar.YEAR),event.geteTime().get(Calendar.MONTH)-1,event.geteTime().get(Calendar.DAY_OF_MONTH));
+            simpleDatePicker.updateDate(event.geteTime().get(Calendar.YEAR),event.geteTime().get(Calendar.MONTH),event.geteTime().get(Calendar.DAY_OF_MONTH));
 
         }
         else{
