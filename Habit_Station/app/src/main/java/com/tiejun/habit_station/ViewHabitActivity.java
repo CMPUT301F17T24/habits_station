@@ -18,6 +18,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.w3c.dom.Text;
 
 import java.text.Format;
@@ -30,6 +31,7 @@ import java.util.logging.Logger;
 
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
+import static java.sql.Types.NULL;
 
 /**
  *
@@ -76,8 +78,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                 }
                 if( delSig == 0){// edit
                     try{
-                        habit.setTitle(data.getStringExtra("newTitle"));
-                        habit.setReason(data.getStringExtra("newReason"));
+                        if(data.getStringExtra("newTitle") != null)
+                            habit.setTitle(data.getStringExtra("newTitle"));
+                        if(data.getStringExtra("newReason") != null);
+                            habit.setReason(data.getStringExtra("newReason"));
                         // update date here, no suitable method
                         ElasticSearchUserController.AddUserTask addUserTask
                                 = new ElasticSearchUserController.AddUserTask();
