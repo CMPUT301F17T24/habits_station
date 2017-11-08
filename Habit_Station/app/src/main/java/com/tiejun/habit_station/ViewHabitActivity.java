@@ -78,6 +78,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                     try{
                         habit.setTitle(data.getStringExtra("newTitle"));
                         habit.setReason(data.getStringExtra("newReason"));
+                        // update date here, no suitable method
                         ElasticSearchUserController.AddUserTask addUserTask
                                 = new ElasticSearchUserController.AddUserTask();
                         addUserTask.execute(user);

@@ -26,6 +26,9 @@ import static android.R.attr.format;
 public class EditHabitActivity extends AppCompatActivity {
     private String oldTitle;
     private String oldReason;
+    private int year;
+    private int month;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class EditHabitActivity extends AppCompatActivity {
         Intent i = getIntent();
         oldTitle = i.getStringExtra("habitTitle");
         oldReason = i.getStringExtra("habitReason");
+        year = i.getIntExtra("year",0);
+        month = i.getIntExtra("month",0);
+        day = i.getIntExtra("day",0);
 
         /**
          * set a click listener for edit title
@@ -51,17 +57,10 @@ public class EditHabitActivity extends AppCompatActivity {
          * set a click listener for edit date
          */
         final EditText editDate = (EditText) findViewById(R.id.editDate);
-        editDate.setHint("old date");
+        editDate.setHint(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
         editDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-                try {
-                    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                    Date newDate = format.parse(editDate.getText().toString());// get the new title
-                }catch (ParseException ex){
-                    Date newDate = new Date(); // handle the exception by assign current date
-                }
 
             }
         });
@@ -110,8 +109,10 @@ public class EditHabitActivity extends AppCompatActivity {
                 backIntent.putExtra("delSig", 0);
                 String newTitle = editTitle.getText().toString();// get the new title
                 String newReason = editReason.getText().toString();// get the new reason
+                String newDate = editDate.getText().toString();
                 backIntent.putExtra("newTitle",newTitle);
                 backIntent.putExtra("newReason",newReason);
+                backIntent.putExtra("newDate",newDate);
 
                 setResult(RESULT_OK, backIntent);
                 finish();
