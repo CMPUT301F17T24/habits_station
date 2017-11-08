@@ -46,21 +46,21 @@ public class MainPageActivityTest extends ActivityInstrumentationTestCase2 {
     public void testViewTodayPlanActivity() {
         // test if the button directs to today's plan page
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
-        solo.clickOnButton("My profile");
+        solo.clickOnButton("Check today's schedule");
         solo.assertCurrentActivity("Wrong Activity", ViewTodayPlanActivity.class);
     }
 
     public void testHabitLibraryActivity() {
         // test if the button directs to habit library page
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
-        solo.clickOnButton("My profile");
+        solo.clickOnButton("Habit lIBRARY");
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
     }
 
     public void testHabitHistoryActivity() {
         // test if the button directs to habit history page
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
-        solo.clickOnButton("My profile");
+        solo.clickOnButton("Habit History");
         solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
     }
 

@@ -45,8 +45,8 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
         User user = new User(255, "testUser");
         ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
         addUserTask.execute(user);
-        solo.enterText((EditText) solo.getView(R.id.signup), "testUser");
-        solo.clickOnButton("Sign up");
+        solo.enterText((EditText) solo.getView(R.id.username), "testUser");
+        solo.clickOnButton("Sign Up");
 
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
         isExist.execute("testUser");
