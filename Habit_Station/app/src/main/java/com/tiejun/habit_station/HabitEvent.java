@@ -36,11 +36,11 @@ public class HabitEvent {
 
     public boolean status;
 
-    public HabitEvent(String name, Calendar time, String reason){
+    public HabitEvent(String name, Calendar time, String comment){
 
         this.eName = name;
         this.eTime = time;
-        this.eReason = reason;
+        this.eComment = comment;
 
         this.status = false;
 
@@ -54,7 +54,7 @@ public class HabitEvent {
 
     public Calendar geteTime(){
 
-        return this.eTime;
+        return eTime;
 
     }
 
@@ -121,9 +121,7 @@ public class HabitEvent {
 
     @Override
     public String toString(){
-        String str="to string method";
-        return str;
-
+        return this.eName +":"+ eTime.get(Calendar.YEAR)+"/" + String.valueOf(eTime.get(Calendar.MONTH)+1) + "/" + eTime.get(Calendar.DAY_OF_MONTH);
     }
 
     ///

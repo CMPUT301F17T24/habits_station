@@ -83,7 +83,7 @@ public class HabitList{
 
     public boolean check_dup (Habit habit){
         for (Habit element: habits){
-            if (element.getTitle().equals(habit.getTitle())){
+            if (element.getTitle().toUpperCase().equals(habit.getTitle().toUpperCase())){
                 return true ;
             }
         }

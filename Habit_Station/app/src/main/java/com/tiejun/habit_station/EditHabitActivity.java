@@ -26,6 +26,9 @@ import static android.R.attr.format;
 public class EditHabitActivity extends AppCompatActivity {
     private String oldTitle;
     private String oldReason;
+    private String newTitle;
+    private String newReason;
+    private String newDate;
     private int year;
     private int month;
     private int day;
@@ -49,7 +52,7 @@ public class EditHabitActivity extends AppCompatActivity {
         editTitle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
+                newTitle = editTitle.getText().toString();// get the new title
             }
         });
 
@@ -61,7 +64,7 @@ public class EditHabitActivity extends AppCompatActivity {
         editDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
+                newDate = editDate.getText().toString();
             }
         });
 
@@ -73,7 +76,7 @@ public class EditHabitActivity extends AppCompatActivity {
         editReason.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
+                newReason = editReason.getText().toString();// get the new reason
             }
         });
 
@@ -107,9 +110,6 @@ public class EditHabitActivity extends AppCompatActivity {
 
                 Intent backIntent = new Intent();
                 backIntent.putExtra("delSig", 0);
-                String newTitle = editTitle.getText().toString();// get the new title
-                String newReason = editReason.getText().toString();// get the new reason
-                String newDate = editDate.getText().toString();
                 backIntent.putExtra("newTitle",newTitle);
                 backIntent.putExtra("newReason",newReason);
                 backIntent.putExtra("newDate",newDate);
