@@ -20,7 +20,7 @@ import java.util.Calendar;
 public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitEventListTest() {
-        super(SignInActivityTest.class);
+        super(SignInActivity.class);
     }
 
 

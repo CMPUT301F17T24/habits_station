@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.HashSet;
@@ -100,7 +101,7 @@ public class AddHabitActivity extends AppCompatActivity {
         SUNBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                weekDay.add(7);
+                weekDay.add(0);
             }
         });
  //////////////////////////////////////////////////////////////////////////
@@ -112,37 +113,48 @@ public class AddHabitActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                boolean added = true;
+
                 String sTitle = title.getText().toString();
                 //String sDate = date.getText().toString();
                 String sReason = reason.getText().toString();
+
 
                 Calendar startDate = Calendar.getInstance();
                 if (set_year == 0 && set_month == 0 && set_day == 0){
                     //
                     set_year = startDate.get(Calendar.YEAR);
-                    set_month = startDate.get(Calendar.MONTH)+1;
+                    set_month = startDate.get(Calendar.MONTH);
                     set_day = startDate.get(Calendar.DAY_OF_MONTH);
                 }
                 startDate.set(set_year, set_month, set_day);
 
                 if ((sTitle.length() == 0) || sTitle.length() > 20){
                     title.setError("Title should not be empty and should be at most 20 words");
+                    added = false;
                 }
 
 
-                if (sReason.length() > 30){
-                    reason.setError("Reason should be at most 30 words");
+                if ((sReason.length() == 0) || sReason.length() > 30){
+                    reason.setError("Reason should not be empty and should be at most 30 words");
+                    added = false;
+                }
+
+                if (weekDay.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "The plan cannot be empty, select the days of a week.", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+
+                if (added){
+                    added = setHabit(userName , sTitle, sReason, startDate, weekDay);
                 }
 
 
-               setHabit(userName , sTitle, sReason, startDate, weekDay);
-
-
-                Log.e("Add_user",userName);
-
-                Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
-                startActivity(intent);
-
+                //Log.e("Add_user",userName);
+                if (added) {
+                    Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -156,7 +168,7 @@ public class AddHabitActivity extends AppCompatActivity {
                     public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
 
                         set_year = simpleDatePicker.getYear();
-                        set_month = simpleDatePicker.getMonth()+1;
+                        set_month = simpleDatePicker.getMonth();
                         set_day =  simpleDatePicker.getDayOfMonth();
 
                     }
@@ -165,7 +177,7 @@ public class AddHabitActivity extends AppCompatActivity {
     }
 
 
-    public void setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
+    public boolean setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
         User user = new User();
         //String query = current_user;
@@ -189,16 +201,26 @@ public class AddHabitActivity extends AppCompatActivity {
         Log.d("CC",String.valueOf(list.getCount()));
 
 
-        list.add(habit1);
-        HabitList list2 = new HabitList(list.getHabits());
-        user.setHabitList(list2);
+
+        if (list.check_dup(habit1)){
+            Toast.makeText(this, "This habit already exists!!!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+
+            list.add(habit1);
+
+            HabitList list2 = new HabitList(list.getHabits());
+            user.setHabitList(list2);
 
 
-        Log.d("CCC",String.valueOf(list.getCount()));
+            Log.d("CCC", String.valueOf(list.getCount()));
 
-        ElasticSearchUserController.AddUserTask addUserTask
-                = new ElasticSearchUserController.AddUserTask();
-        addUserTask.execute(user);
+            ElasticSearchUserController.AddUserTask addUserTask
+                    = new ElasticSearchUserController.AddUserTask();
+            addUserTask.execute(user);
+            return true;
+        }
 
     }
 

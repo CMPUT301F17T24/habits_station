@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -56,6 +57,23 @@ public class HabitLibraryActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        ImageView home_tab = (ImageView) findViewById(R.id.home);
+        home_tab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HabitLibraryActivity.this,  MainPageActivity.class);
+                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
 
 
         registerForContextMenu(habitList);

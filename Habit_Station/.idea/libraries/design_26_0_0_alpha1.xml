@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="design-26.0.0-alpha1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../.android/.android/build-cache/1eb5eebe3925ae6d01db7e725be6509cb0fb1b69/output/res" />
+      <root url="jar://$PROJECT_DIR$/../../.android/.android/build-cache/1eb5eebe3925ae6d01db7e725be6509cb0fb1b69/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/design/26.0.0-alpha1/design-26.0.0-alpha1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

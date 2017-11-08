@@ -1,0 +1,187 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:6:1-51:12
+	package
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:7:5-39
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:6:11-69
+	android:versionCode
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:9:22-64
+application
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:11:5-49:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] D:\Android\.android\.android\build-cache\7bacfaf0cbe7837eeeda17c5d3db966336e9ddd5\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0744db900a6bcac0b5cd76f80b06c7922d373c\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1a4b4130c29df2d9b92804e2e9396414dd8707a5\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] D:\Android\.android\.android\build-cache\bd128028dad5b037691a65aeae02508cf518795f\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] D:\Android\.android\.android\build-cache\eca9626330f455757d9ceaabe515f1dd4257fdaa\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\4e55af6d52e653eeb9ed2cbdfa38e50edb9181b8\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1403b0cad4683e8148309b27a6221b2f99dbb301\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0d15c45e5aee7dc9194d8e750dbfc23f66f34d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] D:\Android\.android\.android\build-cache\06e6a730463b2b801aa907f72a7b5fae8ecccc25\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\b37dfe3791a43736739564ad55b92c5732d22865\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:14:9-41
+	android:supportsRtl
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:16:9-35
+	android:roundIcon
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:15:9-54
+	android:allowBackup
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:12:9-35
+	android:icon
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:13:9-43
+	android:theme
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:17:9-40
+activity#com.tiejun.habit_station.SignUpActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:18:9-21:59
+	android:label
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:20:13-45
+	android:theme
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:21:13-56
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:19:13-43
+activity#com.tiejun.habit_station.SignInActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:22:9-28:20
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:22:19-49
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:26:27-74
+activity#com.tiejun.habit_station.MainPageActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:29:9-54
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:29:19-51
+activity#com.tiejun.habit_station.ViewTodayPlanActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:30:9-59
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:30:19-56
+activity#com.tiejun.habit_station.HabitLibraryActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:31:9-58
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:31:19-55
+activity#com.tiejun.habit_station.AddHabitActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:32:9-54
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:32:19-51
+activity#com.tiejun.habit_station.ViewHabitActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:33:9-55
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:33:19-52
+activity#com.tiejun.habit_station.StatusActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:34:9-52
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:34:19-49
+activity#com.tiejun.habit_station.EditHabitActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:35:9-55
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:35:19-52
+activity#com.tiejun.habit_station.HabitEventLibraryActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:36:9-63
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:36:19-60
+activity#com.tiejun.habit_station.EditHabitEventActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:37:9-60
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:37:19-57
+activity#com.tiejun.habit_station.PhotoGalleryActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:38:9-58
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:38:19-55
+activity#com.tiejun.habit_station.MyProfileActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:39:9-55
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:39:19-52
+activity#com.tiejun.habit_station.NearbyActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:40:9-52
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:40:19-49
+activity#com.tiejun.habit_station.LifeCircleActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:41:9-56
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:41:19-53
+activity#com.tiejun.habit_station.AddFriendActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:42:9-55
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:42:19-52
+activity#com.tiejun.habit_station.FriendsActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:43:9-53
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:43:19-50
+activity#com.tiejun.habit_station.FriendsStatusActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:44:9-59
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:44:19-56
+activity#com.tiejun.habit_station.FriendsMapActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:45:9-56
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:45:19-53
+activity#com.tiejun.habit_station.HabitHistoryActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:46:9-58
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:46:19-55
+activity#com.tiejun.habit_station.MyEventMapActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:47:9-56
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:47:19-53
+activity#com.tiejun.habit_station.ViewEventActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:48:9-64
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:48:19-52
+uses-sdk
+INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] D:\Android\.android\.android\build-cache\7bacfaf0cbe7837eeeda17c5d3db966336e9ddd5\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0744db900a6bcac0b5cd76f80b06c7922d373c\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1a4b4130c29df2d9b92804e2e9396414dd8707a5\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\5d28d40f265ba876c7686d7b57991428e392510b\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] D:\Android\.android\.android\build-cache\bd128028dad5b037691a65aeae02508cf518795f\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] D:\Android\.android\.android\build-cache\eca9626330f455757d9ceaabe515f1dd4257fdaa\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\4e55af6d52e653eeb9ed2cbdfa38e50edb9181b8\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1403b0cad4683e8148309b27a6221b2f99dbb301\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0d15c45e5aee7dc9194d8e750dbfc23f66f34d\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] D:\Android\.android\.android\build-cache\06e6a730463b2b801aa907f72a7b5fae8ecccc25\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\b37dfe3791a43736739564ad55b92c5732d22865\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0744db900a6bcac0b5cd76f80b06c7922d373c\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1a4b4130c29df2d9b92804e2e9396414dd8707a5\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\5d28d40f265ba876c7686d7b57991428e392510b\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] D:\Android\.android\.android\build-cache\bd128028dad5b037691a65aeae02508cf518795f\output\AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] D:\Android\.android\.android\build-cache\eca9626330f455757d9ceaabe515f1dd4257fdaa\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\4e55af6d52e653eeb9ed2cbdfa38e50edb9181b8\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1403b0cad4683e8148309b27a6221b2f99dbb301\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] D:\Android\.android\.android\build-cache\ca0d15c45e5aee7dc9194d8e750dbfc23f66f34d\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] D:\Android\.android\.android\build-cache\06e6a730463b2b801aa907f72a7b5fae8ecccc25\output\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] D:\Android\.android\.android\build-cache\b37dfe3791a43736739564ad55b92c5732d22865\output\AndroidManifest.xml:25:5-27:41
+	android:value
+		ADDED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:27:9-38
+	android:name
+		ADDED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:26:9-47
