@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
@@ -24,6 +25,7 @@ public class User {
     private ArrayList<Integer> follower;
     private ArrayList<Integer> followee;
     private HabitList habits = new HabitList();
+    private  HabitEventList history = new HabitEventList();
 
     public User(int uid, String name) {
         this.uid = uid;
@@ -40,7 +42,7 @@ public class User {
 
     public User() {}
 
-   public int getUid() {
+    public int getUid() {
         return uid;
     }
 
@@ -91,8 +93,16 @@ public class User {
         this.habits = habits;
     }
 
+
     public HabitList getHabitList(){
         return habits;
+    }
+
+    public void setHistory(HabitEventList history){
+        this.history = history;
+    }
+    public HabitEventList getHistory(){
+        return history;
     }
 
 
