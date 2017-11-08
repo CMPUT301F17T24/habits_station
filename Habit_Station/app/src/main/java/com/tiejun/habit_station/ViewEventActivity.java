@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -27,6 +28,7 @@ public class ViewEventActivity extends AppCompatActivity {
     protected HabitEventList habitEventList;
     private TextView info;
 
+    User user = new User();
 
 
 
@@ -35,13 +37,20 @@ public class ViewEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_event);
 
-        /*SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         final String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
         final int habitIndex = intent.getIntExtra("habit index", 0);
         final int eventIndex = intent.getIntExtra("select",0);
-        */
 
+
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(userName);
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
 
 
         ImageView add_tab = (ImageView) findViewById(R.id.add);
@@ -49,9 +58,30 @@ public class ViewEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
+                HabitEvent event = habitEventList.getEvent(eventIndex);
+
+                HabitEventList history = user.getHistory();
+                boolean exist = false;
+                for (HabitEvent element: history.sortEvents()){
+                    if (element.geteTime().equals(event.geteTime()) && (element.geteName().equals(event.geteName()))){
+                        exist = true;
+                    }
+                }
 
 
-
+                if (exist){
+                    Toast.makeText(getApplicationContext(), "Already added to history.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    history.add(event);
+                    HabitEventList history_sorted =  new HabitEventList(history.sortEvents());
+                    user.setHistory(history_sorted);
+                    ElasticSearchUserController.AddUserTask addUserTask
+                            = new ElasticSearchUserController.AddUserTask();
+                    addUserTask.execute(user);
+                    Toast.makeText(getApplicationContext(), "Successfully added to history", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -81,7 +111,7 @@ public class ViewEventActivity extends AppCompatActivity {
         int eventIndex = intent.getIntExtra("select",0);
 
 
-        User user = new User();
+        //User user = new User();
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
         getUserTask.execute(userName);
         try {
@@ -123,7 +153,11 @@ public class ViewEventActivity extends AppCompatActivity {
             sdays.add("SUN");
         }
 
-        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+"\nComment: "+event.geteComment());
+        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+
+                "\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
+                + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
+                + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)
+                +"\nComment: "+event.geteComment());
 
 
     }

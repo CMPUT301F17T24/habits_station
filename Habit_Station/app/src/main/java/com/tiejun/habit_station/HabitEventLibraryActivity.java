@@ -122,6 +122,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         int position = info.position;
         if (item.getTitle().equals("View Event details")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, ViewEventActivity .class);
+            i.putExtra("habit index", habitIndex);
             i.putExtra("event index", position);
             startActivity(i);
         }
