@@ -109,8 +109,14 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
                 doDate.set(do_year, do_month, do_day);
-                /*Calendar fakeDate = Calendar.getInstance();
-                fakeDate.set(do_year, do_month, do_day);*/
+
+                Calendar today = Calendar.getInstance();
+                if (doDate.after(today)) {
+                    Toast.makeText(getApplicationContext(), "Are you sure you have done this event?", Toast.LENGTH_SHORT).show();
+                    added = false;
+                }
+
+
                 Log.d("TTT","Week day is"+String.valueOf(doDate.get(Calendar.DAY_OF_WEEK)-1));
                 int day_of_week = doDate.get(Calendar.DAY_OF_WEEK)-1;
                 if (! weekDay.contains(day_of_week)){
