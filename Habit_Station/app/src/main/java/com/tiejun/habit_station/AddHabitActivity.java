@@ -101,7 +101,7 @@ public class AddHabitActivity extends AppCompatActivity {
         SUNBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                weekDay.add(7);
+                weekDay.add(0);
             }
         });
  //////////////////////////////////////////////////////////////////////////
@@ -124,7 +124,7 @@ public class AddHabitActivity extends AppCompatActivity {
                 if (set_year == 0 && set_month == 0 && set_day == 0){
                     //
                     set_year = startDate.get(Calendar.YEAR);
-                    set_month = startDate.get(Calendar.MONTH)+1;
+                    set_month = startDate.get(Calendar.MONTH);
                     set_day = startDate.get(Calendar.DAY_OF_MONTH);
                 }
                 startDate.set(set_year, set_month, set_day);
@@ -168,7 +168,7 @@ public class AddHabitActivity extends AppCompatActivity {
                     public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
 
                         set_year = simpleDatePicker.getYear();
-                        set_month = simpleDatePicker.getMonth()+1;
+                        set_month = simpleDatePicker.getMonth();
                         set_day =  simpleDatePicker.getDayOfMonth();
 
                     }

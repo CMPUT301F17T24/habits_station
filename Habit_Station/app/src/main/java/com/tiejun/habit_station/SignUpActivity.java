@@ -34,6 +34,12 @@ public class SignUpActivity extends SignInActivity {
                 userName = username.getText().toString();
                 uid = userList.getCount();
                 //uid = 0;
+                boolean sign = true;
+                if (username.length() == 0){
+                    username.setError("User name cannot be empty");
+                    sign = false;
+                }
+
                 User user = new User(uid,userName);
                 if (existedUser(userName)) {
                     try{
@@ -49,8 +55,10 @@ public class SignUpActivity extends SignInActivity {
                     ElasticSearchUserController.AddUserTask addUserTask
                         = new ElasticSearchUserController.AddUserTask();
                     addUserTask.execute(user);
-                    Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                    startActivity(intent);
+                    if (sign) {
+                        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });

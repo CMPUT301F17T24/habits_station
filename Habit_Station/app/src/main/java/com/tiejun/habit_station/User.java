@@ -24,6 +24,7 @@ public class User {
     private ArrayList<Integer> follower;
     private ArrayList<Integer> followee;
     private HabitList habits = new HabitList();
+    private  HabitEventList history = new HabitEventList();
 
     public User() {}
 
@@ -94,8 +95,16 @@ public class User {
         this.habits = habits;
     }
 
+
     public HabitList getHabitList(){
         return habits;
+    }
+
+    public void setHistory(HabitEventList history){
+        this.history = history;
+    }
+    public HabitEventList getHistory(){
+        return history;
     }
 
 
