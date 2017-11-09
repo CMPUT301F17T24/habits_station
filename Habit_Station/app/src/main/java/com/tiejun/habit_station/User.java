@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
@@ -42,7 +41,7 @@ public class User {
 
     public User() {}
 
-    public int getUid() {
+   public int getUid() {
         return uid;
     }
 

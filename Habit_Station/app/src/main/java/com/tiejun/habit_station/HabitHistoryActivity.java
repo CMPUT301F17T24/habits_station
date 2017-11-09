@@ -15,8 +15,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import static android.content.Context.MODE_PRIVATE;
-
 public class HabitHistoryActivity extends AppCompatActivity {
 
     private ListView history;

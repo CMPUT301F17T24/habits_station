@@ -68,12 +68,24 @@
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/add.png"
     },
     {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/join_now.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/join_now.png"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_3bt.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/main_page_3bt.png"
+    },
+    {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/username.png",
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/username.png"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/bg.png",
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/bg.png"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_1bt.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/main_page_1bt.png"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
@@ -110,6 +122,10 @@
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/logo.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/logo.png"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
@@ -198,6 +214,14 @@
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_2bt.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/main_page_2bt.png"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_4bt.png",
+        "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/drawable/main_page_4bt.png"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/library.png",
