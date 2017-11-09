@@ -269,7 +269,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         HabitEvent event1 = new HabitEvent(sName, doDate, sComment);
 
-        if (events.check_duplicate(event1)){
+        if ((eventIndex < 0) && (events.check_duplicate(event1))){
             Toast.makeText(this, "The event for that day already exists!!!", Toast.LENGTH_SHORT).show();
             return false;
         }

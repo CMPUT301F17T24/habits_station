@@ -58,10 +58,10 @@ public class ViewEventActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
+               /* habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
                 HabitEvent event = habitEventList.getEvent(eventIndex);
 
-                HabitEventList history = user.getHistory();
+               HabitEventList history = user.getHistory();
                 boolean exist = false;
                 for (HabitEvent element: history.sortEvents()){
                     if (element.geteTime().equals(event.geteTime()) && (element.geteName().equals(event.geteName()))){
@@ -82,6 +82,30 @@ public class ViewEventActivity extends AppCompatActivity {
                     addUserTask.execute(user);
                     Toast.makeText(getApplicationContext(), "Successfully added to history", Toast.LENGTH_SHORT).show();
                 }
+            */
+
+                HabitEvent event = habitEventList.getEvent(eventIndex);
+                event.setuName(userName);
+
+                String id = userName+event.geteName()
+                        +event.geteTime().get(Calendar.YEAR)
+                        +String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
+                        +event.geteTime().get(Calendar.DAY_OF_MONTH);
+
+                if (existedEvent(id)){
+                    Toast.makeText(getApplicationContext(), "Already added to history.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    ElasticSearchEventController.AddEventTask addEventTask
+                            = new ElasticSearchEventController.AddEventTask();
+                    addEventTask.execute(event);
+                    Toast.makeText(getApplicationContext(), "Successfully added to history", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+
 
             }
         });
@@ -162,6 +186,25 @@ public class ViewEventActivity extends AppCompatActivity {
 
     }
 
+
+
+
+    private boolean existedEvent (String id) {
+        ElasticSearchEventController.IsExist isExist = new ElasticSearchEventController.IsExist();
+        isExist.execute(id);
+
+        try {
+            if (isExist.get()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+
+
+    }
 
 
 

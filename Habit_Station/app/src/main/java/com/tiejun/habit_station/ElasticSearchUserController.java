@@ -14,10 +14,15 @@ import com.searchly.jestdroid.DroidClientConfig;
 import com.searchly.jestdroid.JestClientFactory;
 import com.searchly.jestdroid.JestDroidClient;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.searchbox.client.JestResult;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Get;
 import io.searchbox.core.Index;
+import io.searchbox.core.Search;
+import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 import io.searchbox.indices.CreateIndex;
 import io.searchbox.indices.DeleteIndex;
@@ -152,6 +157,61 @@ public class ElasticSearchUserController {
 //        }
 //    }
 
+
+
+
+    // TODO we need a function which gets tweets from elastic search
+    public static class GetHitoryTask extends AsyncTask<String, Void, ArrayList<HabitEvent>> {
+        @Override
+        protected ArrayList<HabitEvent> doInBackground(String... search_parameters) {
+            verifySettings();
+
+            ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
+
+            // TODO Build the query
+            Search search = new Search.Builder(search_parameters[0])
+                    .addIndex("cmput301f17t24")
+                    .addType("user")
+
+                    .build();
+
+            try {
+                // TODO get the results of the query
+                //Log.d("AAA",String.valueOf(search_parameters[0]));
+                SearchResult result = client.execute(search);
+                if (result.isSucceeded()) {
+                    List<HabitEvent> foundHistories
+                            =result.getSourceAsObjectList(HabitEvent.class);
+                    //List<SearchResult.Hit<NormalTweet, Void>> hits = result.getHits(NormalTweet.class);
+
+                    events.addAll(foundHistories);
+
+                }
+                else{
+                    Log.e("Error","Query failed");
+                }
+            }
+            catch (Exception e) {
+                Log.e("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
+            }
+
+            return events;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Verify settings.
      */
@@ -165,4 +225,5 @@ public class ElasticSearchUserController {
             client = (JestDroidClient) factory.getObject();
         }
     }
+
 }

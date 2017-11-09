@@ -21,6 +21,7 @@ import java.util.Locale;
  * a class for habit events
  */
 public class HabitEvent {
+    public String uName;
 
     public String eName;
 
@@ -36,6 +37,9 @@ public class HabitEvent {
 
     public boolean status;
 
+
+    public HabitEvent(){}
+
     public HabitEvent(String name, Calendar time, String comment){
 
         this.eName = name;
@@ -46,6 +50,24 @@ public class HabitEvent {
 
 
     }
+
+//////////////////
+
+    public HabitEvent(String uName,String eName, Calendar time, String comment){
+        this.uName = uName;
+        this.eName = eName;
+        this.eTime = time;
+        this.eComment = comment;
+        this.status = false;
+    }
+    public void setuName(String uname){
+        this.uName = uname;
+    }
+
+//////////////////////
+
+
+
 
 
     public String geteName(){
@@ -124,7 +146,15 @@ public class HabitEvent {
         return this.eName +":"+ eTime.get(Calendar.YEAR)+"/" + String.valueOf(eTime.get(Calendar.MONTH)+1) + "/" + eTime.get(Calendar.DAY_OF_MONTH);
     }
 
-    ///
+
+
+    public String getuName (){
+        return uName;
+    }
+
+
+
+        ///
 
 
 }

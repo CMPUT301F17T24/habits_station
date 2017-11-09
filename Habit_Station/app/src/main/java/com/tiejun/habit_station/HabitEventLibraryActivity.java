@@ -123,13 +123,14 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         if (item.getTitle().equals("View Event details")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, ViewEventActivity .class);
             i.putExtra("habit index", habitIndex);
-            i.putExtra("event index", position);
+            i.putExtra("select", click_item_index);
             startActivity(i);
         }
         else if (item.getTitle().equals("Edit Events")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, EditHabitEventActivity .class);
             i.putExtra("habit index", habitIndex);
-            i.putExtra("select", click_item_index);            startActivity(i);
+            i.putExtra("select", click_item_index);
+            startActivity(i);
         }
 
         else if (item.getTitle() == "Delete") {
