@@ -17,6 +17,7 @@ import android.widget.EditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import static android.R.attr.format;
@@ -64,7 +65,8 @@ public class EditHabitActivity extends AppCompatActivity {
         editDate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                newDate = editDate.getText().toString(); // get new date
+                //newDate = editDate.getText().toString(); // get new date
+
             }
         });
 
@@ -111,13 +113,19 @@ public class EditHabitActivity extends AppCompatActivity {
                 backIntent.putExtra("delSig", 0);
                 newReason = editReason.getText().toString();// get the new reason
                 newTitle = editTitle.getText().toString();// get the new title
+                newDate = editDate.getText().toString(); // get new date
                 //Log.i("Error",newReason);
                 if( newTitle.length() == 0){
                     newTitle = oldTitle;
                 }
+                if( newReason.length() == 0){
+                    newReason = oldReason;
+                }
+                if( newDate.length() == 0){
+                    newDate = "";
+                }
                 backIntent.putExtra("newReason",newReason);
                 backIntent.putExtra("newTitle",newTitle);
-
                 backIntent.putExtra("newDate",newDate);
                 setResult(RESULT_OK, backIntent);
                 finish();

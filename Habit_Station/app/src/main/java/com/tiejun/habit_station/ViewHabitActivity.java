@@ -80,6 +80,19 @@ public class ViewHabitActivity extends AppCompatActivity {
                     try{
                         habit.setReason(data.getStringExtra("newReason"));
                         habit.setTitle(data.getStringExtra("newTitle"));
+                        String newDate = data.getStringExtra("newDate");
+                        if( newDate != ""){
+                            try {
+                                String pattern = "yyyyMMdd";
+                                Date date = new SimpleDateFormat(pattern).parse(newDate);
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.setTime(date);
+                                habit.setStartDate(calendar);
+                                Log.i("Error", calendar.toString());
+                            }catch (Exception e){
+                                Log.i("Error", "failed to set date");
+                            }
+                        }
 
                         // update date here, no suitable method
                         ElasticSearchUserController.AddUserTask addUserTask
