@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/layout/design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/yaozhilu/.android/build-cache/6eaef4f9839c341f3d941362d4fc070ff128fa7f/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/sign_in_activity.xml",
@@ -24,12 +24,12 @@
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/layout/activity_friends_map.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_habit_event_library.xml",
         "source": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/src/main/res/layout/activity_habit_event_library.xml"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
