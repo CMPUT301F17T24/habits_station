@@ -229,6 +229,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         int habitIndex = intent.getIntExtra("habit index", 0);  // later be useless
         int eventIndex = intent.getIntExtra("select",0);
         habit_name = intent.getStringExtra("habit name");
+        String event_query = intent.getStringExtra("query");
 
 
 ///////////////////////
@@ -263,7 +264,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         if (eventIndex >=0){    // if the event already exists, show its old info         edit, need info directly from event
 
             //////  used to find the events /////////
-            String event_query = "{\n" +
+            /*String event_query = "{\n" +
                     "  \"query\": { \n" +
                     "\"bool\": {\n"+
                     "\"must\": [\n"+
@@ -273,7 +274,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
                     "}"+
                     "}"+
                     "}";
-
+*/
             ElasticSearchEventController.GetEvents getEvents
                     = new  ElasticSearchEventController.GetEvents();
             getEvents.execute(event_query);

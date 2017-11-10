@@ -78,16 +78,18 @@ public class ViewEventActivity extends AppCompatActivity {
         final String habit_name = intent.getStringExtra("habit name");
 
 //////  used to find the events /////////
-        String event_query = "{\n" +
+        String event_query = intent.getStringExtra("query");
+        /*String event_query = "{\n" +
                 "  \"query\": { \n" +
                 "\"bool\": {\n"+
                 "\"must\": [\n"+
                 "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                "{"+ " \"term\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
+                "{"+ " \"match\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
                 "]"+
                 "}"+
                 "}"+
                 "}";
+                */
 
         ElasticSearchEventController.GetEvents getHEvent
                 = new  ElasticSearchEventController.GetEvents();

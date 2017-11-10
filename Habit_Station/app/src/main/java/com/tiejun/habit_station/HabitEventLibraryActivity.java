@@ -38,6 +38,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     private int click_item_index=-1;
 //    int habitIndex=-1;
     String habit_name;
+    String event_query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
         // this is the clicked index, later tha habit name will be passed in
         //habitIndex = intent.getIntExtra("habit index", 0);
-        final String habit_name = intent.getStringExtra("habit name");
+        habit_name = intent.getStringExtra("habit name");
 
 
         //title = (TextView) findViewById(R.id.title);
@@ -123,7 +124,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         menu.setHeaderTitle("Context Menu");
         menu.add(0, v.getId(), 0, "View Event details");
         menu.add(0, v.getId(), 0, "Edit Events");
-        menu.add(0, v.getId(), 0, "Delete");
+        //menu.add(0, v.getId(), 0, "Delete");
 
     }
 
@@ -139,6 +140,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
             i.putExtra("habit name",habit_name);
             i.putExtra("select", click_item_index);
+            i.putExtra("query",event_query);
+
 
             startActivity(i);
         }
@@ -147,12 +150,13 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
          //   i.putExtra("habit index", habitIndex);
 
             i.putExtra("habit name",habit_name);
-
             i.putExtra("select", click_item_index);
+            i.putExtra("query",event_query);
+
             startActivity(i);
         }
 
-        else if (item.getTitle() == "Delete") {
+        /*else if (item.getTitle() == "Delete") {
             Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
 
             SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
@@ -168,7 +172,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
             onStart();
         }
-
+*/
 
 
         else {
@@ -195,12 +199,12 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         Log.d("habitname is", habit_name);
 
 
-        String event_query = "{\n" +
+        event_query = "{\n" +
                         "  \"query\": { \n" +
                                 "\"bool\": {\n"+
                                  "\"must\": [\n"+
                                            "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                                           "{"+ " \"term\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
+                                           "{"+ " \"match\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
                                             "]"+
                                       "}"+
                              "}"+

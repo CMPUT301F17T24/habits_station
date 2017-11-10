@@ -152,8 +152,8 @@ public class AddHabitActivity extends AppCompatActivity {
 
                 //Log.e("Add_user",userName);
                 if (added) {
-                   /* Toast.makeText(getApplicationContext(), "Successfully added a new habit! ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
+                    Toast.makeText(getApplicationContext(), "Successfully added a new habit! ", Toast.LENGTH_SHORT).show();
+                    /*Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
                     startActivity(intent);
                     */
                 }

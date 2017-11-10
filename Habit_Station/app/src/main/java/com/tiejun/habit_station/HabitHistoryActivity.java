@@ -110,6 +110,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String keyword = searchKey.getText().toString();
 
+                SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+                String userName = pref.getString("currentUser", "");
+
                 if (type.isChecked() && comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Cannot select both", Toast.LENGTH_SHORT).show();
                 }
@@ -118,21 +121,37 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 }
                 else if (type.isChecked()){
                     Log.d("check", "type");
+
                     query = "{\n" +
                             "  \"query\": { \n" +
-                            " \"match\" : { \"eName\" : \"" + keyword + "\" }\n" +
-                            " 	}\n" +
+                            "\"bool\": {\n"+
+                            "\"must\": [\n"+
+                            "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
+                            "{"+ " \"match\" : {  \"eName\" : \"" + keyword +  "\" }}\n" +
+                            "]"+
+                            "}"+
+                            "}"+
                             "}";
 
 
                 }
                 else if (comment.isChecked()){
                     Log.d("check", "comment");
+
+
                     query = "{\n" +
                             "  \"query\": { \n" +
-                            " \"wildcard\" : { \"eComment\" : \"" +"*"+ keyword + "*" +"\"  }\n" +
-                            " 	}\n" +
+                            "\"bool\": {\n"+
+                            "\"must\": [\n"+
+                            "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
+                            "{"+ "\"wildcard\" : { \"eComment\" : \"" +"*"+ keyword + "*" +"\"  }}\n" +
+                            "]"+
+                            "}"+
+                            "}"+
                             "}";
+
+
+
                 }
 
 
@@ -169,6 +188,10 @@ public class HabitHistoryActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
+
+
+        HabitEventList results =new  HabitEventList(fillist);
+        fillist = results.sortEvents();
 
         adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
         history.setAdapter(adapter);
