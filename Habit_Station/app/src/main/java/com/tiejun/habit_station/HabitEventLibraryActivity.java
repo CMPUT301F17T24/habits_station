@@ -36,7 +36,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
     protected ArrayAdapter<HabitEvent> adapter;
     private int click_item_index=-1;
-    int habitIndex=-1;
+//    int habitIndex=-1;
     String habit_name;
 
     @Override
@@ -50,7 +50,9 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         // this is the clicked index, later tha habit name will be passed in
-        habitIndex = intent.getIntExtra("habit index", 0);
+        //habitIndex = intent.getIntExtra("habit index", 0);
+        final String habit_name = intent.getStringExtra("habit name");
+
 
         //title = (TextView) findViewById(R.id.title);
 
@@ -64,7 +66,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                 Intent intent = new Intent(HabitEventLibraryActivity.this, EditHabitEventActivity.class);
 
                 // this is the clicked index, later tha habit name will be passed in
-                intent.putExtra("habit index", habitIndex);
+               // intent.putExtra("habit index", habitIndex);
 
                 intent.putExtra("habit name",habit_name);
 
@@ -133,16 +135,16 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         int position = info.position;
         if (item.getTitle().equals("View Event details")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, ViewEventActivity .class);
-            i.putExtra("habit index", habitIndex); // later will be useless
+          //  i.putExtra("habit index", habitIndex); // later will be useless
 
             i.putExtra("habit name",habit_name);
-
             i.putExtra("select", click_item_index);
+
             startActivity(i);
         }
         else if (item.getTitle().equals("Edit Events")) {
             Intent i = new Intent(HabitEventLibraryActivity.this, EditHabitEventActivity .class);
-            i.putExtra("habit index", habitIndex);
+         //   i.putExtra("habit index", habitIndex);
 
             i.putExtra("habit name",habit_name);
 
@@ -155,21 +157,15 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
             SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
             String userName = pref.getString("currentUser", "");
-            User user = new User();
-            ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-            getUserTask.execute(userName);
-            try {
-                user = getUserTask.get();
-            } catch (Exception e) {
-                Log.i("Error", "Failed to get the User out of the async object");
-            }
 
-            habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
-            habitEventList.delete(habitEventList.getEvent(click_item_index));
+            HabitEvent selected_event = fillist.get(position);
 
-            ElasticSearchUserController.AddUserTask addUserTask
-                    = new ElasticSearchUserController.AddUserTask();
-            addUserTask.execute(user);
+            ElasticSearchEventController.DeleteEventTask deleteEventTask
+                    = new ElasticSearchEventController.DeleteEventTask();
+            deleteEventTask.execute(selected_event);
+
+            Toast.makeText(getApplicationContext(), "Successfully deleted the event! ", Toast.LENGTH_SHORT).show();
+
             onStart();
         }
 
@@ -192,22 +188,13 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         String userName = pref.getString("currentUser", "");
 
         Intent intent = getIntent();
-        // this is the clicked index, later tha habit name will be passed in
-        habitIndex = intent.getIntExtra("habit index", 0);
+        String habit_name = intent.getStringExtra("habit name");
 
- //////////////////////////   now just used to get the habit name
-        User user = new User();
-        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute(userName);
-        try {
-            user = getUserTask.get();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the User out of the async object");
-        }
-        habit_name  = user.getHabitList().getHabit(habitIndex).getTitle();
+        Log.d("event", "library");
+        Log.d("username", userName);
+        Log.d("habitname is", habit_name);
 
 
-/////////////////////////
         String event_query = "{\n" +
                         "  \"query\": { \n" +
                                 "\"bool\": {\n"+

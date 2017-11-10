@@ -62,6 +62,33 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 " 	}\n" +
                 "}";
 
+        /*String desc = "desc";
+        String MYhistory = "{\n" +
+                                "  \"query\": { \n" +
+
+                " \"bool\" : {" +
+            " \"filter\" : {"+
+                                         " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                                " 	}}},\n" +
+
+                                " \"sort\": { \n"+
+                                         " \"eTime\" : { \"order\": \"" + desc + "\"} \n" +
+                                 " }\n"+
+                         "}";
+
+*/
+
+
+       /* String MYhistory = "{\n" +
+                            "  \"query\": { \n" +
+                                  " \"term\" : { \"uName\" : \"" + userName + "\" ," +
+                                                " \"order\": [{\n"+
+                                                     " \"eTime\": \"desc\" }]"+
+                                     "}\n" +
+                             " 	}\n" +
+                         "}";
+*/
+
 
 
         ElasticSearchEventController.GetEvents getHistory
@@ -127,13 +154,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-
-
-
             }
         });
-
-
 
 
 

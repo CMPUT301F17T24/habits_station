@@ -40,6 +40,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
     protected HabitEvent habitEvent;
 
     private String habit_name;
+    private Habit habit;
+
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
 
 
@@ -55,9 +57,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         final String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
-        final int habitIndex = intent.getIntExtra("habit index", 0);
-        final int eventIndex = intent.getIntExtra("select",0);
+        //final int habitIndex = intent.getIntExtra("habit index", 0);
 
+        final int eventIndex = intent.getIntExtra("select",0);
         habit_name = intent.getStringExtra("habit name");
 
 
@@ -66,7 +68,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 // later will be modified ////
 
-        User user = new User();
+       /* User user = new User();
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
         getUserTask.execute(userName);
         try {
@@ -76,8 +78,34 @@ public class EditHabitEventActivity extends AppCompatActivity {
         }
 
         final Habit habit = user.getHabitList().getHabit(habitIndex);
-
+        Log.d("Habit",String.valueOf(habitIndex));
+*/
 /////////////////
+
+        String habit_id = userName +habit_name.toUpperCase();
+        Log.d("habitid",habit_id);
+
+        //final Habit habit = new Habit();
+
+        ElasticSearchHabitController.GetHabitTask getHabit
+                = new  ElasticSearchHabitController.GetHabitTask();
+        getHabit.execute(habit_id);
+
+        try {
+            habit = getHabit.get();  //other way later
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            Log.d("habitinfo","???");
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            Log.d("habitinfo","???");
+        }
+
+
+        Log.d("habitinfo",habit.getTitle());
+
+        HashSet<Integer> days = habit.getRepeatWeekOfDay();
+        ArrayList<String> sdays = getPlans(days);
 
 
         final Calendar startDate = habit.getStartDate();
@@ -103,10 +131,14 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 String sComment = comment.getText().toString();
 
 ////////////////////////////////////// fix time comparison bug /////////////////
+
+                doDate.set(do_year, do_month, do_day);
+
                 if(  (startDate.get(Calendar.YEAR) == doDate.get(Calendar.YEAR) )
                         && ( (startDate.get(Calendar.MONTH) == doDate.get(Calendar.MONTH)))
                         && ( (startDate.get(Calendar.DAY_OF_MONTH) == doDate.get(Calendar.DAY_OF_MONTH))))
                 {
+
                     added = true;
                 }
                 else{
@@ -123,7 +155,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 }
 
 
-                doDate.set(do_year, do_month, do_day);
 
                 Calendar today = Calendar.getInstance();
                 if (doDate.after(today)) {
@@ -140,6 +171,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 }
 
 
+
                 if(added){
                     HabitEvent event = new HabitEvent(userName,habit.getTitle(), doDate, sComment, habit.getReason(), habit.getStartDate(), getPlans(weekDay) );
 
@@ -151,12 +183,13 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 }
                 if (added) {
 
-                    Intent intent = new Intent(EditHabitEventActivity.this, HabitEventLibraryActivity.class);
-                    intent.putExtra("habit index", habitIndex);   // later will be useless
+                   /* Intent intent = new Intent(EditHabitEventActivity.this, HabitEventLibraryActivity.class);
+                   // intent.putExtra("habit index", habitIndex);   // later will be useless
 
                     intent.putExtra("habit name",habit_name);
 
                     startActivity(intent);
+                    */
                 }
 
             }
@@ -195,47 +228,39 @@ public class EditHabitEventActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int habitIndex = intent.getIntExtra("habit index", 0);  // later be useless
         int eventIndex = intent.getIntExtra("select",0);
-
         habit_name = intent.getStringExtra("habit name");
 
 
 ///////////////////////
-        User user = new User();
-        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute(userName);
-        try {
-            user = getUserTask.get();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the User out of the async object");
-        }
-
-
-
-        //habitEventList = user.getHabitList().getHabit(habitIndex).getHabitEventList();
 
 
         info = (TextView) findViewById(R.id.info);
-        Habit habit = user.getHabitList().getHabit(habitIndex);     //other way later
-        //String habit_name  = habit.getTitle();
 
+
+        String habit_id = userName +habit_name.toUpperCase();
+        Habit habit = new Habit();
+
+        ElasticSearchHabitController.GetHabitTask getHabit
+                = new  ElasticSearchHabitController.GetHabitTask();
+        getHabit.execute(habit_id);
+
+        try {
+            habit = getHabit.get();  //other way later
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = getPlans(days);
-
-////////////////////////
-
 
         info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays);
 
 
 /////////////////////////
 
-        if (eventIndex >=0){
-
-            Log.d("TTT",String.valueOf(eventIndex));
-
-
-// if the event already exists, show its old info
+        if (eventIndex >=0){    // if the event already exists, show its old info         edit, need info directly from event
 
             //////  used to find the events /////////
             String event_query = "{\n" +
@@ -262,9 +287,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
             }
 
             HabitEvent event = fillist.get(eventIndex);
-
-
-
+        /*    info.setText(event.geteName() + " \nstarts " + event.getsTime().get(Calendar.YEAR)+"/"
+                    + String.valueOf(event.getsTime().get(Calendar.MONTH)+1) + "/" + event.getsTime().get(Calendar.DAY_OF_MONTH)
+                    +"\nReason: "+event.geteReason()+"\nPlan: "+event.getPlan());
+*/
             comment = (EditText)findViewById(R.id.comment);
             comment.setText(event.geteComment());
 
@@ -287,7 +313,16 @@ public class EditHabitEventActivity extends AppCompatActivity {
     public boolean setEvent(String current_user, HabitEvent new_event, int eventIndex )
     {
 
-            if (eventIndex >=0 ) {              //  used for edit
+        Log.d("event",String.valueOf(eventIndex));
+
+
+        String new_id = current_user + new_event.geteName()
+                + new_event.geteTime().get(Calendar.YEAR)
+                + String.valueOf(new_event.geteTime().get(Calendar.MONTH) + 1)
+                + new_event.geteTime().get(Calendar.DAY_OF_MONTH);
+
+
+        if (eventIndex >=0 ) {              //  used for edit
 
                 //////  used to find the events /////////
                 String event_query = "{\n" +
@@ -316,11 +351,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 HabitEvent old_event = fillist.get(eventIndex);
 
                 ////////////////////
-
-                String new_id = current_user + new_event.geteName()
-                        + new_event.geteTime().get(Calendar.YEAR)
-                        + String.valueOf(new_event.geteTime().get(Calendar.MONTH) + 1)
-                        + new_event.geteTime().get(Calendar.DAY_OF_MONTH);
 
                 String old_id = current_user + old_event.geteName()
                         + old_event.geteTime().get(Calendar.YEAR)
@@ -352,6 +382,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
             }
             else {         //  used for add
                 ////// add new event ///////
+                if (existedEvent(new_id)){
+                    Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
                 ElasticSearchEventController.AddEventTask addEventTask
                         = new ElasticSearchEventController.AddEventTask();
                 addEventTask.execute(new_event);
