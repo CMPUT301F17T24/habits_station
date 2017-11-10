@@ -13,6 +13,7 @@ package com.tiejun.habit_station;
 import android.location.Location;
 import android.media.Image;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -23,19 +24,16 @@ import java.util.Locale;
 public class HabitEvent {
     public String uName;
 
-    public String eName;
-
-    public Calendar eTime;
-
+    public Calendar sTime;
     public String eReason;
+    public ArrayList<String> Plan = new ArrayList<String>();
 
+    public String eName;
+    public Calendar eTime;
     public String eComment;
-
     public Image ePhoto;
-
     public Location eLocation;
 
-    public boolean status;
 
 
     public HabitEvent(){}
@@ -46,22 +44,48 @@ public class HabitEvent {
         this.eTime = time;
         this.eComment = comment;
 
-        this.status = false;
-
-
     }
 
 //////////////////
+
+    public HabitEvent(String uName,String eName, Calendar time, String comment, String reason, Calendar sTime, ArrayList<String> plan){
+        this.uName = uName;
+        this.eName = eName;
+        this.eTime = time;
+        this.eComment = comment;
+
+        this.eReason = reason;
+        this.sTime = sTime;
+        this.Plan = plan;
+    }
 
     public HabitEvent(String uName,String eName, Calendar time, String comment){
         this.uName = uName;
         this.eName = eName;
         this.eTime = time;
         this.eComment = comment;
-        this.status = false;
     }
+
+
+
+
     public void setuName(String uname){
         this.uName = uname;
+    }
+    public void setsTime (Calendar sTime){
+        this.sTime = sTime;
+    }
+    public void setPlan (ArrayList<String> plan){
+        this.Plan = plan;
+    }
+    public String getuName(){
+        return  uName;
+    }
+    public Calendar getsTime(){
+        return sTime;
+    }
+    public ArrayList<String> getPlan() {
+        return Plan;
     }
 
 //////////////////////
@@ -103,10 +127,7 @@ public class HabitEvent {
     }
 
 
-    public boolean getStatus(){
 
-        return this.status;
-    }
 
 
     public void seteName(String name){
@@ -132,10 +153,7 @@ public class HabitEvent {
 
     }
 
-    public void setStatus(boolean status){
-        this.status = status;
 
-    }
 
     public void seteComment(String comment){
         this.eComment = comment;
@@ -147,10 +165,6 @@ public class HabitEvent {
     }
 
 
-
-    public String getuName (){
-        return uName;
-    }
 
 
 

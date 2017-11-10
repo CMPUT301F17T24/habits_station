@@ -19,11 +19,13 @@ import java.util.Calendar;
 import java.util.List;
 
 import io.searchbox.client.JestResult;
+import io.searchbox.core.Delete;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Get;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
+import io.searchbox.core.Update;
 
 import static com.tiejun.habit_station.ElasticSearchUserController.verifySettings;
 
@@ -51,8 +53,6 @@ public class ElasticSearchEventController {
                         +String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
                         +event.geteTime().get(Calendar.DAY_OF_MONTH) ).build();
 
-
-
                 try {
                     // where is the client
                     DocumentResult result = client.execute(index);
@@ -70,6 +70,88 @@ public class ElasticSearchEventController {
             return null;
         }
     }
+
+
+
+    /**
+     * The function which add event to elastic search
+     */
+    public static class DeleteEventTask extends AsyncTask<HabitEvent, Void, Void> {
+
+        @Override
+        protected Void doInBackground(HabitEvent... events) {
+            verifySettings();
+
+            for (HabitEvent event : events) {
+                Delete delete = new Delete.Builder(event.getuName()+event.geteName()
+                        +event.geteTime().get(Calendar.YEAR)
+                        +String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
+                        +event.geteTime().get(Calendar.DAY_OF_MONTH))
+                        .index("cmput301f17t24").type("event").build();
+
+
+                try {
+                    // where is the client
+                    DocumentResult result = client.execute(delete);
+                    if (result.isSucceeded()) {
+                        Log.d("In AsyncTask ID", result.getId());
+                    } else {
+                        Log.i("Error", "Elasticsearch was not able to add the user.");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.i("Error", "The application failed to build and send the user");
+                }
+
+            }
+            return null;
+        }
+    }
+
+
+
+
+
+    /**
+     * The function which add event to elastic search
+     */
+    public static class UpdateEventTask extends AsyncTask<HabitEvent, Void, Void> {
+
+        @Override
+        protected Void doInBackground(HabitEvent... events) {
+            verifySettings();
+
+            for (HabitEvent event : events) {
+                Update update = new Update.Builder(event).index("cmput301f17t24").type("event").id(event.getuName()+event.geteName()
+                        +event.geteTime().get(Calendar.YEAR)
+                        +String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
+                        +event.geteTime().get(Calendar.DAY_OF_MONTH) ).build();
+
+                try {
+                    // where is the client
+                    DocumentResult result = client.execute(update);
+                    if (result.isSucceeded()) {
+                        Log.d("In AsyncTask ID", result.getId());
+                    } else {
+                        Log.i("Error", "Elasticsearch was not able to add the user.");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.i("Error", "The application failed to build and send the user");
+                }
+
+            }
+            return null;
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 

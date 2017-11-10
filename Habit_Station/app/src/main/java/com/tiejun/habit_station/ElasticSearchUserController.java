@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.searchbox.client.JestResult;
+import io.searchbox.core.Delete;
 import io.searchbox.core.DocumentResult;
 import io.searchbox.core.Get;
 import io.searchbox.core.Index;
@@ -96,6 +97,8 @@ public class ElasticSearchUserController {
 
             for (User user : users) {
                 Update update = new Update.Builder(user).index("cmput301f17t24").type("user").id(user.getName()).build();
+                //Delete delete = new Delete.Builder(user.getName()).index("cmput301f17t24").type("user").build();
+
 
                 try {
                     // where is the client
