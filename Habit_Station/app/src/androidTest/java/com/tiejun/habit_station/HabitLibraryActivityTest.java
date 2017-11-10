@@ -9,15 +9,16 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.robotium.solo.Solo;
 
-import java.util.Calendar;
-import java.util.HashSet;
-
 import com.tiejun.habit_station.AddHabitActivity;
+import com.tiejun.habit_station.ElasticSearchUserController;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by CBB on 2017/11/7.
@@ -27,9 +28,8 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
 
     private Solo solo;
 
-    public int set_year = 0;
-    public int set_month = 0;
-    public int set_day = 0;
+    private ListView habitList;
+    protected HabitList habits = new HabitList();
 
     public HabitLibraryActivityTest() {
         super(com.tiejun.habit_station.HabitLibraryActivity.class);
@@ -49,10 +49,27 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
 
     public void testViewHabit() {
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
-        ListView listview = (ListView) solo.getView(R.id.habits);
+        /*
+        User user = new User(255, "testUser");
+        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
+        addUserTask.execute(user);
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute("testName");
+        try {
+            user = getUserTask.get();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the User out of the async object");
+        }
+        try {
+            habits = user.getHabitList();
+        } catch (Exception e) {
+            Log.i("Error", "Failed to get the habits out of the async object");
+        }
+        */
+        habitList = (ListView) solo.getView(R.id.habits);
 
         // if habit list is empty, add a new habit
-        if (listview.getCount() == 0) {
+        if (habitList.getCount() == 0) {
             solo.clickOnButton("Add");
             solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
 
@@ -66,6 +83,7 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
         }
 
         solo.clickLongInList(0);
+
     }
 
     public void testAddHabit() {

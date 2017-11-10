@@ -152,8 +152,10 @@ public class AddHabitActivity extends AppCompatActivity {
 
                 //Log.e("Add_user",userName);
                 if (added) {
-                    Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
+                    Toast.makeText(getApplicationContext(), "Successfully added a new habit! ", Toast.LENGTH_SHORT).show();
+                    /*Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
                     startActivity(intent);
+                    */
                 }
 
             }
@@ -179,46 +181,21 @@ public class AddHabitActivity extends AppCompatActivity {
 
     public boolean setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
-        User user = new User();
-        //String query = current_user;
-        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute(current_user);
-        try {
-            user = getUserTask.get();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the User out of the async object");
-        }
 
 
-        //Log.d("CCC",habit.getTitle());
-
-        Habit habit1 = new Habit(sTitle,sReason,startDate,weekDay);
-
-        HabitEventList events = new HabitEventList();
-        habit1.setHabitEventList(events);
-
-        HabitList list = user.getHabitList();
-        Log.d("CC",String.valueOf(list.getCount()));
+        Habit habit = new Habit(current_user,sTitle,sReason,startDate,weekDay);
 
 
-
-        if (list.check_dup(habit1)){
+        if (existedHabit(current_user+sTitle.toUpperCase())){
             Toast.makeText(this, "This habit already exists!!!", Toast.LENGTH_SHORT).show();
             return false;
         }
         else {
 
-            list.add(habit1);
+            ElasticSearchHabitController.AddHabitTask addHabitTask
+                    = new ElasticSearchHabitController.AddHabitTask();
+            addHabitTask.execute(habit);
 
-            HabitList list2 = new HabitList(list.getHabits());
-            user.setHabitList(list2);
-
-
-            Log.d("CCC", String.valueOf(list.getCount()));
-
-            ElasticSearchUserController.AddUserTask addUserTask
-                    = new ElasticSearchUserController.AddUserTask();
-            addUserTask.execute(user);
             return true;
         }
 
@@ -226,6 +203,23 @@ public class AddHabitActivity extends AppCompatActivity {
 
 
 
+
+
+
+    private boolean existedHabit (String id) {
+        ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
+        isExist.execute(id);
+
+        try {
+            if (isExist.get()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 
 

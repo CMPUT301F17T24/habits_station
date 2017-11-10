@@ -13,6 +13,7 @@ import android.util.Log;
 import android.widget.EditText;
 
 import com.robotium.solo.Solo;
+import com.tiejun.habit_station.ElasticSearchUserController;
 
 /**
  * Created by CBB on 2017/11/7.

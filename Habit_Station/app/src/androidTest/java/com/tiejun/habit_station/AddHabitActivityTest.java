@@ -9,6 +9,7 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
@@ -36,7 +37,7 @@ public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
         Activity activity = getActivity();
     }
 
-
+    
 
     /**
      * Runs at the end of the tests

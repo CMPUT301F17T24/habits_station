@@ -55,6 +55,8 @@ public class SignUpActivity extends SignInActivity {
                     ElasticSearchUserController.AddUserTask addUserTask
                         = new ElasticSearchUserController.AddUserTask();
                     addUserTask.execute(user);
+
+
                     if (sign) {
                         Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                         startActivity(intent);
