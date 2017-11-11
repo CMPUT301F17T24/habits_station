@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,6 +85,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                     try{
                         habit.setReason(data.getStringExtra("newReason"));
                         habit.setTitle(data.getStringExtra("newTitle"));
+                        if(data.getIntegerArrayListExtra("newRepeat").isEmpty() == false){
+                            HashSet<Integer> newRepeat = new HashSet<Integer>(data.getIntegerArrayListExtra("newRepeat"));
+                            habit.setRepeatWeekOfDay(newRepeat);
+                        }
                         String newDate = data.getStringExtra("newDate");
                         if( newDate != ""){
                             try {
