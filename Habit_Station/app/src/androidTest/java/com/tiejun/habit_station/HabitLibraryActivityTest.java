@@ -70,25 +70,28 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
 
         // if habit list is empty, add a new habit
         if (habitList.getCount() == 0) {
-            solo.clickOnButton(R.id.add);
+            solo.clickOnView(solo.getView(R.id.add));
             solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
 
             // identical to AddHabitActivityTest
-            solo.enterText((EditText) solo.getView(R.id.title), "testHabit");
-            solo.enterText((EditText) solo.getView(R.id.reason), "testReason");
-            solo.clickOnButton(R.id.SAT);
-            solo.clickOnButton(R.id.SUN);
-            solo.clickOnButton(R.id.OK);
+            solo.enterText((EditText) solo.getView(R.id.title), "test habit");
+            solo.enterText((EditText) solo.getView(R.id.reason), "test reason");
+            solo.clickOnView(solo.getView(R.id.SAT));
+            solo.clickOnView(solo.getView(R.id.SUN));
+            solo.clickOnView(solo.getView(R.id.OK));
             solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
         }
 
         solo.clickLongInList(0);
-
+        solo.clickOnMenuItem("View Habit details");
+        solo.assertCurrentActivity("Wrong Activity", ViewHabitActivity .class);
     }
+
+
 
     public void testAddHabit() {
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
-        solo.clickOnButton(R.id.add);
+        solo.clickOnView(solo.getView(R.id.add));
         solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
     }
 

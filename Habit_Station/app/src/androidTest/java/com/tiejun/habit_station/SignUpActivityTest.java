@@ -42,12 +42,16 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
     public void testSignUp() {
         solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
 
+        // testEmptyUsername()
+        solo.clickOnView(solo.getView(R.id.signup));
+        solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
+
         // create a new user
         User user = new User(255, "testUser");
         ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
         addUserTask.execute(user);
         solo.enterText((EditText) solo.getView(R.id.username), "testUser");
-        solo.clickOnButton(R.id.signup);
+        solo.clickOnView(solo.getView(R.id.signup));
 
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
         isExist.execute("testUser");
