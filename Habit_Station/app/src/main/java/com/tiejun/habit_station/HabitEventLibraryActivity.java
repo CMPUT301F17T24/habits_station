@@ -234,8 +234,16 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
     }
 
+/*
+
+    // @Override
+    protected void onResume(Bundle savedInstanceState) {
+        super.onResume();
+        onCreate(savedInstanceState);
+    }
 
 
+*/
 
 
 }
