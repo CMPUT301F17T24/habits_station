@@ -49,6 +49,7 @@ public class ViewHabitActivity extends AppCompatActivity {
     private TextView theName;
     private TextView theReason;
     private TextView theDate;
+    private TextView showRepeat;
     private Habit habit;
     private int index;
     private User user = new User();
@@ -145,6 +146,32 @@ public class ViewHabitActivity extends AppCompatActivity {
 
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
+
+        showRepeat = (TextView) findViewById(R.id.showRepeat);
+        ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+        String daysInWeek = "";
+        if(frequency.contains(1) == true){
+            daysInWeek += " Monday ";
+        }
+        if(frequency.contains(2) == true){
+            daysInWeek += " Tuesday ";
+        }
+        if(frequency.contains(3)){
+            daysInWeek += " Wednesday ";
+        }
+        if(frequency.contains(4)){
+            daysInWeek += " Thursday ";
+        }
+        if(frequency.contains(5)){
+            daysInWeek += " Friday ";
+        }
+        if(frequency.contains(6)){
+            daysInWeek += " Saturday ";
+        }
+        if(frequency.contains(7)){
+            daysInWeek += " Sunday ";
+        }
+        showRepeat.setText(daysInWeek);
 
         /**
          * a tostring method to show date
@@ -254,6 +281,32 @@ public class ViewHabitActivity extends AppCompatActivity {
 
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
+
+        showRepeat = (TextView) findViewById(R.id.showRepeat);
+        ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+        String daysInWeek = "";
+        if(frequency.contains(1) == true){
+            daysInWeek += " Monday ";
+        }
+        if(frequency.contains(2) == true){
+            daysInWeek += " Tuesday ";
+        }
+        if(frequency.contains(3)){
+            daysInWeek += " Wednesday ";
+        }
+        if(frequency.contains(4)){
+            daysInWeek += " Thursday ";
+        }
+        if(frequency.contains(5)){
+            daysInWeek += " Friday ";
+        }
+        if(frequency.contains(6)){
+            daysInWeek += " Saturday ";
+        }
+        if(frequency.contains(7)){
+            daysInWeek += " Sunday ";
+        }
+        showRepeat.setText(daysInWeek);
 
         /**
          * a tostring method to show date
