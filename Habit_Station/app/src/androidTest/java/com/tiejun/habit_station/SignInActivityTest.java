@@ -49,14 +49,14 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
 
         // attempt to log in
         solo.enterText((EditText) solo.getView(R.id.username), "testUser");
-        solo.clickOnButton("Sign In");
+        solo.clickOnButton(R.id.signin);
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
     }
 
     public void testSignUp() {
         // test if the sign up button directs to sign up page
         solo.assertCurrentActivity("Wrong Activity", SignInActivity.class);
-        solo.clickOnButton("Sign Up");
+        solo.clickOnButton(R.id.signup);
         solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
     }
 

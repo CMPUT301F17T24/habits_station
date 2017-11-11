@@ -37,7 +37,29 @@ public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
         Activity activity = getActivity();
     }
 
-    
+    public void testAdd() {
+        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+
+        // testEmptyTitle()
+        solo.clickOnButton(R.id.OK);
+        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+        solo.enterText((EditText) solo.getView(R.id.title), "testHabit");
+
+        // testEmptyReason()
+        solo.clickOnButton(R.id.OK);
+        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+        solo.enterText((EditText) solo.getView(R.id.reason), "testReason");
+
+        // testEmptyWeekday()
+        solo.clickOnButton(R.id.OK);
+        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+        solo.clickOnButton(R.id.SAT);
+        solo.clickOnButton(R.id.SUN);
+
+        // add successful
+        solo.clickOnButton(R.id.OK);
+        solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
+    }
 
     /**
      * Runs at the end of the tests
