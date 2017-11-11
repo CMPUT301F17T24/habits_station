@@ -11,7 +11,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tiejun.habit_station.HabitHistoryActivity">
+    tools:context="com.tiejun.habit_station.HabitHistoryActivity"
+    android:background="@drawable/bg">
 
     <EditText
         android:id="@+id/editText"
@@ -43,7 +44,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-9dp" />
+        tools:layout_editor_absoluteX="-9dp"
+        android:background="@drawable/list_view_bg"/>
 
     <ImageView
         android:id="@+id/search"
