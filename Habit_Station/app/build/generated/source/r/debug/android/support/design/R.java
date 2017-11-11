@@ -776,7 +776,7 @@ public final class R {
         public static final int icon_group = 0x7f0d00b5;
         public static final int ifRoom = 0x7f0d0044;
         public static final int image = 0x7f0d004e;
-        public static final int info = 0x7f0d0087;
+        public static final int info = 0x7f0d0086;
         public static final int item_touch_helper_previous_elevation = 0x7f0d0005;
         public static final int largeLabel = 0x7f0d009a;
         public static final int left = 0x7f0d0035;
