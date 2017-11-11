@@ -9,16 +9,10 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ListView;
 
 import com.robotium.solo.Solo;
-
-import com.tiejun.habit_station.AddHabitActivity;
-import com.tiejun.habit_station.ElasticSearchUserController;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by CBB on 2017/11/7.
