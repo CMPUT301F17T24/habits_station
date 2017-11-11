@@ -151,7 +151,7 @@ public class ViewHabitActivity extends AppCompatActivity {
          */
         theDate = (TextView) findViewById(R.id.showDate);// reason
         int year = habit.getStartDate().get(Calendar.YEAR);
-        int month = habit.getStartDate().get(Calendar.MONTH);
+        int month = habit.getStartDate().get(Calendar.MONTH) +1;
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
 
         theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
@@ -171,7 +171,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                 onClickIntent.putExtra("habitTitle", habit.getTitle()); //title
                 onClickIntent.putExtra("habitReason", habit.getReason()); //reason
                 onClickIntent.putExtra("year", habit.getStartDate().get(Calendar.YEAR)); //year
-                onClickIntent.putExtra("month", habit.getStartDate().get(Calendar.MONTH)); //month
+                onClickIntent.putExtra("month", habit.getStartDate().get(Calendar.MONTH) +1); //month
                 onClickIntent.putExtra("day", habit.getStartDate().get(Calendar.DAY_OF_MONTH)); //day
 
                 startActivityForResult(onClickIntent,1);
@@ -260,7 +260,7 @@ public class ViewHabitActivity extends AppCompatActivity {
          */
         theDate = (TextView) findViewById(R.id.showDate);// reason
         int year = habit.getStartDate().get(Calendar.YEAR);
-        int month = habit.getStartDate().get(Calendar.MONTH);
+        int month = habit.getStartDate().get(Calendar.MONTH) +1;
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
 
         theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
