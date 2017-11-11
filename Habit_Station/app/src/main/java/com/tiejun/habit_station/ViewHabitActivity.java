@@ -216,7 +216,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                 }
 
                 Intent onClickIntent = new Intent(getApplicationContext(), StatusActivity.class);
-                onClickIntent.putExtra("complete",th);
+                onClickIntent.putExtra("total",th);
                 onClickIntent.putExtra("total",maxDays);
 
                 startActivity(onClickIntent);

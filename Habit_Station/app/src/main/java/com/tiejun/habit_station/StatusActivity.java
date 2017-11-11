@@ -8,10 +8,15 @@
 package com.tiejun.habit_station;
 
 import android.content.Intent;
+import android.graphics.drawable.RotateDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 public class StatusActivity extends AppCompatActivity {
+    private int eventDone;
+    private int totalDays;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +24,13 @@ public class StatusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status);
     // my code starts here
         Intent i = getIntent();
+        eventDone = i.getIntExtra("complete",0);
+        totalDays = i.getIntExtra("total",0);
+
+        totalDays =20;
+
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar.setProgress(totalDays);
     }
 }
