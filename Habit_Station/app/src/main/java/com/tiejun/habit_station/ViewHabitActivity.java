@@ -24,8 +24,11 @@ import org.w3c.dom.Text;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -174,6 +177,49 @@ public class ViewHabitActivity extends AppCompatActivity {
                 startActivityForResult(onClickIntent,1);
 
 
+            }
+        });
+
+        /**
+         * a listener when states button clicked,
+         *
+         * implemented by using strat intent for result
+         */
+        Button state = (Button) findViewById(R.id.status);
+        state.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+// online resource from stack overflow to get a
+// count of given day:https://stackoverflow.com/questions/10428798/how-to-calculate-the-number-of-tuesday-in-one-month
+
+                Calendar c = Calendar.getInstance();// start date
+                c.set(Calendar.MONTH, habit.getStartDate().get(Calendar.MONTH));
+                c.set(Calendar.YEAR, habit.getStartDate().get(Calendar.YEAR));
+                Calendar today = new GregorianCalendar();
+
+                ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+                int maxDays=0;
+                int th = 0;
+                if(c.after(today)){ // not started
+                     maxDays=0;
+                     th = 0;
+                    }
+                else { //started
+                    maxDays = today.get(Calendar.DATE) - c.get(Calendar.DATE);
+                    for (int d = 1; d <= maxDays; d++) {
+                        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+                        if (frequency.contains(dayOfWeek)) {
+                            th++;
+                        }
+                        c.add(Calendar.DATE, 1); //next day
+                    }
+                }
+
+                Intent onClickIntent = new Intent(getApplicationContext(), StatusActivity.class);
+                onClickIntent.putExtra("complete",th);
+                onClickIntent.putExtra("total",maxDays);
+
+                startActivity(onClickIntent);
             }
         });
     }

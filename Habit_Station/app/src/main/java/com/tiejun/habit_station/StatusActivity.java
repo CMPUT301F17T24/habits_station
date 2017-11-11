@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -16,5 +17,7 @@ public class StatusActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
+    // my code starts here
+        Intent i = getIntent();
     }
 }
