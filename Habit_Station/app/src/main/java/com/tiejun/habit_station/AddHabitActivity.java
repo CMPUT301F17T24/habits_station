@@ -146,6 +146,8 @@ public class AddHabitActivity extends AppCompatActivity {
                 }
 
                 if (added){
+                    SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+                    final String userName = pref.getString("currentUser", "");
                     added = setHabit(userName , sTitle, sReason, startDate, weekDay);
                 }
 
@@ -181,8 +183,6 @@ public class AddHabitActivity extends AppCompatActivity {
 
     public boolean setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
-
-
         Habit habit = new Habit(current_user,sTitle,sReason,startDate,weekDay);
 
 

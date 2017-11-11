@@ -42,6 +42,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
     private Habit selectedHabit = new Habit();   // used to delete
 
     private String hName ;
+    //private String MYhabits;
 
     //private String userName;
 
@@ -162,7 +163,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
                     "\"bool\": {\n"+
                     "\"must\": [\n"+
                     "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                    "{"+ " \"term\" : {  \"eName\" : \"" + hName +  "\" }}\n" +
+                    "{"+ " \"match\" : {  \"eName\" : \"" + hName +  "\" }}\n" +
                     "]"+
                     "}"+
                     "}"+
@@ -223,7 +224,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
                 " 	}\n" +
                 "}";
 
-
+        Log.d("MYhabits",MYhabits);
 
         ElasticSearchHabitController.GetHabits getHabits
                 = new  ElasticSearchHabitController.GetHabits();

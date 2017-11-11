@@ -35,7 +35,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private CheckBox comment,type;
     private int num_checked;
 
-    String query;
+    private String query;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
