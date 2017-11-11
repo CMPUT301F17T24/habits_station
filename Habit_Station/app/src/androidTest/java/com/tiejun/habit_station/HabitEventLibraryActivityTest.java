@@ -9,6 +9,8 @@ package com.tiejun.habit_station;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import com.robotium.solo.Solo;
 
@@ -34,6 +36,44 @@ public class HabitEventLibraryActivityTest extends ActivityInstrumentationTestCa
 
     public void testStart() throws Exception {
         Activity activity = getActivity();
+    }
+
+    public void testViewEvent() {
+        solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity.class);
+        ListView habitEventList = (ListView) solo.getView(R.id.events);
+
+        // if habit event list is empty, add a new habit event
+        if (habitEventList.getCount() == 0) {
+            solo.clickOnView(solo.getView(R.id.add));
+            solo.assertCurrentActivity("Wrong Activity", EditHabitEventActivity.class);
+
+            // identical to EditHabitEventActivityTest
+            solo.enterText((EditText) solo.getView(R.id.comment), "test comment");
+            solo.clickOnView(solo.getView(R.id.save));
+            solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity.class);
+        }
+        solo.clickLongInList(0);
+        solo.clickOnMenuItem("View Event details");
+        solo.assertCurrentActivity("Wrong Activity", ViewEventActivity.class);
+    }
+
+    public void testEditEvent() {
+        solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity.class);
+        ListView habitEventList = (ListView) solo.getView(R.id.events);
+
+        // if habit event list is empty, add a new habit event
+        if (habitEventList.getCount() == 0) {
+            solo.clickOnView(solo.getView(R.id.add));
+            solo.assertCurrentActivity("Wrong Activity", EditHabitEventActivity.class);
+
+            // identical to EditHabitEventActivityTest
+            solo.enterText((EditText) solo.getView(R.id.comment), "test comment");
+            solo.clickOnView(solo.getView(R.id.save));
+            solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity.class);
+        }
+        solo.clickLongInList(0);
+        solo.clickOnMenuItem("Edit Events");
+        solo.assertCurrentActivity("Wrong Activity", EditHabitEventActivity.class);
     }
 
     public void testAddEvent() {
