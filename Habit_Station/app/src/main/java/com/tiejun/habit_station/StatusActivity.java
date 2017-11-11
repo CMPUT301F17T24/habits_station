@@ -11,6 +11,8 @@ import android.content.Intent;
 import android.graphics.drawable.RotateDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 
 public class StatusActivity extends AppCompatActivity {
@@ -32,5 +34,18 @@ public class StatusActivity extends AppCompatActivity {
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         progressBar.setProgress(totalDays);
+
+        final Button cool = (Button) findViewById(R.id.cool);
+        cool.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+
+                Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
+
+                startActivity(onClickIntent);
+            }
+        });
+
+
     }
 }
