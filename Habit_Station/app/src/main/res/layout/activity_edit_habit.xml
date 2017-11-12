@@ -11,7 +11,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tiejun.habit_station.EditHabitActivity">
+    tools:context="com.tiejun.habit_station.EditHabitActivity"
+    android:background="@drawable/bg">
 
     <Button
         android:id="@+id/sat"
