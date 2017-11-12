@@ -26,7 +26,6 @@ import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -443,6 +442,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 ///////////////////////////////////////////
 
 //comment for calculate date
+// include a general code to extend usage to multiple years
                     //long millsec = today.getTimeInMillis()- start.getTimeInMillis();
                     //total = (int)millsec;///1000/60/60/24;
 

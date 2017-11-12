@@ -54,10 +54,10 @@ public class StatusActivity extends AppCompatActivity {
         cool.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-                Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
-
-                startActivity(onClickIntent);
+                finish();
+//                Intent backIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
+//
+//                startActivity(backIntent);
             }
         });
 
