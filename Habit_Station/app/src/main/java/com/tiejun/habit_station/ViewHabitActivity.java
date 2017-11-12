@@ -32,6 +32,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -256,6 +257,12 @@ public class ViewHabitActivity extends AppCompatActivity {
                 }
 
             }
+//            try{
+//            TimeUnit.SECONDS.sleep(1);
+//            }catch (Exception e){
+//                Log.i("Error","cannot sleep");
+//            }
+
             onStart(); // fix not update view issue by call onstart
         }
         
@@ -463,41 +470,46 @@ public class ViewHabitActivity extends AppCompatActivity {
     
     @Override
     /**
-     * update the content
+     * update the content，
+     *
+     * changed the implementation, cannot use old intent,
+     *
+     * will cause sequence issue
      */
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-        
-        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-        final String tempName = pref.getString("currentUser", "");
-        
-        theName = (TextView) findViewById(R.id.name);
-        theName.setText(tempName);
+        ///////comment the elastic search for performance and stability
 
-
-/////////////////
-        Intent i = getIntent();
-        index = i.getIntExtra("habit index", 0); // get index of specific habit
-        String habit_query = i.getStringExtra("habit query");
-        //String habit_name = i.getStringExtra("habit name");
-
-        ElasticSearchHabitController.GetHabits getHabits
-                = new  ElasticSearchHabitController.GetHabits();
-        getHabits.execute(habit_query);
-
-        try {
-            fillist.clear();
-            fillist.addAll(getHabits.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        habit = fillist.get(index); // get the specific habit
-
-
+//        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+//        final String tempName = pref.getString("currentUser", "");
+//
+//        theName = (TextView) findViewById(R.id.name);
+//        theName.setText(tempName);
+//
+//
 ///////////////////
+//        Intent i = getIntent();
+//        index = i.getIntExtra("habit index", 0); // get index of specific habit
+//        String habit_query = i.getStringExtra("habit query");
+//        //String habit_name = i.getStringExtra("habit name");
+//
+//        ElasticSearchHabitController.GetHabits getHabits
+//                = new  ElasticSearchHabitController.GetHabits();
+//        getHabits.execute(habit_query);
+//
+//        try {
+//            fillist.clear();
+//            fillist.addAll(getHabits.get());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
+//        habit = fillist.get(index); // get the specific habit
+
+
+/////////////////// comment ends here
         
         theTitle = (TextView) findViewById(R.id.showTitle);//title
         theTitle.setText(habit.getTitle());
