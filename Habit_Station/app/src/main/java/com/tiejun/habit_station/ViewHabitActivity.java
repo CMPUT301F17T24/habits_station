@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,6 +52,7 @@ public class ViewHabitActivity extends AppCompatActivity {
     private TextView theName;
     private TextView theReason;
     private TextView theDate;
+    private TextView showRepeat;
     private Habit habit;
     private int index;
     private User user = new User();
@@ -134,6 +136,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                         deleteEventTask.execute(element);
 
                     }
+/////////////////// block moved to here
                     ElasticSearchHabitController.DeleteHabitTask deleteHabitTask
                             = new ElasticSearchHabitController.DeleteHabitTask();
                     deleteHabitTask.execute(habit);
@@ -144,6 +147,12 @@ public class ViewHabitActivity extends AppCompatActivity {
 
 
                 if( delSig == 0){// edit
+//////////// added for edit repeat
+                    if(data.getIntegerArrayListExtra("newRepeat").isEmpty() == false){
+                        HashSet<Integer> newRepeat = new HashSet<Integer>(data.getIntegerArrayListExtra("newRepeat"));
+                        habit.setRepeatWeekOfDay(newRepeat);
+                    }
+////////////end of block
                     Calendar calendar = Calendar.getInstance();
 
                     try{
@@ -291,6 +300,36 @@ public class ViewHabitActivity extends AppCompatActivity {
         
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
+
+         /**
+         * 　a show repeat method if need to change, change the block or extract
+         */
+        showRepeat = (TextView) findViewById(R.id.showRepeat);
+        ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+        String daysInWeek = "";
+        if(frequency.contains(1) == true){
+            daysInWeek += " Monday ";
+        }
+        if(frequency.contains(2) == true){
+            daysInWeek += " Tuesday ";
+        }
+        if(frequency.contains(3)){
+            daysInWeek += " Wednesday ";
+        }
+        if(frequency.contains(4)){
+            daysInWeek += " Thursday ";
+        }
+        if(frequency.contains(5)){
+            daysInWeek += " Friday ";
+        }
+        if(frequency.contains(6)){
+            daysInWeek += " Saturday ";
+        }
+        if(frequency.contains(7)){
+            daysInWeek += " Sunday ";
+        }
+        showRepeat.setText(daysInWeek);
+////////// the block ends here
         
         /**
          * a tostring method to show date
@@ -465,6 +504,36 @@ public class ViewHabitActivity extends AppCompatActivity {
         
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
+
+        /**
+         * 　a show repeat method if need to change, change the block or extract
+         */
+        showRepeat = (TextView) findViewById(R.id.showRepeat);
+        ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+        String daysInWeek = "";
+        if(frequency.contains(1) == true){
+            daysInWeek += " Monday ";
+        }
+        if(frequency.contains(2) == true){
+            daysInWeek += " Tuesday ";
+        }
+        if(frequency.contains(3)){
+            daysInWeek += " Wednesday ";
+        }
+        if(frequency.contains(4)){
+            daysInWeek += " Thursday ";
+        }
+        if(frequency.contains(5)){
+            daysInWeek += " Friday ";
+        }
+        if(frequency.contains(6)){
+            daysInWeek += " Saturday ";
+        }
+        if(frequency.contains(7)){
+            daysInWeek += " Sunday ";
+        }
+        showRepeat.setText(daysInWeek);
+        // the block ends here
         
         /**
          * a tostring method to show date

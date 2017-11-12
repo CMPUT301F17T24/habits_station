@@ -17,6 +17,7 @@ import android.widget.EditText;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -98,6 +99,68 @@ public class EditHabitActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //code for edit frequency, keep the block
+
+        final ArrayList<Integer> frequency = new ArrayList<>();//get repeat date
+        final Button mon = (Button) findViewById(R.id.mon);
+        mon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(1);
+
+            }
+        });
+        final Button tue = (Button) findViewById(R.id.tue);
+        tue.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(2);
+
+            }
+        });
+        final Button wed = (Button) findViewById(R.id.wed);
+        wed.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(3);
+
+            }
+        });
+        final Button fri = (Button) findViewById(R.id.fri);
+        fri.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(5);
+
+            }
+        });
+        final Button thur = (Button) findViewById(R.id.thur);
+        thur.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(4);
+
+            }
+        });
+        final Button sat = (Button) findViewById(R.id.sat);
+        sat.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(6);
+
+            }
+        });
+        final Button sun = (Button) findViewById(R.id.sun);
+        sun.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                frequency.add(7);
+
+            }
+        });
+
+        // keep the block
         
         /**
          *  set a click listener for edit
@@ -127,6 +190,7 @@ public class EditHabitActivity extends AppCompatActivity {
                 backIntent.putExtra("newReason",newReason);
                 backIntent.putExtra("newTitle",newTitle);
                 backIntent.putExtra("newDate",newDate);
+                backIntent.putExtra("newRepeat",frequency);
                 setResult(RESULT_OK, backIntent);
                 finish();
 
