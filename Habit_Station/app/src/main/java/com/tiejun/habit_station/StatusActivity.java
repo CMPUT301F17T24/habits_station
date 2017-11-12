@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.drawable.RotateDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -18,22 +19,34 @@ import android.widget.ProgressBar;
 public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
-
+    private int progress;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
-    // my code starts here
+        // my code starts here
         Intent i = getIntent();
         eventDone = i.getIntExtra("complete",0);
         totalDays = i.getIntExtra("total",0);
 
-        totalDays =20;
+        Log.d("complete",String.valueOf(eventDone));
+        Log.d("total",String.valueOf(totalDays));
 
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        if (totalDays ==0){
+            progress =100;
+        }
+        else{
+            progress = eventDone/totalDays*100;
 
-        progressBar.setProgress(totalDays);
+        }
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar.setProgress(progress);
+
+
 
         final Button cool = (Button) findViewById(R.id.cool);
         cool.setOnClickListener(new View.OnClickListener() {

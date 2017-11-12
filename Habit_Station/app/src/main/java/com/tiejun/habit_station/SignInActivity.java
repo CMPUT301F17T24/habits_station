@@ -43,7 +43,11 @@ public class SignInActivity extends AppCompatActivity {
                 TextView testView = (TextView) findViewById(R.id.username);
                 userName = testView.getText().toString();
                 //Log.d("username", userName);
-                if (existedUser(userName)) {
+
+                if (! userName.equals(userName.toLowerCase())){
+                    testView.setError("NO Capital letter for user name. ");
+                }
+                else if (existedUser(userName)) {
                     Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
                     Log.d("username", userName);
                     storePreference(userName);
