@@ -23,7 +23,7 @@ public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
     private int progress;
-    private ProgressBar progressBar;
+    ProgressBar progressBar;
     private TextView status;
 
     @Override
@@ -53,19 +53,16 @@ public class StatusActivity extends AppCompatActivity {
         status.setText("Finished: " + eventDone +"   Total: " + totalDays);
 
 
-
         final Button cool = (Button) findViewById(R.id.cool);
         cool.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-               /* Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
-
-                startActivity(onClickIntent);
-                */
+                finish();
+//                Intent backIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
+//
+//                startActivity(backIntent);
             }
         });
-
 
     }
 }
