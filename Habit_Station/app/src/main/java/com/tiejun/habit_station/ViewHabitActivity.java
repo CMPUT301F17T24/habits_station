@@ -194,9 +194,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                         HabitEventList corres_events = new HabitEventList(events);
                         events = corres_events.sortEvents();
                         
-                       /* HabitEvent oldest_event = events.get(events.size());
-                        Calendar oldest_date =oldest_event.geteTime();
-                        if (calendar.after(oldest_date)) {
+                        HabitEvent oldest_event = events.get(events.size());
+                        //Calendar oldest_date =oldest_event.geteTime();
+
+                        /*if (calendar.after(oldest_date)) {
                             Toast.makeText(getApplicationContext(), "Failed to set date, should before the oldest event.", Toast.LENGTH_SHORT).show();
 
                         }*/

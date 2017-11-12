@@ -45,7 +45,8 @@
         <activity android:name=".FriendsMapActivity" />
         <activity android:name=".HabitHistoryActivity" />
         <activity android:name=".MyEventMapActivity" />
-        <activity android:name=".ViewEventActivity"></activity>
+        <activity android:name=".ViewEventActivity" />
+        <activity android:name=".PhotoDisplayActivity"></activity>
     </application>
 
 </manifest>

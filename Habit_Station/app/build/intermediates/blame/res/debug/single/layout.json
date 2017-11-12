@@ -224,6 +224,10 @@
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_layout_snackbar.xml"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_photo_display.xml",
+        "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/layout/activity_photo_display.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/activity_friends_status.xml",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/layout/activity_friends_status.xml"
     },

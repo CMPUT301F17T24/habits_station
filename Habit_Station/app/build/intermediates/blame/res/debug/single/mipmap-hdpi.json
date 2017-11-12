@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-hdpi/icon.png",
+        "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/mipmap-hdpi/icon.png"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },

@@ -57,6 +57,7 @@
         <activity android:name="com.tiejun.habit_station.HabitHistoryActivity" />
         <activity android:name="com.tiejun.habit_station.MyEventMapActivity" />
         <activity android:name="com.tiejun.habit_station.ViewEventActivity" />
+        <activity android:name="com.tiejun.habit_station.PhotoDisplayActivity" />
     </application>
 
 </manifest>

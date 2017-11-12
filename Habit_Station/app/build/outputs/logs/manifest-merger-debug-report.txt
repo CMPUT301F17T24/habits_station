@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-51:12
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-52:12
 	package
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:7:5-39
 		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:22-64
 application
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-49:19
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-50:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:29:5-20
@@ -142,9 +142,13 @@ ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-53
 activity#com.tiejun.habit_station.ViewEventActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-64
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-55
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:19-52
+activity#com.tiejun.habit_station.PhotoDisplayActivity
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:9-67
+	android:name
+		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:19-55
 uses-sdk
 INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:5:5-7:41
