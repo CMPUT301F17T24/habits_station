@@ -17,11 +17,13 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import static java.lang.Math.round;
+
 public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
     private int progress;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
     private TextView status;
 
     @Override
@@ -40,7 +42,7 @@ public class StatusActivity extends AppCompatActivity {
             progress =100;
         }
         else{
-            progress = eventDone/totalDays*100;
+            progress = round((eventDone/ (float)totalDays)*100);
 
         }
 
@@ -57,9 +59,10 @@ public class StatusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 setResult(RESULT_OK);
 
-                Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
+               /* Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
 
                 startActivity(onClickIntent);
+                */
             }
         });
 
