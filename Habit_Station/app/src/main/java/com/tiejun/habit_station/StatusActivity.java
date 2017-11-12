@@ -15,12 +15,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
     private int progress;
     ProgressBar progressBar;
+    private TextView status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class StatusActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         progressBar.setProgress(progress);
+        status = (TextView)findViewById(R.id.status);
+        status.setText("Finished: " + eventDone +"   Total: " + totalDays);
 
 
 

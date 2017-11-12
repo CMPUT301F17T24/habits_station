@@ -25,6 +25,7 @@ import io.searchbox.core.Get;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
+import io.searchbox.core.Update;
 
 /**
  * Created by XuanyiWu on 2017-11-09.
@@ -93,6 +94,36 @@ public class ElasticSearchHabitController {
                     Log.i("Error", "The application failed to build and send the user");
                 }
 
+            }
+            return null;
+        }
+    }
+
+
+
+
+
+
+    public static class UpdateHabitTask extends  AsyncTask<Habit, Void, Void> {
+        @Override
+        protected Void doInBackground(Habit... habits) {
+            verifySettings();
+
+            for (Habit habit : habits) {
+                Update update = new Update.Builder(habit).index("cmput301f17t24").type("habit").id(habit.getuName() + habit.getTitle().toUpperCase()).build();
+
+
+                try {
+                    // where is the client
+                    DocumentResult result = client.execute(update);
+                    if (result.isSucceeded()) {
+                        Log.d("In AsyncTask ID", result.getId());
+                    } else {
+                        Log.i("Error", "Elasticsearch was not able to update the user.");
+                    }
+                } catch (Exception e) {
+                    Log.i("Error", "The application failed to build and send the user");
+                }
             }
             return null;
         }
