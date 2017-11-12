@@ -391,7 +391,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 
 
 
-                ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+                ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
                 int complete=0;
                 int total = 0;
                 if(start.after(today)){ // not started
@@ -444,7 +444,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 
                     for (int d = 1; d <= maxDays; d++) {
                         int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-                        if (frequency.contains(dayOfWeek)) {
+                        if (repeat.contains(dayOfWeek)) {
                             th++;
                         }
                         c.add(Calendar.DATE, 1); //next day
