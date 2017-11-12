@@ -97,8 +97,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                 // set variable of edited data here
                 int delSig =data.getIntExtra("delSig",0); //get signal of delete
                 if( delSig == 1 ){ // fix a issue of delete
-                    //delete the habit, tested and passed
-
 
                     ///// delete corresponding events? ///////////////////
 
@@ -150,7 +148,7 @@ public class ViewHabitActivity extends AppCompatActivity {
 
                     try{
                         String newDate = data.getStringExtra("newDate");
-                        if( newDate == "no change"){
+                        if( newDate.equals("no change") == false){ //fix error report, cannot use == to compare
                             try {
                                 String pattern = "yyyyMMdd";
                                 Date date = new SimpleDateFormat(pattern).parse(newDate);
@@ -247,7 +245,9 @@ public class ViewHabitActivity extends AppCompatActivity {
                     }
 
                 }
+
             }
+            onStart(); // fix not update view issue by call onstart
         }
         
     }
