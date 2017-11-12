@@ -10,6 +10,7 @@ package com.tiejun.habit_station;
  * Created by yfeng3 on 2017-10-21.
  */
 
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.media.Image;
 
@@ -30,7 +31,7 @@ public class HabitEvent {
 
     public String eComment;
 
-    public Image ePhoto;
+    public Bitmap ePhoto;
 
     public Location eLocation;
 
@@ -70,7 +71,7 @@ public class HabitEvent {
 
     }
 
-    public Image getePhoto(){
+    public Bitmap getePhoto(){
 
         return this.ePhoto;
 
@@ -101,7 +102,7 @@ public class HabitEvent {
 
     }
 
-    public void setePhoto(Image photo){
+    public void setePhoto(Bitmap photo){
         this.ePhoto = photo;
 
     }

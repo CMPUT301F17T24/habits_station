@@ -203,6 +203,7 @@
                 android:id="@+id/datePicker"
                 android:layout_width="wrap_content"
                 android:layout_height="156dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="0dp"
                 android:layout_marginLeft="-10dp"
                 android:layout_marginRight="-40dp"

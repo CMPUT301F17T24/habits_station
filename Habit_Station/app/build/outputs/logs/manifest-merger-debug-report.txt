@@ -1,187 +1,197 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-51:12
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-56:12
 	package
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:7:5-39
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:7:5-39
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:11-69
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:11-69
 	android:versionCode
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:5-67
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:5-67
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:22-64
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:22-64
+uses-feature#android.hardware.Camera
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-13:35
+	android:required
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:9-32
+	android:name
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:12:9-47
 application
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-49:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/cc3975cfb77b54d955159a6ca2ad57a6dc56c92e/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f457d9c69076def88b8a33bb6afebd53cd64acb5/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f0ecf7b63477a3b64b379d728c4a63d5228749c4/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/78905ae573ace9b35262388d9dbb5c6d006839f2/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6f95177cf2535db8a38c6a5ac18b0a47b192e2ee/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/b63da43caaaea0ed8509bc46ae7155820f9f04e8/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:29:5-20
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:5-54:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/tiejun/.android/build-cache/a91f0ebf01e5cd2aab1039c3553bf2a9bff13398/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/f281b342b4bfad62c9091e808f0dbafce0eb38b1/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/2c6f768d95af8981e796e55b5e31f72b7911e0ef/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/tiejun/.android/build-cache/ff3d028642df2b443b8d143056cdbb6a1b5d0329/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/tiejun/.android/build-cache/b4c4e92cbd5a7ae7752d5904f55e0ee3695bc876/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1ae5a1b896ccb3bc29f32f804c0e8ef1a3abc575/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/tiejun/.android/build-cache/537df4b757508292df8048ec6d294ea4e1896b50/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/tiejun/.android/build-cache/6b2179e7521769d516be6952a8a4dc3189bb4319/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e19eceda9a971e389ace73af70ccef24cf35c0ae/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/a59a26829495cbad5b435b4911a48c86a115c2d2/output/AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:14:9-41
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:20:9-35
 	android:roundIcon
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:9-54
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:19:9-54
 	android:allowBackup
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:9-43
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:17:9-40
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:21:9-40
 activity#com.tiejun.habit_station.SignUpActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:18:9-21:59
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:22:9-25:59
 	android:label
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:20:13-45
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:24:13-45
 	android:theme
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:21:13-56
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:25:13-56
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:19:13-43
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:23:13-43
 activity#com.tiejun.habit_station.SignInActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:22:9-28:20
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:26:9-32:20
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:22:19-49
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:26:19-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:30:27-74
 activity#com.tiejun.habit_station.MainPageActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:29:9-54
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:33:9-54
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:29:19-51
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:33:19-51
 activity#com.tiejun.habit_station.ViewTodayPlanActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:30:9-59
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:34:9-59
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:30:19-56
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:34:19-56
 activity#com.tiejun.habit_station.HabitLibraryActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:31:9-58
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:35:9-58
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:31:19-55
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:35:19-55
 activity#com.tiejun.habit_station.AddHabitActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:32:9-54
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:36:9-54
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:32:19-51
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:36:19-51
 activity#com.tiejun.habit_station.ViewHabitActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:33:9-55
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:37:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:33:19-52
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:37:19-52
 activity#com.tiejun.habit_station.StatusActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:34:9-52
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:38:9-52
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:34:19-49
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:38:19-49
 activity#com.tiejun.habit_station.EditHabitActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:35:9-55
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:39:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:35:19-52
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:39:19-52
 activity#com.tiejun.habit_station.HabitEventLibraryActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:36:9-63
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:40:9-63
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:36:19-60
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:40:19-60
 activity#com.tiejun.habit_station.EditHabitEventActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:37:9-60
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:9-60
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:37:19-57
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:19-57
 activity#com.tiejun.habit_station.PhotoGalleryActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:38:9-58
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:9-58
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:38:19-55
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:19-55
 activity#com.tiejun.habit_station.MyProfileActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:39:9-55
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:39:19-52
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:19-52
 activity#com.tiejun.habit_station.NearbyActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:40:9-52
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:9-52
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:40:19-49
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:19-49
 activity#com.tiejun.habit_station.LifeCircleActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:9-56
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:9-56
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:19-53
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:19-53
 activity#com.tiejun.habit_station.AddFriendActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:9-55
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:19-52
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:19-52
 activity#com.tiejun.habit_station.FriendsActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:9-53
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-53
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:19-50
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-50
 activity#com.tiejun.habit_station.FriendsStatusActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:9-59
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-59
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:19-56
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:19-56
 activity#com.tiejun.habit_station.FriendsMapActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:9-56
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:9-56
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:19-53
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:19-53
 activity#com.tiejun.habit_station.HabitHistoryActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:9-58
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:9-58
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:19-55
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:19-55
 activity#com.tiejun.habit_station.MyEventMapActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-56
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:51:9-56
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-53
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:51:19-53
 activity#com.tiejun.habit_station.ViewEventActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-64
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:52:9-55
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:19-52
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:52:19-52
+activity#com.tiejun.habit_station.PhotoDisplayActivity
+ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:9-67
+	android:name
+		ADDED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:19-55
 uses-sdk
-INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/cc3975cfb77b54d955159a6ca2ad57a6dc56c92e/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f457d9c69076def88b8a33bb6afebd53cd64acb5/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/bb702a28601cd0d1033d37cf49f3ee2324987e27/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f0ecf7b63477a3b64b379d728c4a63d5228749c4/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/78905ae573ace9b35262388d9dbb5c6d006839f2/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6f95177cf2535db8a38c6a5ac18b0a47b192e2ee/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/b63da43caaaea0ed8509bc46ae7155820f9f04e8/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:21:5-23:58
+INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/tiejun/.android/build-cache/a91f0ebf01e5cd2aab1039c3553bf2a9bff13398/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/f281b342b4bfad62c9091e808f0dbafce0eb38b1/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/2c6f768d95af8981e796e55b5e31f72b7911e0ef/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/2c004d66966c191aad406f03bf3064c2a2c4a916/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/tiejun/.android/build-cache/ff3d028642df2b443b8d143056cdbb6a1b5d0329/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/tiejun/.android/build-cache/b4c4e92cbd5a7ae7752d5904f55e0ee3695bc876/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1ae5a1b896ccb3bc29f32f804c0e8ef1a3abc575/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/tiejun/.android/build-cache/537df4b757508292df8048ec6d294ea4e1896b50/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/tiejun/.android/build-cache/6b2179e7521769d516be6952a8a4dc3189bb4319/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e19eceda9a971e389ace73af70ccef24cf35c0ae/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/a59a26829495cbad5b435b4911a48c86a115c2d2/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/cc3975cfb77b54d955159a6ca2ad57a6dc56c92e/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f457d9c69076def88b8a33bb6afebd53cd64acb5/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/bb702a28601cd0d1033d37cf49f3ee2324987e27/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/f0ecf7b63477a3b64b379d728c4a63d5228749c4/output/AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/78905ae573ace9b35262388d9dbb5c6d006839f2/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6f95177cf2535db8a38c6a5ac18b0a47b192e2ee/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/b63da43caaaea0ed8509bc46ae7155820f9f04e8/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:25:5-27:41
+ADDED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/f281b342b4bfad62c9091e808f0dbafce0eb38b1/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] /Users/tiejun/.android/build-cache/2c6f768d95af8981e796e55b5e31f72b7911e0ef/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/2c004d66966c191aad406f03bf3064c2a2c4a916/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:transition:26.0.0-alpha1] /Users/tiejun/.android/build-cache/ff3d028642df2b443b8d143056cdbb6a1b5d0329/output/AndroidManifest.xml:22:5-24:41
+MERGED from [com.android.support:support-v4:26.0.0-alpha1] /Users/tiejun/.android/build-cache/b4c4e92cbd5a7ae7752d5904f55e0ee3695bc876/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1ae5a1b896ccb3bc29f32f804c0e8ef1a3abc575/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/tiejun/.android/build-cache/537df4b757508292df8048ec6d294ea4e1896b50/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/tiejun/.android/build-cache/6b2179e7521769d516be6952a8a4dc3189bb4319/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e19eceda9a971e389ace73af70ccef24cf35c0ae/output/AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/tiejun/.android/build-cache/a59a26829495cbad5b435b4911a48c86a115c2d2/output/AndroidManifest.xml:25:5-27:41
 	android:value
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:27:9-38
+		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:27:9-38
 	android:name
-		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:26:9-47

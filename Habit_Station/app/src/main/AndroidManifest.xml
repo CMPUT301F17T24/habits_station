@@ -8,6 +8,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature
+        android:name="android.hardware.Camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -45,7 +49,8 @@
         <activity android:name=".FriendsMapActivity" />
         <activity android:name=".HabitHistoryActivity" />
         <activity android:name=".MyEventMapActivity" />
-        <activity android:name=".ViewEventActivity"></activity>
+        <activity android:name=".ViewEventActivity" />
+        <activity android:name=".PhotoDisplayActivity"></activity>
     </application>
 
 </manifest>

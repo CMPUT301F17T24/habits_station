@@ -9,6 +9,9 @@ package com.tiejun.habit_station;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +21,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +34,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private TextView info;
     private EditText comment;
     private DatePicker simpleDatePicker;
-    private CheckBox image,location;
+    private CheckBox location;
+    private Button image;
+    private Bitmap photo;
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -39,6 +45,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
     public  int do_year = 0,
             do_month = 0,
             do_day = 0;
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +58,11 @@ public class EditHabitEventActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final int habitIndex = intent.getIntExtra("habit index", 0);
         final int eventIndex = intent.getIntExtra("select",0);
+        image = (Button) findViewById(R.id.image);
+
+        if (!hasCamera()) {
+            image.setEnabled(false);
+        }
 
 
         User user = new User();
@@ -160,6 +173,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 });
 
 
+
+
     }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -197,6 +212,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         //String habit_name  = habit.getTitle();
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = new ArrayList<String>();
+
         if (days.contains(1)){
             sdays.add("M");
         }
@@ -307,11 +323,30 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     }
 
+    public void takePhoto(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // take a picture and pass result along to onActivityResult
+        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
 
+    }
 
+    private boolean hasCamera() {
+        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+    }
 
+    // IF YOU WANT TO RETURN THE IMAGE
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            // GET THE PHOTO
+            Bundle extras = data.getExtras();
+            photo = (Bitmap) extras.get("data");
+            //habitEvent.setePhoto(photo);
+            Intent intent = new Intent(EditHabitEventActivity.this, PhotoDisplayActivity.class);
+            intent.putExtra("image", photo);
+            startActivity(intent);
 
-
-
+        }
+    }
 
 }
