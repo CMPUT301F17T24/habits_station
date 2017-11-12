@@ -71,11 +71,12 @@ public class HabitList{
     public ArrayList<Habit> getTodayHabits() {
         ArrayList<Habit> todayList = new ArrayList<Habit>();
         Calendar today = Calendar.getInstance();
-        int weekDay = today.get(Calendar.DAY_OF_WEEK);
+        int weekDay = today.get(Calendar.DAY_OF_WEEK)-1;
 
         for (Habit h : habits) {
-            if (h.getRepeatWeekOfDay().contains(weekDay))
+            if ( (h.getRepeatWeekOfDay().contains(weekDay))  &&( h.getStartDate().before(today))  ){
                 todayList.add(h);
+            }
         }
         return todayList;
     }
