@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import static java.lang.Math.round;
+
 public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
@@ -38,7 +40,7 @@ public class StatusActivity extends AppCompatActivity {
             progress =100;
         }
         else{
-            progress = eventDone/totalDays*100;
+            progress = round((eventDone/ (float)totalDays)*100);
 
         }
 

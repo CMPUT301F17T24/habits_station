@@ -26,6 +26,7 @@ import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,6 +39,7 @@ import java.util.logging.Logger;
 
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
+import static java.sql.Types.INTEGER;
 import static java.sql.Types.NULL;
 
 /**
@@ -257,7 +259,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                 }
 
             }
-//            try{
+//            try{// a code try to solve server response issue
 //            TimeUnit.SECONDS.sleep(1);
 //            }catch (Exception e){
 //                Log.i("Error","cannot sleep");
@@ -269,7 +271,7 @@ public class ViewHabitActivity extends AppCompatActivity {
     }
     
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_habit);
         
@@ -386,13 +388,14 @@ public class ViewHabitActivity extends AppCompatActivity {
                 
                 Calendar start = habit.getStartDate();
                 Calendar today = Calendar.getInstance();
+                int maxDays =0;
 
-                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
-                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
-                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
-                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
+//                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
+//                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
+//                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
+//                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
+//                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
+//                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
 
 
 
@@ -401,6 +404,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                 ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
                 int complete=0;
                 int total = 0;
+                int th =0;
                 if(start.after(today)){ // not started
                     complete=0;
                     total = 0;
@@ -438,30 +442,44 @@ public class ViewHabitActivity extends AppCompatActivity {
                     complete = fillist.size();
 ///////////////////////////////////////////
 
+//comment for calculate date
+                    //long millsec = today.getTimeInMillis()- start.getTimeInMillis();
+                    //total = (int)millsec;///1000/60/60/24;
 
-                    long millsec = today.getTimeInMillis()- start.getTimeInMillis();
-                    total = (int)millsec;///1000/60/60/24;
+                    // th = today.get(Calendar.DATE) - start.get(Calendar.DATE);
+                   // Log.d("days",String.valueOf(total));
 
-
-                    //th = today.get(Calendar.DATE) - start.get(Calendar.DATE);
-                    Log.d("days",String.valueOf(total));
-
-                    /*maxDays = today.get(Calendar.DATE) - c.get(Calendar.DATE);
+                    //long p2 = ChronoUnit.DAYS.between(today, start);
+//                    Calendar cal1 = new GregorianCalendar();
+//                    Calendar cal2 = new GregorianCalendar();
+//                    SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+//
+//                    Date date = sdf.parse(today.get(Calendar.DATE));
+//                    cal1.setTime(date);
+//                    date = sdf.parse(start.get(Calendar.DATE));
+//                    cal2.setTime(date);
+//                    maxDays = ( (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
+                    maxDays = today.get(Calendar.DAY_OF_YEAR) - start.get(Calendar.DAY_OF_YEAR);
 
 
                     for (int d = 1; d <= maxDays; d++) {
-                        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+                        int dayOfWeek = start.get(Calendar.DAY_OF_WEEK);
                         if (repeat.contains(dayOfWeek)) {
                             th++;
                         }
-                        c.add(Calendar.DATE, 1); //next day
-                    }*/
+                        start.add(Calendar.DATE, 1); //next day
+                    }
                 }
 
                 
                 Intent onClickIntent = new Intent(getApplicationContext(), StatusActivity.class);
-                onClickIntent.putExtra("total",total);
+                onClickIntent.putExtra("total",th);
                 onClickIntent.putExtra("complete",complete);
+
+                Log.i("Error","calculate dates");
+
+                Log.i("Error",Integer.toString(th));
+                Log.i("Error",Integer.toString(maxDays));
                 
                 startActivity(onClickIntent);
             }
