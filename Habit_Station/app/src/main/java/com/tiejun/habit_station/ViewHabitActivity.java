@@ -301,6 +301,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                     }
                 }
 
+                if( delSig == 3 ){ // do nothing
+
+                }
+
             }
 //            try{
 //            TimeUnit.SECONDS.sleep(1);
