@@ -483,10 +483,14 @@ public class ViewHabitActivity extends AppCompatActivity {
                     complete = fillist.size();
 ///////////////////////////////////////////
                     int maxDays =0;
-                    maxDays = today.get(Calendar.DAY_OF_YEAR) - start.get(Calendar.DAY_OF_YEAR);
+                    //maxDays = today.get(Calendar.DAY_OF_YEAR) - start.get(Calendar.DAY_OF_YEAR);
+                    maxDays = 36500;
 
 
                     for (int d = 1; d <= maxDays; d++) {
+                        if (start.after(today)){
+                            break;
+                        }
                         int dayOfWeek = start.get(Calendar.DAY_OF_WEEK);
                         if (repeat.contains(dayOfWeek)) {
                             total++;

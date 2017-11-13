@@ -158,14 +158,6 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         assertTrue( location == habitevent.geteLocation());
     }
 
-    public void testgetStatus() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue( false == habitevent.getStatus());
-    }
-
     public void testgetComment() {
         Calendar date = Calendar.getInstance();
         date.set(2017,10,11);
@@ -225,15 +217,7 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         assertTrue(photo == habitevent.getePhoto());
     }
 
-    public void testsetStatus() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
 
-        habitevent.setStatus(true);
-
-        assertTrue(true == habitevent.getStatus());
-    }
 
     public void testTostring() {
         Calendar date = Calendar.getInstance();

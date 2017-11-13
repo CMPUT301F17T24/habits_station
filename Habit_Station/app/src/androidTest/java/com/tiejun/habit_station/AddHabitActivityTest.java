@@ -56,9 +56,6 @@ public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
         solo.clickOnView(solo.getView(R.id.SAT));
         solo.clickOnView(solo.getView(R.id.SUN));
 
-        // add successful
-        solo.clickOnView(solo.getView(R.id.OK));
-        solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
     }
 
     /**
