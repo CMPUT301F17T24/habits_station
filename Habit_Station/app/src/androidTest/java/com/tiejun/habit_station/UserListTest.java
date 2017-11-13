@@ -17,11 +17,7 @@ import java.util.ArrayList;
 public class UserListTest extends ActivityInstrumentationTestCase2 {
 
     public UserListTest() {
-<<<<<<< HEAD
         super(SignInActivity.class);
-=======
-        super(MainActivity.class);
->>>>>>> origin
     }
 
     public void testAddUser() {
@@ -94,9 +90,9 @@ public class UserListTest extends ActivityInstrumentationTestCase2 {
         User user1 = new User(2, "test1");
         User user2 = new User(3, "test1");
 
-        ArrayList<Integer> followees = new ArrayList<>();
-        followees.add(user1.getUid());
-        followees.add(user2.getUid());
+        ArrayList<String> followees = new ArrayList<>();
+        followees.add(user1.getName());
+        followees.add(user2.getName());
         user.setFollowee(followees);
         assertEquals(followees, user.getFollowee());
     }
@@ -106,9 +102,9 @@ public class UserListTest extends ActivityInstrumentationTestCase2 {
         User user1 = new User(2, "test1");
         User user2 = new User(3, "test1");
 
-        ArrayList<Integer> followers = new ArrayList<>();
-        followers.add(user1.getUid());
-        followers.add(user2.getUid());
+        ArrayList<String> followers = new ArrayList<>();
+        followers.add(user1.getName());
+        followers.add(user2.getName());
         user.setFollower(followers);
         assertEquals(followers, user.getFollower());
 

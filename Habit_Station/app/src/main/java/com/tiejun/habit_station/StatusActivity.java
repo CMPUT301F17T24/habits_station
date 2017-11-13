@@ -30,7 +30,6 @@ public class StatusActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
-        // my code starts here
         Intent i = getIntent();
         eventDone = i.getIntExtra("complete",0);
         totalDays = i.getIntExtra("total",0);
@@ -58,11 +57,9 @@ public class StatusActivity extends AppCompatActivity {
         cool.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-
-               /* Intent onClickIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
-
+                Intent onClickIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
                 startActivity(onClickIntent);
-                */
+
             }
         });
 

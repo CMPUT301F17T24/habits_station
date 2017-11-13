@@ -1,18 +1,10 @@
 [
     {
-        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
-        "source": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
+        "source": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
-        "source": "/Users/tiejun/Desktop/p1/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]
