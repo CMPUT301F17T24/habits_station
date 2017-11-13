@@ -2,5 +2,9 @@
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
         "source": "D:\\Android\\habits_station\\Habit_Station\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\src\\main\\res\\menu\\menu_main.xml"
     }
 ]

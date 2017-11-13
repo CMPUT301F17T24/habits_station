@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:6:1-51:12
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:6:1-52:12
 	package
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:7:5-39
 		INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.
 	android:name
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:11:5-49:19
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:11:5-50:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] D:\Android\.android\.android\build-cache\7bacfaf0cbe7837eeeda17c5d3db966336e9ddd5\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] D:\Android\.android\.android\build-cache\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\output\AndroidManifest.xml:29:5-20
@@ -36,7 +36,7 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] D:\Android\.andro
 	android:supportsRtl
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:16:9-35
 	android:roundIcon
-		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:15:9-54
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:15:9-41
 	android:allowBackup
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:12:9-35
 	android:icon
@@ -142,9 +142,13 @@ ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.
 	android:name
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:47:19-53
 activity#com.tiejun.habit_station.ViewEventActivity
-ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:48:9-64
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:48:9-55
 	android:name
 		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:48:19-52
+activity#com.tiejun.habit_station.PhotoDisplayActivity
+ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:49:9-67
+	android:name
+		ADDED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml:49:19-55
 uses-sdk
 INJECTED from D:\Android\habits_station\Habit_Station\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] D:\Android\.android\.android\build-cache\7bacfaf0cbe7837eeeda17c5d3db966336e9ddd5\output\AndroidManifest.xml:5:5-7:41

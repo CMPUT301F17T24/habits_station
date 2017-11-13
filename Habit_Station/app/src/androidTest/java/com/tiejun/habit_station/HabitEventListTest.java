@@ -217,6 +217,8 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
         assertTrue(photo == habitevent.getePhoto());
     }
 
+
+
     public void testTostring() {
         Calendar date = Calendar.getInstance();
         date.set(2017,10,11);

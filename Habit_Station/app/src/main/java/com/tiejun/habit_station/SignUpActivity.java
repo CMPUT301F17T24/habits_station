@@ -41,7 +41,12 @@ public class SignUpActivity extends SignInActivity {
                 }
 
                 User user = new User(uid,userName);
-                if (existedUser(userName)) {
+
+                if (! userName.equals(userName.toLowerCase())){
+                    username.setError("NO Capital letter for user name. ");
+                }
+
+                else if (existedUser(userName)) {
                     try{
                         Toast.makeText(getApplicationContext(),"Duplicate user name!",Toast.LENGTH_LONG).show();
                         throw new IllegalArgumentException("Duplicate user");

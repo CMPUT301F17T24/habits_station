@@ -51,6 +51,7 @@ public class AddHabitActivity extends AppCompatActivity {
 
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                MBtn.setBackgroundResource(R.drawable.m1_bt);
                 weekDay.add(1);
             }
         });
@@ -59,6 +60,7 @@ public class AddHabitActivity extends AppCompatActivity {
         TBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                TBtn.setBackgroundResource(R.drawable.tu1_bt);
                 weekDay.add(2);
             }
         });
@@ -67,6 +69,7 @@ public class AddHabitActivity extends AppCompatActivity {
         WBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                WBtn.setBackgroundResource(R.drawable.w1_bt);
                 weekDay.add(3);
             }
         });
@@ -76,6 +79,7 @@ public class AddHabitActivity extends AppCompatActivity {
         RBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                RBtn.setBackgroundResource(R.drawable.th1_bt);
                 weekDay.add(4);
             }
         });
@@ -84,6 +88,7 @@ public class AddHabitActivity extends AppCompatActivity {
         FBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                FBtn.setBackgroundResource(R.drawable.fri1_bt);
                 weekDay.add(5);
             }
         });
@@ -93,6 +98,7 @@ public class AddHabitActivity extends AppCompatActivity {
         SATBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                SATBtn.setBackgroundResource(R.drawable.sa1_bt);
                 weekDay.add(6);
             }
         });
@@ -101,6 +107,7 @@ public class AddHabitActivity extends AppCompatActivity {
         SUNBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                SUNBtn.setBackgroundResource(R.drawable.sun1_bt);
                 weekDay.add(0);
             }
         });
@@ -146,6 +153,8 @@ public class AddHabitActivity extends AppCompatActivity {
                 }
 
                 if (added){
+                    SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+                    final String userName = pref.getString("currentUser", "");
                     added = setHabit(userName , sTitle, sReason, startDate, weekDay);
                 }
 
@@ -154,8 +163,8 @@ public class AddHabitActivity extends AppCompatActivity {
                 if (added) {
                     Toast.makeText(getApplicationContext(), "Successfully added a new habit! ", Toast.LENGTH_SHORT).show();
                     /*Intent intent = new Intent(AddHabitActivity.this, HabitLibraryActivity.class);
-                    startActivity(intent);
-                    */
+                    startActivity(intent);*/
+
                 }
 
             }
@@ -181,8 +190,6 @@ public class AddHabitActivity extends AppCompatActivity {
 
     public boolean setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
-
-
         Habit habit = new Habit(current_user,sTitle,sReason,startDate,weekDay);
 
 

@@ -47,16 +47,17 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
 
         // create a new user
-        User user = new User(255, "testUser");
+        User user = new User(255, "test user");
         ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
         addUserTask.execute(user);
-        solo.enterText((EditText) solo.getView(R.id.username), "testUser");
+        solo.enterText((EditText) solo.getView(R.id.username), "test user");
         solo.clickOnView(solo.getView(R.id.signup));
 
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
-        isExist.execute("testUser");
+        isExist.execute("test user");
         try {
-            assertTrue(isExist.get());
+            boolean Exist = isExist.get();
+            assertTrue(Exist);
         } catch (Exception e){
             Log.i("Error", "Failed to get the User out of the async object");
         }

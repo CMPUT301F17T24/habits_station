@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Handler;
 
 
 public class HabitLibraryActivity extends AppCompatActivity {
@@ -42,9 +43,9 @@ public class HabitLibraryActivity extends AppCompatActivity {
     private Habit selectedHabit = new Habit();   // used to delete
 
     private String hName ;
+    private String MYhabits;
 
     //private String userName;
-
 
 
     @Override
@@ -52,10 +53,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_habit_library);
 
-
-
-//        selectedHabit = fillist.get(position);
-//        hName = selectedHabit.getTitle();
 
         Log.d("Back", "create");
 
@@ -126,6 +123,8 @@ public class HabitLibraryActivity extends AppCompatActivity {
 
         if (item.getTitle().equals("View Habit details")) {
             Intent i = new Intent(HabitLibraryActivity.this, ViewHabitActivity .class);
+            i.putExtra("habit query",MYhabits);
+            i.putExtra("habit name",hName);
             i.putExtra("habit index", position);
             startActivity(i);
         }
@@ -136,7 +135,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
             hName = selectedHabit.getTitle();
 
             i.putExtra("habit name",hName);
-
             i.putExtra("habit index", position);
             startActivity(i);
         }
@@ -162,7 +160,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
                     "\"bool\": {\n"+
                     "\"must\": [\n"+
                     "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                    "{"+ " \"term\" : {  \"eName\" : \"" + hName +  "\" }}\n" +
+                    "{"+ " \"match\" : {  \"eName\" : \"" + hName +  "\" }}\n" +
                     "]"+
                     "}"+
                     "}"+
@@ -217,13 +215,13 @@ public class HabitLibraryActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
 
-        String MYhabits = "{\n" +
+        MYhabits = "{\n" +
                 "  \"query\": { \n" +
                 " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
                 " 	}\n" +
                 "}";
 
-
+        Log.d("MYhabits",MYhabits);
 
         ElasticSearchHabitController.GetHabits getHabits
                 = new  ElasticSearchHabitController.GetHabits();

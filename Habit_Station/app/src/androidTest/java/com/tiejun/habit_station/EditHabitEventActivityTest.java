@@ -37,20 +37,24 @@ public class EditHabitEventActivityTest extends ActivityInstrumentationTestCase2
         Activity activity = getActivity();
     }
 
+    // USELESS TEST SINCE NO HABIT IS PASSED AS ARGUMENT
+    /*
     public void testEdit() {
         solo.assertCurrentActivity("Wrong Activity", EditHabitEventActivity.class);
 
         //test long comment
         solo.clearEditText((EditText) solo.getView(R.id.comment));
-        solo.enterText((EditText) solo.getView(R.id.comment), "BOO BOO BOO BOO BOO!!!");
+        solo.enterText((EditText) solo.getView(R.id.comment), "boo boo boo boo boo boo");
         solo.clickOnView(solo.getView(R.id.save));
-        solo.assertCurrentActivity("Wrong Activity", EditHabitEventActivity.class);
+        solo.waitForText("should be at most 20 words");
 
         //edit successful
         solo.clearEditText((EditText) solo.getView(R.id.comment));
         solo.enterText((EditText) solo.getView(R.id.comment), "test comment");
-        solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity.class);
+        solo.clickOnView(solo.getView(R.id.save));
+        solo.waitForText("Successfully updated the event.");
     }
+    */
 
     /**
      * Runs at the end of the tests
