@@ -272,10 +272,13 @@ public class ViewHabitActivity extends AppCompatActivity {
                     }
                 }
 
+<<<<<<< HEAD
                 if( delSig == 3 ){ // do nothing
 
                 }
 
+=======
+>>>>>>> ff65e656e3fca11edc39756604e0e11f05d391ad
             }
 
             onStart();
