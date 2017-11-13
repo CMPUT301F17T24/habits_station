@@ -16,6 +16,15 @@ import java.util.Comparator;
  * Created by XuanyiWu on 2017-10-22.
  */
 
+/**
+ * a class for event list
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @since 1.0
+ *
+ */
 public class HabitEventList {
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
 

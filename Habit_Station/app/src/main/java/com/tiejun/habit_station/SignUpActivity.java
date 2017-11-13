@@ -20,7 +20,6 @@ public class SignUpActivity extends SignInActivity {
     protected EditText username;
     private String userName;
     int uid;
-    //public UserList userList = new UserList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +32,6 @@ public class SignUpActivity extends SignInActivity {
             public void onClick(View v) {
                 userName = username.getText().toString();
                 uid = userList.getCount();
-                //uid = 0;
                 boolean sign = true;
                 if (username.length() == 0){
                     username.setError("User name cannot be empty");

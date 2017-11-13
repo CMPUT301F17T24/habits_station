@@ -43,23 +43,7 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
 
     public void testViewHabit() {
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
-        /*
-        User user = new User(255, "testUser");
-        ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
-        addUserTask.execute(user);
-        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-        getUserTask.execute("testName");
-        try {
-            user = getUserTask.get();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the User out of the async object");
-        }
-        try {
-            habits = user.getHabitList();
-        } catch (Exception e) {
-            Log.i("Error", "Failed to get the habits out of the async object");
-        }
-        */
+
         habitList = (ListView) solo.getView(R.id.habits);
 
         // if habit list is empty, add a new habit
@@ -73,12 +57,15 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
             solo.clickOnView(solo.getView(R.id.SAT));
             solo.clickOnView(solo.getView(R.id.SUN));
             solo.clickOnView(solo.getView(R.id.OK));
-            solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
+            solo.goBack();
         }
 
-        solo.clickLongInList(0);
-        solo.clickOnMenuItem("View Habit details");
-        solo.assertCurrentActivity("Wrong Activity", ViewHabitActivity .class);
+        if (habitList.getCount() != 0) {
+            solo.clickLongInList(0);
+            solo.clickOnMenuItem("View Habit details");
+            solo.assertCurrentActivity("Wrong Activity", ViewHabitActivity .class);
+        }
+
     }
 
     public void testViewEvents() {
@@ -97,12 +84,14 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
             solo.clickOnView(solo.getView(R.id.SAT));
             solo.clickOnView(solo.getView(R.id.SUN));
             solo.clickOnView(solo.getView(R.id.OK));
-            solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
+            solo.goBack();
         }
 
-        solo.clickLongInList(0);
-        solo.clickOnMenuItem("View Habit Events");
-        solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity .class);
+        if (habitList.getCount() != 0) {
+            solo.clickLongInList(0);
+            solo.clickOnMenuItem("View Habit Events");
+            solo.assertCurrentActivity("Wrong Activity", HabitEventLibraryActivity .class);
+        }
     }
 
     public void testAddHabit() {

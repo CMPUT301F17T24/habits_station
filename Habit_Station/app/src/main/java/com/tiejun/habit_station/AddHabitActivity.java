@@ -123,13 +123,11 @@ public class AddHabitActivity extends AppCompatActivity {
                 boolean added = true;
 
                 String sTitle = title.getText().toString();
-                //String sDate = date.getText().toString();
                 String sReason = reason.getText().toString();
 
 
                 Calendar startDate = Calendar.getInstance();
                 if (set_year == 0 && set_month == 0 && set_day == 0){
-                    //
                     set_year = startDate.get(Calendar.YEAR);
                     set_month = startDate.get(Calendar.MONTH);
                     set_day = startDate.get(Calendar.DAY_OF_MONTH);
