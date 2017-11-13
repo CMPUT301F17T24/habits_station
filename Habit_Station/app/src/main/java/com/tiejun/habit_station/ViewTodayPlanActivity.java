@@ -59,7 +59,6 @@ public class ViewTodayPlanActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onStart();
         HabitList results =new  HabitList(fillist);
-        //Log.d("fill", String.valueOf(results.getCount()));
         ArrayList<Habit> fillist = results.getTodayHabits();
         Log.d("fill", String.valueOf(fillist.size()));
 

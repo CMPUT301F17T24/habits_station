@@ -102,129 +102,13 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
         ArrayList<HabitEvent> sortedEventList = eventList.sortEvents();
 
-        assertEquals(sortedEventList.get(0).geteName(),habitevent2.geteName());
-        assertEquals(sortedEventList.get(2).geteName(),habitevent3.geteName());
+        assertEquals(sortedEventList.get(0).geteName(),habitevent3.geteName());
+        assertEquals(sortedEventList.get(2).geteName(),habitevent2.geteName());
 
 
 
 
     }
 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-    public void testgetname() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("test1".equals(habitevent.geteName()));
-    }
-
-    public void testgettime() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue(date == habitevent.geteTime());
-    }
-
-    public void testgetReason() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("test reason".equals(habitevent.geteReason()));
-    }
-
-    public void testgetPhoto() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Image image = null;
-
-        assertTrue( image == habitevent.getePhoto());
-    }
-
-    public void testgetlocation() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Location location = null;
-
-        assertTrue( location == habitevent.geteLocation());
-    }
-
-
-    public void testgetComment() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue( null == habitevent.geteComment());
-    }
-
-    public void testsetName() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        String str = "setname";
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-        habitevent.seteName(str);
-        assertTrue(str.equals(habitevent.geteName()));
-    }
-
-    public void testsetTime() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteTime(date);
-
-        assertTrue(date == habitevent.geteTime());
-    }
-
-    public void testsetReason() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteReason("new test reason");
-
-        assertTrue("new test reason" == habitevent.geteReason());
-    }
-
-    public void testsetComment() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteComment("new test comment");
-
-        assertTrue("new test comment" == habitevent.geteComment());
-    }
-
-    public void testsetPhoto() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Image photo = null;
-
-        habitevent.setePhoto(photo);
-
-        assertTrue(photo == habitevent.getePhoto());
-    }
-
-
-    public void testTostring() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("to string method" == habitevent.toString());
-    }
 
 }

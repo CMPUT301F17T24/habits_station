@@ -31,18 +31,15 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.sign_in_activity);
         userList = new UserList();
 
-        //TextView testView = (TextView) findViewById(R.id.username);
         Button signIn = (Button) findViewById(R.id.signin);
         Button signUp = (Button) findViewById(R.id.signup);
-        //userName = testView.getText().toString();
-//        Log.d("username", userName);
+
 
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 TextView testView = (TextView) findViewById(R.id.username);
                 userName = testView.getText().toString();
-                //Log.d("username", userName);
 
                 if (! userName.equals(userName.toLowerCase())){
                     testView.setError("NO Capital letter for user name. ");

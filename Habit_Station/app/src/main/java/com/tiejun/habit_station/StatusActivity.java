@@ -23,14 +23,13 @@ public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
     private int progress;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
     private TextView status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
-        // my code starts here
         Intent i = getIntent();
         eventDone = i.getIntExtra("complete",0);
         totalDays = i.getIntExtra("total",0);
@@ -53,16 +52,17 @@ public class StatusActivity extends AppCompatActivity {
         status.setText("Finished: " + eventDone +"   Total: " + totalDays);
 
 
+
         final Button cool = (Button) findViewById(R.id.cool);
         cool.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                finish();
-//                Intent backIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
-//
-//                startActivity(backIntent);
+                Intent onClickIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
+                startActivity(onClickIntent);
+
             }
         });
+
 
     }
 }

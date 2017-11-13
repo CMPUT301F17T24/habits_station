@@ -26,14 +26,12 @@ import java.util.concurrent.ExecutionException;
 public class HabitHistoryActivity extends AppCompatActivity {
 
     private ListView history;
-    protected HabitEventList histories = new HabitEventList();
     protected ArrayAdapter<HabitEvent> adapter;
     protected ImageView search;
     private EditText searchKey;
 
     private  ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
     private CheckBox comment,type;
-    private int num_checked;
 
     private String query;
 
@@ -53,7 +51,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
         type.setChecked(false);
         comment.setChecked(false);
-        num_checked =0;
 
 
         String MYhistory = "{\n" +
@@ -61,35 +58,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
                 " 	}\n" +
                 "}";
-
-        /*String desc = "desc";
-        String MYhistory = "{\n" +
-                                "  \"query\": { \n" +
-
-                " \"bool\" : {" +
-            " \"filter\" : {"+
-                                         " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
-                                " 	}}},\n" +
-
-                                " \"sort\": { \n"+
-                                         " \"eTime\" : { \"order\": \"" + desc + "\"} \n" +
-                                 " }\n"+
-                         "}";
-
-*/
-
-
-       /* String MYhistory = "{\n" +
-                            "  \"query\": { \n" +
-                                  " \"term\" : { \"uName\" : \"" + userName + "\" ," +
-                                                " \"order\": [{\n"+
-                                                     " \"eTime\": \"desc\" }]"+
-                                     "}\n" +
-                             " 	}\n" +
-                         "}";
-*/
-
-
 
         ElasticSearchEventController.GetEvents getHistory
                 = new  ElasticSearchEventController.GetEvents();
@@ -102,7 +70,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
 
 
         search.setOnClickListener(new View.OnClickListener() {
@@ -137,8 +104,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 }
                 else if (comment.isChecked()){
                     Log.d("check", "comment");
-
-
                     query = "{\n" +
                             "  \"query\": { \n" +
                             "\"bool\": {\n"+
@@ -149,23 +114,17 @@ public class HabitHistoryActivity extends AppCompatActivity {
                             "}"+
                             "}"+
                             "}";
-
-
-
                 }
-
 
 
                 ElasticSearchEventController.GetEvents getHistory
                         = new  ElasticSearchEventController.GetEvents();
                 getHistory.execute(query);
-
                 try {
 
                     fillist.clear();
                     fillist.addAll(getHistory.get());
                     onStart();
-
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -176,11 +135,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
 
 
@@ -189,10 +143,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onStart();
 
-
         HabitEventList results =new  HabitEventList(fillist);
         fillist = results.sortEvents();
-
         adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
         history.setAdapter(adapter);
 
