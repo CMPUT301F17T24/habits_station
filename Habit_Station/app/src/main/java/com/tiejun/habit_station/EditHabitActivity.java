@@ -107,6 +107,7 @@ public class EditHabitActivity extends AppCompatActivity {
         mon.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                mon.setBackgroundResource(R.drawable.m1_bt);
                 frequency.add(1);
 
             }
@@ -115,6 +116,7 @@ public class EditHabitActivity extends AppCompatActivity {
         tue.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                tue.setBackgroundResource(R.drawable.tu1_bt);
                 frequency.add(2);
 
             }
@@ -123,6 +125,7 @@ public class EditHabitActivity extends AppCompatActivity {
         wed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                wed.setBackgroundResource(R.drawable.w1_bt);
                 frequency.add(3);
 
             }
@@ -131,6 +134,7 @@ public class EditHabitActivity extends AppCompatActivity {
         fri.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                fri.setBackgroundResource(R.drawable.fri1_bt);
                 frequency.add(5);
 
             }
@@ -139,6 +143,7 @@ public class EditHabitActivity extends AppCompatActivity {
         thur.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                thur.setBackgroundResource(R.drawable.th1_bt);
                 frequency.add(4);
 
             }
@@ -147,6 +152,7 @@ public class EditHabitActivity extends AppCompatActivity {
         sat.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
+                sat.setBackgroundResource(R.drawable.sa1_bt);
                 frequency.add(6);
 
             }
@@ -155,8 +161,8 @@ public class EditHabitActivity extends AppCompatActivity {
         sun.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                frequency.add(7);
-
+                sun.setBackgroundResource(R.drawable.sun1_bt);
+                frequency.add(0);
             }
         });
 
@@ -190,7 +196,7 @@ public class EditHabitActivity extends AppCompatActivity {
                 backIntent.putExtra("newReason",newReason);
                 backIntent.putExtra("newTitle",newTitle);
                 backIntent.putExtra("newDate",newDate);
-                //backIntent.putExtra("newRepeat",frequency);
+                backIntent.putExtra("newRepeat",frequency);
                 setResult(RESULT_OK, backIntent);
                 finish();
 
@@ -200,12 +206,6 @@ public class EditHabitActivity extends AppCompatActivity {
         });
         
         
-    }
-    @Override
-    public void onBackPressed()
-    {
-        Intent intent = new Intent(getApplicationContext(),ViewHabitActivity.class);
-        startActivity(intent);
     }
     
     

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import static java.lang.Math.round;
 
@@ -22,7 +23,8 @@ public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
     private int progress;
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
+    private TextView status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class StatusActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         progressBar.setProgress(progress);
+        status = (TextView)findViewById(R.id.status);
+        status.setText("Finished: " + eventDone +"   Total: " + totalDays);
 
 
 
@@ -54,10 +58,10 @@ public class StatusActivity extends AppCompatActivity {
         cool.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                finish();
-//                Intent backIntent = new Intent(getApplicationContext(), ViewHabitActivity.class);
-//
-//                startActivity(backIntent);
+                //finish();
+                Intent onClickIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
+                startActivity(onClickIntent);
+
             }
         });
 

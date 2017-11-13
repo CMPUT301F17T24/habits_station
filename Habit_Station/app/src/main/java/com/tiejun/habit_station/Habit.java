@@ -39,6 +39,7 @@ public class Habit implements Comparable<Habit> {
         this.repeatWeekOfDay = repeatWeekOfDay;
     }
 
+
     public String getuName() {
         return uName;
     }

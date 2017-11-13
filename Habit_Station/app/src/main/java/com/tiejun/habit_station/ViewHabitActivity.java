@@ -38,7 +38,6 @@ import java.util.logging.Logger;
 
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
-import static java.sql.Types.INTEGER;
 import static java.sql.Types.NULL;
 
 /**
@@ -48,7 +47,7 @@ import static java.sql.Types.NULL;
  * fulfilled by using start for result
  */
 public class ViewHabitActivity extends AppCompatActivity {
-    
+
     protected HabitList habitsList =new HabitList();
     private TextView theTitle;
     private TextView theName;
@@ -85,16 +84,13 @@ public class ViewHabitActivity extends AppCompatActivity {
 /*        ElasticSearchEventController.GetEvents getHEvent
                 = new  ElasticSearchEventController.GetEvents();
         getHEvent.execute(event_query);
-
         try {
-
             events.addAll(getHEvent.get());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
 */
         if (requestCode == 1) { // edit or delete habit
             if(resultCode == RESULT_OK) {
@@ -149,28 +145,28 @@ public class ViewHabitActivity extends AppCompatActivity {
 
 
                 if( delSig == 0){// edit
-//////////// added for edit repeat
-                    if(data.getIntegerArrayListExtra("newRepeat").isEmpty() == false){
-                        HashSet<Integer> newRepeat = new HashSet<Integer>(data.getIntegerArrayListExtra("newRepeat"));
-                        habit.setRepeatWeekOfDay(newRepeat);
-                    }
+
+
 ////////////end of block
                     Calendar calendar = Calendar.getInstance();
 
-                    try{
+                    try {
                         String newDate = data.getStringExtra("newDate");
-                        if( newDate.equals("no change") == false){ //fix error report, cannot use == to compare
+                        if (newDate.equals("no change") == false) { //fix error report, cannot use == to compare
                             try {
                                 String pattern = "yyyyMMdd";
                                 Date date = new SimpleDateFormat(pattern).parse(newDate);
                                 calendar.setTime(date);
                                 habit.setStartDate(calendar);
                                 Log.i("Error", calendar.toString());
-                            }catch (Exception e){
+                            } catch (Exception e) {
                                 Log.i("Error", "failed to set date");
                                 Toast.makeText(getApplicationContext(), "failed to set date.", Toast.LENGTH_SHORT).show();
 
                             }
+                        }
+                        else{
+                            calendar = habit.getStartDate();
                         }
 
                         // need to compare to the oldest date of corresponding events
@@ -178,18 +174,18 @@ public class ViewHabitActivity extends AppCompatActivity {
                         /////// find events
                         String event_query = "{\n" +
                                 "  \"query\": { \n" +
-                                "\"bool\": {\n"+
-                                "\"must\": [\n"+
-                                "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                                "{"+ " \"match\" : {  \"eName\" : \"" + habit.getTitle() +  "\" }}\n" +
-                                "]"+
-                                "}"+
-                                "}"+
+                                "\"bool\": {\n" +
+                                "\"must\": [\n" +
+                                "{" + " \"term\" : { \"uName\" : \"" + userName + "\" }},\n" +
+                                "{" + " \"match\" : {  \"eName\" : \"" + habit.getTitle() + "\" }}\n" +
+                                "]" +
+                                "}" +
+                                "}" +
                                 "}";
 
 
                         ElasticSearchEventController.GetEvents getHEvent
-                                = new  ElasticSearchEventController.GetEvents();
+                                = new ElasticSearchEventController.GetEvents();
                         getHEvent.execute(event_query);
 
                         try {
@@ -203,62 +199,110 @@ public class ViewHabitActivity extends AppCompatActivity {
 
                         HabitEventList corres_events = new HabitEventList(events);
                         events = corres_events.sortEvents();
-                        
-                       /* HabitEvent oldest_event = events.get(events.size());
-                        Calendar oldest_date =oldest_event.geteTime();
+
+                        Calendar oldest_date;
+                        if (events.size()==0) {
+                            oldest_date = calendar;
+                        }
+                        else{
+                            HabitEvent oldest_event = events.get(events.size() - 1);
+                            oldest_date = oldest_event.geteTime();
+                        }
+
+
+
+
                         if (calendar.after(oldest_date)) {
                             Toast.makeText(getApplicationContext(), "Failed to set date, should before the oldest event.", Toast.LENGTH_SHORT).show();
 
-                        }*/
+                            //  ??????????????? need to do sth to avoid changes
 
 
-                        // update date here, no suitable method
-                        habit.setReason(data.getStringExtra("newReason"));
-                        habit.setTitle(data.getStringExtra("newTitle"));
-
-                        if (habit.getTitle().equals(data.getStringExtra("newTitle"))){      // haven't changed the title
-
-
-                            // update habit
-                            ElasticSearchHabitController.AddHabitTask addHabitTask
-                                    = new ElasticSearchHabitController.AddHabitTask();
-                            addHabitTask.execute(habit);
-
-                           ///// no need to change corresponding events
-
-                        }
-                 ///////////////////////////// the title is changed ////////////
-                        else if (existedHabit(userName+habit.getTitle().toUpperCase())){
-                            Toast.makeText(this, "This habit already exists!!!", Toast.LENGTH_SHORT).show();
                         }
                         else {
+                            // update date here, no suitable method
+                            //////////// added for edit repeat
+                            if (data.getIntegerArrayListExtra("newRepeat").isEmpty() == false) {
+                                HashSet<Integer> newRepeat = new HashSet<Integer>(data.getIntegerArrayListExtra("newRepeat"));
+                                habit.setRepeatWeekOfDay(newRepeat);
+                            }
+                            habit.setReason(data.getStringExtra("newReason"));
+                            //habit.setTitle(data.getStringExtra("newTitle"));
 
-                            // update habit
-                            ElasticSearchHabitController.AddHabitTask addHabitTask
-                                    = new ElasticSearchHabitController.AddHabitTask();
-                            addHabitTask.execute(habit);
+                            if (habit.getTitle().equals(data.getStringExtra("newTitle"))) {
+                                // haven't changed the title
+
+                                Log.d("status", "title not changed");
+                                // update habit
+                                ElasticSearchHabitController.AddHabitTask addHabitTask
+                                        = new ElasticSearchHabitController.AddHabitTask();
+                                addHabitTask.execute(habit);
+                                Toast.makeText(this, "Successfully updated !", Toast.LENGTH_SHORT).show();
+
+                                ///// no need to change corresponding events
+
+                            }
+                            ///////////////////////////// the title is changed ////////////
+                            else if (existedHabit(userName + data.getStringExtra("newTitle").toUpperCase())) {
+                                Toast.makeText(this, "This habit already exists!!!", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                String old_id = userName + habit.getTitle().toUpperCase();
+                                // upddate corresponding events
+                                habit.setTitle(data.getStringExtra("newTitle"));
+                                for (HabitEvent element : events) {
+
+                                    HabitEvent event = new HabitEvent(userName, element.geteName(), element.geteTime(), element.geteComment());
+                                    element.seteName(data.getStringExtra("newTitle"));
+                                    ///////  delete old event /////
+                                    ElasticSearchEventController.DeleteEventTask deleteEventTask
+                                            = new ElasticSearchEventController.DeleteEventTask();
+                                    deleteEventTask.execute(event);
+                                    // update new event
+                                    ElasticSearchEventController.AddEventTask AddEventTask
+                                            = new ElasticSearchEventController.AddEventTask();
+                                    AddEventTask.execute(element);
+
+                                }
+
+                                // delete the old habit
+                                //Log.d("old title", old_title);
+                                Habit oldHabit = new Habit();
+                                ElasticSearchHabitController.GetHabitTask getHabitTask
+                                        = new ElasticSearchHabitController.GetHabitTask();
+                                getHabitTask.execute(old_id);
+                                try {
+                                    oldHabit = getHabitTask.get();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                } catch (ExecutionException e) {
+                                    e.printStackTrace();
+                                }
 
 
-                            // upddate corresponding events
-                           for (HabitEvent element: events){
-                               element.seteName(data.getStringExtra("newTitle"));
+                                ElasticSearchHabitController.DeleteHabitTask deleteHabitTask
+                                        = new ElasticSearchHabitController.DeleteHabitTask();
+                                deleteHabitTask.execute(oldHabit);
 
-                               ElasticSearchEventController.AddEventTask AddEventTask
-                                        = new ElasticSearchEventController.AddEventTask();
-                                AddEventTask.execute(element);
+                                // update to new habit
+                                ElasticSearchHabitController.AddHabitTask addHabitTask
+                                        = new ElasticSearchHabitController.AddHabitTask();
+                                addHabitTask.execute(habit);
 
+                                Toast.makeText(this, "Successfully updated !", Toast.LENGTH_SHORT).show();
+                                
                             }
                         }
 
 
-                    }catch (Exception e){
-                        Log.i("Error", "failed to change");
-                    }
+                        }catch(Exception e){
+                            Log.i("Error", "failed to change");
 
+                    }
                 }
 
             }
-//            try{// a code try to solve server response issue
+//            try{
 //            TimeUnit.SECONDS.sleep(1);
 //            }catch (Exception e){
 //                Log.i("Error","cannot sleep");
@@ -266,22 +310,22 @@ public class ViewHabitActivity extends AppCompatActivity {
 
             onStart(); // fix not update view issue by call onstart
         }
-        
+
     }
-    
+
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_habit);
-        
+
         // my code start here
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         final String tempName = pref.getString("currentUser", "");
-        
+
         theName = (TextView) findViewById(R.id.name);
         theName.setText(tempName);
 
-    //////////////////////////
+        //////////////////////////
         Intent i = getIntent();
         index = i.getIntExtra("habit index", 0); // get index of specific habit
         String habit_query = i.getStringExtra("habit query");
@@ -302,14 +346,14 @@ public class ViewHabitActivity extends AppCompatActivity {
         habit = fillist.get(index); // get the specific habit
 
 /////////////////////////////////////////////////
-        
+
         theTitle = (TextView) findViewById(R.id.showTitle);//title
         theTitle.setText(habit.getTitle());
-        
+
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
 
-         /**
+        /**
          * 　a show repeat method if need to change, change the block or extract
          */
         showRepeat = (TextView) findViewById(R.id.showRepeat);
@@ -338,7 +382,7 @@ public class ViewHabitActivity extends AppCompatActivity {
         }
         showRepeat.setText(daysInWeek);
 ////////// the block ends here
-        
+
         /**
          * a tostring method to show date
          */
@@ -346,9 +390,9 @@ public class ViewHabitActivity extends AppCompatActivity {
         int year = habit.getStartDate().get(Calendar.YEAR);
         int month = habit.getStartDate().get(Calendar.MONTH);
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
-        
+
         theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month)+1 +"/"+Integer.toString(day));
-        
+
         /**
          * a listener when edit button clicked,
          *
@@ -358,21 +402,21 @@ public class ViewHabitActivity extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 setResult(RESULT_OK);
-                
+
                 Intent onClickIntent = new Intent(getApplicationContext(), EditHabitActivity.class);
-                
+
                 onClickIntent.putExtra("habitTitle", habit.getTitle()); //title
                 onClickIntent.putExtra("habitReason", habit.getReason()); //reason
                 onClickIntent.putExtra("year", habit.getStartDate().get(Calendar.YEAR)); //year
                 onClickIntent.putExtra("month", habit.getStartDate().get(Calendar.MONTH)+1); //month
                 onClickIntent.putExtra("day", habit.getStartDate().get(Calendar.DAY_OF_MONTH)); //day
-                
+
                 startActivityForResult(onClickIntent,1);
-                
-                
+
+
             }
         });
-        
+
         /**
          * a listener when states button clicked,
          *
@@ -384,17 +428,16 @@ public class ViewHabitActivity extends AppCompatActivity {
                 setResult(RESULT_OK);
                 // online resource from stack overflow to get a
                 // count of given day:https://stackoverflow.com/questions/10428798/how-to-calculate-the-number-of-tuesday-in-one-month
-                
+
                 Calendar start = habit.getStartDate();
                 Calendar today = Calendar.getInstance();
-                int maxDays =0;
 
-//                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
-//                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
-//                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
-//                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
-//                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
-//                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
+                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
+                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
+                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
+                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
+                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
+                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
 
 
 
@@ -403,7 +446,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                 ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
                 int complete=0;
                 int total = 0;
-                int th =0;
                 if(start.after(today)){ // not started
                     complete=0;
                     total = 0;
@@ -440,52 +482,38 @@ public class ViewHabitActivity extends AppCompatActivity {
                     }
                     complete = fillist.size();
 ///////////////////////////////////////////
-
-//comment for calculate date
-// include a general code to extend usage to multiple years
-                    //long millsec = today.getTimeInMillis()- start.getTimeInMillis();
-                    //total = (int)millsec;///1000/60/60/24;
-
-                    // th = today.get(Calendar.DATE) - start.get(Calendar.DATE);
-                   // Log.d("days",String.valueOf(total));
-
-                    //long p2 = ChronoUnit.DAYS.between(today, start);
-//                    Calendar cal1 = new GregorianCalendar();
-//                    Calendar cal2 = new GregorianCalendar();
-//                    SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-//
-//                    Date date = sdf.parse(today.get(Calendar.DATE));
-//                    cal1.setTime(date);
-//                    date = sdf.parse(start.get(Calendar.DATE));
-//                    cal2.setTime(date);
-//                    maxDays = ( (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24));
-                    maxDays = today.get(Calendar.DAY_OF_YEAR) - start.get(Calendar.DAY_OF_YEAR);
+                    int maxDays =0;
+                    //maxDays = today.get(Calendar.DAY_OF_YEAR) - start.get(Calendar.DAY_OF_YEAR);
+                    maxDays = 36500;
 
 
                     for (int d = 1; d <= maxDays; d++) {
+                        if (start.after(today)){
+                            break;
+                        }
                         int dayOfWeek = start.get(Calendar.DAY_OF_WEEK);
                         if (repeat.contains(dayOfWeek)) {
-                            th++;
+                            total++;
                         }
                         start.add(Calendar.DATE, 1); //next day
                     }
+
+
+
+
+
                 }
 
-                
+
                 Intent onClickIntent = new Intent(getApplicationContext(), StatusActivity.class);
-                onClickIntent.putExtra("total",th);
+                onClickIntent.putExtra("total",total);
                 onClickIntent.putExtra("complete",complete);
 
-                Log.i("Error","calculate dates");
-
-                Log.i("Error",Integer.toString(th));
-                Log.i("Error",Integer.toString(maxDays));
-                
                 startActivity(onClickIntent);
             }
         });
     }
-    
+
     @Override
     /**
      * update the content，
@@ -528,10 +556,10 @@ public class ViewHabitActivity extends AppCompatActivity {
 
 
 /////////////////// comment ends here
-        
+
         theTitle = (TextView) findViewById(R.id.showTitle);//title
         theTitle.setText(habit.getTitle());
-        
+
         theReason = (TextView) findViewById(R.id.showReason);// reason
         theReason.setText(habit.getReason());
 
@@ -564,7 +592,7 @@ public class ViewHabitActivity extends AppCompatActivity {
         }
         showRepeat.setText(daysInWeek);
         // the block ends here
-        
+
         /**
          * a tostring method to show date
          */
@@ -572,28 +600,28 @@ public class ViewHabitActivity extends AppCompatActivity {
         int year = habit.getStartDate().get(Calendar.YEAR);
         int month = habit.getStartDate().get(Calendar.MONTH)+1;
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
-        
+
         theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
-        
-        
+
+
     }
 
 
 
-        private boolean existedHabit (String id) {
-            ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
-            isExist.execute(id);
+    private boolean existedHabit (String id) {
+        ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
+        isExist.execute(id);
 
-            try {
-                if (isExist.get()) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch (Exception e) {
+        try {
+            if (isExist.get()) {
+                return true;
+            } else {
                 return false;
             }
+        } catch (Exception e) {
+            return false;
         }
-
-
     }
+
+
+}

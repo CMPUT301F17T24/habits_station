@@ -48,7 +48,7 @@ public class HabitEvent {
 
 //////////////////
 
-    public HabitEvent(String uName,String eName, Calendar time, String comment, String reason, Calendar sTime, ArrayList<String> plan){
+/*    public HabitEvent(String uName,String eName, Calendar time, String comment, String reason, Calendar sTime, ArrayList<String> plan){
         this.uName = uName;
         this.eName = eName;
         this.eTime = time;
@@ -58,7 +58,7 @@ public class HabitEvent {
         this.sTime = sTime;
         this.Plan = plan;
     }
-
+*/
     public HabitEvent(String uName,String eName, Calendar time, String comment){
         this.uName = uName;
         this.eName = eName;

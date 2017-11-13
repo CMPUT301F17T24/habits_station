@@ -11,7 +11,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tiejun.habit_station.ViewTodayPlanActivity">
+    tools:context="com.tiejun.habit_station.ViewTodayPlanActivity"
+    android:background="@drawable/bg">
 
     <TextView
         android:id="@+id/textView"
@@ -19,7 +20,7 @@
         android:layout_height="45dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="Today's Habits"
         android:textSize="24sp"
@@ -37,8 +38,10 @@
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/list_view_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
 </android.support.constraint.ConstraintLayout>

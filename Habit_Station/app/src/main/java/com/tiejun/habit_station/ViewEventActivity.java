@@ -107,10 +107,57 @@ public class ViewEventActivity extends AppCompatActivity {
 ////////////////////
 
         info = (TextView) findViewById(R.id.details);
-        info.setText(event.geteName() + " \nstarts " + event.getsTime().get(Calendar.YEAR)+"/"
+
+       /* info.setText(event.geteName() + " \nstarts " + event.getsTime().get(Calendar.YEAR)+"/"
                 + String.valueOf(event.getsTime().get(Calendar.MONTH)+1) + "/" + event.getsTime().get(Calendar.DAY_OF_MONTH)
                 +"\nReason: "+event.geteReason()+"\nPlan: "+event.getPlan()
                 +"\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
+                + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
+                + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)
+                +"\nComment: "+event.geteComment());
+
+*/
+
+        String habit_id = userName +habit_name.toUpperCase();
+        Habit habit = new Habit();
+        ElasticSearchHabitController.GetHabitTask getHabit
+                = new  ElasticSearchHabitController.GetHabitTask();
+        getHabit.execute(habit_id);
+        try {
+            habit = getHabit.get();  //other way later
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+/////  find the corresponding habit
+
+        HashSet<Integer> days = habit.getRepeatWeekOfDay();
+        ArrayList<String> sdays = new ArrayList<String>();
+        if (days.contains(1)){
+            sdays.add("M");
+        }
+        if (days.contains(2)){
+            sdays.add("T");
+        }
+        if (days.contains(3)){
+            sdays.add("W");
+        }
+        if (days.contains(4)){
+            sdays.add("R");
+        }
+        if (days.contains(5)){
+            sdays.add("F");
+        }
+        if (days.contains(6)){
+            sdays.add("SAT");
+        }
+        if (days.contains(0)){
+            sdays.add("SUN");
+        }
+
+        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+
+                "\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
                 + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
                 + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)
                 +"\nComment: "+event.geteComment());
