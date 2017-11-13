@@ -40,22 +40,30 @@ public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
     public void testAdd() {
         solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
 
+        solo.enterText((EditText) solo.getView(R.id.title), "test habit");
+        solo.enterText((EditText) solo.getView(R.id.reason), "test reason");
+
         // testEmptyTitle()
+        solo.clearEditText((EditText) solo.getView(R.id.title));
         solo.clickOnView(solo.getView(R.id.OK));
-        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
-        solo.enterText((EditText) solo.getView(R.id.title), "testHabit");
+        solo.waitForText("Title should not be empty and should be at most 20 words");
+        solo.enterText((EditText) solo.getView(R.id.title), "test habit");
 
         // testEmptyReason()
+        solo.clearEditText((EditText) solo.getView(R.id.reason));
         solo.clickOnView(solo.getView(R.id.OK));
-        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
-        solo.enterText((EditText) solo.getView(R.id.reason), "testReason");
+        solo.waitForText("Reason should not be empty and should be at most 30 words");
+        solo.enterText((EditText) solo.getView(R.id.reason), "test reason");
 
         // testEmptyWeekday()
         solo.clickOnView(solo.getView(R.id.OK));
-        solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+        solo.waitForText("The plan cannot be empty, select the days of a week.");
         solo.clickOnView(solo.getView(R.id.SAT));
         solo.clickOnView(solo.getView(R.id.SUN));
 
+        // testAddSuccess()
+        solo.clickOnView(solo.getView(R.id.OK));
+        solo.waitForText("Successfully added a new habit! ");
     }
 
     /**

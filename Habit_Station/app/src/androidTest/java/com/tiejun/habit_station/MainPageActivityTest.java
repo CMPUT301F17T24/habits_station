@@ -53,7 +53,7 @@ public class MainPageActivityTest extends ActivityInstrumentationTestCase2 {
     public void testHabitLibraryActivity() {
         // test if the button directs to habit library page
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
-        solo.clickOnView(solo.getView(R.id.library));
+        solo.clickOnView(solo.getView(R.id.habits));
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
     }
 

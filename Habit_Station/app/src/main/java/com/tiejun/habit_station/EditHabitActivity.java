@@ -207,13 +207,12 @@ public class EditHabitActivity extends AppCompatActivity {
         
         
     }
-
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(){
         setResult(RESULT_OK);
 
         Intent backIntent = new Intent();
-        backIntent.putExtra("delSig", 3);// do nothing do not save changes
+        backIntent.putExtra("delSig", 3);
         setResult(RESULT_OK, backIntent);
         finish();
 

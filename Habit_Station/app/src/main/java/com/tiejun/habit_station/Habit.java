@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
- * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
- * You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
+ * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
+ *
  */
-
 package com.tiejun.habit_station;
 
 import java.text.SimpleDateFormat;
@@ -15,22 +15,41 @@ import java.util.HashSet;
  * Created by tiejun on 2017-10-13.
  */
 
+/**
+ *  This class is used to create a Habit object
+ *
+ * @author Xtie
+ * @version 1.5
+ * @see HabitList
+ * @since 1.0
+ *
+ */
 public class Habit implements Comparable<Habit> {
     private String uName;
-
     private  String title;
     private String reason;
     private Calendar startDate;
+    // "Monday" 1, "Tuesday" 2, "Wednesday" 3, "Thursday" 4, "Friday" 5, "Saturday" 6, "Sunday" 0
+    private HashSet<Integer> repeatWeekOfDay;
     private HabitEventList events;
 
-    // "Monday" 2, "Tuesday" 3, "Wednesday" 4, "Thursday" 5, "Friday" 6, "Saturday" 7, "Sunday" 0
-    private HashSet<Integer> repeatWeekOfDay;
-   // static SimpleDateFormat formatter = new SimpleDateFormat("M, yyyy-MM-dd");
 
 
-
-    /////////////////////////
+    /**
+     *  Create Habit object with no initialization
+     */
     public Habit(){}
+
+    /**
+     *
+     *   Create Habit object with information
+     *
+     * @param uname   useName
+     * @param title     Habit title
+     * @param reason    Habit Reason
+     * @param startDate Habit StartDate
+     * @param repeatWeekOfDay   Habit frequency( what days in a week plan to do)
+     */
     public Habit(String uname, String title, String reason, Calendar startDate, HashSet<Integer> repeatWeekOfDay) {
         this.uName = uname;
         this.title = title;
@@ -39,20 +58,21 @@ public class Habit implements Comparable<Habit> {
         this.repeatWeekOfDay = repeatWeekOfDay;
     }
 
-
+    /**
+     *  return userName
+     *
+     * @return
+     */
     public String getuName() {
         return uName;
     }
 
-    //////////////////////
-
-    public Habit(String title, String reason, Calendar startDate, HashSet<Integer> repeatWeekOfDay) {
-        this.title = title;
-        this.reason = reason;
-        this.startDate = startDate;
-        this.repeatWeekOfDay = repeatWeekOfDay;
-    }
-
+    /**
+     *  Set title for the Habit
+     *
+     * @param title    Habit Title
+     * @throws InvalidInputException
+     */
     public void setTitle(String title) throws InvalidInputException {
         if (title.length()>20 || title.isEmpty() || title.trim().isEmpty()) {
             throw new InvalidInputException();
@@ -60,6 +80,12 @@ public class Habit implements Comparable<Habit> {
         this.title = title;
     }
 
+    /**
+     *  set reason for the Habit
+     *
+     * @param reason  Habit reason
+     * @throws InvalidInputException
+     */
     public void setReason(String reason) throws InvalidInputException {
         if (reason.length()>30) {
             throw new InvalidInputException();
@@ -67,46 +93,88 @@ public class Habit implements Comparable<Habit> {
         this.reason = reason;
     }
 
+    /**
+     * Set Date for the Habit
+     * @param startDate  Habit startDate
+     */
     public void setStartDate(Calendar startDate) {
         this.startDate = startDate;
-    }                                                                       ///////////////////////////////////////////////
+    }
 
-    public void setRepeatWeekOfDay(HashSet<Integer> repeatWeekOfDay) {//throws InvalidInputException {
-//        if (repeatWeekOfDay.size() == 0)
-//            // the user has to choose one day of week repeat
-//            throw new InvalidInputException();
+    /**
+     *  Set  Repeat days of week
+     *
+     * @param repeatWeekOfDay Habit frequency( what days in a week plan to do)
+     */
+    public void setRepeatWeekOfDay(HashSet<Integer> repeatWeekOfDay) {
         this.repeatWeekOfDay = repeatWeekOfDay;
     }
 
+    /**
+     *  return Habit Title
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *  return habit reason
+     * @return
+     */
     public String getReason() {
         return reason;
     }
 
+    /**
+     * return Habit start date
+     *
+     * @return
+     */
     public Calendar getStartDate() {
         return startDate;
     }
 
+    /**
+     * return Habit frequency( what days in a week plan to do)
+     * @return
+     */
     public HashSet<Integer> getRepeatWeekOfDay() {
         return repeatWeekOfDay;
     }
 
+    /**
+     * to String method
+     * @return
+     */
     @Override
     public String toString() {
         return this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + String.valueOf(startDate.get(Calendar.MONTH)+1) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
     }
 
+    /**
+     * used to compare the start date of the two habits
+     *
+     * @param habit Habit object
+     *
+     * @return
+     */
     public int compareTo(Habit habit) {
         return habit.getStartDate().compareTo(startDate);
     }
 
+    /**
+     *  set the corresponding Habit Event List
+     * @param events  corresponding Habit EventList
+     */
     public void setHabitEventList(HabitEventList events){
         this.events = events;
     }
 
+    /**
+     * return the corresponding Habit Event List
+     * @return
+     */
     public HabitEventList getHabitEventList(){
         return this.events;
     }

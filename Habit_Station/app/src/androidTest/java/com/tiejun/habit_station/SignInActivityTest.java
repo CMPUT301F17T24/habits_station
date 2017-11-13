@@ -42,7 +42,7 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", SignInActivity.class);
 
         // create a new user "testUser"
-        User user = new User(255, "testUser");
+        User user = new User(255, "test user");
         ElasticSearchUserController.AddUserTask addUserTask = new ElasticSearchUserController.AddUserTask();
         addUserTask.execute(user);
 
@@ -53,13 +53,13 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
         // attempt to log in with an unregistered account
         boolean Exist = false;
         ElasticSearchUserController.IsExist isExist1 = new ElasticSearchUserController.IsExist();
-        isExist1.execute("unregisteredUser");
+        isExist1.execute("guest");
         try {
             Exist = isExist1.get();
         } catch (Exception e){
             Log.i("Error", "Failed to get the User out of the async object");
         }
-        solo.enterText((EditText) solo.getView(R.id.username), "unregisteredUser");
+        solo.enterText((EditText) solo.getView(R.id.username), "guest");
         solo.clickOnView(solo.getView(R.id.signin));
         if (Exist){
             solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
@@ -69,14 +69,14 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
 
         // attempt to log in with a registered account
         ElasticSearchUserController.IsExist isExist2 = new ElasticSearchUserController.IsExist();
-        isExist2.execute("testUser");
+        isExist2.execute("test user");
         try {
             Exist = isExist2.get();
         } catch (Exception e){
             Log.i("Error", "Failed to get the User out of the async object");
         }
         solo.clearEditText((EditText) solo.getView(R.id.username));
-        solo.enterText((EditText) solo.getView(R.id.username), "testUser");
+        solo.enterText((EditText) solo.getView(R.id.username), "test user");
         solo.clickOnView(solo.getView(R.id.signin));
         if (Exist){
             solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);

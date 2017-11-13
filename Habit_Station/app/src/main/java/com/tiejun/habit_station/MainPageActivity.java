@@ -21,10 +21,6 @@ public class MainPageActivity extends SignInActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-//
-//        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-//        final String userName = pref.getString("currentUser", "");
-//        Log.d("username_main", userName);
 
         Button Button1 = (Button) findViewById(R.id.profile);
         Button1.setOnClickListener(new View.OnClickListener() {
