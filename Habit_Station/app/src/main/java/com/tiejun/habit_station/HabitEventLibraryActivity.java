@@ -35,7 +35,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
 
     protected ArrayAdapter<HabitEvent> adapter;
-    private int click_item_index=-1;
+    private int click_item_index = -1;
 //    int habitIndex=-1;
     String habit_name;
     String event_query;
@@ -82,18 +82,16 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         events.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
-                click_item_index=position;
+                click_item_index = position;
                 return false;
             }
         });
-
-
 
         ImageView home_tab = (ImageView) findViewById(R.id.home);
         home_tab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HabitEventLibraryActivity.this,  MainPageActivity.class);
+                Intent intent = new Intent(HabitEventLibraryActivity.this, MainPageActivity.class);
                 //intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
@@ -109,13 +107,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
-
-
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
@@ -128,8 +120,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
     }
 
-
-
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -141,7 +131,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             i.putExtra("habit name",habit_name);
             i.putExtra("select", click_item_index);
             i.putExtra("query",event_query);
-
 
             startActivity(i);
         }
@@ -223,14 +212,11 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-
         adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
         events.setAdapter(adapter);
 
         title = (TextView) findViewById(R.id.title);
         title.setText(habit_name + " Library");
-
 
     }
 

@@ -27,8 +27,6 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 
-import static com.tiejun.habit_station.ElasticSearchUserController.verifySettings;
-
 /**
  * Created by XuanyiWu on 2017-11-08.
  */
@@ -74,7 +72,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function which add event to elastic search
+     * The function which deletes event to elastic search
      */
     public static class DeleteEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
