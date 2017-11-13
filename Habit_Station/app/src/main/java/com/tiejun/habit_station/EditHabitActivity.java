@@ -190,7 +190,7 @@ public class EditHabitActivity extends AppCompatActivity {
                 backIntent.putExtra("newReason",newReason);
                 backIntent.putExtra("newTitle",newTitle);
                 backIntent.putExtra("newDate",newDate);
-                backIntent.putExtra("newRepeat",frequency);
+                //backIntent.putExtra("newRepeat",frequency);
                 setResult(RESULT_OK, backIntent);
                 finish();
 
@@ -200,6 +200,12 @@ public class EditHabitActivity extends AppCompatActivity {
         });
         
         
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(getApplicationContext(),ViewHabitActivity.class);
+        startActivity(intent);
     }
     
     
