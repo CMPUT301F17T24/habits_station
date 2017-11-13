@@ -1,0 +1,31 @@
+
+/*
+ * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
+ *
+ */
+
+package com.tiejun.habit_station;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class PhotoDisplayActivity extends AppCompatActivity {
+
+    private ImageView photo;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_photo_display);
+
+        photo = (ImageView) findViewById(R.id.photo);
+        Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("image");
+        photo.setImageBitmap(bitmap);
+
+    }
+}

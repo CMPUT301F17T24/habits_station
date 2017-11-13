@@ -16,10 +16,24 @@ import java.util.Comparator;
  * Created by XuanyiWu on 2017-10-22.
  */
 
+/**
+ * a class for event list
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @since 1.0
+ *
+ */
 public class HabitEventList {
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
 
     public HabitEventList() {}
+
+    public HabitEventList(ArrayList<HabitEvent> events) {
+        this.events = events;
+    }
+
 
     public void add(HabitEvent event) {
         events.add(event);
@@ -45,7 +59,7 @@ public class HabitEventList {
         public int compare(HabitEvent event, HabitEvent e1) {
             if (event.geteTime().before(e1.geteTime()))
                 return 1;
-            if (event.geteTime().before(e1.geteTime()))
+            if (event.geteTime().after(e1.geteTime()))
                 return -1;
             return 0;
         }
@@ -56,6 +70,21 @@ public class HabitEventList {
         Collections.sort(events, compare);
         return events;
     }
+
+    public boolean check_duplicate (HabitEvent event){
+        for (HabitEvent element: events){
+            //if (element.geteTime().equals(event.geteTime())){
+            if(  (element.geteTime().get(Calendar.YEAR) == event.geteTime().get(Calendar.YEAR) )
+                    && ( (element.geteTime().get(Calendar.MONTH) == event.geteTime().get(Calendar.MONTH)))
+                    && ( (element.geteTime().get(Calendar.DAY_OF_MONTH) == event.geteTime().get(Calendar.DAY_OF_MONTH))))
+            {
+
+                return true ;
+            }
+        }
+        return false;
+    }
+
 
 
 }

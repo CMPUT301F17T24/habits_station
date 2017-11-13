@@ -9,12 +9,9 @@ package com.tiejun.habit_station;
 import android.location.Location;
 import android.media.Image;
 import android.test.ActivityInstrumentationTestCase2;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
 
 /**
  * Created by yfeng3 2017-10-21.
@@ -23,7 +20,7 @@ import java.util.HashSet;
 public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
     public HabitEventListTest() {
-        super(com.tiejun.habit_station.MainActivity.class);
+        super(SignInActivity.class);
     }
 
 
@@ -105,145 +102,13 @@ public class HabitEventListTest extends ActivityInstrumentationTestCase2 {
 
         ArrayList<HabitEvent> sortedEventList = eventList.sortEvents();
 
-        assertEquals(sortedEventList.get(0).geteName(),habitevent2.geteName());
-        assertEquals(sortedEventList.get(2).geteName(),habitevent3.geteName());
+        assertEquals(sortedEventList.get(0).geteName(),habitevent3.geteName());
+        assertEquals(sortedEventList.get(2).geteName(),habitevent2.geteName());
 
 
 
 
     }
 
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-    public void testgetname() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("test1".equals(habitevent.geteName()));
-    }
-
-    public void testgettime() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue(date == habitevent.geteTime());
-    }
-
-    public void testgetReason() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("test reason".equals(habitevent.geteReason()));
-    }
-
-    public void testgetPhoto() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Image image = null;
-
-        assertTrue( image == habitevent.getePhoto());
-    }
-
-    public void testgetlocation() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Location location = null;
-
-        assertTrue( location == habitevent.geteLocation());
-    }
-
-    public void testgetStatus() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue( false == habitevent.getStatus());
-    }
-
-    public void testgetComment() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue( null == habitevent.geteComment());
-    }
-
-    public void testsetName() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        String str = "setname";
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-        habitevent.seteName(str);
-        assertTrue(str.equals(habitevent.geteName()));
-    }
-
-    public void testsetTime() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteTime(date);
-
-        assertTrue(date == habitevent.geteTime());
-    }
-
-    public void testsetReason() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteReason("new test reason");
-
-        assertTrue("new test reason" == habitevent.geteReason());
-    }
-
-    public void testsetComment() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.seteComment("new test comment");
-
-        assertTrue("new test comment" == habitevent.geteComment());
-    }
-
-    public void testsetPhoto() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        Image photo = null;
-
-        habitevent.setePhoto(photo);
-
-        assertTrue(photo == habitevent.getePhoto());
-    }
-
-    public void testsetStatus() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        habitevent.setStatus(true);
-
-        assertTrue(true == habitevent.getStatus());
-    }
-
-    public void testTostring() {
-        Calendar date = Calendar.getInstance();
-        date.set(2017,10,11);
-        HabitEvent habitevent = new HabitEvent("test1", date, "test reason" );
-
-        assertTrue("to string method" == habitevent.toString());
-    }
 
 }

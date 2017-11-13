@@ -8,46 +8,92 @@ package com.tiejun.habit_station;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import io.searchbox.annotations.JestId;
 
 /**
  * Created by tiejun on 2017-10-21.
  */
 
+/**
+ *
+ *  a class for user
+ *
+ *  @author Xtie
+ * @version 1.5
+ * @see UserList
+ * @since 1.0
+ *
+ */
 public class User {
 
+    @JestId
     private int uid;
     private String name;
-    private ArrayList<Integer> follower;
-    private ArrayList<Integer> followee;
-    private HabitList habits;
+    private ArrayList<String> follower = new ArrayList<String>();
+    private ArrayList<String> followee = new ArrayList<String>();
 
+
+    /**
+     *  construct a user
+     *
+     * @param uid the user id
+     * @param name  the user name
+     */
     public User(int uid, String name) {
         this.uid = uid;
         this.name = name;
     }
 
+    /**
+     * construct an empty user
+     */public User() {}
+
+    /**
+     * return the user id
+     * @return
+     */
    public int getUid() {
         return uid;
     }
 
-    /*public void setUid(int uid) {
+    /**
+     * set the user id
+     * @param uid user id
+     */
+    public void setUid(int uid) {
         this.uid = uid;
-    }*/
+    }
 
-
+    /**
+     * return the user name
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * set the user name
+     * @param name user name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * to string method
+     * @return
+     */
     @Override
     public String toString() {
         return getName();
     }
 
+    /**
+     * check if the user already exists
+     * @param o object
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,34 +102,37 @@ public class User {
         return uid == user.uid;
     }
 
-    public ArrayList<Integer> getFollower() {
+    /**
+     *  return a list of followers
+     * @return
+     */
+    public ArrayList<String> getFollower() {
         return follower;
     }
 
-    public void setFollower(ArrayList<Integer> follower) {
+    /**
+     * set the follower list
+     * @param follower a list of updated followers
+     */
+    public void setFollower(ArrayList<String> follower) {
         this.follower = follower;
     }
 
-    public ArrayList<Integer> getFollowee() {
+    /**
+     * return a list of followees
+     * @return
+     */
+    public ArrayList<String> getFollowee() {
         return followee;
     }
 
-    public void setFollowee(ArrayList<Integer> followee) {
+    /**
+     * set a list of followees
+     * @param followee a list of updated followees
+     */
+    public void setFollowee(ArrayList<String> followee) {
         this.followee = followee;
     }
 
 
-    public void setHabitList(HabitList habits){
-        this.habits = habits;
-    }
-
-    public HabitList getHabitList(){
-        return this.habits;
-    }
-
-
-    //    @Override
-//    public int hashCode() {
-//        return Objects.hash(uid);
-//    }
 }

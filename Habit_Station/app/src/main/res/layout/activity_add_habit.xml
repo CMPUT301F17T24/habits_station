@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+  ~ You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+  ~ You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
+  ~
+  -->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.tiejun.habit_station.AddHabitActivity"
+    android:background="@drawable/bg">
+
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/reason"
+        android:layout_alignEnd="@+id/scrollView2"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/habit_title"
+        android:paddingLeft="3dp"
+        android:hint="habit title"
+        android:inputType="textPersonName"
+        android:windowSoftInputMode="adjustNothing"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/reason"
+        android:layout_width="0dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/reason"
+        android:ems="10"
+        android:gravity="top"
+        android:paddingLeft="3dp"
+        android:hint="Reason"
+        android:inputType="textCapSentences|textAutoCorrect"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <Button
+        android:id="@+id/M"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/m_bt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/T"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/T"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/tu_bt"
+        app:layout_constraintLeft_toRightOf="@+id/M"
+        app:layout_constraintRight_toLeftOf="@+id/W"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/W"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/w_bt"
+        app:layout_constraintLeft_toRightOf="@+id/T"
+        app:layout_constraintRight_toLeftOf="@+id/R"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/R"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/th_bt"
+        app:layout_constraintLeft_toRightOf="@+id/W"
+        app:layout_constraintRight_toLeftOf="@+id/F"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/F"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fri_bt"
+        app:layout_constraintLeft_toRightOf="@+id/R"
+        app:layout_constraintRight_toLeftOf="@+id/SAT"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/SAT"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/sa_bt"
+        app:layout_constraintLeft_toRightOf="@+id/F"
+        app:layout_constraintRight_toLeftOf="@+id/SUN"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/SUN"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/sun_bt"
+        app:layout_constraintLeft_toRightOf="@+id/SAT"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reason" />
+
+    <Button
+        android:id="@+id/OK"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/confirm_bt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/R"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="152dp"
+        android:layout_alignEnd="@+id/datePicker"
+        android:layout_alignTop="@+id/datePicker"
+        android:layout_marginEnd="74dp"
+        android:layout_marginLeft="74dp"
+        android:layout_marginRight="74dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+            app:layout_constraintLeft_toLeftOf="@+id/scrollView2"
+            app:layout_constraintTop_toTopOf="@+id/scrollView2"
+            app:layout_constraintVertical_bias="1.0" />
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
