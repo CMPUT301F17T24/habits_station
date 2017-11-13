@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Nov 12 16:22:20 MST 2017
+#Sun Nov 12 16:36:24 MST 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/yaozhilu/Desktop/habits_station/Habit_Station/app/build/intermediates/res/resources-debug.ap_/res/color-v23/abc_tint_seek_thumb.xml
 14.set=ANDROID_RESOURCE
