@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -1396,7 +1396,7 @@
                     "endOffset": 6275
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1415,7 +1415,7 @@
                     "endOffset": 6322
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1434,7 +1434,7 @@
                     "endOffset": 6373
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -4607,7 +4607,7 @@
                     "endOffset": 53536
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/dimens.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -5671,7 +5671,7 @@
                     "endOffset": 57050
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -5690,7 +5690,7 @@
                     "endOffset": 57104
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -6298,7 +6298,7 @@
                     "endOffset": 59395
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -6317,7 +6317,7 @@
                     "endOffset": 59446
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -6488,7 +6488,7 @@
                     "endOffset": 60656
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -6545,7 +6545,7 @@
                     "endOffset": 60820
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -6662,7 +6662,7 @@
                     "endOffset": 61778
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -6682,7 +6682,7 @@
                     "endOffset": 61868
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -6702,7 +6702,7 @@
                     "endOffset": 62018
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -6722,7 +6722,7 @@
                     "endOffset": 62098
                 },
                 "from": {
-                    "file": "/Users/tiejun/Desktop/master/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
+                    "file": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,

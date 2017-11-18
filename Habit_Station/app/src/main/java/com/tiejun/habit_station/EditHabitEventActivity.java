@@ -12,7 +12,10 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.Image;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,8 +28,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 import java.util.concurrent.ExecutionException;
@@ -39,6 +46,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private DatePicker simpleDatePicker;
     private Button image;
     private Bitmap photo;
+    String mCurrentPhotoPath;
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -388,9 +396,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
      }
 
-
-
-
     private boolean existedEvent (String id) {
         ElasticSearchEventController.IsExist isExist = new ElasticSearchEventController.IsExist();
         isExist.execute(id);
@@ -404,21 +409,45 @@ public class EditHabitEventActivity extends AppCompatActivity {
         } catch (Exception e) {
             return false;
         }
-
-
-    }
-
-
-
-    public void takePhoto(View view) {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // take a picture and pass result along to onActivityResult
-        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
-
     }
 
     private boolean hasCamera() {
-        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
+        return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
+    }
+
+    private File createImageFile() throws IOException {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir
+        );
+        mCurrentPhotoPath = image.getAbsolutePath();
+        return image;
+
+    }
+
+    public void takePhoto(View view) {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        // take a picture and pass result along to onActivityResult
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+
+            File photoFile = null;
+            try {
+                photoFile = createImageFile();
+            } catch (IOException ex) {
+                Log.d("error", "error during save image");
+                ex.printStackTrace();
+                photoFile = null;
+                mCurrentPhotoPath = null;
+            }
+            if (photoFile != null) {
+                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
+        }
     }
 
     // IF YOU WANT TO RETURN THE IMAGE
@@ -428,18 +457,22 @@ public class EditHabitEventActivity extends AppCompatActivity {
             // GET THE PHOTO
             Bundle extras = data.getExtras();
             photo = (Bitmap) extras.get("data");
+            galleryAddPic();
+            mCurrentPhotoPath =null;
             //habitEvent.setePhoto(photo);
             Intent intent = new Intent(EditHabitEventActivity.this, PhotoDisplayActivity.class);
             intent.putExtra("image", photo);
             startActivity(intent);
-
         }
     }
 
-
-
-
-
+    private void galleryAddPic() {
+        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
+        File f = new File(mCurrentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
+    }
 
 }
 

@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
-  ~ You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
-  ~ You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
--->
+<?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tiejun.habit_station">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <application
+    <application>
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
