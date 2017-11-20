@@ -149,7 +149,7 @@ public class Habit implements Comparable<Habit> {
      */
     @Override
     public String toString() {
-        return this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + String.valueOf(startDate.get(Calendar.MONTH)+1) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
+        return this.uName +"  >>>  "+ this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + String.valueOf(startDate.get(Calendar.MONTH)+1) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
     }
 
     /**
