@@ -5,4 +5,5 @@
     <string name="reason">Reason</string>
     <string name="Comment">Comment</string>
     <string name="Search">Search for history</string>
+    <string name="SearchUser">Add a friend?</string>
 </resources>
