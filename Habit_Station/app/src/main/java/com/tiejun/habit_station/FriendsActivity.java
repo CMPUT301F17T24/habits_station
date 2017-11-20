@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -111,10 +112,32 @@ public class FriendsActivity extends AppCompatActivity {
 
 
         if (item.getTitle().equals("Accept")) {
+            String pendingUser = pendings.get(position);
             // remove from pending list
             // update current user's follower list
+            followers.add(pendingUser);
+            pendings.remove(position);
+            ElasticSearchUserController.AddUserTask addUserTask
+                    = new ElasticSearchUserController.AddUserTask();
+            addUserTask.execute(user);
             // update the accepted user's followee list
+            User pending_user = new User();
+            ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+            getUserTask.execute(pendingUser);
+            try{
+               pending_user = getUserTask.get();
+            }
+            catch (Exception e) {
+                Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
+            }
 
+            ArrayList<String> pendingFollowees = pending_user.getFollowee();
+            pendingFollowees.add(userName);
+            ElasticSearchUserController.AddUserTask addUserTask2
+                    = new ElasticSearchUserController.AddUserTask();
+            addUserTask2.execute(pending_user);
+            Toast.makeText(this, "You accepted this request!", Toast.LENGTH_SHORT).show();
+            onStart();
         }
         else if (item.getTitle().equals("Ignore")){
             //remove from pending list
@@ -122,6 +145,8 @@ public class FriendsActivity extends AppCompatActivity {
             ElasticSearchUserController.AddUserTask addUserTask
                     = new ElasticSearchUserController.AddUserTask();
             addUserTask.execute(user);
+            Toast.makeText(this, "You ignored this user! ", Toast.LENGTH_SHORT).show();
+            onStart();
         }
         else {
             return false;
