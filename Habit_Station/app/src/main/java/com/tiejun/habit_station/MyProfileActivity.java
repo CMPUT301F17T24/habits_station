@@ -62,6 +62,15 @@ public class MyProfileActivity extends AppCompatActivity {
             }
         });
 
+        Button nearbyButton = (Button) findViewById(R.id.nearby);
+        nearbyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                Intent intent = new Intent(MyProfileActivity.this, NearbyActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

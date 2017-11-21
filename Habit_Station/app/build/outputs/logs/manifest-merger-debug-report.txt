@@ -15,6 +15,7 @@ ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main
 		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:5-67
+MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:20:5-67
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:22-64
 application
@@ -164,6 +165,7 @@ MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:21:5-23:58
+MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -189,3 +191,60 @@ MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:27:9-38
 	android:name
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:26:9-47
+supports-screens
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:11:5-14:40
+	android:largeScreens
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:13:9-36
+	android:normalScreens
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:14:9-37
+	android:anyDensity
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:12:9-34
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:16:5-79
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:16:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:17:22-78
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:18:5-76
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:18:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:19:5-79
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:19:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:21:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:22:5-80
+IMPLIED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-52:12 reason: org.osmdroid.library requested WRITE_EXTERNAL_STORAGE
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:22:22-77
+uses-feature#android.hardware.location.network
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:24:5-26:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:26:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:25:9-57
+uses-feature#android.hardware.location.gps
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:27:5-29:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:29:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:28:9-53
+uses-feature#android.hardware.telephony
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:30:5-32:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:32:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:31:9-50
+uses-feature#android.hardware.wifi
+ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:35:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:34:9-45

@@ -284,6 +284,10 @@
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_navigation_menu_item.xml"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/bonuspack_bubble.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/res/layout/bonuspack_bubble.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/layout/design_layout_snackbar_include.xml"
     },

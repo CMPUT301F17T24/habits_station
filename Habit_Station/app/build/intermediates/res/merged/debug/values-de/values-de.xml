@@ -19,6 +19,15 @@
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Freigeben für"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Freigeben für %s"</string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Minimieren"</string>
+    <string name="about">Über</string>
+    <string name="about_message">Diese Software benutzt Kartenmaterial von OpenStreetMap.org</string>
+    <string name="base">OSM Basislayer</string>
+    <string name="cyclemap">Fahrradkarte</string>
+    <string name="hills">Relief</string>
+    <string name="map_mode">Kartenmodus</string>
+    <string name="my_location">Standort</string>
     <string msgid="146198913615257606" name="search_menu_title">"Suchen"</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="topo">Topographisch</string>
+    <string name="unknown">Unbekannt</string>
 </resources>
