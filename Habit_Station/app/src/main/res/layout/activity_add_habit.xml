@@ -144,8 +144,6 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="152dp"
-        android:layout_alignEnd="@+id/datePicker"
-        android:layout_alignTop="@+id/datePicker"
         android:layout_marginEnd="74dp"
         android:layout_marginLeft="74dp"
         android:layout_marginRight="74dp"

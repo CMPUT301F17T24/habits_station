@@ -11,13 +11,14 @@ package com.tiejun.habit_station;
  * Created by yfeng3 on 2017-10-21.
  */
 
+import android.graphics.Bitmap;
 import android.location.Location;
-import android.media.Image;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import org.osmdroid.util.GeoPoint;
 
 /**
  * a class for habit events
@@ -38,8 +39,8 @@ public class HabitEvent {
     public String eName;
     public Calendar eTime;
     public String eComment;
-    public Image ePhoto;
-    public Location eLocation;
+    public Bitmap ePhoto;
+    public GeoPoint eLocation;
 
 
     /**
@@ -75,6 +76,8 @@ public class HabitEvent {
         this.eName = eName;
         this.eTime = time;
         this.eComment = comment;
+        this.eLocation = null;
+        this.ePhoto = null;
     }
 
     /**
@@ -122,7 +125,7 @@ public class HabitEvent {
      * return the event's image
      * @return
      */
-    public Image getePhoto(){
+    public Bitmap getePhoto(){
         return this.ePhoto;
     }
 
@@ -130,7 +133,7 @@ public class HabitEvent {
      * return the event's location
      * @return
      */
-    public Location geteLocation(){
+    public GeoPoint geteLocation(){
         return this.eLocation;
     }
 
@@ -164,7 +167,7 @@ public class HabitEvent {
      * set the event's photo
      * @param photo event's photo
      */
-    public void setePhoto(Image photo){
+    public void setePhoto(Bitmap photo){
         this.ePhoto = photo;
     }
 
@@ -172,7 +175,7 @@ public class HabitEvent {
      * set the event's location
      * @param location event's location
      */
-    public void seteLocation(Location location){
+    public void seteLocation(GeoPoint location){
         this.eLocation = location;
     }
 
