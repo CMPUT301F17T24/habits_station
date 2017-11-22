@@ -7,12 +7,19 @@
 
 package com.tiejun.habit_station;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.location.Location;
+import android.location.LocationManager;
 import android.media.Image;
+import android.os.Build;
 import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +31,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.osmdroid.util.GeoPoint;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,6 +48,11 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private DatePicker simpleDatePicker;
     private Button image;
     private Bitmap photo;
+
+    // new
+    private GeoPoint currentLocation;
+    private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
+    //
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -111,6 +125,50 @@ public class EditHabitEventActivity extends AppCompatActivity {
         }
 
 
+        //new
+        final Button locationBtn = (Button) findViewById(R.id.location);                        //  click the button to save the information
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+
+                // URL : http://developer.android.com/guide/topics/ui/dialogs.html
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(EditHabitEventActivity.this);
+                builder1.setTitle("Add a location")
+                        .setMessage("Add current location or choose a new one?")
+                        .setPositiveButton("          Current", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.d("location","current");
+                                add_location();
+
+                                Toast.makeText(getApplicationContext(), currentLocation.toString(), Toast.LENGTH_LONG).show();
+
+                            }
+                        })
+                        .setNegativeButton("Choose on Map        ", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Do
+                                Log.d("location","map");
+
+
+                            }
+                        });
+                builder1.show();
+
+
+            }
+            });
+
+
+
+
+
+        //
+
+
+
         final Button confirmBtn = (Button) findViewById(R.id.save);                        //  click the button to save the information
         confirmBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -162,8 +220,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
                     HabitEvent event = new HabitEvent(userName,habit.getTitle(), doDate, sComment );
-                   // event.seteLocation(...);
-                    //event.setePhoto(.....);
+                    event.seteLocation(currentLocation);
+                    event.setePhoto(photo);
 
 
                     added = setEvent(userName, event, eventIndex );
@@ -211,8 +269,17 @@ public class EditHabitEventActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
+        // new
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            permissionLocationRequest();
+            Log.d("gps", "ask for permission");
 
-        Log.d("TTT","start");
+        }
+        else{
+            Log.d("gps", "allowed");
+            Toast.makeText(this, "Allowed to use GPS!", Toast.LENGTH_SHORT).show();
+        }
+        //
 
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
@@ -437,6 +504,61 @@ public class EditHabitEventActivity extends AppCompatActivity {
     }
 
 
+
+//new
+    /**
+     * Grand the gps permission
+     */
+    private void permissionLocationRequest() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            int hasLocationPermission = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
+            if (hasLocationPermission != PackageManager.PERMISSION_GRANTED) {
+                if(!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    showMessageOKCancel("You need to allow access to Location",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    requestPermissions(new String[] {Manifest.permission.ACCESS_FINE_LOCATION},
+                                            REQUEST_CODE_ASK_PERMISSIONS);
+                                }
+                            });
+                }
+            }
+
+        }
+    }
+
+    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
+        new AlertDialog.Builder(EditHabitEventActivity.this)
+                .setMessage(message)
+                .setPositiveButton("OK", okListener)
+                .setNegativeButton("Cancel", null)
+                .create()
+                .show();
+    }
+
+
+
+    /**
+     * Using GPS to add current location.
+     */
+    public void add_location() {
+        try {
+            CurrentLocation locationListener = new CurrentLocation();
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (location != null) {
+                int latitude = (int) (location.getLatitude() * 1E6);
+                int longitude = (int) (location.getLongitude() * 1E6);
+                currentLocation = new GeoPoint(latitude, longitude);
+            }
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
+
+    }
+//
 
 
 

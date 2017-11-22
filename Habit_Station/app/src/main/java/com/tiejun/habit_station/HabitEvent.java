@@ -76,6 +76,8 @@ public class HabitEvent {
         this.eName = eName;
         this.eTime = time;
         this.eComment = comment;
+        this.eLocation = null;
+        this.ePhoto = null;
     }
 
     /**
