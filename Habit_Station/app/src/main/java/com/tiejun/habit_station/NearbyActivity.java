@@ -148,9 +148,7 @@ public class NearbyActivity extends AppCompatActivity {
                         rest.add(habitEvent);
                     }
                 }
-                else{
-                    rest.add(habitEvent);
-                }
+                
             }
 
 ////
@@ -227,9 +225,6 @@ public class NearbyActivity extends AppCompatActivity {
                         rest.add(habitEvent);
                     }
 
-                }
-                else{
-                    rest.add(habitEvent);
                 }
             }
 
