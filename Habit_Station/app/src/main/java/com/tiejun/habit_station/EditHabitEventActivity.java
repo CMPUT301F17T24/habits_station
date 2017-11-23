@@ -144,29 +144,16 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 // URL : http://developer.android.com/guide/topics/ui/dialogs.html
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(EditHabitEventActivity.this);
                 builder1.setTitle("Add a location")
-                        .setMessage("Add current location or choose a new one?")
-                        .setPositiveButton("          Current", new DialogInterface.OnClickListener() {
+                        .setMessage("Add current location?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.d("location","current");
                                 add_location();
-
                                 Toast.makeText(getApplicationContext(), currentLocation.toString(), Toast.LENGTH_LONG).show();
-
-                            }
-                        })
-                        .setNegativeButton("Choose on Map        ", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Do
-                                Log.d("location","map");
-
-
                             }
                         });
                 builder1.show();
-
-
             }
             });
 
