@@ -1,366 +1,366 @@
 [
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/signup.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/signup.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/w_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/w_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_tab_indicator_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/reason_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/reason_bg.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/go.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/go.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/home.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/home.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/confirm_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/confirm_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_go_search_api_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/bg.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/list_view_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/list_view_bg.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/add.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/add.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_icon_background.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/logo.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/logo.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/date_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/date_bg.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_edit_text_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/reason.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/reason.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_textfield_search_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
-        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_password_eye.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_cab_background_internal_bg.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/back_home.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/back_home.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/library.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/library.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sa1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/sa1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_bottom_navigation_item_background.xml",
-        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_bottom_navigation_item_background.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/m1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/m1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_library_title.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/habit_library_title.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_clear_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/frequency.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/frequency.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_cab_background_top_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/save_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/save_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_search_api_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_seekbar_track_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_text_cursor_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_voice_search_api_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/th1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/th1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_holo_dark.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_switch_thumb_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_bg.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_seekbar_tick_mark_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sun1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/sun1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_2bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/main_page_2bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_4bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/main_page_4bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_small_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/username.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/username.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/w1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/w1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/m_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/m_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/frequency_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/frequency_bg.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_station.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/habit_station.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/fri1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/fri1_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/join_now.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/join_now.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_menu_overflow_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_tile_bg.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_vector_test.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/th_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/th_bt.png"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_check_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_item_background_holo_light.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/user_name_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/user_name_bg.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/frequency_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/frequency_bg.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_snackbar_background.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/reason_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/reason_bg.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/delete_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/delete_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_logo_2x.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/habit_logo_2x.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sun_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/sun_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/signin.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/signin.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
-        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/navigation_empty_icon.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_edit_text_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_indicator_material.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/m1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/m1_bt.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_tile_bg.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sa_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/sa_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/m_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/m_bt.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/add_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/add_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/fri_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/fri_bt.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_dialog_material_background.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/go.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/go.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/w_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/w_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/title_bg.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/title_bg.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/username.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/username.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/tu1_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/tu1_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/fri1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/fri1_bt.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_title.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/habit_title.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/status_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/status_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
-        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_fab_background.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_logo_2x.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/habit_logo_2x.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_vector_test.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/fri_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/fri_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_colored_material.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_ab_back_material.xml"
-    },
-    {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/tu_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/tu_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_radio_material.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/title_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/title_bg.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_bg_low.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_dialog_material_background.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_material.xml"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_station.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/habit_station.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_2bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/main_page_2bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/date_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/date_bg.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/home.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/home.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_4bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/main_page_4bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_library_title.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/habit_library_title.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/th1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/th1_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_menu_overflow_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/tu_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/tu_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/navigation_empty_icon.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/signin.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/signin.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_snackbar_background.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/edit_bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/edit_bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/reason.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/reason.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/delete.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/delete.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/add.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/add.png"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_1bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/main_page_1bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_icon_background.xml"
     },
     {
-        "merged": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_3bt.png",
-        "source": "/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/src/main/res/drawable/main_page_3bt.png"
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/logo.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/frequency.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/frequency.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/list_view_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/list_view_bg.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/add_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/add_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/confirm_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/confirm_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/delete_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/delete_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_title.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/habit_title.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sa1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/sa1_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/th_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/th_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sun_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/sun_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_password_eye.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/edit_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/edit_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/save_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/save_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/w1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/w1_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/user_name_bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/user_name_bg.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/library.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/library.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/join_now.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/join_now.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/signup.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/signup.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/back_home.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/back_home.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_1bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/main_page_1bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sun1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/sun1_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_3bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/main_page_3bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sa_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/sa_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/delete.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/delete.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_bottom_navigation_item_background.xml",
+        "source": "/Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/res/drawable/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/status_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/status_bt.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/bg.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/bg.png"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/tu1_bt.png",
+        "source": "/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/src/main/res/drawable/tu1_bt.png"
     }
 ]

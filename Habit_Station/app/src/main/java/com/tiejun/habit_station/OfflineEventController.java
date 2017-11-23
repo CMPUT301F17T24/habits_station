@@ -8,152 +8,143 @@
 package com.tiejun.habit_station;
 
 import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
- * handle offline behaviour with database
+ * Created by tiejun on 2017-11-21.
  */
 
 public class OfflineEventController {
 
-    private static final String FILEPREFIX = "offline_";
-    private static String eventID;
-    Context context;
-    ArrayList<OfflineEventModule> offlineEventArrayList;
+    private static final String ADD_EVENT = "EventAddList.sav";
+    private static final String DELETE_EVENT = "EventDeleteList.sav";
+    private static final String UPDATE_EVENT = "EventUodateList.sav";
 
-    public OfflineEventController(String eventID, Context context) {
-        this.context = context;
-        loadList(eventID);
-    }
+    private ArrayList<HabitEvent> eventList;
 
-    private void loadList(String eventID) {
+    public void AddEventTask(Context context, HabitEvent event) {
 
-        this.eventID = eventID;
-        File cashedFile  = new File(context.getExternalCacheDir(),FILEPREFIX + eventID);
-
-        if (!cashedFile.exists()) {
-            offlineEventArrayList = new ArrayList<OfflineEventModule>();
+        InternetChecker checker = new InternetChecker();
+        final boolean isOnline = checker.isOnline(context);
+        if (!isOnline) {
+            updateOfflineEventList(context, "add", event);
         }
-
         else {
-            ReadFile(cashedFile);
+            return;
         }
     }
 
-    public void addOfflineAction(String action, HabitEvent event) {
-        OfflineEventModule offlineEvent = new OfflineEventModule();
-        offlineEvent.action = action;
-        offlineEvent.event = event;
+    public void DeleteEventTask(Context context, HabitEvent event) {
 
-        offlineEventArrayList.add(offlineEvent);
-        SaveFile();
-    }
-
-    public int getOfflineEventListSize() {
-        return offlineEventArrayList.size();
-    }
-
-    public ArrayList<OfflineEventModule> getOfflineEventArrayList() {
-        return offlineEventArrayList;
-    }
-
-    public boolean syncOfflineEvent() {
-
-        if (getOfflineEventListSize() == 0) {
-            return true;
+        InternetChecker checker = new InternetChecker();
+        final boolean isOnline = checker.isOnline(context);
+        if (!isOnline) {
+            updateOfflineEventList(context, "delete", event);
         }
-
-        for (OfflineEventModule offlineEventModule : offlineEventArrayList) {
-            doSync(offlineEventModule);
-        }
-
-        File cachedFile = new File(context.getExternalCacheDir(), FILEPREFIX + eventID);
-        cachedFile.delete();
-
-        Log.i("Offline", "Offline Data synced.");
-        Toast.makeText(context,
-                "Offline Data synced.",
-                Toast.LENGTH_SHORT).show();
-        return true;
-    }
-
-    public void clearFile(String eventID) {
-        File cachedFile = new File(context.getExternalCacheDir(), FILEPREFIX + eventID);
-        cachedFile.delete();
-    }
-
-    private void doSync(OfflineEventModule offlineEventModule) {
-
-        if (offlineEventModule.action.equals("add")) {
-            ElasticSearchEventController.AddEventTask addEventTask
-                    = new ElasticSearchEventController.AddEventTask();
-            addEventTask.execute(offlineEventModule.event);
-        }
-
-        else if (offlineEventModule.action.equals("delete")) {
-            ElasticSearchEventController.DeleteEventTask deleteEventTask
-                    = new ElasticSearchEventController.DeleteEventTask();
-            deleteEventTask.execute(offlineEventModule.event);
-        }
-
-        else if (offlineEventModule.action.equals("update")) {
-            ElasticSearchEventController.DeleteEventTask deleteEventTask
-                    = new ElasticSearchEventController.DeleteEventTask();
-            deleteEventTask.execute(offlineEventModule.event);
-
-            ////// add new event ///////
-            ElasticSearchEventController.AddEventTask addEventTask
-                    = new ElasticSearchEventController.AddEventTask();
-            addEventTask.execute(offlineEventModule.event);
+        else {
+            return;
         }
     }
 
-    private void ReadFile(File fp) {
+    public void EditEventTask(Context context, HabitEvent event) {
+
+        InternetChecker checker = new InternetChecker();
+        final boolean isOnline = checker.isOnline(context);
+        if (!isOnline) {
+            updateOfflineEventList(context, "update", event);
+        }
+        else {
+            return;
+        }
+    }
+
+
+
+    public void updateOfflineEventList(Context context, String mode, HabitEvent event) {
+
         try {
-            FileInputStream fis = new FileInputStream(fp);
 
+            ArrayList<HabitEvent> updateList = getEventList(context, "update");
+            ArrayList<HabitEvent> deleteList = getEventList(context, "delete");
+            ArrayList<HabitEvent> addList = getEventList(context, "add");
+
+            // Change accordingly
+            if (mode.equals("update")) {
+                updateList.add(event);
+                FileOutputStream fos = context.openFileOutput(UPDATE_EVENT, Context.MODE_PRIVATE);
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+                Gson gson = new Gson();
+                gson.toJson(updateList, out);
+                out.flush();
+                fos.close();
+
+            } else if (mode.equals("delete")) {
+               deleteList.add(event);
+                FileOutputStream fos1 = context.openFileOutput(DELETE_EVENT, Context.MODE_PRIVATE);
+                BufferedWriter out1 = new BufferedWriter(new OutputStreamWriter(fos1));
+                Gson gson1 = new Gson();
+                gson1.toJson(deleteList, out1);
+                out1.flush();
+                fos1.close();
+
+            } else if (mode.equals("add")){
+                addList.add(event);
+                FileOutputStream fos = context.openFileOutput(ADD_EVENT, Context.MODE_PRIVATE);
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(fos));
+                Gson gson = new Gson();
+                gson.toJson(addList, out);
+                out.flush();
+                fos.close();
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException();
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
+    }
+
+    public ArrayList<HabitEvent> getEventList(Context context, String mode){
+        try {
+            String filename;
+            if (mode.equals("add")){
+                filename = ADD_EVENT;
+            } else if (mode.equals("delete")){
+                filename = DELETE_EVENT;
+            } else if (mode.equals("update")){
+                filename = UPDATE_EVENT;
+            } else{
+                return null;
+            }
+
+            FileInputStream fis = context.openFileInput(filename);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
             Gson gson = new Gson();
-            offlineEventArrayList = gson.fromJson(in, new TypeToken<ArrayList<OfflineEventModule>>() {}.getType());
+            Type type = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
+            eventList = gson.fromJson(in, type); // deserializes json into ArrayList<String>
             fis.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void SaveFile() {
-        try {
-
-            File cachedfile = new File(context.getExternalCacheDir(), FILEPREFIX + eventID);
-            FileOutputStream outputStream = new FileOutputStream(cachedfile);
-            //outputStream = context.openFileOutput(OFFLINE_NAME, Context.MODE_PRIVATE);
-
-            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(outputStream));
-            Gson gson = new Gson();
-
-            gson.toJson(offlineEventArrayList, out);
-            out.flush();
-            outputStream.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
+            return eventList;
+        } catch (FileNotFoundException e) {
+            return null;
+        } catch (NullPointerException e) {
+            return null;
+        } catch (Exception e) {
+            return null;
         }
 
-        //Log.i("Offline", "Offline Data Saved, Count: " + getOfflineListSize());
     }
 }
+

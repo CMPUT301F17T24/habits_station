@@ -1,7 +1,7 @@
-#Sat Nov 18 11:16:34 MST 2017
-base.0=/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_70a2a13862526fa0afd8a32b06699994eb358089
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a2e7c499d735c9f489fb4379c35bb88333cd7029/classes.dex
-base.1=/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_a2e7c499d735c9f489fb4379c35bb88333cd7029
-file.0=/Users/tiejun/Desktop/xinran/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_70a2a13862526fa0afd8a32b06699994eb358089/classes.dex
+#Tue Nov 21 21:40:06 MST 2017
+base.0=/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f73223426d84f84064fd05eba281df25511f57ac
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_231cb8cc50051720bf4ba80eea5ac0882745c0a5/classes.dex
+base.1=/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_231cb8cc50051720bf4ba80eea5ac0882745c0a5
+file.0=/Users/tiejun/Desktop/xtie/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f73223426d84f84064fd05eba281df25511f57ac/classes.dex

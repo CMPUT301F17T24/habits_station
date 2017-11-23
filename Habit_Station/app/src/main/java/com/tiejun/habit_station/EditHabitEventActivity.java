@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -46,7 +47,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private DatePicker simpleDatePicker;
     private Button image;
     private Bitmap photo;
-    String mCurrentPhotoPath;
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -62,7 +62,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
             do_day = 0;
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +70,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         final String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
-        //final int habitIndex = intent.getIntExtra("habit index", 0);
 
         final int eventIndex = intent.getIntExtra("select",0);
         habit_name = intent.getStringExtra("habit name");
@@ -119,7 +117,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
         }
 
 
-        final Button confirmBtn = (Button) findViewById(R.id.save);                        //  click the button to save the information
+        final Button confirmBtn = (Button) findViewById(R.id.save);
+
+        //  click the button to save the information
         confirmBtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -169,15 +169,14 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 if(added){
 
 
-                    HabitEvent event = new HabitEvent(userName,habit.getTitle(), doDate, sComment );
+                    habitEvent = new HabitEvent(userName, habit.getTitle(), doDate, sComment);
                    // event.seteLocation(...);
-                    //event.setePhoto(.....);
-
-
-                    added = setEvent(userName, event, eventIndex );
+                    habitEvent.setePhoto(photo);
+                    added = setEvent(userName, habitEvent, eventIndex);
 
 
                 }
+
                 if (added) {
 
                    /* Intent intent = new Intent(EditHabitEventActivity.this, HabitEventLibraryActivity.class);
@@ -234,7 +233,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         String habit_id = userName +habit_name.toUpperCase();
         Habit habit = new Habit();
         ElasticSearchHabitController.GetHabitTask getHabit
-                = new  ElasticSearchHabitController.GetHabitTask();
+                = new ElasticSearchHabitController.GetHabitTask();
         getHabit.execute(habit_id);
 
         try {
@@ -252,7 +251,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
 
-        if (eventIndex >=0){    // if the event already exists, show its old info         edit, need info directly from event
+        if (eventIndex >= 0){    // if the event already exists, show its old info         edit, need info directly from event
 
             ElasticSearchEventController.GetEvents getEvents
                     = new  ElasticSearchEventController.GetEvents();
@@ -277,16 +276,15 @@ public class EditHabitEventActivity extends AppCompatActivity {
         else{
             Log.d("TTT","event haven't been created");
         }
-
-
     }
 
 
-    public boolean setEvent(String current_user, HabitEvent new_event, int eventIndex )
-    {
+    public boolean setEvent(String current_user, HabitEvent new_event, int eventIndex) {
 
-        Log.d("event",String.valueOf(eventIndex));
+        Context context = getApplicationContext();
+        final boolean isOnline = InternetChecker.isOnline(context);
 
+        Log.d("event", String.valueOf(eventIndex));
 
         String new_id = current_user + new_event.geteName()
                 + new_event.geteTime().get(Calendar.YEAR)
@@ -294,77 +292,87 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 + new_event.geteTime().get(Calendar.DAY_OF_MONTH);
 
 
-        if (eventIndex >=0 ) {              //  used for edit
+        //  used for edit online
+        if (eventIndex >= 0 && isOnline) {
 
-                //////  used to find the events /////////
-               /* String event_query = "{\n" +
-                        "  \"query\": { \n" +
-                        "\"bool\": {\n" +
-                        "\"must\": [\n" +
-                        "{" + " \"term\" : { \"uName\" : \"" + current_user + "\" }},\n" +
-                        "{" + " \"match\" : {  \"eName\" : \"" + habit_name + "\" }}\n" +
-                        "]" +
-                        "}" +
-                        "}" +
-                        "}";
-                  */
             Intent intent = getIntent();
             String event_query = intent.getStringExtra("query");
 
-                ElasticSearchEventController.GetEvents getEvents
-                        = new ElasticSearchEventController.GetEvents();
-                getEvents.execute(event_query);
-                try {
-                    fillist.clear();
-                    fillist.addAll(getEvents.get());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-                HabitEvent old_event = fillist.get(eventIndex);
-
-                String old_id = current_user + old_event.geteName()
-                        + old_event.geteTime().get(Calendar.YEAR)
-                        + String.valueOf(old_event.geteTime().get(Calendar.MONTH) + 1)
-                        + old_event.geteTime().get(Calendar.DAY_OF_MONTH);
-
-
-                if ((existedEvent(new_id)) && !(new_id.equals(old_id))  ){
-                    Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-                else {
-
-                    ///////  delete old event /////
-                    ElasticSearchEventController.DeleteEventTask deleteEventTask
-                            = new ElasticSearchEventController.DeleteEventTask();
-                    deleteEventTask.execute(old_event);
-
-                    ////// add new event ///////
-                    ElasticSearchEventController.AddEventTask addEventTask
-                            = new ElasticSearchEventController.AddEventTask();
-                    addEventTask.execute(new_event);
-
-                    Toast.makeText(getApplicationContext(), "Successfully updated the event.", Toast.LENGTH_SHORT).show();
-
-                    return true;
-                }
-
+            ElasticSearchEventController.GetEvents getEvents
+                    = new ElasticSearchEventController.GetEvents();
+            getEvents.execute(event_query);
+            try {
+                fillist.clear();
+                fillist.addAll(getEvents.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
             }
-            else {         //  used for add
+
+            HabitEvent old_event = fillist.get(eventIndex);
+
+            String old_id = current_user + old_event.geteName()
+                    + old_event.geteTime().get(Calendar.YEAR)
+                    + String.valueOf(old_event.geteTime().get(Calendar.MONTH) + 1)
+                    + old_event.geteTime().get(Calendar.DAY_OF_MONTH);
+
+
+            if ((existedEvent(new_id)) && !(new_id.equals(old_id))) {
+                Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
+                return false;
+            } else {
+
+                ///////  delete old event /////
+                ElasticSearchEventController.DeleteEventTask deleteEventTask
+                        = new ElasticSearchEventController.DeleteEventTask();
+                deleteEventTask.execute(old_event);
+
                 ////// add new event ///////
-                if (existedEvent(new_id)){
+                ElasticSearchEventController.AddEventTask addEventTask
+                        = new ElasticSearchEventController.AddEventTask();
+                addEventTask.execute(new_event);
+
+                Toast.makeText(getApplicationContext(), "Successfully updated the event.", Toast.LENGTH_SHORT).show();
+
+                return true;
+            }
+        }
+
+        //  used for add new event online or offline
+        else {
+            if (isOnline) {
+                if (existedEvent(new_id)) {
                     Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
                     return false;
                 }
+
                 ElasticSearchEventController.AddEventTask addEventTask
                         = new ElasticSearchEventController.AddEventTask();
                 addEventTask.execute(new_event);
                 Toast.makeText(getApplicationContext(), "Successfully added to history.", Toast.LENGTH_SHORT).show();
                 return true;
+
             }
+
+            // offline add an event
+            else {
+                OfflineEventController offlineEventController = new OfflineEventController();
+                offlineEventController.AddEventTask(context, new_event);
+                Toast.makeText(getApplicationContext(), "Event added offline!", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+//            if (existedEvent(new_id)) {
+//                Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
+//                return false;
+//            }
+//
+//            ElasticSearchEventController.AddEventTask addEventTask
+//                    = new ElasticSearchEventController.AddEventTask();
+//            addEventTask.execute(new_event);
+//            Toast.makeText(getApplicationContext(), "Successfully added to history.", Toast.LENGTH_SHORT).show();
+//            return true;
+        }
 
     }
 
@@ -415,38 +423,13 @@ public class EditHabitEventActivity extends AppCompatActivity {
         return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA);
     }
 
-    private File createImageFile() throws IOException {
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,
-                ".jpg",
-                storageDir
-        );
-        mCurrentPhotoPath = image.getAbsolutePath();
-        return image;
-
-    }
 
     public void takePhoto(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // take a picture and pass result along to onActivityResult
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
 
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
-                Log.d("error", "error during save image");
-                ex.printStackTrace();
-                photoFile = null;
-                mCurrentPhotoPath = null;
-            }
-            if (photoFile != null) {
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-            }
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
 
@@ -457,22 +440,13 @@ public class EditHabitEventActivity extends AppCompatActivity {
             // GET THE PHOTO
             Bundle extras = data.getExtras();
             photo = (Bitmap) extras.get("data");
-            galleryAddPic();
-            mCurrentPhotoPath =null;
-            //habitEvent.setePhoto(photo);
             Intent intent = new Intent(EditHabitEventActivity.this, PhotoDisplayActivity.class);
             intent.putExtra("image", photo);
             startActivity(intent);
         }
     }
 
-    private void galleryAddPic() {
-        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
-        File f = new File(mCurrentPhotoPath);
-        Uri contentUri = Uri.fromFile(f);
-        mediaScanIntent.setData(contentUri);
-        this.sendBroadcast(mediaScanIntent);
-    }
+
 
 }
 
