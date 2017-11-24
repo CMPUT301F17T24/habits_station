@@ -51,8 +51,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private DatePicker simpleDatePicker;
     private Button image;
     private Bitmap photo=null;
-    private Bitmap oldPhoto = null;
-
+//    private Bitmap oldPhoto = null;
+    private String oldPhoto = null;
     // new
     private GeoPoint currentLocation;
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
@@ -218,13 +218,14 @@ public class EditHabitEventActivity extends AppCompatActivity {
                     HabitEvent event = new HabitEvent(userName,habit.getTitle(), doDate, sComment );
                     event.seteLocation(currentLocation);
                     if (photo != null) {
-                        checkImageSize(photo);
-                        photo = base64ToImage();
-                        event.setePhoto(photo);
+                        String base = checkImageSize(photo);
+                        //photo = base64ToImage();
+                        Log.d("64", imageBase64);
+                        event.setePhoto(base);
                     }
                     else{
-                        photo = oldPhoto;
-                        event.setePhoto(photo);
+                        //photo = oldPhoto;
+                        event.setePhoto(oldPhoto);
                     }
 
 
@@ -506,16 +507,18 @@ public class EditHabitEventActivity extends AppCompatActivity {
 //new
 
 
-    private void checkImageSize(Bitmap bm) {
+    private String checkImageSize(Bitmap bm) {
         imageByteArray = changeImageIntoByteArray(bm);
         imageByteCount = imageByteArray.length;
+        String base64;
         if (imageByteCount >= 65536) {
             resizeImage(bm);
-            checkImageSize(bm);
+            base64=checkImageSize(bm);
         }
         else {
-            imageToBase64(bm);
+            base64 = imageToBase64(bm);
         }
+        return base64;
     }
 
 
@@ -531,8 +534,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
     }
 
-    private void imageToBase64(Bitmap bm){
+    private String imageToBase64(Bitmap bm){
         imageBase64 = Base64.encodeToString(changeImageIntoByteArray(bm), Base64.NO_WRAP);
+        return  imageBase64;
     }
 
     public Bitmap base64ToImage() {

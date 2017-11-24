@@ -59,11 +59,11 @@ public class ElasticSearchEventController {
                     if (result.isSucceeded()) {
                         Log.d("In AsyncTask ID", result.getId());
                     } else {
-                        Log.i("Error", "Elasticsearch was not able to add the user.");
+                        Log.i("Error", "Elasticsearch was not able to add the event.");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Log.i("Error", "The application failed to build and send the user");
+                    Log.i("Error", "The application failed to build and send the event");
                 }
 
             }

@@ -9,10 +9,14 @@ package com.tiejun.habit_station;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,6 +34,9 @@ public class ViewEventActivity extends AppCompatActivity {
     private TextView info;
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
     private ImageView image;
+
+
+    private String imageBase64;
 
     User user = new User();
     HabitEvent event = new HabitEvent();
@@ -60,7 +67,6 @@ public class ViewEventActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
@@ -149,9 +155,17 @@ public class ViewEventActivity extends AppCompatActivity {
                 +"\nComment: "+event.geteComment()
                 +"\nLocation: "+ eventLocation );
 
+        imageBase64 = event.getePhoto();
+        image.setImageBitmap(base64ToImage());
 
-        image.setImageBitmap(event.getePhoto());
+    }
 
+    public Bitmap base64ToImage() {
+        byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
+                decodedString.length);
+
+        return decodedByte;
     }
 
 
