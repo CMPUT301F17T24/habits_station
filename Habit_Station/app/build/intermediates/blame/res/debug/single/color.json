@@ -20,8 +20,16 @@
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/color/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
@@ -34,6 +42,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/color/common_google_signin_btn_tint.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/design_error.xml",

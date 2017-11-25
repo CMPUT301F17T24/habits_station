@@ -16,6 +16,10 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/reason_bg.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/bg.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/bg.png"
     },
@@ -52,6 +56,10 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/m_bt.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_btn_borderless_material.xml"
     },
@@ -62,6 +70,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/person.png",
         "source": "/Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/res/drawable/person.png"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
@@ -82,6 +94,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/navigation_empty_icon.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/res/drawable/navigation_empty_icon.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_disabled.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/marker_default_focused_base.png",
@@ -112,12 +128,20 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/w1_bt.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_vector_test.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/sa1_bt.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/sa1_bt.png"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_disabled.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/frequency_bg.png",
@@ -160,6 +184,10 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/home.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
@@ -190,6 +218,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_light_normal.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/habit_library_title.png",
@@ -232,6 +264,10 @@
         "source": "/Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/res/drawable/moreinfo_arrow.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_switch_thumb_material.xml"
     },
@@ -270,6 +306,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/marker_default.png",
         "source": "/Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/res/drawable/marker_default.png"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_dark_normal.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/w_bt.png",
@@ -340,6 +380,10 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/th_bt.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/tu1_bt.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/tu1_bt.png"
     },
@@ -356,12 +400,20 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/sa_bt.png"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/add.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/add.png"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
@@ -390,6 +442,10 @@
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/main_page_4bt.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/drawable/main_page_4bt.png"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/9ec3491e6af593cca224f1af3bd69714aa4eedb2/output/res/drawable/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable/go.png",

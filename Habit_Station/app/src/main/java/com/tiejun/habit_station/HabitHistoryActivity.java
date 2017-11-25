@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -134,6 +135,21 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        final Button map = (Button) findViewById(R.id.historyMap);
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                setResult(RESULT_OK);
+                Intent intent = new Intent(HabitHistoryActivity.this,MyEventMapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

@@ -132,12 +132,12 @@ public class NearbyActivity extends AppCompatActivity {
 
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
                     double disKM = distance/10;
                     Log.d("dis", String.valueOf(disKM));
@@ -164,7 +164,7 @@ public class NearbyActivity extends AppCompatActivity {
             //title.setText("empty");
             Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
 
-/*
+
 
 
             // just used to test
@@ -209,14 +209,14 @@ public class NearbyActivity extends AppCompatActivity {
 
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/10;
+                    double disKM = distance/1000;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
                         results.add(habitEvent);
@@ -228,7 +228,7 @@ public class NearbyActivity extends AppCompatActivity {
                 }
             }
 
-*/
+
 
             //
 
