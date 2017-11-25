@@ -31,6 +31,8 @@ public class User {
     private String name;
     private ArrayList<String> follower = new ArrayList<String>();
     private ArrayList<String> followee = new ArrayList<String>();
+    // new
+    private ArrayList<String> pendingPermissions = new ArrayList<>();
 
 
     /**
@@ -102,6 +104,7 @@ public class User {
         return uid == user.uid;
     }
 
+
     /**
      *  return a list of followers
      * @return
@@ -133,6 +136,28 @@ public class User {
     public void setFollowee(ArrayList<String> followee) {
         this.followee = followee;
     }
+
+
+    /////////// new
+
+    /**
+     * return pending permission array.
+     *
+     * @return the pending permission array
+     */
+    public ArrayList<String> getPendingPermission() {
+        return pendingPermissions;
+    }
+
+    /**
+     * set pending permissions.
+     *
+     * @param pendingPermissions the pending permissions
+     */
+    public void setPendingPermissions(ArrayList<String> pendingPermissions) {
+        this.pendingPermissions = pendingPermissions;
+    }
+
 
 
 }

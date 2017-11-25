@@ -11,13 +11,17 @@ package com.tiejun.habit_station;
  * Created by yfeng3 on 2017-10-21.
  */
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.location.Location;
-import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import org.osmdroid.util.GeoPoint;
 
 /**
  * a class for habit events
@@ -31,15 +35,16 @@ import java.util.Locale;
 public class HabitEvent {
     public String uName;
 
-    public Calendar sTime;
-    public String eReason;
-    public ArrayList<String> Plan = new ArrayList<String>();
+   // public Calendar sTime;
+    //public String eReason;
+    //public ArrayList<String> Plan = new ArrayList<String>();
 
     public String eName;
     public Calendar eTime;
     public String eComment;
-    public Image ePhoto;
-    public Location eLocation;
+    //public Bitmap ePhoto;
+    public GeoPoint eLocation;
+    private String esPhoto;
 
 
     /**
@@ -75,6 +80,8 @@ public class HabitEvent {
         this.eName = eName;
         this.eTime = time;
         this.eComment = comment;
+        this.eLocation = null;
+        this.esPhoto = null;
     }
 
     /**
@@ -106,10 +113,10 @@ public class HabitEvent {
      * return event's reason
      * @return
      */
-    public String geteReason(){
+    /*public String geteReason(){
         return this.eReason;
     }
-
+*/
     /**
      * return the event's comment
      * @return
@@ -122,15 +129,19 @@ public class HabitEvent {
      * return the event's image
      * @return
      */
-    public Image getePhoto(){
+    /*public Bitmap getePhoto(){
         return this.ePhoto;
+    }*/
+
+    public String getePhoto(){
+        return this.esPhoto;
     }
 
     /**
      * return the event's location
      * @return
      */
-    public Location geteLocation(){
+    public GeoPoint geteLocation(){
         return this.eLocation;
     }
 
@@ -155,24 +166,29 @@ public class HabitEvent {
      * set the event's reason
      * @param reason event's reason
      */
-    public void seteReason(String reason){
+  /*  public void seteReason(String reason){
         this.eReason = reason;
 
     }
-
+*/
     /**
      * set the event's photo
      * @param photo event's photo
      */
-    public void setePhoto(Image photo){
+
+    /*public void setePhoto(Bitmap photo){
         this.ePhoto = photo;
+    }*/
+    public void setePhoto(String photo){
+        this.esPhoto = photo;
     }
+
 
     /**
      * set the event's location
      * @param location event's location
      */
-    public void seteLocation(Location location){
+    public void seteLocation(GeoPoint location){
         this.eLocation = location;
     }
 

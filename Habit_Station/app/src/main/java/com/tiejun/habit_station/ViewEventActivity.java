@@ -9,10 +9,14 @@ package com.tiejun.habit_station;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,6 +33,10 @@ public class ViewEventActivity extends AppCompatActivity {
     //protected HabitEventList habitEventList;
     private TextView info;
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
+    private ImageView image;
+
+
+    private String imageBase64;
 
     User user = new User();
     HabitEvent event = new HabitEvent();
@@ -39,6 +47,9 @@ public class ViewEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_event);
+
+        info = (TextView) findViewById(R.id.details);
+        image = (ImageView)findViewById(R.id.image);
 
 
         ImageView delete_tab = (ImageView) findViewById(R.id.delete);
@@ -56,7 +67,6 @@ public class ViewEventActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
@@ -92,7 +102,6 @@ public class ViewEventActivity extends AppCompatActivity {
         }
         // find that event
         event = fillist.get(eventIndex);
-        info = (TextView) findViewById(R.id.details);
 
 
         String habit_id = userName +habit_name.toUpperCase();
@@ -131,15 +140,32 @@ public class ViewEventActivity extends AppCompatActivity {
         if (days.contains(0)){
             sdays.add("SUN");
         }
+        String eventLocation;
+        if (event.geteLocation() != null){
+            eventLocation = event.geteLocation().toString();
+        }
+        else{
+            eventLocation = "";
+        }
 
         info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+
                 "\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
                 + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
                 + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)
-                +"\nComment: "+event.geteComment());
+                +"\nComment: "+event.geteComment()
+                +"\nLocation: "+ eventLocation );
 
+        imageBase64 = event.getePhoto();
+        image.setImageBitmap(base64ToImage());
 
+    }
 
+    public Bitmap base64ToImage() {
+        byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
+                decodedString.length);
+
+        return decodedByte;
     }
 
 
