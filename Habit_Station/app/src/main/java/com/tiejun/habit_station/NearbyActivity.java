@@ -76,12 +76,23 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
                             new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                             MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
                 }
-            }else {
+            } else {
                 Toast.makeText(getApplicationContext(), "Permission (already) Granted!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+        @Override
+        public void onMapReady(GoogleMap googleMap) {
+            mgoogleMap = googleMap;
+            LatLng Edmonton = new LatLng(53.5444, -113.4909);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
+
+            setMarker();
+        }
 
 
+    public void setMarker(){
         // get current location
         try {
             CurrentLocation locationListener = new CurrentLocation();
@@ -140,14 +151,14 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
 
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/10;
+                    double disKM = distance/1000;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
                         double lat = geoPoint.getLatitude();
@@ -177,7 +188,7 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
             //title.setText("empty");
             Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
 
-/*
+
             // just used to test
             currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
             SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
@@ -215,44 +226,34 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
                 GeoPoint geoPoint = habitEvent.geteLocation();
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/10;
+                    double disKM = distance/1000;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
-                        results.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
                     else {
-                        rest.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
                 }
             }
-*/
-
             //
 
         }
     }
 
-
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-
-
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mgoogleMap = googleMap;
-        LatLng Edmonton = new LatLng(53.5444, -113.4909);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
     }
 }

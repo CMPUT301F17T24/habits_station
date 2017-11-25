@@ -136,7 +136,8 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
-        //edited here
+
+
         final Button map = (Button) findViewById(R.id.historyMap);
 
         map.setOnClickListener(new View.OnClickListener() {
@@ -147,8 +148,9 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //add button jump to My habit event history page
-        //remember change xml as well
+
+
+
     }
 
 

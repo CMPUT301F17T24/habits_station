@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.Image;
@@ -22,6 +23,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,6 +36,7 @@ import android.widget.Toast;
 
 import org.osmdroid.util.GeoPoint;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -47,11 +50,17 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private EditText comment;
     private DatePicker simpleDatePicker;
     private Button image;
-    private Bitmap photo;
-
+    private Bitmap photo=null;
+//    private Bitmap oldPhoto = null;
+    private String oldPhoto = null;
     // new
     private GeoPoint currentLocation;
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 123;
+
+    private byte[] imageByteArray;
+    private String imageBase64;
+    private int imageByteCount;
+
     //
 
     protected HabitEventList habitEventList = new HabitEventList();
@@ -135,29 +144,16 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 // URL : http://developer.android.com/guide/topics/ui/dialogs.html
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(EditHabitEventActivity.this);
                 builder1.setTitle("Add a location")
-                        .setMessage("Add current location or choose a new one?")
-                        .setPositiveButton("          Current", new DialogInterface.OnClickListener() {
+                        .setMessage("Add current location?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.d("location","current");
                                 add_location();
-
                                 Toast.makeText(getApplicationContext(), currentLocation.toString(), Toast.LENGTH_LONG).show();
-
-                            }
-                        })
-                        .setNegativeButton("Choose on Map        ", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                // Do
-                                Log.d("location","map");
-
-
                             }
                         });
                 builder1.show();
-
-
             }
             });
 
@@ -221,7 +217,16 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
                     HabitEvent event = new HabitEvent(userName,habit.getTitle(), doDate, sComment );
                     event.seteLocation(currentLocation);
-                    event.setePhoto(photo);
+                    if (photo != null) {
+                        String base = checkImageSize(photo);
+                        //photo = base64ToImage();
+                        Log.d("64", imageBase64);
+                        event.setePhoto(base);
+                    }
+                    else{
+                        //photo = oldPhoto;
+                        event.setePhoto(oldPhoto);
+                    }
 
 
                     added = setEvent(userName, event, eventIndex );
@@ -332,6 +337,12 @@ public class EditHabitEventActivity extends AppCompatActivity {
             simpleDatePicker = (DatePicker)findViewById(R.id.datePicker);
             simpleDatePicker.updateDate(event.geteTime().get(Calendar.YEAR),event.geteTime().get(Calendar.MONTH),event.geteTime().get(Calendar.DAY_OF_MONTH));
 
+            // new
+            currentLocation = event.geteLocation();
+            oldPhoto = event.getePhoto();
+            //
+
+
         }
         else{
             Log.d("TTT","event haven't been created");
@@ -355,18 +366,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         if (eventIndex >=0 ) {              //  used for edit
 
-                //////  used to find the events /////////
-               /* String event_query = "{\n" +
-                        "  \"query\": { \n" +
-                        "\"bool\": {\n" +
-                        "\"must\": [\n" +
-                        "{" + " \"term\" : { \"uName\" : \"" + current_user + "\" }},\n" +
-                        "{" + " \"match\" : {  \"eName\" : \"" + habit_name + "\" }}\n" +
-                        "]" +
-                        "}" +
-                        "}" +
-                        "}";
-                  */
             Intent intent = getIntent();
             String event_query = intent.getStringExtra("query");
 
@@ -506,6 +505,53 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
 //new
+
+
+    private String checkImageSize(Bitmap bm) {
+        imageByteArray = changeImageIntoByteArray(bm);
+        imageByteCount = imageByteArray.length;
+        String base64;
+        if (imageByteCount >= 65536) {
+            resizeImage(bm);
+            base64=checkImageSize(bm);
+        }
+        else {
+            base64 = imageToBase64(bm);
+        }
+        return base64;
+    }
+
+
+    private byte[] changeImageIntoByteArray(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        return stream.toByteArray();
+    }
+
+
+    private void resizeImage(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 70, stream);
+    }
+
+    private String imageToBase64(Bitmap bm){
+        imageBase64 = Base64.encodeToString(changeImageIntoByteArray(bm), Base64.NO_WRAP);
+        return  imageBase64;
+    }
+
+    public Bitmap base64ToImage() {
+        byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
+                decodedString.length);
+
+        return decodedByte;
+    }
+
+/*    public String getImageBase64() {
+        return imageBase64;
+    }
+*/
+
     /**
      * Grand the gps permission
      */

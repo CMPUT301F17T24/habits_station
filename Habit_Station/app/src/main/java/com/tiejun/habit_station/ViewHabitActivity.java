@@ -225,6 +225,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                                 for (HabitEvent element : events) {
 
                                     HabitEvent event = new HabitEvent(userName, element.geteName(), element.geteTime(), element.geteComment());
+                                    // new
+                                    event.seteLocation(element.geteLocation());
+                                    event.setePhoto(element.getePhoto());
+                                    //
                                     element.seteName(data.getStringExtra("newTitle"));
                                     ///////  delete old event /////
                                     ElasticSearchEventController.DeleteEventTask deleteEventTask
