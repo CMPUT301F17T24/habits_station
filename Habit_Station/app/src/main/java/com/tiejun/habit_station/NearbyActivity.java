@@ -25,6 +25,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
@@ -32,7 +41,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
-public class NearbyActivity extends AppCompatActivity {
+public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GeoPoint currentLocation;
     private static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 301;
@@ -43,6 +52,7 @@ public class NearbyActivity extends AppCompatActivity {
     private ArrayList<HabitEvent> results = new ArrayList<HabitEvent>();
     private ArrayList<HabitEvent> rest = new ArrayList<HabitEvent>();
 
+    GoogleMap mgoogleMap;
 
 
 
@@ -51,7 +61,8 @@ public class NearbyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nearby);
-
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.nearby_map);
+        mapFragment.getMapAsync(this);
 
         //the dialog for checking the permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -139,10 +150,15 @@ public class NearbyActivity extends AppCompatActivity {
                     double disKM = distance/10;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
-                        results.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+
                     }
                     else{
-                        rest.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
                 }
 
@@ -233,4 +249,10 @@ public class NearbyActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mgoogleMap = googleMap;
+        LatLng Edmonton = new LatLng(53.5444, -113.4909);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
+    }
 }

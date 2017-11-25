@@ -57,7 +57,7 @@
         <activity android:name=".PhotoDisplayActivity"></activity>
 
         <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyB_QJKr7tsdI8xjMenWafjy8gDGY-cJCdg"/>
+            android:value="AIzaSyA16ua_UDhp9NCN3xcwg2w5JChyKw3HEYA"/>
         <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
 

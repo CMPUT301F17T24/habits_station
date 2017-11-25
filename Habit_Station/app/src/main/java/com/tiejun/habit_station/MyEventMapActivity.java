@@ -29,15 +29,19 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.osmdroid.util.GeoPoint;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
-public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyCallback,
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener, LocationListener {
+import static com.tiejun.habit_station.R.id.events;
+
+public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap mgoogleMap;
-    GoogleApiClient mgoogleApiClient;
+    private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,91 +50,49 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.history_map);
         mapFragment.getMapAsync(this);
 
+
+
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        String userName = pref.getString("currentUser", "");
+        String MYhistory = "{\n" +
+            "  \"query\": { \n" +
+            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+            " 	}\n" +
+            "}";
+
+            ElasticSearchEventController.GetEvents getHistory
+            = new  ElasticSearchEventController.GetEvents();
+        getHistory.execute(MYhistory);
+
+                try {
+                fillist.addAll(getHistory.get());
+                } catch (InterruptedException e) {
+                e.printStackTrace();
+                } catch (ExecutionException e) {
+                e.printStackTrace();
+                }
+
+                int len = fillist.size();
+                for (int i = 0; i<len; i++) {
+                    HabitEvent habitEvent = fillist.get(i);
+                    GeoPoint geoPoint = habitEvent.geteLocation();
+
+
+                    if (geoPoint != null) {
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(""));
+                     }
+                }
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mgoogleMap = googleMap;
+        LatLng Edmonton = new LatLng(53.5444, -113.4909);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
 
-        mgoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(LocationServices.API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();
-        mgoogleApiClient.connect();
     }
 
-    LocationRequest mLocationRequest;
-
-    @Override
-    public void onConnected(@Nullable Bundle bundle) {
-        mLocationRequest = LocationRequest.create();
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequest.setInterval(1000);
-
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        LocationServices.FusedLocationApi.requestLocationUpdates(mgoogleApiClient, mLocationRequest, this);
-        }
-
-        @Override
-        public void onConnectionSuspended(int i) {
-
-        }
-
-        @Override
-        public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-        }
-
-        @Override
-        public void onLocationChanged(Location location) {
-            LatLng la = new LatLng(location.getLatitude(),location.getLongitude());
-            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(la,15);
-            mgoogleMap.animateCamera(cameraUpdate);
-        }
-    }
-
-
-
-//    SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-//    String userName = pref.getString("currentUser", "");
-//    //本人的所有event
-//    private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
-//
-//    String MYhistory = "{\n" +
-//            "  \"query\": { \n" +
-//            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
-//            " 	}\n" +
-//            "}";
-//
-//    ElasticSearchEventController.GetEvents getHistory
-//            = new  ElasticSearchEventController.GetEvents();
-//        getHistory.execute(MYhistory);
-//
-//                try {
-//                fillist.addAll(getHistory.get());
-//                } catch (InterruptedException e) {
-//                e.printStackTrace();
-//                } catch (ExecutionException e) {
-//                e.printStackTrace();
-//                }
-//
-/////
-//                int len = fillist.size();
-//                for (int i = 0; i<len; i++) {
-//                    HabitEvent habitEvent = events.get(i);
-//                    GeoPoint geoPoint = habitEvent.geteLocation();
-//
-//                if (geoPoint != null) {
-//                    //显示
-//                 }
+}
