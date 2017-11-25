@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/src/main/res/menu/menu_main.xml"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/menu/menu_main.xml"
     }
