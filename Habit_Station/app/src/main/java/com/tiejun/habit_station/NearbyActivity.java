@@ -25,6 +25,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 
@@ -32,20 +41,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
-public class NearbyActivity extends AppCompatActivity {
+public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GeoPoint currentLocation;
     private static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 301;
     private User user;
-    private ListView Fevents,Rest;
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
-    private ArrayAdapter<HabitEvent> adapter;
-    private ArrayAdapter<HabitEvent> adapter2;
 
 
     private ArrayList<HabitEvent> results = new ArrayList<HabitEvent>();
     private ArrayList<HabitEvent> rest = new ArrayList<HabitEvent>();
 
+    GoogleMap mgoogleMap;
 
 
 
@@ -54,7 +61,8 @@ public class NearbyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nearby);
-
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.nearby_map);
+        mapFragment.getMapAsync(this);
 
         //the dialog for checking the permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -68,12 +76,23 @@ public class NearbyActivity extends AppCompatActivity {
                             new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                             MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
                 }
-            }else {
+            } else {
                 Toast.makeText(getApplicationContext(), "Permission (already) Granted!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+        @Override
+        public void onMapReady(GoogleMap googleMap) {
+            mgoogleMap = googleMap;
+            LatLng Edmonton = new LatLng(53.5444, -113.4909);
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
+
+            setMarker();
+        }
 
 
+    public void setMarker(){
         // get current location
         try {
             CurrentLocation locationListener = new CurrentLocation();
@@ -132,23 +151,28 @@ public class NearbyActivity extends AppCompatActivity {
 
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/10;
+                    double disKM = distance/1000;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
-                        results.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+
                     }
                     else{
-                        rest.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
                 }
-                
+
             }
 
 ////
@@ -164,8 +188,6 @@ public class NearbyActivity extends AppCompatActivity {
             //title.setText("empty");
             Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
 
-/*
-
 
             // just used to test
             currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
@@ -179,7 +201,6 @@ public class NearbyActivity extends AppCompatActivity {
             catch (Exception e) {
                 Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
             }
-
             ArrayList<String> friends = user.getFollowee();     // get the users followed by the current user
             for (String element: friends){
                 String query = "{\n" +
@@ -187,7 +208,6 @@ public class NearbyActivity extends AppCompatActivity {
                         " \"term\" : { \"uName\" : \"" + element + "\" }\n" +
                         " 	}\n" +
                         "}";
-
                 ElasticSearchEventController.GetEvents getEvents
                         = new  ElasticSearchEventController.GetEvents();
                 getEvents.execute(query);
@@ -199,56 +219,41 @@ public class NearbyActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-
-
-            // check 5 km 
+            // check 5 km
             int len = events.size();
             for (int i = 0; i<len; i++) {
                 HabitEvent habitEvent = events.get(i);
                 GeoPoint geoPoint = habitEvent.geteLocation();
-
                 if (geoPoint != null) {
                     Location current = new Location("Current Location");
-                    currentLocation.setLatitude(currentLocation.getLatitude() / 1E6);
-                    currentLocation.setLongitude(currentLocation.getLongitude() / 1E6);
-
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
                     Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitude() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitude() / 1E6);
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
                     double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/10;
+                    double disKM = distance/1000;
                     Log.d("dis", String.valueOf(disKM));
                     if (disKM <=5) {
-                        results.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
                     else {
-                        rest.add(habitEvent);
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
                     }
-
                 }
             }
-
-*/
-
             //
 
         }
     }
 
-
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-
-        Fevents = (ListView)findViewById(R.id.list);
-        adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, results);
-        Fevents.setAdapter(adapter);
-        Rest = (ListView)findViewById(R.id.rest);
-        adapter2 = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, rest);
-        Rest.setAdapter(adapter2);
     }
-
 }

@@ -4,6 +4,14 @@
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
         "source": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     }
