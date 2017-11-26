@@ -30,15 +30,16 @@
 
     <Button
         android:id="@+id/friend"
-        android:layout_width="241dp"
-        android:layout_height="50dp"
+        android:layout_width="123dp"
+        android:layout_height="58dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="93dp"
         android:text="friend"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.253" />
 
     <Button
         android:id="@+id/lifyCycle"
@@ -86,5 +87,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/add" />
+
+    <Button
+        android:id="@+id/recommand"
+        android:layout_width="111dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="93dp"
+        android:text="explore"
+        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="204dp" />
 
 </android.support.constraint.ConstraintLayout>

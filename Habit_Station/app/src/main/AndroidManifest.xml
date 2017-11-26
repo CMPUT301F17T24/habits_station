@@ -46,7 +46,7 @@
         <activity android:name=".AddFriendActivity" />
         <activity android:name=".FriendsActivity" />
         <activity android:name=".FriendsStatusActivity" />
-        <activity android:name=".FriendsMapActivity" />
+        <activity android:name=".FriendsExploreActivity" />
         <activity android:name=".HabitHistoryActivity" />
         <activity android:name=".MyEventMapActivity" />
         <activity android:name=".ViewEventActivity" />

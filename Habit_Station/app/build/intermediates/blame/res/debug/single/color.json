@@ -60,6 +60,10 @@
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/switch_thumb_material_dark.xml"
     },
     {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/wallet_primary_text_holo_light.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/5b4240e929f33cdf50496f014ae79651841ff474/output/res/color/wallet_primary_text_holo_light.xml"
+    },
+    {
         "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
         "source": "/Users/yaozhilu/.android/build-cache/2bf84129e30255f391c4d963c85ee4e8ec5ca227/output/res/color/common_google_signin_btn_text_dark.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
         "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/wallet_secondary_text_holo_dark.xml",
+        "source": "/Users/XuanyiWu/.android/build-cache/5b4240e929f33cdf50496f014ae79651841ff474/output/res/color/wallet_secondary_text_holo_dark.xml"
     },
     {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
