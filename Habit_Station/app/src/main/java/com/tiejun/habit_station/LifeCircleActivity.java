@@ -15,15 +15,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.concurrent.ExecutionException;
+
+import static java.lang.Math.round;
 
 public class LifeCircleActivity extends AppCompatActivity {
     private User user;
     private ListView Fhabits;
     private ArrayList<Habit> habits = new ArrayList<Habit>();
     private ArrayAdapter<Habit> adapter;
+
+    private ArrayList<String> friendHabit = new ArrayList<String>();
+    private ArrayAdapter<String> adapter1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +64,7 @@ public class LifeCircleActivity extends AppCompatActivity {
                 ArrayList<Habit> result = getHabits.get();
                 Collections.sort(result, new OrderByHabitType() );
                 habits.addAll(result);
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -65,6 +73,15 @@ public class LifeCircleActivity extends AppCompatActivity {
 
         }
 
+
+        for (Habit element: habits){
+            int total = totalDays(element);
+            int  complete = completeDays(element);
+
+            String info = element.getuName()+" >> " +element.getTitle()+"\nprogress: " +complete +"/" + total;
+            friendHabit.add(info);
+
+        }
 
 
     }
@@ -75,8 +92,11 @@ public class LifeCircleActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onStart();
 
-        adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, habits);
-        Fhabits.setAdapter(adapter);
+        //adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, habits);
+        //Fhabits.setAdapter(adapter);
+
+        adapter1 = new ArrayAdapter<String>(this, R.layout.list_habits, friendHabit);
+        Fhabits.setAdapter(adapter1);
     }
 
 //Defining our own Comparator
@@ -89,6 +109,76 @@ public class LifeCircleActivity extends AppCompatActivity {
             return h1.getTitle().compareTo(h2.getTitle());
         }
     }
+
+
+
+
+    protected int completeDays (Habit habit) {
+
+        /////////////////////// used to get complete days
+
+        ArrayList<HabitEvent> fillist = new ArrayList<HabitEvent>();
+        String event_query = "{\n" +
+                "  \"query\": { \n" +
+                "\"bool\": {\n" +
+                "\"must\": [\n" +
+                "{" + " \"term\" : { \"uName\" : \"" + habit.getuName() + "\" }},\n" +
+                "{" + " \"match\" : {  \"eName\" : \"" + habit.getTitle() + "\" }}\n" +
+                "]" +
+                "}" +
+                "}" +
+                "}";
+
+        ElasticSearchEventController.GetEvents getHEvent
+                = new ElasticSearchEventController.GetEvents();
+        getHEvent.execute(event_query);
+        int num= 0;
+        try {
+           num = getHEvent.get().size();
+            //fillist.addAll(getHEvent.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Log.d("complete",String.valueOf(fillist.size()));
+        return num;
+
+    }
+
+    protected int totalDays (Habit habit) {
+        Calendar start = habit.getStartDate();
+        Calendar today = Calendar.getInstance();
+        if(start.after(today)){
+            return 0;
+        }
+        ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
+        int maxDays = 0;
+        int total = 0;
+        maxDays = 36500;
+
+        for (int d = 1; d <= maxDays; d++) {
+            if (start.after(today)) {
+                break;
+            }
+            int dayOfWeek = start.get(Calendar.DAY_OF_WEEK);
+            if (repeat.contains(dayOfWeek)) {
+                total++;
+            }
+            start.add(Calendar.DATE, 1); //next day
+        }
+
+        return total;
+    }
+
+
+
+
+
+
+
+
+
 
 
 }

@@ -83,9 +83,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
                 if (type.isChecked() && comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Cannot select both", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if(!type.isChecked() && !comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Please select one", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if (type.isChecked()){
                     Log.d("check", "type");
@@ -121,6 +131,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 ElasticSearchEventController.GetEvents getHistory
                         = new  ElasticSearchEventController.GetEvents();
                 getHistory.execute(query);
+
                 try {
 
                     fillist.clear();
