@@ -48,10 +48,6 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
     private User user;
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
 
-
-    private ArrayList<HabitEvent> results = new ArrayList<HabitEvent>();
-    private ArrayList<HabitEvent> rest = new ArrayList<HabitEvent>();
-
     GoogleMap mgoogleMap;
 
 
@@ -85,15 +81,16 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         @Override
         public void onMapReady(GoogleMap googleMap) {
             mgoogleMap = googleMap;
-            LatLng Edmonton = new LatLng(53.5444, -113.4909);
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
+            //LatLng Edmonton = new LatLng(53.5444, -113.4909);
+            getcLocation();
+            double la = currentLocation.getLatitude();
+            double ll = currentLocation.getLongitude();
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom((new LatLng(la,ll)), 10));
 
             setMarker();
         }
 
-
-    public void setMarker(){
-        // get current location
+    public void getcLocation(){
         try {
             CurrentLocation locationListener = new CurrentLocation();
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -107,147 +104,89 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         } catch (SecurityException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void setMarker(){
+        // get current location
+        getcLocation();
 
         if (currentLocation != null){
             //title.setText(currentLocation.toString());
-
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-            ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-            getUserTask.execute(userName);
-            try{
-                user = getUserTask.get();
+            addMarker();
             }
-            catch (Exception e) {
-                Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
-            }
-
-            ArrayList<String> friends = user.getFollowee();     // get the users followed by the current user
-            for (String element: friends){
-                String query = "{\n" +
-                        "  \"query\": { \n" +
-                        " \"term\" : { \"uName\" : \"" + element + "\" }\n" +
-                        " 	}\n" +
-                        "}";
-
-                ElasticSearchEventController.GetEvents getEvents
-                        = new  ElasticSearchEventController.GetEvents();
-                getEvents.execute(query);
-                try {
-                    events.addAll(getEvents.get());                 // get all the events of the friends
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            // check 5 km
-            int len = events.size();
-            for (int i = 0; i<len; i++) {
-                HabitEvent habitEvent = events.get(i);
-                GeoPoint geoPoint = habitEvent.geteLocation();
-
-                if (geoPoint != null) {
-                    Location current = new Location("Current Location");
-                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
-                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
-
-                    Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
-                    double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/1000;
-                    Log.d("dis", String.valueOf(disKM));
-                    if (disKM <=5) {
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
-
-                    }
-                    else{
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
-                    }
-                }
-
-            }
-
-////
-
-
-
-
-
-
-
-        }
         else{
             //title.setText("empty");
             Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
-
-
             // just used to test
             currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-            ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
-            getUserTask.execute(userName);
-            try{
-                user = getUserTask.get();
-            }
-            catch (Exception e) {
-                Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
-            }
-            ArrayList<String> friends = user.getFollowee();     // get the users followed by the current user
-            for (String element: friends){
-                String query = "{\n" +
-                        "  \"query\": { \n" +
-                        " \"term\" : { \"uName\" : \"" + element + "\" }\n" +
-                        " 	}\n" +
-                        "}";
-                ElasticSearchEventController.GetEvents getEvents
-                        = new  ElasticSearchEventController.GetEvents();
-                getEvents.execute(query);
-                try {
-                    events.addAll(getEvents.get());                 // get all the events of the friends
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
-            // check 5 km
-            int len = events.size();
-            for (int i = 0; i<len; i++) {
-                HabitEvent habitEvent = events.get(i);
-                GeoPoint geoPoint = habitEvent.geteLocation();
-                if (geoPoint != null) {
-                    Location current = new Location("Current Location");
-                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
-                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
-                    Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
-                    double distance = current.distanceTo(eventLocation);
-                    double disKM = distance/1000;
-                    Log.d("dis", String.valueOf(disKM));
-                    if (disKM <=5) {
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
-                    }
-                    else {
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
-                    }
-                }
-            }
-            //
+            addMarker();
+        }
+    }
 
+
+    public void addMarker() {
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        String userName = pref.getString("currentUser", "");
+        ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
+        getUserTask.execute(userName);
+        try{
+            user = getUserTask.get();
+        }
+        catch (Exception e) {
+            Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
+        }
+
+        ArrayList<String> friends = user.getFollowee();     // get the users followed by the current user
+        for (String element: friends){
+            String query = "{\n" +
+                    "  \"query\": { \n" +
+                    " \"term\" : { \"uName\" : \"" + element + "\" }\n" +
+                    " 	}\n" +
+                    "}";
+
+            ElasticSearchEventController.GetEvents getEvents
+                    = new  ElasticSearchEventController.GetEvents();
+            getEvents.execute(query);
+            try {
+                events.addAll(getEvents.get());                 // get all the events of the friends
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        // check 5 km
+        int len = events.size();
+        for (int i = 0; i<len; i++) {
+            HabitEvent habitEvent = events.get(i);
+            GeoPoint geoPoint = habitEvent.geteLocation();
+
+            if (geoPoint != null) {
+                Location current = new Location("Current Location");
+                current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
+
+                Location eventLocation = new Location("Mood's location");
+                eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
+                double distance = current.distanceTo(eventLocation);
+                double disKM = distance/1000;
+                Log.d("dis", String.valueOf(disKM));
+                if (disKM <=5) {
+                    double lat = geoPoint.getLatitude();
+                    double lon = geoPoint.getLongitude();
+                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+
+                }
+                else{
+                    double lat = geoPoint.getLatitude();
+                    double lon = geoPoint.getLongitude();
+                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat,lon)).title(habitEvent.geteName()));
+                }
+            }
         }
     }
 
@@ -257,3 +196,4 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         super.onStart();
     }
 }
+
