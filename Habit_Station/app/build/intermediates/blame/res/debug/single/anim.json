@@ -1,11 +1,23 @@
 [
     {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
@@ -16,12 +28,12 @@
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\a2da21f03c98dce59d1f5f9361beeed8562847ff\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
@@ -52,20 +64,28 @@
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\a2da21f03c98dce59d1f5f9361beeed8562847ff\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
@@ -100,15 +120,27 @@
         "source": "D:\\Android\\.android\\.android\\build-cache\\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\6eaef4f9839c341f3d941362d4fc070ff128fa7f\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\6eaef4f9839c341f3d941362d4fc070ff128fa7f\\output\\res\\anim\\design_snackbar_in.xml"
     }
 ]

@@ -33,10 +33,6 @@ public class AddHabitActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
-    public void testStart() throws Exception {
-        Activity activity = getActivity();
-    }
-
     public void testAdd() {
         solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
 

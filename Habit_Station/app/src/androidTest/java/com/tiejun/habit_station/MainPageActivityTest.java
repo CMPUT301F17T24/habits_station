@@ -32,10 +32,6 @@ public class MainPageActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
-    public void testStart() throws Exception {
-        Activity activity = getActivity();
-    }
-
     public void testMyProfileActivity() {
         // test if the button directs to profile page
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
@@ -62,13 +58,5 @@ public class MainPageActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", MainPageActivity.class);
         solo.clickOnView(solo.getView(R.id.history));
         solo.assertCurrentActivity("Wrong Activity", HabitHistoryActivity.class);
-    }
-
-    /**
-     * Runs at the end of the tests
-     * @throws Exception
-     */
-    public void tearDown() throws Exception {
-        solo.finishOpenedActivities();
     }
 }

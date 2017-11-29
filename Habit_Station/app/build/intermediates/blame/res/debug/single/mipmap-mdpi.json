@@ -1,5 +1,13 @@
 [
     {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "D:\\Android\\habits_station\\Habit_Station\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },

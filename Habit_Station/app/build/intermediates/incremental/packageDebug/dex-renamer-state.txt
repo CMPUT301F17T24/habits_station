@@ -1,4 +1,7 @@
-#Mon Nov 13 11:00:24 MST 2017
-base.0=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Mon Nov 27 13:07:51 MST 2017
+base.0=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_3a12e2f95a07d7155195f545d60c29b9556766e1
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.1=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_db7b10125fc3071050abf115906c9da048d4f859\\classes.dex
+base.1=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_db7b10125fc3071050abf115906c9da048d4f859
+file.0=D\:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_3a12e2f95a07d7155195f545d60c29b9556766e1\\classes.dex

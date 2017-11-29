@@ -91,12 +91,4 @@ public class SignInActivityTest extends ActivityInstrumentationTestCase2 {
         solo.clickOnView(solo.getView(R.id.signup));
         solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
     }
-
-    /**
-     * Runs at the end of the tests
-     * @throws Exception
-     */
-    public void tearDown() throws Exception {
-        solo.finishOpenedActivities();
-    }
 }

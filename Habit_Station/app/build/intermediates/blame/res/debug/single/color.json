@@ -4,36 +4,24 @@
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_btn_colored_text_material.xml"
-    },
-    {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
@@ -44,28 +32,32 @@
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\\output\\res\\color\\design_error.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\2bf84129e30255f391c4d963c85ee4e8ec5ca227\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
+        "source": "D:\\Android\\.android\\.android\\build-cache\\a30dd788372511148e93b22190f74f49b6ae0ef4\\output\\res\\color\\common_google_signin_btn_tint.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
@@ -76,12 +68,12 @@
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1eb5eebe3925ae6d01db7e725be6509cb0fb1b69\\output\\res\\color\\design_tint_password_toggle.xml"
-    },
-    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_primary_text_holo_light.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\5b4240e929f33cdf50496f014ae79651841ff474\\output\\res\\color\\wallet_primary_text_holo_light.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
@@ -92,40 +84,44 @@
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_default.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\6eaef4f9839c341f3d941362d4fc070ff128fa7f\\output\\res\\color\\design_error.xml"
+    },
+    {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "D:\\Android\\.android\\.android\\build-cache\\a30dd788372511148e93b22190f74f49b6ae0ef4\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\a2da21f03c98dce59d1f5f9361beeed8562847ff\\output\\res\\color\\design_tint_password_toggle.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_primary_text_material_light.xml"
     },
     {
         "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
@@ -136,20 +132,12 @@
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\switch_thumb_material_light.xml"
-    },
-    {
-        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_tint_switch_thumb.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
@@ -164,15 +152,39 @@
         "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_tint_spinner.xml"
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\e5f6809deef607a5ec270d9c6da67a440ed10dbd\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
-        "source": "D:\\Android\\.android\\.android\\build-cache\\1e58d438ac6243a2d63ff4e63f64b7d8ac1b3885\\output\\res\\color\\abc_btn_colored_text_material.xml"
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\wallet_secondary_text_holo_dark.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\5b4240e929f33cdf50496f014ae79651841ff474\\output\\res\\color\\wallet_secondary_text_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\9ec3491e6af593cca224f1af3bd69714aa4eedb2\\output\\res\\color\\common_google_signin_btn_tint.xml"
     },
     {
         "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
         "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\772242217b8091895d673ddc0d2c809bf4a292fe\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "D:\\Android\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "D:\\Android\\.android\\.android\\build-cache\\a30dd788372511148e93b22190f74f49b6ae0ef4\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\9ec3491e6af593cca224f1af3bd69714aa4eedb2\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_tint.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\2bf84129e30255f391c4d963c85ee4e8ec5ca227\\output\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "D:\\Users\\yaozhilu\\Desktop\\xuanyi branch\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "D:\\Users\\yaozhilu\\.android\\build-cache\\2bf84129e30255f391c4d963c85ee4e8ec5ca227\\output\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "D:\\Users\\XuanyiWu\\Desktop\\pro\\habits_station\\Habit_Station\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "D:\\Users\\XuanyiWu\\.android\\build-cache\\9ec3491e6af593cca224f1af3bd69714aa4eedb2\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     }
 ]
