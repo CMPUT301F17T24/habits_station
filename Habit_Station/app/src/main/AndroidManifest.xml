@@ -43,7 +43,6 @@
         <activity android:name=".MyProfileActivity" />
         <activity android:name=".NearbyActivity" />
         <activity android:name=".LifeCircleActivity" />
-        <activity android:name=".AddFriendActivity" />
         <activity android:name=".FriendsActivity" />
         <activity android:name=".FriendsStatusActivity" />
         <activity android:name=".FriendsExploreActivity" />
