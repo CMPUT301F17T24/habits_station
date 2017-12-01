@@ -7,8 +7,11 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -192,37 +196,62 @@ public class HabitLibraryActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-        String userName = pref.getString("currentUser", "");
-        MYhabits = "{\n" +
-                "  \"query\": { \n" +
-                " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
-                " 	}\n" +
-                "}";
 
-        Log.d("MYhabits",MYhabits);
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
 
-        ElasticSearchHabitController.GetHabits getHabits
-                = new  ElasticSearchHabitController.GetHabits();
-        getHabits.execute(MYhabits);
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
-        try {
-            fillist.clear();
-            fillist.addAll(getHabits.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
+            habitList.setAdapter(adapter);
+
         }
 
+        else {  // start of online else block
+            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+            String userName = pref.getString("currentUser", "");
+            MYhabits = "{\n" +
+                    "  \"query\": { \n" +
+                    " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                    " 	}\n" +
+                    "}";
 
-        adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
-        habitList.setAdapter(adapter);
+            Log.d("MYhabits", MYhabits);
+
+            ElasticSearchHabitController.GetHabits getHabits
+                    = new ElasticSearchHabitController.GetHabits();
+            getHabits.execute(MYhabits);
+
+            try {
+                fillist.clear();
+                fillist.addAll(getHabits.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
 
 
+            adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
+            habitList.setAdapter(adapter);
+
+        }//end of else blcok
     }
 
-
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
 
 }
