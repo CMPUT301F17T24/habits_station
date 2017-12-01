@@ -405,17 +405,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                 Calendar start = habit.getStartDate();
                 Calendar today = Calendar.getInstance();
 
-                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
-                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
-                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
-                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
-
-
-
-
-
                 ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
                 int complete=0;
                 int total = 0;

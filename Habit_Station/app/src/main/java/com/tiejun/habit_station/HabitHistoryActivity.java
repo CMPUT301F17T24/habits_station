@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -82,9 +83,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
                 if (type.isChecked() && comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Cannot select both", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if(!type.isChecked() && !comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Please select one", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if (type.isChecked()){
                     Log.d("check", "type");
@@ -120,6 +131,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 ElasticSearchEventController.GetEvents getHistory
                         = new  ElasticSearchEventController.GetEvents();
                 getHistory.execute(query);
+
                 try {
 
                     fillist.clear();
@@ -134,6 +146,21 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
             }
         });
+
+
+
+        final Button map = (Button) findViewById(R.id.historyMap);
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                setResult(RESULT_OK);
+                Intent intent = new Intent(HabitHistoryActivity.this,MyEventMapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

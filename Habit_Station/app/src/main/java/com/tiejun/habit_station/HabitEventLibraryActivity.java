@@ -7,8 +7,11 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -157,51 +160,81 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-        click_item_index = -1;
-        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-        String userName = pref.getString("currentUser", "");
 
-        Intent intent = getIntent();
-        String habit_name = intent.getStringExtra("habit name");
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
 
-        Log.d("event", "library");
-        Log.d("username", userName);
-        Log.d("habitname is", habit_name);
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
+            adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
+            events.setAdapter(adapter);
 
-        event_query = "{\n" +
-                        "  \"query\": { \n" +
-                                "\"bool\": {\n"+
-                                 "\"must\": [\n"+
-                                           "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                                           "{"+ " \"match\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
-                                            "]"+
-                                      "}"+
-                             "}"+
-                        "}";
+            title = (TextView) findViewById(R.id.title);
+            title.setText(habit_name + " Library");
 
-        ElasticSearchEventController.GetEvents getHEvent
-                = new  ElasticSearchEventController.GetEvents();
-        getHEvent.execute(event_query);
-
-        try {
-            fillist.clear();
-            fillist.addAll(getHEvent.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
         }
 
+        else {  // start of online block
+
+            click_item_index = -1;
+            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+            String userName = pref.getString("currentUser", "");
+
+            Intent intent = getIntent();
+            String habit_name = intent.getStringExtra("habit name");
+
+            Log.d("event", "library");
+            Log.d("username", userName);
+            Log.d("habitname is", habit_name);
 
 
-        adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
-        events.setAdapter(adapter);
+            event_query = "{\n" +
+                    "  \"query\": { \n" +
+                    "\"bool\": {\n" +
+                    "\"must\": [\n" +
+                    "{" + " \"term\" : { \"uName\" : \"" + userName + "\" }},\n" +
+                    "{" + " \"match\" : {  \"eName\" : \"" + habit_name + "\" }}\n" +
+                    "]" +
+                    "}" +
+                    "}" +
+                    "}";
 
-        title = (TextView) findViewById(R.id.title);
-        title.setText(habit_name + " Library");
+            ElasticSearchEventController.GetEvents getHEvent
+                    = new ElasticSearchEventController.GetEvents();
+            getHEvent.execute(event_query);
+
+            try {
+                fillist.clear();
+                fillist.addAll(getHEvent.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
 
 
+            adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
+            events.setAdapter(adapter);
+
+            title = (TextView) findViewById(R.id.title);
+            title.setText(habit_name + " Library");
+
+        }// end of online else block
+    }
+
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
 }
