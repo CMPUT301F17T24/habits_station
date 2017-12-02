@@ -86,6 +86,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
 
+    private ArrayList<Habit> habitList  = new ArrayList<Habit>();
+
 
     public  int do_year = 0,
             do_month = 0,
@@ -122,6 +124,20 @@ public class EditHabitEventActivity extends AppCompatActivity {
         if( isNetworkAvailable(this) == false){
 
             loadFromFile();
+
+            /**
+             * search in a arraylist
+             * source: https://stackoverflow.com/questions/12496038/searching-in-a-arraylist-with-custom-objects-for-certain-strings
+             */
+            for(Habit h : habitList){
+                if(h.getTitle() != null && h.getTitle().contains(habit_name)){
+                    int habitIdex = habitList.indexOf(h);
+                    habit = h;
+                }
+
+            }
+
+
 
             Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
@@ -325,24 +341,49 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         info = (TextView) findViewById(R.id.info);
         ///
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
+
+            loadFromFile();
+
+            /**
+             * search in a arraylist
+             * source: https://stackoverflow.com/questions/12496038/searching-in-a-arraylist-with-custom-objects-for-certain-strings
+             */
+            for(Habit h : habitList){
+                if(h.getTitle() != null && h.getTitle().contains(habit_name)){
+                    int habitIdex = habitList.indexOf(h);
+                    Habit habit = new Habit();
+                    habit = h;
+                }
+
+            }
 
 
 
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
 
+        }
 
-        String habit_id = userName +habit_name.toUpperCase();
-        Habit habit = new Habit();
-        ElasticSearchHabitController.GetHabitTask getHabit
-                = new  ElasticSearchHabitController.GetHabitTask();
-        getHabit.execute(habit_id);
+        else {
 
-        try {
-            habit = getHabit.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            String habit_id = userName + habit_name.toUpperCase();
+            Habit habit = new Habit();
+            ElasticSearchHabitController.GetHabitTask getHabit
+                    = new ElasticSearchHabitController.GetHabitTask();
+            getHabit.execute(habit_id);
+
+            try {
+                habit = getHabit.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
         }
         /////
 
@@ -691,11 +732,17 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private void loadFromFile() {
         //ArrayList<String> tweets = new ArrayList<String>();
         try {
-            FileInputStream fis = openFileInput(FILENAME2);
-            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
-            Gson gson = new Gson();
-            Type listType = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
-            fillist = gson.fromJson(in, listType);
+            FileInputStream fis1 = openFileInput(FILENAME2);
+            BufferedReader in1 = new BufferedReader(new InputStreamReader(fis1));
+            Gson gson1 = new Gson();
+            Type listType1 = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
+            fillist = gson1.fromJson(in1, listType1);
+
+            FileInputStream fis2 = openFileInput(FILENAME1);
+            BufferedReader in2 = new BufferedReader(new InputStreamReader(fis2));
+            Gson gson2 = new Gson();
+            Type listType2 = new TypeToken<ArrayList<Habit>>(){}.getType();
+            habitList = gson2.fromJson(in2, listType2);
 
         } catch (FileNotFoundException e) {
             //TODO Auto-generated catch block

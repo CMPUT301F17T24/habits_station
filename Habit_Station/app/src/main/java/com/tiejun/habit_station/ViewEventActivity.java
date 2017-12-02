@@ -155,8 +155,8 @@ public class ViewEventActivity extends AppCompatActivity {
                 +"\nComment: "+event.geteComment()
                 +"\nLocation: "+ eventLocation );
 
-        imageBase64 = event.getePhoto();
-        image.setImageBitmap(base64ToImage());
+        //imageBase64 = event.getePhoto();
+        //image.setImageBitmap(base64ToImage());
 
     }
 
