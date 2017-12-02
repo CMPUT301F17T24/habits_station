@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 
 import com.robotium.solo.Solo;
@@ -26,9 +27,21 @@ public class StatusActivityTest extends ActivityInstrumentationTestCase2{
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testReturn() {
         solo.assertCurrentActivity("Wrong Activity", StatusActivity.class);
         solo.clickOnView(solo.getView(R.id.cool));
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
+    }
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
     }
 }

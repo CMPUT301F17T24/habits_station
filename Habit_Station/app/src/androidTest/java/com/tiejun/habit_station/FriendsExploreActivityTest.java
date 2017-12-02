@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
 
@@ -30,9 +31,21 @@ public class FriendsExploreActivityTest extends ActivityInstrumentationTestCase2
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testGo() {
         solo.assertCurrentActivity("Wrong Activity", FriendsExploreActivity.class);
         solo.enterText((EditText) solo.getView(R.id.keyword), "test habit");
         solo.clickOnView(solo.getView(R.id.go));
+    }
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
     }
 }

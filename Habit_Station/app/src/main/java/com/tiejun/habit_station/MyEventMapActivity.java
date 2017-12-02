@@ -60,14 +60,36 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mgoogleMap = googleMap;
-        LatLng Edmonton = new LatLng(53.5444, -113.4909);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Edmonton, 10));
+        getcLocation();
+        double la;
+        double ll;
+        if (currentLocation!=null){
+            la = currentLocation.getLatitude();
+            ll = currentLocation.getLongitude();
+        }
+        else{
+            la = 53.537519;
+            ll= -113.497412;
+            //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
+        }
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom((new LatLng(la,ll)), 10));
 
         setMarker();
     }
-
-
     public void setMarker() {
+        getcLocation();
+
+        if (currentLocation != null){
+            addMaker();
+        }
+        else {
+            Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
+            //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
+            addMaker();
+        }
+    }
+    public void getcLocation(){
         try {
             CurrentLocation locationListener = new CurrentLocation();
             LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -81,34 +103,36 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
         } catch (SecurityException e) {
             e.printStackTrace();
         }
+    }
+    public void addMaker(){
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        String userName = pref.getString("currentUser", "");
+        String MYhistory = "{\n" +
+                "  \"query\": { \n" +
+                " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                " 	}\n" +
+                "}";
 
-        if (currentLocation != null){
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-            String MYhistory = "{\n" +
-                    "  \"query\": { \n" +
-                    " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
-                    " 	}\n" +
-                    "}";
+        ElasticSearchEventController.GetEvents getHistory
+                = new ElasticSearchEventController.GetEvents();
+        getHistory.execute(MYhistory);
 
-            ElasticSearchEventController.GetEvents getHistory
-                    = new ElasticSearchEventController.GetEvents();
-            getHistory.execute(MYhistory);
+        try {
+            fillist.addAll(getHistory.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
 
-            try {
-                fillist.addAll(getHistory.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
+        int len = fillist.size();
+        for (int i = 0; i < len; i++) {
+            HabitEvent habitEvent = fillist.get(i);
+            GeoPoint geoPoint = habitEvent.geteLocation();
 
-            int len = fillist.size();
-            for (int i = 0; i < len; i++) {
-                HabitEvent habitEvent = fillist.get(i);
-                GeoPoint geoPoint = habitEvent.geteLocation();
+            if (geoPoint != null) {
 
-                if (geoPoint != null) {
+                if (currentLocation!=null) {
                     Location current = new Location("Current Location");
                     current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
                     current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
@@ -129,61 +153,18 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
                         double lon = geoPoint.getLongitude();
                         mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
                     }
+
                 }
+                else{
+                    double lat = geoPoint.getLatitude();
+                    double lon = geoPoint.getLongitude();
+                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
+                }
+
+
+
             }
         }
-        else {
-            Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
-            currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-            String MYhistory = "{\n" +
-                    "  \"query\": { \n" +
-                    " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
-                    " 	}\n" +
-                    "}";
-
-            ElasticSearchEventController.GetEvents getHistory
-                    = new ElasticSearchEventController.GetEvents();
-            getHistory.execute(MYhistory);
-
-            try {
-                fillist.addAll(getHistory.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-
-            int len = fillist.size();
-            for (int i = 0; i < len; i++) {
-                HabitEvent habitEvent = fillist.get(i);
-                GeoPoint geoPoint = habitEvent.geteLocation();
-
-                if (geoPoint != null) {
-                    Location current = new Location("Current Location");
-                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
-                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
-
-                    Location eventLocation = new Location("Mood's location");
-                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
-                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
-                    double distance = current.distanceTo(eventLocation);
-                    double disKM = distance / 1000;
-                    Log.d("dis", String.valueOf(disKM));
-                    if (disKM <= 5) {
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
-
-                    } else {
-                        double lat = geoPoint.getLatitude();
-                        double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
-                    }
-                }
-            }
-        }
-
     }
+
 }

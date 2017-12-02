@@ -35,6 +35,10 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testSignUp() {
         solo.assertCurrentActivity("Wrong Activity", SignUpActivity.class);
 
@@ -57,5 +61,13 @@ public class SignUpActivityTest extends ActivityInstrumentationTestCase2 {
         } catch (Exception e){
             Log.i("Error", "Failed to get the User out of the async object");
         }
+    }
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
     }
 }

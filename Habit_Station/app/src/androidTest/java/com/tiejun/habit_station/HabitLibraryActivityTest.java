@@ -37,6 +37,10 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testViewHabit() {
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
 
@@ -94,5 +98,13 @@ public class HabitLibraryActivityTest extends ActivityInstrumentationTestCase2 {
         solo.assertCurrentActivity("Wrong Activity", HabitLibraryActivity.class);
         solo.clickOnView(solo.getView(R.id.add));
         solo.assertCurrentActivity("Wrong Activity", AddHabitActivity.class);
+    }
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
     }
 }

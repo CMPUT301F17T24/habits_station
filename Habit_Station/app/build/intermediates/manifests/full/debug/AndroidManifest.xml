@@ -81,7 +81,6 @@
         <activity android:name="com.tiejun.habit_station.MyProfileActivity" />
         <activity android:name="com.tiejun.habit_station.NearbyActivity" />
         <activity android:name="com.tiejun.habit_station.LifeCircleActivity" />
-        <activity android:name="com.tiejun.habit_station.AddFriendActivity" />
         <activity android:name="com.tiejun.habit_station.FriendsActivity" />
         <activity android:name="com.tiejun.habit_station.FriendsStatusActivity" />
         <activity android:name="com.tiejun.habit_station.FriendsExploreActivity" />
@@ -92,7 +91,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA16ua_UDhp9NCN3xcwg2w5JChyKw3HEYA" />
+            android:value="AIzaSyDFDttvUxIKyvRIVqzskwbRy_Sr_C89f_U" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

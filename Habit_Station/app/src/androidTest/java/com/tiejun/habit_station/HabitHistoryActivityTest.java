@@ -37,6 +37,10 @@ public class HabitHistoryActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     // CANNOT TEST SINCE HABIT EVENT LIST IS NULL
     /*
     public void testSearch() {
@@ -60,4 +64,12 @@ public class HabitHistoryActivityTest extends ActivityInstrumentationTestCase2 {
         solo.waitForText("Cannot select both");
     }
     */
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
+    }
 }

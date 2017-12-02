@@ -7,14 +7,16 @@
 
 package com.tiejun.habit_station;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.EditText;
 
 import com.robotium.solo.Solo;
 
 import java.util.ArrayList;
 
-import static android.content.Context.MODE_PRIVATE;
+import static com.tiejun.habit_station.R.id.search;
 
 /**
  * Created by CBB on 2017/11/29.
@@ -32,17 +34,23 @@ public class MyProfileActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testGo() {
         solo.assertCurrentActivity("Wrong Activity", MyProfileActivity.class);
 
         String userName = "test user";
-        String followName = "test user";
+        solo.enterText((EditText) solo.getView(search), "test user");
+        String followName = getActivity().findViewById(R.id.search).toString();
         solo.clickOnView(solo.getView(R.id.go));
         if (followName.equals(userName)) {
             solo.waitForText("You cannot follow yourself");
         }
 
-        followName = "test follow";
+        solo.enterText((EditText) solo.getView(search), "test follow");
+        followName = getActivity().findViewById(R.id.search).toString();
         solo.clickOnView(solo.getView(R.id.go));
         ElasticSearchUserController.GetUserTask getUserTask = new ElasticSearchUserController.GetUserTask();
         getUserTask.execute(followName);
@@ -86,11 +94,18 @@ public class MyProfileActivityTest extends ActivityInstrumentationTestCase2 {
         solo.clickOnView(solo.getView(R.id.nearby));
         solo.assertCurrentActivity("Wrong Activity", NearbyActivity.class);
     }
-    /*
+
     public void testRecommend() {
         solo.assertCurrentActivity("Wrong Activity", MyProfileActivity.class);
         solo.clickOnView(solo.getView(R.id.recommand));
         solo.assertCurrentActivity("Wrong Activity", FriendsExploreActivity.class);
     }
-    */
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
+    }
 }

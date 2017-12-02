@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.util.Log;
 import android.widget.ListView;
@@ -36,6 +37,10 @@ public class FriendsActivityTest extends ActivityInstrumentationTestCase2 {
         solo = new Solo(getInstrumentation(), getActivity());
     }
 
+    public void testStart() throws Exception {
+        Activity activity = getActivity();
+    }
+
     public void testPending() {
         solo.assertCurrentActivity("Wrong Activity", FriendsActivity.class);
 
@@ -48,6 +53,10 @@ public class FriendsActivityTest extends ActivityInstrumentationTestCase2 {
             Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
         }
 
+        // test followee list
+        solo.clickOnView(solo.getView(R.id.friends));
+
+        // test pending list
         solo.clickOnView(solo.getView(R.id.pending));
 
         if (uNames.size() > 0) {
@@ -61,5 +70,13 @@ public class FriendsActivityTest extends ActivityInstrumentationTestCase2 {
                 solo.waitForText("You ignored this user! ");
             }
         }
+    }
+
+    /**
+     * Runs at the end of the tests
+     * @throws Exception
+     */
+    public void tearDown() throws Exception {
+        solo.finishOpenedActivities();
     }
 }
