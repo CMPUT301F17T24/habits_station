@@ -213,7 +213,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
                     HabitEvent event = new HabitEvent(userName, habit.getTitle(), doDate, sComment);
-                    event.seteLocation(currentLocation);
+                    if (currentLocation != new GeoPoint(0,0)) {
+                        event.seteLocation(currentLocation);
+                    }
                     if (photo != null) {
                         String base = checkImageSize(photo);
                         //photo = base64ToImage();
@@ -614,6 +616,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 int latitude = (int) (location.getLatitude() * 1E6);
                 int longitude = (int) (location.getLongitude() * 1E6);
                 currentLocation = new GeoPoint(latitude, longitude);
+            }
+            else{
+                currentLocation = new GeoPoint(0, 0);
+                Toast.makeText(this, "GPS not ready.", Toast.LENGTH_SHORT).show();
             }
         } catch (SecurityException e) {
             e.printStackTrace();

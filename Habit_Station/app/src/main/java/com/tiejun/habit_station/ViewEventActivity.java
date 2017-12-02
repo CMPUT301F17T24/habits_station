@@ -157,8 +157,13 @@ public class ViewEventActivity extends AppCompatActivity {
                 +"\nLocation: "+ eventLocation );
 
         imageBase64 = event.getePhoto();
-        image.setImageBitmap(base64ToImage());
+        if ( imageBase64 !=null) {
+            image.setImageBitmap(base64ToImage());
+        }
+        else{
+            image.setImageBitmap(null);
 
+        }
     }
 
     /**
