@@ -599,6 +599,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 int longitude = (int) (location.getLongitude() * 1E6);
                 currentLocation = new GeoPoint(latitude, longitude);
             }
+            else {
+                currentLocation = new GeoPoint(0, 0);
+                Toast.makeText(this, "GPS not ready.", Toast.LENGTH_SHORT).show();
+            }
         } catch (SecurityException e) {
             e.printStackTrace();
         }
