@@ -71,6 +71,15 @@ public class MyProfileActivity extends AppCompatActivity {
             }
         });
 
+        Button exploreButton = (Button) findViewById(R.id.recommand);
+        exploreButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setResult(RESULT_OK);
+                Intent intent = new Intent(MyProfileActivity.this, FriendsExploreActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

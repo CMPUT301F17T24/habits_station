@@ -60,10 +60,19 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mgoogleMap = googleMap;
-        //LatLng Edmonton = new LatLng(53.5444, -113.4909);
         getcLocation();
-        double la = currentLocation.getLatitude();
-        double ll = currentLocation.getLongitude();
+        double la;
+        double ll;
+        if (currentLocation!=null){
+            la = currentLocation.getLatitude();
+            ll = currentLocation.getLongitude();
+        }
+        else{
+            la = 53.537519;
+            ll= -113.497412;
+            //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
+        }
+
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom((new LatLng(la,ll)), 10));
 
         setMarker();
@@ -76,7 +85,7 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
         }
         else {
             Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
-            currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
+            //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
             addMaker();
         }
     }
@@ -122,26 +131,38 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
             GeoPoint geoPoint = habitEvent.geteLocation();
 
             if (geoPoint != null) {
-                Location current = new Location("Current Location");
-                current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
-                current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
-                Location eventLocation = new Location("Mood's location");
-                eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
-                eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
-                double distance = current.distanceTo(eventLocation);
-                double disKM = distance / 1000;
-                Log.d("dis", String.valueOf(disKM));
-                if (disKM <= 5) {
-                    double lat = geoPoint.getLatitude();
-                    double lon = geoPoint.getLongitude();
-                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+                if (currentLocation!=null) {
+                    Location current = new Location("Current Location");
+                    current.setLatitude(currentLocation.getLatitudeE6() / 1E6);
+                    current.setLongitude(currentLocation.getLongitudeE6() / 1E6);
 
-                } else {
+                    Location eventLocation = new Location("Mood's location");
+                    eventLocation.setLatitude(geoPoint.getLatitudeE6() / 1E6);
+                    eventLocation.setLongitude(geoPoint.getLongitudeE6() / 1E6);
+                    double distance = current.distanceTo(eventLocation);
+                    double disKM = distance / 1000;
+                    Log.d("dis", String.valueOf(disKM));
+                    if (disKM <= 5) {
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+
+                    } else {
+                        double lat = geoPoint.getLatitude();
+                        double lon = geoPoint.getLongitude();
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
+                    }
+
+                }
+                else{
                     double lat = geoPoint.getLatitude();
                     double lon = geoPoint.getLongitude();
                     mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
                 }
+
+
+
             }
         }
     }
