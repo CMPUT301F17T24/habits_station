@@ -34,6 +34,7 @@ import io.searchbox.indices.IndicesExists;
  *
  * @author xtie
  * @version 1.0
+ * @see User
  *
  */
 
@@ -152,7 +153,7 @@ public class ElasticSearchUserController {
     }
 
     /**
-     * Verify settings.
+     * Verify settings
      */
     public static void verifySettings() {
         if (client == null) {

@@ -139,8 +139,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         return true;
     }
 
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
@@ -180,8 +178,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
-
 
         adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
         events.setAdapter(adapter);

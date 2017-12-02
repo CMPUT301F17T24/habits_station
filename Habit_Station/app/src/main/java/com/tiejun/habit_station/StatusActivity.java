@@ -20,7 +20,8 @@ import android.widget.TextView;
 import static java.lang.Math.round;
 
 /**
- * Activity to show status of habits
+ * Activity to show status of a habit using a progress bar
+ * Visual and statistical habit status indicator
  *
  * @author xuanyi
  * @version 1.0
@@ -53,12 +54,9 @@ public class StatusActivity extends AppCompatActivity {
         }
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
         progressBar.setProgress(progress);
         status = (TextView)findViewById(R.id.status);
         status.setText("Finished: " + eventDone +"   Total: " + totalDays);
-
-
 
         final Button cool = (Button) findViewById(R.id.cool);
         cool.setOnClickListener(new View.OnClickListener() {

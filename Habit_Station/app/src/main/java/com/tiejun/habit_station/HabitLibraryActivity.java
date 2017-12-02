@@ -217,7 +217,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
         habitList.setAdapter(adapter);
 

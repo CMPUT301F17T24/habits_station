@@ -16,7 +16,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Activity to show main page
+ * Activity to show main page of this application
  *
  * @author xuanyi
  * @version 1.0

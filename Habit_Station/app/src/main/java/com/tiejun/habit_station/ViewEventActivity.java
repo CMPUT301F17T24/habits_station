@@ -28,7 +28,7 @@ import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Activity to show habit events
+ * Activity to view habit events
  *
  * @author xuanyi
  * @version 1.5
@@ -162,7 +162,7 @@ public class ViewEventActivity extends AppCompatActivity {
     }
 
     /**
-     * Convert base64 to bitmap
+     * Convert base64 to bitmap object
      * @return
      */
     public Bitmap base64ToImage() {

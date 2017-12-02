@@ -32,6 +32,7 @@ import io.searchbox.core.Update;
  *
  * @author xuanyi
  * @version 1.0
+ * @see HabitEvent
  *
  */
 
@@ -41,7 +42,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function which add event to elastic search
+     * The function which adds event to elastic search
      */
     public static class AddEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -74,7 +75,7 @@ public class ElasticSearchEventController {
     }
 
     /**
-     * The function which add event to elastic search
+     * The function which delete event to elastic search
      */
     public static class DeleteEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -109,7 +110,7 @@ public class ElasticSearchEventController {
     }
 
     /**
-     * The function which update event to elastic search
+     * The function which updates a event to elastic search
      */
     public static class UpdateEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -195,7 +196,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function to judge if the array list of events is stored in elastic search
+     * The function to get a array list of habit events from elastic search
      */
     // TODO we need a function which gets tweets from elastic search
     public static class GetEvents extends AsyncTask<String, Void, ArrayList<HabitEvent>> {
@@ -237,7 +238,7 @@ public class ElasticSearchEventController {
     }
 
     /**
-     * Verify settings.
+     * Verify settings
      */
     public static void verifySettings() {
         if (client == null) {

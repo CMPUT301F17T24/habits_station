@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -32,6 +32,7 @@ import io.searchbox.core.Update;
  *
  * @author xuanyi
  * @version 1.0
+ * @see Habit
  *
  */
 
@@ -132,7 +133,7 @@ public class ElasticSearchHabitController {
     }
 
     /**
-     * The function which get habit from elastic search
+     * The function which gets habit from elastic search
      */
     public static class GetHabitTask extends AsyncTask<String, Void, Habit> {
         @Override
@@ -182,7 +183,7 @@ public class ElasticSearchHabitController {
 
 
     /**
-     * The function which get habit list from elastic search
+     * The function which get a array list of habits from elastic search
      */
     public static class GetHabits extends AsyncTask<String, Void, ArrayList<Habit>> {
         @Override
@@ -222,7 +223,7 @@ public class ElasticSearchHabitController {
     }
 
     /**
-     * Verify settings.
+     * Verify settings
      */
     public static void verifySettings() {
         if (client == null) {

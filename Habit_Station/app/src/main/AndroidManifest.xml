@@ -39,12 +39,10 @@
         <activity android:name=".EditHabitActivity" />
         <activity android:name=".HabitEventLibraryActivity" />
         <activity android:name=".EditHabitEventActivity" />
-        <activity android:name=".PhotoGalleryActivity" />
         <activity android:name=".MyProfileActivity" />
         <activity android:name=".NearbyActivity" />
         <activity android:name=".LifeCircleActivity" />
         <activity android:name=".FriendsActivity" />
-        <activity android:name=".FriendsStatusActivity" />
         <activity android:name=".FriendsExploreActivity" />
         <activity android:name=".HabitHistoryActivity" />
         <activity android:name=".MyEventMapActivity" />

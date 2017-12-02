@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  *  consturct a user list
  *
- *  @author Xtie
+ *  @author xtie
  * @version 1.5
  * @see User
  * @since 1.0

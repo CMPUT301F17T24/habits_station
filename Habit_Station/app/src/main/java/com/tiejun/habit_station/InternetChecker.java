@@ -21,6 +21,11 @@ import android.net.NetworkInfo;
 
 public class InternetChecker {
 
+    /**
+     * Check if the current device is connected to the internet
+     * @param context current context
+     * @return
+     */
     public static boolean isOnline(Context context) {
         ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

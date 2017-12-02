@@ -44,7 +44,7 @@ import java.util.StringTokenizer;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Activity to edit habit events
+ * Activity to add, edit and delete habit events
  *
  * @author xuanyi
  * @version 2.0
@@ -497,7 +497,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
     }
 
     /**
-     * Check the image size
+     * Check the if image size is greater than 65536
      *
      * @param bm photo
      * @return
@@ -516,7 +516,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
     }
 
     /**
-     * Convert bitmap object to byte array
+     * Convert bitmap object to a byte array
+     *
      * @param bitmap photo
      * @return
      */
@@ -528,6 +529,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     /**
      * Resize the photo
+     *
      * @param bitmap photo
      */
     private void resizeImage(Bitmap bitmap) {
@@ -537,6 +539,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     /**
      * Convert bitmap object to base64 string
+     * Used to save into the elasticsearch
+     *
      * @param bm photo
      * @return
      */
@@ -545,6 +549,12 @@ public class EditHabitEventActivity extends AppCompatActivity {
         return imageBase64;
     }
 
+    /**
+     * Convert base64 to an bitmap object
+     * Used to display photo on the screen
+     *
+     * @return
+     */
     public Bitmap base64ToImage() {
         byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
@@ -555,7 +565,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
     /**
-     * Grand the gps permission
+     * Grand the GPS permission
      */
     private void permissionLocationRequest() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

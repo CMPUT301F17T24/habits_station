@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
- * Sign up
+ * Activity used to sign up
  *
  * @author xtie
  * @version 1.0
@@ -78,6 +78,7 @@ public class SignUpActivity extends SignInActivity {
 
     /**
      * Check if the user is already existed
+     *
      * @param name username
      * @return
      */

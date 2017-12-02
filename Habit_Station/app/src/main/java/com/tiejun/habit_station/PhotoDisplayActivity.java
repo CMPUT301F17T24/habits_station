@@ -14,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 /**
- * Activity to show the photo taken by the user
+ * Activity to show the photo taken by the user using camera
  *
  * @author xtie
  * @version 1.0

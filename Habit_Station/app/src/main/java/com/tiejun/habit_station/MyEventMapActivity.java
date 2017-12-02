@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You may use,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -41,7 +41,7 @@ import java.util.concurrent.ExecutionException;
 import static com.tiejun.habit_station.R.id.events;
 
 /**
- * Activity to show map with all habit events of a user
+ * Activity to show the map with all habit events of a user
  *
  * @author yaozhi
  * @version 1.0
@@ -88,7 +88,7 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
     }
 
     /**
-     * Set marker on the map with corresponding loction of habit events
+     * Set markers on the map with corresponding location of habit events
      */
     public void setMarker() {
         getcLocation();
@@ -123,7 +123,7 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
     }
 
     /**
-     * Add marker to the map
+     * Highlight the events of the current user based on locations on the map (within 5km or not)
      */
     public void addMaker(){
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
@@ -174,7 +174,6 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
                         double lon = geoPoint.getLongitude();
                         mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
                     }
-
                 }
                 else{
                     double lat = geoPoint.getLatitude();

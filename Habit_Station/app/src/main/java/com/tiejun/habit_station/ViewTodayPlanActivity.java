@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Activity to show today's plan
+ * Activity to show today's plan of habits og the current user
  *
  * @author xuanyi
  * @version 1.5
- * @see HabitEvent
- * @see HabitEventList
+ * @see Habit
+ * @see HabitList
  * @since 1.0
  *
  */

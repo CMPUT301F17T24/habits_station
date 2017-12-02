@@ -42,7 +42,8 @@ import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Activity to show near by habit event
+ * Activity to show nearby habit event on the map.
+ * Distinct events within 5 km to events not within 5 km.
  *
  * @author yaozhi
  * @version 1.0
@@ -127,7 +128,7 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     /**
-     * Set marker on the map
+     * Set markers on the map
      */
     public void setMarker(){
         // get current location
@@ -147,7 +148,7 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
     }
 
     /**
-     * Highlight locations on the map (within 5km or not)
+     * Highlight all nearby locations on the map (within 5km or not)
      */
     public void addMarker() {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);

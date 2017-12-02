@@ -19,16 +19,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 /**
- * Activity to follow friends
+ * Activity to follow another user, accept and ignore friend request
  *
  * @author xuanyi
  * @version 1.0
+ * @see User
  *
  */
 
@@ -93,7 +93,6 @@ public class FriendsActivity extends AppCompatActivity {
         
     }
 
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
@@ -105,8 +104,6 @@ public class FriendsActivity extends AppCompatActivity {
         }
 
     }
-
-
 
     @Override
     public boolean onContextItemSelected(MenuItem item){
@@ -162,18 +159,12 @@ public class FriendsActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
 
-
         adapter = new ArrayAdapter<String>(this, R.layout.list_habits, uNames);
         nameList.setAdapter(adapter);
-
-
     }
 }

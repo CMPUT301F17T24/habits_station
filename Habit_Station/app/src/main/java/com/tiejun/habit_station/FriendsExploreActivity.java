@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Activity for exploring friends
+ * Activity for exploring friends by searching habits
  *
  * @author xuanyi
  * @version 1.0
@@ -91,8 +91,6 @@ public class FriendsExploreActivity extends AppCompatActivity {
         });
 
     }
-
-
 
     @Override
     protected void onStart() {
