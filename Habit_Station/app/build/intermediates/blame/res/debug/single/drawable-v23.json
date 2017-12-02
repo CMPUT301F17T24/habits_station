@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
-        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/drawable-v23/abc_control_background_material.xml"
-    },
-    {
         "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
         "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/drawable-v23/abc_control_background_material.xml"
     }
