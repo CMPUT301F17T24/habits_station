@@ -43,7 +43,7 @@ import static com.tiejun.habit_station.R.id.events;
 /**
  * Activity to show map with all habit events of a user
  *
- * @author xuanyi
+ * @author yaozhi
  * @version 1.0
  *
  */

@@ -44,7 +44,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Activity to show near by habit event
  *
- * @author xuanyi
+ * @author yaozhi
  * @version 1.0
  *
  */
