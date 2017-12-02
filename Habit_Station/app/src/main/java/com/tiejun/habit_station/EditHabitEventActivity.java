@@ -18,6 +18,8 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -34,9 +36,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
 import org.osmdroid.util.GeoPoint;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -62,6 +75,8 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private int imageByteCount;
 
     //
+    private static final String FILENAME2 = "habitLibrary.sav";// for save and load
+    private static final String FILENAME1 = "habitEventLibrary.sav";// for save and load
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -100,19 +115,33 @@ public class EditHabitEventActivity extends AppCompatActivity {
         Log.d("habitid",habit_id);
 
 
-        ElasticSearchHabitController.GetHabitTask getHabit
-                = new  ElasticSearchHabitController.GetHabitTask();
-        getHabit.execute(habit_id);
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
 
-        try {
-            habit = getHabit.get();  //other way later
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            Log.d("habitinfo","???");
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-            Log.d("habitinfo","???");
+            loadFromFile();
+
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
+
+
         }
+        else {
+            ElasticSearchHabitController.GetHabitTask getHabit
+                    = new ElasticSearchHabitController.GetHabitTask();
+            getHabit.execute(habit_id);
+
+            try {
+                habit = getHabit.get();  //other way later
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Log.d("habitinfo", "???");
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+                Log.d("habitinfo", "???");
+            }
+        }// end of on line get habit
 
 
         Log.d("habitinfo",habit.getTitle());
@@ -295,6 +324,13 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
         info = (TextView) findViewById(R.id.info);
+        ///
+
+
+
+
+
+
         String habit_id = userName +habit_name.toUpperCase();
         Habit habit = new Habit();
         ElasticSearchHabitController.GetHabitTask getHabit
@@ -308,6 +344,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        /////
 
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = getPlans(days);
@@ -606,7 +643,72 @@ public class EditHabitEventActivity extends AppCompatActivity {
     }
 //
 
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 
+    /**
+     * a method to save in file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab exercise
+     */
+    private void saveInFile() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME2,
+                    Context.MODE_PRIVATE);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(fillist, writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+
+            //e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+            //e.printStackTrace();
+        }
+
+        Log.d("Error","done save in file");
+    }
+
+    /**
+     * a method to load from file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab excercise
+     */
+    private void loadFromFile() {
+        //ArrayList<String> tweets = new ArrayList<String>();
+        try {
+            FileInputStream fis = openFileInput(FILENAME2);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
+            fillist = gson.fromJson(in, listType);
+
+        } catch (FileNotFoundException e) {
+            //TODO Auto-generated catch block
+            fillist = new ArrayList<HabitEvent>();
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+            //e.printStackTrace();
+        }
+        //return tweets.toArray(new String[tweets.size()]);
+
+    }
 
 
 }

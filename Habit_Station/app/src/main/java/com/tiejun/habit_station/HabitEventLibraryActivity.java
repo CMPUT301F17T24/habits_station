@@ -26,6 +26,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -39,6 +50,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     private int click_item_index=-1;
     String habit_name;
     String event_query;
+
+    private static final String FILENAME = "habitEventLibrary.sav";// for save and load
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +104,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
 
     }
@@ -169,6 +184,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
+            loadFromFile();
+
             adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
             events.setAdapter(adapter);
 
@@ -222,6 +239,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             title = (TextView) findViewById(R.id.title);
             title.setText(habit_name + " Library");
 
+            saveInFile();
+
         }// end of online else block
     }
 
@@ -235,6 +254,67 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+
+    /**
+     * a method to save in file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab excercise
+     */
+    private void saveInFile() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME,
+                    Context.MODE_PRIVATE);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(fillist, writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+
+            //e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+            //e.printStackTrace();
+        }
+    }
+
+    /**
+     * a method to load from file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab excercise
+     */
+    private void loadFromFile() {
+        //ArrayList<String> tweets = new ArrayList<String>();
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            Type listType = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
+            fillist = gson.fromJson(in, listType);
+
+
+
+            //String line = in.readLine();
+            //while (line != null) {
+            //tweets.add(line);
+            //line = in.readLine();
+
+        } catch (FileNotFoundException e) {
+            //TODO Auto-generated catch block
+            fillist = new ArrayList<HabitEvent>();
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+            //e.printStackTrace();
+        }
+        //return tweets.toArray(new String[tweets.size()]);
+
     }
 
 }
