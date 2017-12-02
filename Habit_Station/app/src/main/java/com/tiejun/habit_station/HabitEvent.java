@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -23,7 +23,7 @@ import org.osmdroid.util.GeoPoint;
 /**
  * a class for habit events
  *
- * @author Xtie
+ * @author xtie
  * @version 1.5
  * @see HabitEventList
  * @since 1.0
@@ -32,7 +32,7 @@ import org.osmdroid.util.GeoPoint;
 public class HabitEvent {
     public String uName;
 
-   // public Calendar sTime;
+    // public Calendar sTime;
     //public String eReason;
     //public ArrayList<String> Plan = new ArrayList<String>();
 
@@ -165,7 +165,6 @@ public class HabitEvent {
      */
   /*  public void seteReason(String reason){
         this.eReason = reason;
-
     }
 */
     /**

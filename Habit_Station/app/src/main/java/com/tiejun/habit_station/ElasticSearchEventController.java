@@ -27,10 +27,13 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 
-import static com.tiejun.habit_station.ElasticSearchUserController.verifySettings;
-
 /**
- * Created by XuanyiWu on 2017-11-08.
+ * Elastic search controller for habit events
+ *
+ * @author xuanyi
+ * @version 1.0
+ * @see HabitEvent
+ *
  */
 
 public class ElasticSearchEventController {
@@ -39,7 +42,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function which add event to elastic search
+     * The function which adds event to elastic search
      */
     public static class AddEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -71,10 +74,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
     /**
-     * The function which add event to elastic search
+     * The function which delete event to elastic search
      */
     public static class DeleteEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -108,12 +109,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
     /**
-     * The function which add event to elastic search
+     * The function which updates a event to elastic search
      */
     public static class UpdateEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -145,18 +142,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
-     * The function which get user from elastic search
+     * The function which get event from elastic search
      */
     public static class GetEventTask extends AsyncTask<String, Void, HabitEvent> {
         @Override
@@ -179,7 +166,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function to judge if the user is stored in elastic search
+     * The function to judge if the event is stored in elastic search
      */
     public static class IsExist extends AsyncTask<String, Void, Boolean> {
         @Override
@@ -208,7 +195,9 @@ public class ElasticSearchEventController {
 
 
 
-
+    /**
+     * The function to get a array list of habit events from elastic search
+     */
     // TODO we need a function which gets tweets from elastic search
     public static class GetEvents extends AsyncTask<String, Void, ArrayList<HabitEvent>> {
         @Override
@@ -248,14 +237,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
-
-
     /**
-     * Verify settings.
+     * Verify settings
      */
     public static void verifySettings() {
         if (client == null) {
@@ -267,7 +250,4 @@ public class ElasticSearchEventController {
             client = (JestDroidClient) factory.getObject();
         }
     }
-
-
-
 }

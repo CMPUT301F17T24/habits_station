@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -16,6 +16,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Activity used to sign up
+ *
+ * @author xtie
+ * @version 1.0
+ *
+ */
 public class SignUpActivity extends SignInActivity {
     protected EditText username;
     private String userName;
@@ -69,6 +76,12 @@ public class SignUpActivity extends SignInActivity {
         });
     }
 
+    /**
+     * Check if the user is already existed
+     *
+     * @param name username
+     * @return
+     */
     private boolean existedUser (String name) {
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
         isExist.execute(name);
@@ -83,7 +96,4 @@ public class SignUpActivity extends SignInActivity {
             return false;
         }
     }
-
-
-
 }

@@ -1,50 +1,26 @@
 [
     {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_template_big_media.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_media_action.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_media_action.xml"
     },
     {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_template_big_media.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_media_action.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/res/layout-v11/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/Users/yaozhilu/Desktop/xuanyi branch/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/Users/yaozhilu/.android/build-cache/e5f6809deef607a5ec270d9c6da67a440ed10dbd/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/res/layout-v11/notification_template_big_media_narrow.xml"
     }
 ]

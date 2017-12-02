@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -23,8 +23,13 @@ import java.util.Date;
 
 import static android.R.attr.format;
 
+
 /**
  * a activity when click edit, implemented by back intent to update information
+ *
+ * @author yfeng
+ * @version 1.0
+ *
  */
 public class EditHabitActivity extends AppCompatActivity {
     private String oldTitle;

@@ -41,6 +41,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show nearby habit event on the map.
+ * Distinct events within 5 km to events not within 5 km.
+ *
+ * @author yaozhi
+ * @version 1.0
+ *
+ */
 public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GeoPoint currentLocation;
@@ -49,9 +57,6 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
 
     GoogleMap mgoogleMap;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +83,10 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         }
     }
 
+    /**
+     * Check if the map is ready
+     * @param googleMap
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mgoogleMap = googleMap;
@@ -99,6 +108,9 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         setMarker();
     }
 
+    /**
+     * Get current location
+     */
     public void getcLocation(){
         try {
             CurrentLocation locationListener = new CurrentLocation();
@@ -115,7 +127,9 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         }
     }
 
-
+    /**
+     * Set markers on the map
+     */
     public void setMarker(){
         // get current location
         getcLocation();
@@ -133,7 +147,9 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         }
     }
 
-
+    /**
+     * Highlight all nearby locations on the map (within 5km or not)
+     */
     public void addMarker() {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");

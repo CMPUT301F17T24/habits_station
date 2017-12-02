@@ -1,7 +1,7 @@
 /*
- * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
- * You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
+ * You can find a copy of lisense in this project. Otherwise please contact xtie@ualberta.ca.
  */
 
 package com.tiejun.habit_station;
@@ -11,14 +11,10 @@ import java.util.Objects;
 import io.searchbox.annotations.JestId;
 
 /**
- * Created by tiejun on 2017-10-21.
- */
-
-/**
  *
  *  a class for user
  *
- *  @author Xtie
+ *  @author xtie
  * @version 1.5
  * @see UserList
  * @since 1.0
@@ -31,7 +27,6 @@ public class User {
     private String name;
     private ArrayList<String> follower = new ArrayList<String>();
     private ArrayList<String> followee = new ArrayList<String>();
-    // new
     private ArrayList<String> pendingPermissions = new ArrayList<>();
 
 
@@ -137,9 +132,6 @@ public class User {
         this.followee = followee;
     }
 
-
-    /////////// new
-
     /**
      * return pending permission array.
      *
@@ -157,7 +149,4 @@ public class User {
     public void setPendingPermissions(ArrayList<String> pendingPermissions) {
         this.pendingPermissions = pendingPermissions;
     }
-
-
-
 }

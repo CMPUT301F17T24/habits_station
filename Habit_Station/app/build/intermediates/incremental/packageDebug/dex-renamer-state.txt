@@ -1,7 +1,7 @@
-#Sat Dec 02 11:44:56 MST 2017
-base.0=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d2472e072f008dc33bbe6633ca95b5c3eec08eb3
+#Fri Dec 01 23:31:03 MST 2017
+base.0=/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0fedf2acd3396184cd527b416c135319f1c1dd09
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_997a57d853988a72e57585b936e8a28520ea963f/classes.dex
-base.1=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_997a57d853988a72e57585b936e8a28520ea963f
-file.0=/Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d2472e072f008dc33bbe6633ca95b5c3eec08eb3/classes.dex
+file.1=/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e8a119e90c134efad59155407afb79c681d2e7c9/classes.dex
+base.1=/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e8a119e90c134efad59155407afb79c681d2e7c9
+file.0=/Users/tiejun/Desktop/final/habits_station/Habit_Station/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0fedf2acd3396184cd527b416c135319f1c1dd09/classes.dex

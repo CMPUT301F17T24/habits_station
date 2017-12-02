@@ -20,6 +20,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Activity to show profile of the user
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class MyProfileActivity extends AppCompatActivity {
 
     private EditText search;
@@ -96,14 +103,10 @@ public class MyProfileActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-
+    /**
+     * Follow another user
+     * @param followName username
+     */
     private void addFollow(String followName) {
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
@@ -143,10 +146,4 @@ public class MyProfileActivity extends AppCompatActivity {
         }
 
     }
-
-
-
-
-
-
 }

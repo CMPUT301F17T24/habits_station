@@ -1,8 +1,7 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
- * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
- *
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
+ * You can find a copy of license in this project. Otherwise please contact xuanyi@ualberta.ca.
  */
 
 package com.tiejun.habit_station;
@@ -28,20 +27,27 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to view habit events
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @see HabitEventList
+ * @since 1.0
+ *
+ */
+
 public class ViewEventActivity extends AppCompatActivity {
 
     //protected HabitEventList habitEventList;
     private TextView info;
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
     private ImageView image;
-
-
     private String imageBase64;
 
     User user = new User();
     HabitEvent event = new HabitEvent();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,6 @@ public class ViewEventActivity extends AppCompatActivity {
         info = (TextView) findViewById(R.id.details);
         image = (ImageView)findViewById(R.id.image);
 
-
         ImageView delete_tab = (ImageView) findViewById(R.id.delete);
 
         delete_tab.setOnClickListener(new View.OnClickListener() {
@@ -59,19 +64,13 @@ public class ViewEventActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ElasticSearchEventController.DeleteEventTask deleteEventTask
-                            = new ElasticSearchEventController.DeleteEventTask();
+                        = new ElasticSearchEventController.DeleteEventTask();
                 deleteEventTask.execute(event);
 
                 Toast.makeText(getApplicationContext(), "Successfully deleted the event! ", Toast.LENGTH_SHORT).show();
-
-
             }
         });
-
-
     }
-
-
 
     @Override
     protected void onStart() {
@@ -100,15 +99,16 @@ public class ViewEventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
         // find that event
         event = fillist.get(eventIndex);
-
 
         String habit_id = userName +habit_name.toUpperCase();
         Habit habit = new Habit();
         ElasticSearchHabitController.GetHabitTask getHabit
                 = new  ElasticSearchHabitController.GetHabitTask();
         getHabit.execute(habit_id);
+
         try {
             habit = getHabit.get();
         } catch (InterruptedException e) {
@@ -116,7 +116,8 @@ public class ViewEventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-    //  find the corresponding habit
+
+        //  find the corresponding habit
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = new ArrayList<String>();
         if (days.contains(1)){
@@ -160,15 +161,14 @@ public class ViewEventActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Convert base64 to bitmap object
+     * @return
+     */
     public Bitmap base64ToImage() {
         byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
         Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
                 decodedString.length);
-
         return decodedByte;
     }
-
-
-
 }
-

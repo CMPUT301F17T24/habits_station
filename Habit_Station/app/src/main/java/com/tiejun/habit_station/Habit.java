@@ -12,13 +12,9 @@ import java.util.Calendar;
 import java.util.HashSet;
 
 /**
- * Created by tiejun on 2017-10-13.
- */
-
-/**
  *  This class is used to create a Habit object
  *
- * @author Xtie
+ * @author xtie
  * @version 1.5
  * @see HabitList
  * @since 1.0
