@@ -29,6 +29,13 @@ import io.searchbox.indices.CreateIndex;
 import io.searchbox.indices.DeleteIndex;
 import io.searchbox.indices.IndicesExists;
 
+/**
+ * Elastic search controller for users
+ *
+ * @author xtie
+ * @version 1.0
+ *
+ */
 
 public class ElasticSearchUserController {
     private static JestDroidClient client;
@@ -143,77 +150,6 @@ public class ElasticSearchUserController {
             return true;
         }
     }
-
-    /**
-     * Create new Index with empty data
-     */
-//    public static void createIndex() {
-//        verifySettings();
-//        try {
-//            boolean indexExists = client.execute(new IndicesExists.Builder("cmput301f17t24").build()).isSucceeded();
-//            if (indexExists) {
-//                client.execute(new DeleteIndex.Builder("cmput301f17t24").build());
-//            }
-//            client.execute(new CreateIndex.Builder("cmput301f17t24").build());
-//        } catch (Exception e) {
-//            Log.i("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
-//        }
-//    }
-
-
-
-
-    // TODO we need a function which gets tweets from elastic search
-    public static class GetHitoryTask extends AsyncTask<String, Void, ArrayList<HabitEvent>> {
-        @Override
-        protected ArrayList<HabitEvent> doInBackground(String... search_parameters) {
-            verifySettings();
-
-            ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
-
-            // TODO Build the query
-            Search search = new Search.Builder(search_parameters[0])
-                    .addIndex("cmput301f17t24")
-                    .addType("user")
-
-                    .build();
-
-            try {
-                // TODO get the results of the query
-                //Log.d("AAA",String.valueOf(search_parameters[0]));
-                SearchResult result = client.execute(search);
-                if (result.isSucceeded()) {
-                    List<HabitEvent> foundHistories
-                            =result.getSourceAsObjectList(HabitEvent.class);
-                    //List<SearchResult.Hit<NormalTweet, Void>> hits = result.getHits(NormalTweet.class);
-
-                    events.addAll(foundHistories);
-
-                }
-                else{
-                    Log.e("Error","Query failed");
-                }
-            }
-            catch (Exception e) {
-                Log.e("Error", "Something went wrong when we tried to communicate with the elasticsearch server!");
-            }
-
-            return events;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Verify settings.

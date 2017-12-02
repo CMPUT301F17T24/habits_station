@@ -17,14 +17,22 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show today's plan
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @see HabitEventList
+ * @since 1.0
+ *
+ */
 public class ViewTodayPlanActivity extends AppCompatActivity {
 
     private ListView today;
     protected ArrayAdapter<Habit> adapter;
     private ArrayList<Habit> fillist  = new ArrayList<Habit>();
     private String habit_query;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +74,5 @@ public class ViewTodayPlanActivity extends AppCompatActivity {
         today.setAdapter(adapter);
 
     }
-
-
+    
 }

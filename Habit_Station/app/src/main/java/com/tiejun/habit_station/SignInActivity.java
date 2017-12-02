@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
  * You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
  */
@@ -21,6 +21,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Sign in activity
+ *
+ * @author xtie
+ * @version 1.0
+ *
+ */
 public class SignInActivity extends AppCompatActivity {
     public UserList userList;
     public String userName;
@@ -62,6 +69,11 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Check if the user is existed
+     * @param name username
+     * @return
+     */
     private boolean existedUser (String name) {
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
         isExist.execute(name);

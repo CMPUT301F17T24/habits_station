@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -13,17 +13,17 @@ package com.tiejun.habit_station;
 
 import android.graphics.Bitmap;
 import android.location.Location;
-import android.media.Image;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import org.osmdroid.util.GeoPoint;
 
 /**
  * a class for habit events
  *
- * @author Xtie
+ * @author xtie
  * @version 1.5
  * @see HabitEventList
  * @since 1.0
@@ -32,15 +32,16 @@ import java.util.Locale;
 public class HabitEvent {
     public String uName;
 
-    public Calendar sTime;
-    public String eReason;
-    public ArrayList<String> Plan = new ArrayList<String>();
+    // public Calendar sTime;
+    //public String eReason;
+    //public ArrayList<String> Plan = new ArrayList<String>();
 
     public String eName;
     public Calendar eTime;
     public String eComment;
-    public Bitmap ePhoto;
-    public Location eLocation;
+    //public Bitmap ePhoto;
+    public GeoPoint eLocation;
+    private String esPhoto;
 
 
     /**
@@ -76,6 +77,8 @@ public class HabitEvent {
         this.eName = eName;
         this.eTime = time;
         this.eComment = comment;
+        this.eLocation = null;
+        this.esPhoto = null;
     }
 
     /**
@@ -107,10 +110,10 @@ public class HabitEvent {
      * return event's reason
      * @return
      */
-    public String geteReason(){
+    /*public String geteReason(){
         return this.eReason;
     }
-
+*/
     /**
      * return the event's comment
      * @return
@@ -123,15 +126,19 @@ public class HabitEvent {
      * return the event's image
      * @return
      */
-    public Bitmap getePhoto(){
+    /*public Bitmap getePhoto(){
         return this.ePhoto;
+    }*/
+
+    public String getePhoto(){
+        return this.esPhoto;
     }
 
     /**
      * return the event's location
      * @return
      */
-    public Location geteLocation(){
+    public GeoPoint geteLocation(){
         return this.eLocation;
     }
 
@@ -156,24 +163,28 @@ public class HabitEvent {
      * set the event's reason
      * @param reason event's reason
      */
-    public void seteReason(String reason){
+  /*  public void seteReason(String reason){
         this.eReason = reason;
-
     }
-
+*/
     /**
      * set the event's photo
      * @param photo event's photo
      */
-    public void setePhoto(Bitmap photo){
+
+    /*public void setePhoto(Bitmap photo){
         this.ePhoto = photo;
+    }*/
+    public void setePhoto(String photo){
+        this.esPhoto = photo;
     }
+
 
     /**
      * set the event's location
      * @param location event's location
      */
-    public void seteLocation(Location location){
+    public void seteLocation(GeoPoint location){
         this.eLocation = location;
     }
 

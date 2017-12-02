@@ -13,10 +13,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Created by XuanyiWu on 2017-10-22.
- */
-
-/**
  * a class for event list
  *
  * @author xuanyi
@@ -26,6 +22,7 @@ import java.util.Comparator;
  *
  */
 public class HabitEventList {
+
     private ArrayList<HabitEvent> events = new ArrayList<HabitEvent>();
 
     public HabitEventList() {}

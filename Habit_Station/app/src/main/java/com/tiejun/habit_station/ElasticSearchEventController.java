@@ -27,10 +27,12 @@ import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 
-import static com.tiejun.habit_station.ElasticSearchUserController.verifySettings;
-
 /**
- * Created by XuanyiWu on 2017-11-08.
+ * Elastic search controller for habit events
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
  */
 
 public class ElasticSearchEventController {
@@ -59,19 +61,17 @@ public class ElasticSearchEventController {
                     if (result.isSucceeded()) {
                         Log.d("In AsyncTask ID", result.getId());
                     } else {
-                        Log.i("Error", "Elasticsearch was not able to add the user.");
+                        Log.i("Error", "Elasticsearch was not able to add the event.");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Log.i("Error", "The application failed to build and send the user");
+                    Log.i("Error", "The application failed to build and send the event");
                 }
 
             }
             return null;
         }
     }
-
-
 
     /**
      * The function which add event to elastic search
@@ -108,12 +108,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
     /**
-     * The function which add event to elastic search
+     * The function which update event to elastic search
      */
     public static class UpdateEventTask extends AsyncTask<HabitEvent, Void, Void> {
 
@@ -145,18 +141,8 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     /**
-     * The function which get user from elastic search
+     * The function which get event from elastic search
      */
     public static class GetEventTask extends AsyncTask<String, Void, HabitEvent> {
         @Override
@@ -179,7 +165,7 @@ public class ElasticSearchEventController {
 
 
     /**
-     * The function to judge if the user is stored in elastic search
+     * The function to judge if the event is stored in elastic search
      */
     public static class IsExist extends AsyncTask<String, Void, Boolean> {
         @Override
@@ -208,7 +194,9 @@ public class ElasticSearchEventController {
 
 
 
-
+    /**
+     * The function to judge if the array list of events is stored in elastic search
+     */
     // TODO we need a function which gets tweets from elastic search
     public static class GetEvents extends AsyncTask<String, Void, ArrayList<HabitEvent>> {
         @Override
@@ -248,12 +236,6 @@ public class ElasticSearchEventController {
         }
     }
 
-
-
-
-
-
-
     /**
      * Verify settings.
      */
@@ -267,7 +249,4 @@ public class ElasticSearchEventController {
             client = (JestDroidClient) factory.getObject();
         }
     }
-
-
-
 }

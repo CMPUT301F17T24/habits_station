@@ -15,6 +15,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Activity to show main page
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class MainPageActivity extends SignInActivity {
 
     @Override
@@ -62,7 +69,5 @@ public class MainPageActivity extends SignInActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

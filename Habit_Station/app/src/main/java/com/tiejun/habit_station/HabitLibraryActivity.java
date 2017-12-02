@@ -27,7 +27,13 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Handler;
 
-
+/**
+ * Activity to show habit library
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class HabitLibraryActivity extends AppCompatActivity {
 
     private ListView habitList;
@@ -178,15 +184,11 @@ public class HabitLibraryActivity extends AppCompatActivity {
             onStart();
 
         }
-
-
         else {
             return false;
         }
         return true;
     }
-
-
 
     @Override
     protected void onStart() {
@@ -221,10 +223,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
 }
 
 

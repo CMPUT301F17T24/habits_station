@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -12,7 +12,11 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * Created by tiejun on 2017-11-12.
+ * Check if the device is connected to the internet
+ *
+ * @author xtie
+ * @version 1.0
+ *
  */
 
 public class InternetChecker {

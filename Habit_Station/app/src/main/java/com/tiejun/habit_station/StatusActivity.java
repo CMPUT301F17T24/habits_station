@@ -19,6 +19,13 @@ import android.widget.TextView;
 
 import static java.lang.Math.round;
 
+/**
+ * Activity to show status of habits
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class StatusActivity extends AppCompatActivity {
     private int eventDone;
     private int totalDays;
@@ -59,10 +66,7 @@ public class StatusActivity extends AppCompatActivity {
                 setResult(RESULT_OK);
                 Intent onClickIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
                 startActivity(onClickIntent);
-
             }
         });
-
-
     }
 }

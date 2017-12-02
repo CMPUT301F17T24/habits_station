@@ -38,13 +38,14 @@ import java.util.logging.Logger;
 
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
-import static java.sql.Types.NULL;
 
 /**
- *
- * this activity shows details about a habit
+ * This activity shows details about a habit
  * with button to start new intent to edit or show the status
  * fulfilled by using start for result
+ *
+ * @author yfeng
+ * @version 1.0
  */
 public class ViewHabitActivity extends AppCompatActivity {
 
@@ -128,8 +129,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                     deleteHabitTask.execute(habit);
                     Toast.makeText(getApplicationContext(), "Successfully deleted this event!", Toast.LENGTH_SHORT).show();
 
-                    /*Intent deleteBackIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
-                    startActivity(deleteBackIntent);*/
                 }
 
 
@@ -225,6 +224,10 @@ public class ViewHabitActivity extends AppCompatActivity {
                                 for (HabitEvent element : events) {
 
                                     HabitEvent event = new HabitEvent(userName, element.geteName(), element.geteTime(), element.geteComment());
+                                    // new
+                                    event.seteLocation(element.geteLocation());
+                                    event.setePhoto(element.getePhoto());
+                                    //
                                     element.seteName(data.getStringExtra("newTitle"));
                                     ///////  delete old event /////
                                     ElasticSearchEventController.DeleteEventTask deleteEventTask
@@ -396,17 +399,6 @@ public class ViewHabitActivity extends AppCompatActivity {
                 Calendar start = habit.getStartDate();
                 Calendar today = Calendar.getInstance();
 
-                Log.d("start", String.valueOf(start.get(Calendar.YEAR)));
-                Log.d("start", String.valueOf(start.get(Calendar.MONTH)));
-                Log.d("start", String.valueOf(start.get(Calendar.DAY_OF_MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.YEAR)));
-                Log.d("to", String.valueOf(today.get(Calendar.MONTH)));
-                Log.d("to", String.valueOf(today.get(Calendar.DAY_OF_MONTH)));
-
-
-
-
-
                 ArrayList<Integer> repeat = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
                 int complete=0;
                 int total = 0;
@@ -539,8 +531,11 @@ public class ViewHabitActivity extends AppCompatActivity {
 
     }
 
-
-
+    /**
+     * Check if the habit is already existed
+     * @param id habit ID
+     * @return
+     */
     private boolean existedHabit (String id) {
         ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
         isExist.execute(id);

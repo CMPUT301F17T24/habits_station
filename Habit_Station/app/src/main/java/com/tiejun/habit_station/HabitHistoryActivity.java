@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,6 +23,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+
+/**
+ * Activity to show habit history
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @see HabitEventList
+ * @since 1.0
+ *
+ */
 
 public class HabitHistoryActivity extends AppCompatActivity {
 
@@ -82,9 +94,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
 
                 if (type.isChecked() && comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Cannot select both", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if(!type.isChecked() && !comment.isChecked()){
                     Toast.makeText(getApplicationContext(), "Please select one", Toast.LENGTH_SHORT).show();
+                    query = "{\n" +
+                            "  \"query\": { \n" +
+                            " \"term\" : { \"uName\" : \"" + userName + "\" }\n" +
+                            " 	}\n" +
+                            "}";
                 }
                 else if (type.isChecked()){
                     Log.d("check", "type");
@@ -135,6 +157,19 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+        final Button map = (Button) findViewById(R.id.historyMap);
+
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                setResult(RESULT_OK);
+                Intent intent = new Intent(HabitHistoryActivity.this,MyEventMapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

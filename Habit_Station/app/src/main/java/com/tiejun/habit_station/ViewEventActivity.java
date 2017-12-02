@@ -1,18 +1,21 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
- * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
- *
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
+ * You can find a copy of license in this project. Otherwise please contact xuanyi@ualberta.ca.
  */
 
 package com.tiejun.habit_station;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,22 +27,35 @@ import java.util.Calendar;
 import java.util.HashSet;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show habit events
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @see HabitEventList
+ * @since 1.0
+ *
+ */
+
 public class ViewEventActivity extends AppCompatActivity {
 
     //protected HabitEventList habitEventList;
     private TextView info;
     private ArrayList<HabitEvent> fillist  = new ArrayList<HabitEvent>();
+    private ImageView image;
+    private String imageBase64;
 
     User user = new User();
     HabitEvent event = new HabitEvent();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_event);
 
+        info = (TextView) findViewById(R.id.details);
+        image = (ImageView)findViewById(R.id.image);
 
         ImageView delete_tab = (ImageView) findViewById(R.id.delete);
 
@@ -48,20 +64,13 @@ public class ViewEventActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 ElasticSearchEventController.DeleteEventTask deleteEventTask
-                            = new ElasticSearchEventController.DeleteEventTask();
+                        = new ElasticSearchEventController.DeleteEventTask();
                 deleteEventTask.execute(event);
 
                 Toast.makeText(getApplicationContext(), "Successfully deleted the event! ", Toast.LENGTH_SHORT).show();
-
-
             }
         });
-
-
-
     }
-
-
 
     @Override
     protected void onStart() {
@@ -90,16 +99,16 @@ public class ViewEventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
         // find that event
         event = fillist.get(eventIndex);
-        info = (TextView) findViewById(R.id.details);
-
 
         String habit_id = userName +habit_name.toUpperCase();
         Habit habit = new Habit();
         ElasticSearchHabitController.GetHabitTask getHabit
                 = new  ElasticSearchHabitController.GetHabitTask();
         getHabit.execute(habit_id);
+
         try {
             habit = getHabit.get();
         } catch (InterruptedException e) {
@@ -107,7 +116,8 @@ public class ViewEventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-    //  find the corresponding habit
+
+        //  find the corresponding habit
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = new ArrayList<String>();
         if (days.contains(1)){
@@ -131,18 +141,34 @@ public class ViewEventActivity extends AppCompatActivity {
         if (days.contains(0)){
             sdays.add("SUN");
         }
+        String eventLocation;
+        if (event.geteLocation() != null){
+            eventLocation = event.geteLocation().toString();
+        }
+        else{
+            eventLocation = "";
+        }
 
         info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+
                 "\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
                 + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
                 + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)
-                +"\nComment: "+event.geteComment());
+                +"\nComment: "+event.geteComment()
+                +"\nLocation: "+ eventLocation );
 
-
+        imageBase64 = event.getePhoto();
+        image.setImageBitmap(base64ToImage());
 
     }
 
-
-
+    /**
+     * Convert base64 to bitmap
+     * @return
+     */
+    public Bitmap base64ToImage() {
+        byte[] decodedString = Base64.decode(imageBase64, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0,
+                decodedString.length);
+        return decodedByte;
+    }
 }
-

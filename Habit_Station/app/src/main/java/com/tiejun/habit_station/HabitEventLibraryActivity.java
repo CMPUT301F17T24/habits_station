@@ -26,6 +26,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show habit event library
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 
 public class HabitEventLibraryActivity extends AppCompatActivity {
 
@@ -125,25 +132,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             i.putExtra("query",event_query);
             startActivity(i);
         }
-
-        /*else if (item.getTitle() == "Delete") {
-            Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
-
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-
-            HabitEvent selected_event = fillist.get(position);
-
-            ElasticSearchEventController.DeleteEventTask deleteEventTask
-                    = new ElasticSearchEventController.DeleteEventTask();
-            deleteEventTask.execute(selected_event);
-
-            Toast.makeText(getApplicationContext(), "Successfully deleted the event! ", Toast.LENGTH_SHORT).show();
-
-            onStart();
-        }
-*/
-
 
         else {
             return false;

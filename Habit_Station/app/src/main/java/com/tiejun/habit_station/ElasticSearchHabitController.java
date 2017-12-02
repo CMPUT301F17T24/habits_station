@@ -28,7 +28,11 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 
 /**
- * Created by XuanyiWu on 2017-11-09.
+ * Elastic search controller for habits
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
  */
 
 public class ElasticSearchHabitController {
@@ -68,9 +72,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
-
-
+    /**
+     * The function which delete habit from elastic search
+     */
     public static class DeleteHabitTask extends AsyncTask<Habit, Void, Void> {
 
         @Override
@@ -99,11 +103,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
-
-
-
-
+    /**
+     * The function which update habit in elastic search
+     */
     public static class UpdateHabitTask extends  AsyncTask<Habit, Void, Void> {
         @Override
         protected Void doInBackground(Habit... habits) {
@@ -129,7 +131,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
+    /**
+     * The function which get habit from elastic search
+     */
     public static class GetHabitTask extends AsyncTask<String, Void, Habit> {
         @Override
         protected Habit doInBackground(String... params) {
@@ -149,9 +153,9 @@ public class ElasticSearchHabitController {
 
     }
 
-
-
-
+    /**
+     * The function which check if habit is already existed in elastic search
+     */
     public static class IsExist extends AsyncTask<String, Void, Boolean> {
         @Override
         protected Boolean doInBackground(String... params){
@@ -177,7 +181,9 @@ public class ElasticSearchHabitController {
     }
 
 
-    // TODO we need a function which gets tweets from elastic search
+    /**
+     * The function which get habit list from elastic search
+     */
     public static class GetHabits extends AsyncTask<String, Void, ArrayList<Habit>> {
         @Override
         protected ArrayList<Habit> doInBackground(String... search_parameters) {
@@ -214,9 +220,6 @@ public class ElasticSearchHabitController {
             return habits;
         }
     }
-
-
-
 
     /**
      * Verify settings.
