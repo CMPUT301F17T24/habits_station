@@ -7,10 +7,10 @@
     package="com.tiejun.habit_station">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -43,20 +43,20 @@
         <activity android:name=".NearbyActivity" />
         <activity android:name=".LifeCircleActivity" />
         <activity android:name=".FriendsActivity" />
-        <activity android:name=".FriendsStatusActivity" />
         <activity android:name=".FriendsExploreActivity" />
-        <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".HabitHistoryActivity" android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MyEventMapActivity" />
         <activity android:name=".ViewEventActivity" />
-        <activity android:name=".PhotoDisplayActivity"></activity>
+        <activity android:name=".PhotoDisplayActivity" />
 
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDFDttvUxIKyvRIVqzskwbRy_Sr_C89f_U" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-        <meta-data android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDFDttvUxIKyvRIVqzskwbRy_Sr_C89f_U"/>
-
-        <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version"/>
-
+        <activity android:name=".ViewHistoryDetailActivity"></activity>
     </application>
 
 </manifest>

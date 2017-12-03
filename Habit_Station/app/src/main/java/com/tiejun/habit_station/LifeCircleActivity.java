@@ -22,6 +22,14 @@ import java.util.concurrent.ExecutionException;
 
 import static java.lang.Math.round;
 
+/**
+ * Activity to show the life cycle of each habit event
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
+
 public class LifeCircleActivity extends AppCompatActivity {
     private User user;
     private ListView Fhabits;
@@ -78,11 +86,10 @@ public class LifeCircleActivity extends AppCompatActivity {
             int total = totalDays(element);
             int  complete = completeDays(element);
 
-            String info = element.getuName()+" >> " +element.getTitle()+"\nprogress: " +complete +"/" + total;
+            String info = element.getuName()+" ❥ " +element.getTitle()+"\nprogress: " +complete +"/" + total;
             friendHabit.add(info);
 
         }
-
 
     }
 
@@ -92,30 +99,28 @@ public class LifeCircleActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onStart();
 
-        //adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, habits);
-        //Fhabits.setAdapter(adapter);
-
         adapter1 = new ArrayAdapter<String>(this, R.layout.list_habits, friendHabit);
         Fhabits.setAdapter(adapter1);
     }
 
-//Defining our own Comparator
-
+    /**
+     * Defining our own Comparator
+     */
     class OrderByHabitType implements Comparator<Habit>
     {
         @Override
         public int compare(Habit h1, Habit h2)
         {
-            return h1.getTitle().compareTo(h2.getTitle());
+            return h1.getTitle().toLowerCase().compareTo(h2.getTitle().toLowerCase());
         }
     }
 
-
-
-
+    /**
+     * Calculate the complete dates of a habit
+     * @param habit habit object
+     * @return
+     */
     protected int completeDays (Habit habit) {
-
-        /////////////////////// used to get complete days
 
         ArrayList<HabitEvent> fillist = new ArrayList<HabitEvent>();
         String event_query = "{\n" +
@@ -146,6 +151,12 @@ public class LifeCircleActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Calculate the total days of a habit from its start date
+     *
+     * @param habit
+     * @return
+     */
     protected int totalDays (Habit habit) {
         Calendar start = habit.getStartDate();
         Calendar today = Calendar.getInstance();

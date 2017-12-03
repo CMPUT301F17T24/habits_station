@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -14,7 +14,14 @@ import android.os.Bundle;
 import org.osmdroid.util.GeoPoint;
 
 /**
- * Created by XuanyiWu on 2017-11-20.
+ * The class used to get the current location
+ *
+ * refer to  gitHub BugFree
+ * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/util/CurrentLocation.java
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
  */
 
 public class CurrentLocation implements LocationListener {

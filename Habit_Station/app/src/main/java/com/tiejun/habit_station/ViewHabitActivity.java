@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import org.apache.commons.lang3.ObjectUtils;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,15 +38,17 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static android.R.attr.data;
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
-import static java.sql.Types.NULL;
 
 /**
- *
- * this activity shows details about a habit
+ * This activity shows details about a habit
  * with button to start new intent to edit or show the status
  * fulfilled by using start for result
+ *
+ * @author yfeng
+ * @version 1.0
  */
 public class ViewHabitActivity extends AppCompatActivity {
 
@@ -123,13 +127,23 @@ public class ViewHabitActivity extends AppCompatActivity {
                         deleteEventTask.execute(element);
 
                     }
+                    // delete corresponding file
+                    String FILENAME1 = habit.getuName()+habit.getTitle() +".sav";
+                    Context context = getApplicationContext();
+
+                    if (fileExists(context, FILENAME1)) {
+                        File file = context.getFileStreamPath(FILENAME1);
+                        file.delete();
+                    }
+
+                    ////
                     ElasticSearchHabitController.DeleteHabitTask deleteHabitTask
                             = new ElasticSearchHabitController.DeleteHabitTask();
                     deleteHabitTask.execute(habit);
-                    Toast.makeText(getApplicationContext(), "Successfully deleted this event!", Toast.LENGTH_SHORT).show();
 
-                    /*Intent deleteBackIntent = new Intent(getApplicationContext(), HabitLibraryActivity.class);
-                    startActivity(deleteBackIntent);*/
+
+                    Toast.makeText(getApplicationContext(), "Successfully deleted this Habit!", Toast.LENGTH_SHORT).show();
+
                 }
 
 
@@ -258,6 +272,15 @@ public class ViewHabitActivity extends AppCompatActivity {
                                 ElasticSearchHabitController.DeleteHabitTask deleteHabitTask
                                         = new ElasticSearchHabitController.DeleteHabitTask();
                                 deleteHabitTask.execute(oldHabit);
+
+                                // delete old habit's event file
+                                String FILENAME1 = oldHabit.getuName()+oldHabit.getTitle() +".sav";
+                                Context context = getApplicationContext();
+                                if (fileExists(context, FILENAME1)) {
+                                    File file = context.getFileStreamPath(FILENAME1);
+                                    file.delete();
+                                }
+
 
                                 // update to new habit
                                 ElasticSearchHabitController.AddHabitTask addHabitTask
@@ -495,25 +518,25 @@ public class ViewHabitActivity extends AppCompatActivity {
         showRepeat = (TextView) findViewById(R.id.showRepeat);
         ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
         String daysInWeek = "";
-        if(frequency.contains(1) == true){
+        if (frequency.contains(1) == true) {
             daysInWeek += " Monday ";
         }
-        if(frequency.contains(2) == true){
+        if (frequency.contains(2) == true) {
             daysInWeek += " Tuesday ";
         }
-        if(frequency.contains(3)){
+        if (frequency.contains(3)) {
             daysInWeek += " Wednesday ";
         }
-        if(frequency.contains(4)){
+        if (frequency.contains(4)) {
             daysInWeek += " Thursday ";
         }
-        if(frequency.contains(5)){
+        if (frequency.contains(5)) {
             daysInWeek += " Friday ";
         }
-        if(frequency.contains(6)){
+        if (frequency.contains(6)) {
             daysInWeek += " Saturday ";
         }
-        if(frequency.contains(7)){
+        if (frequency.contains(7)) {
             daysInWeek += " Sunday ";
         }
         showRepeat.setText(daysInWeek);
@@ -524,16 +547,19 @@ public class ViewHabitActivity extends AppCompatActivity {
          */
         theDate = (TextView) findViewById(R.id.showDate);// reason
         int year = habit.getStartDate().get(Calendar.YEAR);
-        int month = habit.getStartDate().get(Calendar.MONTH)+1;
+        int month = habit.getStartDate().get(Calendar.MONTH) + 1;
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
 
-        theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
+        theDate.setText(Integer.toString(year) + "/" + Integer.toString(month) + "/" + Integer.toString(day));
 
 
     }
 
-
-
+    /**
+     * Check if the habit is already existed
+     * @param id habit ID
+     * @return
+     */
     private boolean existedHabit (String id) {
         ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
         isExist.execute(id);
@@ -549,5 +575,23 @@ public class ViewHabitActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+
+
+    /**
+     * To check if the file ".sav" is exist
+     * @param context
+     * @param filename
+     * @return if it exists, return true. Vice Versa
+     */
+    private boolean fileExists(Context context, String filename) {
+        File file = context.getFileStreamPath(filename);
+        if (file == null || !file.exists()) {
+            return false;
+        }
+        return true;
+    }
 
 }

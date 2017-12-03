@@ -8,14 +8,11 @@ package com.tiejun.habit_station;
 
 import java.util.ArrayList;
 
-/**
- * Created by tiejun on 2017-10-21.
- */
 
 /**
  *  consturct a user list
  *
- *  @author Xtie
+ *  @author xtie
  * @version 1.5
  * @see User
  * @since 1.0

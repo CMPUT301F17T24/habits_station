@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -21,9 +21,19 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.HashSet;
 
+/**
+ * Activity to add habits
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see Habit
+ * @see HabitList
+ * @since 1.0
+ *
+ */
+
 public class AddHabitActivity extends AppCompatActivity {
     private EditText title;
-    //private EditText date;
     private DatePicker simpleDatePicker;
     private EditText reason;
     public  int set_year = 0,
@@ -111,9 +121,6 @@ public class AddHabitActivity extends AppCompatActivity {
                 weekDay.add(0);
             }
         });
- //////////////////////////////////////////////////////////////////////////
-
-
 
         final Button confirmBtn = (Button) findViewById(R.id.OK);                        //  click the button to save the information
         confirmBtn.setOnClickListener(new View.OnClickListener() {
@@ -168,7 +175,6 @@ public class AddHabitActivity extends AppCompatActivity {
             }
         });
 
-//////////////////////////////////////////////
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         simpleDatePicker.init(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
@@ -185,7 +191,16 @@ public class AddHabitActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Set a habit to its corresponding user and return whether it is set successfully
+     *
+     * @param current_user username
+     * @param sTitle title of habit
+     * @param sReason reason of habit
+     * @param startDate start date of the habit
+     * @param weekDay repeat weekday of the habot
+     * @return
+     */
     public boolean setHabit(String current_user,String sTitle,String sReason,Calendar startDate,HashSet<Integer> weekDay)
     {
         Habit habit = new Habit(current_user,sTitle,sReason,startDate,weekDay);
@@ -203,14 +218,14 @@ public class AddHabitActivity extends AppCompatActivity {
 
             return true;
         }
-
     }
 
-
-
-
-
-
+    /**
+     * Check if the habit is already existed
+     *
+     * @param id habit ID
+     * @return
+     */
     private boolean existedHabit (String id) {
         ElasticSearchHabitController.IsExist isExist = new ElasticSearchHabitController.IsExist();
         isExist.execute(id);
@@ -225,9 +240,4 @@ public class AddHabitActivity extends AppCompatActivity {
             return false;
         }
     }
-
-
-
-
-
 }

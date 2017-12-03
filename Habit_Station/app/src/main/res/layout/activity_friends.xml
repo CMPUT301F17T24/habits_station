@@ -15,10 +15,6 @@
     android:orientation="vertical"
     android:background="@drawable/bg">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_weight="0.01" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="59dp">
@@ -52,10 +48,6 @@
             android:layout_weight="0.20" />
     </LinearLayout>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_weight="0.01" />
     <ListView
         android:id="@+id/names"
         android:layout_width="372dp"
