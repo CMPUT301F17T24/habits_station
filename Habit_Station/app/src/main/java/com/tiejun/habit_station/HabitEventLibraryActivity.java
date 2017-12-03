@@ -189,12 +189,20 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             Intent intent = getIntent();
             String habit_name = intent.getStringExtra("habit name");
 
+            event_query = "{\n" +
+                    "  \"query\": { \n" +
+                    "\"bool\": {\n" +
+                    "\"must\": [\n" +
+                    "{" + " \"term\" : { \"uName\" : \"" + userName + "\" }},\n" +
+                    "{" + " \"match\" : {  \"eName\" : \"" + habit_name + "\" }}\n" +
+                    "]" +
+                    "}" +
+                    "}" +
+                    "}";
+
             fillist.clear();
             FILENAME = userName+habit_name +".sav";
             loadFromFile();
-
-            Log.d("file name:", FILENAME);
-
             if (fillist.size()!=0){  //load from file if file not null
 
                 for (HabitEvent element: fillist){
@@ -205,17 +213,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                 }
             }
             else {   // elasticsearch
-
-                event_query = "{\n" +
-                        "  \"query\": { \n" +
-                        "\"bool\": {\n" +
-                        "\"must\": [\n" +
-                        "{" + " \"term\" : { \"uName\" : \"" + userName + "\" }},\n" +
-                        "{" + " \"match\" : {  \"eName\" : \"" + habit_name + "\" }}\n" +
-                        "]" +
-                        "}" +
-                        "}" +
-                        "}";
 
                 ElasticSearchEventController.GetEvents getHEvent
                         = new ElasticSearchEventController.GetEvents();
@@ -239,16 +236,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
 
             //////////// synchronize ///////
             ArrayList<HabitEvent>  result = new ArrayList<HabitEvent>();
-            String event_query = "{\n" +
-                    "  \"query\": { \n" +
-                    "\"bool\": {\n"+
-                    "\"must\": [\n"+
-                    "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
-                    "{"+ " \"match\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
-                    "]"+
-                    "}"+
-                    "}"+
-                    "}";
             ElasticSearchEventController.GetEvents getHEvent
                     = new  ElasticSearchEventController.GetEvents();
             getHEvent.execute(event_query);

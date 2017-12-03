@@ -38,6 +38,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static android.R.attr.data;
 import static com.tiejun.habit_station.R.id.date;
 import static com.tiejun.habit_station.R.id.habits;
 
@@ -508,25 +509,25 @@ public class ViewHabitActivity extends AppCompatActivity {
         showRepeat = (TextView) findViewById(R.id.showRepeat);
         ArrayList<Integer> frequency = new ArrayList<>(habit.getRepeatWeekOfDay());//get repeat date
         String daysInWeek = "";
-        if(frequency.contains(1) == true){
+        if (frequency.contains(1) == true) {
             daysInWeek += " Monday ";
         }
-        if(frequency.contains(2) == true){
+        if (frequency.contains(2) == true) {
             daysInWeek += " Tuesday ";
         }
-        if(frequency.contains(3)){
+        if (frequency.contains(3)) {
             daysInWeek += " Wednesday ";
         }
-        if(frequency.contains(4)){
+        if (frequency.contains(4)) {
             daysInWeek += " Thursday ";
         }
-        if(frequency.contains(5)){
+        if (frequency.contains(5)) {
             daysInWeek += " Friday ";
         }
-        if(frequency.contains(6)){
+        if (frequency.contains(6)) {
             daysInWeek += " Saturday ";
         }
-        if(frequency.contains(7)){
+        if (frequency.contains(7)) {
             daysInWeek += " Sunday ";
         }
         showRepeat.setText(daysInWeek);
@@ -537,10 +538,10 @@ public class ViewHabitActivity extends AppCompatActivity {
          */
         theDate = (TextView) findViewById(R.id.showDate);// reason
         int year = habit.getStartDate().get(Calendar.YEAR);
-        int month = habit.getStartDate().get(Calendar.MONTH)+1;
+        int month = habit.getStartDate().get(Calendar.MONTH) + 1;
         int day = habit.getStartDate().get(Calendar.DAY_OF_MONTH);
 
-        theDate.setText(Integer.toString(year)+"/"+ Integer.toString(month) +"/"+Integer.toString(day));
+        theDate.setText(Integer.toString(year) + "/" + Integer.toString(month) + "/" + Integer.toString(day));
 
 
     }

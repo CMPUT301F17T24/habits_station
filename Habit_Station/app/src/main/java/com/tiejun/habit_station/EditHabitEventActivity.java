@@ -85,7 +85,6 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     //
     private static final String FILENAME2 = "habitLibrary.sav";// for save and load
-    //private static final String FILENAME1 = "habitEventLibrary.sav";// for save and load
     private String FILENAME1;
 
 
@@ -193,7 +192,9 @@ public class EditHabitEventActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.d("location", "current");
                                 add_location();
-                                Toast.makeText(getApplicationContext(), currentLocation.toString(), Toast.LENGTH_LONG).show();
+                                if(currentLocation != null) {
+                                    Toast.makeText(getApplicationContext(), currentLocation.toString(), Toast.LENGTH_LONG).show();
+                                }
                             }
                         });
                 builder1.show();
@@ -251,13 +252,11 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
                     HabitEvent event = new HabitEvent(userName, habit.getTitle(), doDate, sComment);
-                    if (currentLocation != new GeoPoint(0,0)) {
+                    if (currentLocation != null) {
                         event.seteLocation(currentLocation);
                     }
                     if (photo != null) {
                         String base = checkImageSize(photo);
-                        //photo = base64ToImage();
-                        Log.d("64", imageBase64);
                         event.setePhoto(base);
                     } else {
                         //photo = oldPhoto;
@@ -477,8 +476,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
                     ElasticSearchEventController.AddEventTask addEventTask
                             = new ElasticSearchEventController.AddEventTask();
                     addEventTask.execute(new_event);
+                    fillist.remove(eventIndex);
+                    fillist.add(new_event);
+                    saveInFile();
                 }
-                saveInFile();
                 Toast.makeText(getApplicationContext(), "Successfully updated the event.", Toast.LENGTH_SHORT).show();
 
                 return true;
@@ -733,7 +734,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 currentLocation = new GeoPoint(latitude, longitude);
             }
             else{
-                currentLocation = new GeoPoint(0, 0);
+                currentLocation = null;
                 Toast.makeText(this, "GPS not ready.", Toast.LENGTH_SHORT).show();
             }
         } catch (SecurityException e) {

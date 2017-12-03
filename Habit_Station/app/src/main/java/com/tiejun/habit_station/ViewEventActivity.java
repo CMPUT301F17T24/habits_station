@@ -201,7 +201,7 @@ public class ViewEventActivity extends AppCompatActivity {
             eventLocation = "";
         }
 
-        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+
+        info.setText(habit.toString() +"\nReason: "+habit.getReason()+"\nPlan: "+sdays+"\n"+
                 "\nEvent finished at: "+ event.geteTime().get(Calendar.YEAR)+"/"
                 + String.valueOf(event.geteTime().get(Calendar.MONTH)+1)
                 + "/" + event.geteTime().get(Calendar.DAY_OF_MONTH)

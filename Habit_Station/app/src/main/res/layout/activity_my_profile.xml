@@ -42,7 +42,7 @@
             android:id="@+id/go"
             android:layout_width="60dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/go"
+            app:srcCompat="@drawable/add"
             tools:layout_editor_absoluteX="320dp"
             tools:layout_editor_absoluteY="8dp" />
         <View

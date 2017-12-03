@@ -97,7 +97,7 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
             addMaker();
         }
         else {
-            Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cannot access current location, check your GPS.", Toast.LENGTH_SHORT).show();
             //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
             addMaker();
         }

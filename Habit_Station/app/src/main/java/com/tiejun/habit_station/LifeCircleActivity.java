@@ -86,7 +86,7 @@ public class LifeCircleActivity extends AppCompatActivity {
             int total = totalDays(element);
             int  complete = completeDays(element);
 
-            String info = element.getuName()+" >> " +element.getTitle()+"\nprogress: " +complete +"/" + total;
+            String info = element.getuName()+" ❥ " +element.getTitle()+"\nprogress: " +complete +"/" + total;
             friendHabit.add(info);
 
         }

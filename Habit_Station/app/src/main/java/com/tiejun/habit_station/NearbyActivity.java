@@ -140,7 +140,7 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
         }
         else{
             //title.setText("empty");
-            Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cannot access current location, check your GPS.", Toast.LENGTH_SHORT).show();
             // just used to test
             //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
             addMarker();
@@ -204,18 +204,18 @@ public class NearbyActivity extends AppCompatActivity implements OnMapReadyCallb
                     if (disKM <= 5) {
                         double lat = geoPoint.getLatitude();
                         double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.geteName()));
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)).title(habitEvent.getuName()+" : " +habitEvent.geteName()));
 
                     } else {
                         double lat = geoPoint.getLatitude();
                         double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.getuName()+" : " +habitEvent.geteName()));
                     }
                 }
                 else{
                     double lat = geoPoint.getLatitude();
                     double lon = geoPoint.getLongitude();
-                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
+                    mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.getuName()+" : " +habitEvent.geteName()));
                 }
             }
         }

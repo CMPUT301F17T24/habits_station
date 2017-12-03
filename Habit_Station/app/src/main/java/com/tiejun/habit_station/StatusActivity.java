@@ -67,4 +67,5 @@ public class StatusActivity extends AppCompatActivity {
             }
         });
     }
+
 }
