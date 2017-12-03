@@ -273,6 +273,15 @@ public class ViewHabitActivity extends AppCompatActivity {
                                         = new ElasticSearchHabitController.DeleteHabitTask();
                                 deleteHabitTask.execute(oldHabit);
 
+                                // delete old habit's event file
+                                String FILENAME1 = oldHabit.getuName()+oldHabit.getTitle() +".sav";
+                                Context context = getApplicationContext();
+                                if (fileExists(context, FILENAME1)) {
+                                    File file = context.getFileStreamPath(FILENAME1);
+                                    file.delete();
+                                }
+
+
                                 // update to new habit
                                 ElasticSearchHabitController.AddHabitTask addHabitTask
                                         = new ElasticSearchHabitController.AddHabitTask();
