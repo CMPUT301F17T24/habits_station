@@ -149,7 +149,9 @@ ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:19-57
 activity#com.tiejun.habit_station.HabitHistoryActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-58
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-98
+	android:windowSoftInputMode
+		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:56-95
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-55
 activity#com.tiejun.habit_station.MyEventMapActivity

@@ -44,7 +44,7 @@
         <activity android:name=".LifeCircleActivity" />
         <activity android:name=".FriendsActivity" />
         <activity android:name=".FriendsExploreActivity" />
-        <activity android:name=".HabitHistoryActivity" />
+        <activity android:name=".HabitHistoryActivity" android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MyEventMapActivity" />
         <activity android:name=".ViewEventActivity" />
         <activity android:name=".PhotoDisplayActivity" />
