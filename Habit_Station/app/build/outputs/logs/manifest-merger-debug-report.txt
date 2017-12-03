@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-61:12
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-62:12
 	package
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:7:5-39
 		INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
@@ -20,29 +20,28 @@ MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:9:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:10:5-78
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:10:5-79
 MERGED from [com.google.android.gms:play-services-maps:11.0.4] /Users/XuanyiWu/.android/build-cache/dbb1f65754646b7507d2df2cbcbeab087de9d48c/output/AndroidManifest.xml:19:5-78
 MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:19:5-79
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-80
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:5-81
 MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:17:5-81
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:11:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:12:5-78
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:12:5-79
 MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:16:5-79
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:12:22-76
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:5-80
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:5-81
 MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:21:5-81
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:22-78
 application
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:5-59:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:9:5-20
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:5-60:19
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/cc3975cfb77b54d955159a6ca2ad57a6dc56c92e/output/AndroidManifest.xml:26:5-20
@@ -58,6 +57,7 @@ MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
@@ -161,25 +161,28 @@ ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:19-52
 activity#com.tiejun.habit_station.PhotoDisplayActivity
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:9-67
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:9-58
 	android:name
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:19-55
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:9-54:70
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:52:9-54:71
 	android:value
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:54:13-68
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:20-69
+		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:13-62
 meta-data#com.google.android.gms.version
-ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:9-57:68
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:55:9-57:69
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/XuanyiWu/.android/build-cache/90f87f26073295d4b7306beb28a1f8658abba4da/output/AndroidManifest.xml:20:9-121
 	android:value
 		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:57:13-66
 	android:name
-		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:20-65
+		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:13-58
+activity#com.tiejun.habit_station.ViewHistoryDetailActivity
+ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:59:9-72
+	android:name
+		ADDED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:59:19-60
 uses-sdk
 INJECTED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/772242217b8091895d673ddc0d2c809bf4a292fe/output/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/cc3975cfb77b54d955159a6ca2ad57a6dc56c92e/output/AndroidManifest.xml:20:5-44
@@ -196,6 +199,7 @@ MERGED from [com.android.support:support-fragment:26.0.0-alpha1] /Users/XuanyiWu
 MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/6facbed9a2a3f3b3f8a534471ecde62e4ead5144/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/fd250d9a125c0441531da548e82c90d37769c2a1/output/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/90dea28a1cdc95237a39db17fa927a20c06f1918/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/XuanyiWu/.android/build-cache/bbe2c48aa2922b99adee5137314d5431cc501774/output/AndroidManifest.xml:5:5-7:41
 MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:26.0.0-alpha1] /Users/XuanyiWu/.android/build-cache/a2da21f03c98dce59d1f5f9361beeed8562847ff/output/AndroidManifest.xml:23:9-59
@@ -250,7 +254,7 @@ ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-
 		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:18:22-73
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:22:5-80
-IMPLIED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-61:12 reason: org.osmdroid.library requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/XuanyiWu/Desktop/pro/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-62:12 reason: org.osmdroid.library requested WRITE_EXTERNAL_STORAGE
 	android:name
 		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/XuanyiWu/.android/build-cache/0191163e311afafaf72268bf30b58f23652737df/output/AndroidManifest.xml:22:22-77
 uses-feature#android.hardware.location.network

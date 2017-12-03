@@ -109,9 +109,6 @@ public class ViewEventActivity extends AppCompatActivity {
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
-
-        Log.d("TTT","start");
-
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
         Intent intent = getIntent();
