@@ -111,7 +111,7 @@ public class LifeCircleActivity extends AppCompatActivity {
         @Override
         public int compare(Habit h1, Habit h2)
         {
-            return h1.getTitle().compareTo(h2.getTitle());
+            return h1.getTitle().toLowerCase().compareTo(h2.getTitle().toLowerCase());
         }
     }
 
