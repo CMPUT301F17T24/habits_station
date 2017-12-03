@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-63:12
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-61:12
 	package
 		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:7:5-39
 		INJECTED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml
@@ -41,7 +41,7 @@ MERGED from [org.osmdroid:osmdroid-android:5.6.5] /Users/tiejun/.android/build-c
 	android:name
 		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:13:22-78
 application
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:5-61:19
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:15:5-59:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/tiejun/.android/build-cache/a91f0ebf01e5cd2aab1039c3553bf2a9bff13398/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.0.0-alpha1] /Users/tiejun/.android/build-cache/1af3c9cf8b6bad13da4fce37914bcbfde99e6412/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] /Users/tiejun/.android/build-cache/e17db2de821866739b74e96d7a40c9e910a7ce97/output/AndroidManifest.xml:29:5-20
@@ -128,63 +128,55 @@ activity#com.tiejun.habit_station.EditHabitEventActivity
 ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:9-60
 	android:name
 		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:41:19-57
-activity#com.tiejun.habit_station.PhotoGalleryActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:9-58
-	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:19-55
 activity#com.tiejun.habit_station.MyProfileActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:9-55
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:9-55
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:19-52
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:42:19-52
 activity#com.tiejun.habit_station.NearbyActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:9-52
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:9-52
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:19-49
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:43:19-49
 activity#com.tiejun.habit_station.LifeCircleActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:9-56
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:9-56
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:19-53
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:44:19-53
 activity#com.tiejun.habit_station.FriendsActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:9-53
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:9-53
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:19-50
-activity#com.tiejun.habit_station.FriendsStatusActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-59
-	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-56
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:45:19-50
 activity#com.tiejun.habit_station.FriendsExploreActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-60
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:9-60
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:19-57
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:46:19-57
 activity#com.tiejun.habit_station.HabitHistoryActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:9-58
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:9-58
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:19-55
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:47:19-55
 activity#com.tiejun.habit_station.MyEventMapActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:9-56
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:9-56
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:19-53
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:48:19-53
 activity#com.tiejun.habit_station.ViewEventActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:51:9-55
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:9-55
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:51:19-52
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:49:19-52
 activity#com.tiejun.habit_station.PhotoDisplayActivity
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:52:9-67
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:9-67
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:52:19-55
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:50:19-55
 meta-data#com.google.android.maps.v2.API_KEY
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:55:9-56:70
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:9-54:70
 	android:value
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:13-68
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:54:13-68
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:55:20-69
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:53:20-69
 meta-data#com.google.android.gms.version
-ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:58:9-59:68
+ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:9-57:68
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] /Users/tiejun/.android/build-cache/7bc9c10d11a8c31775d9b44b171be1330bbb1819/output/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:59:13-66
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:57:13-66
 	android:name
-		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:58:20-65
+		ADDED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:56:20-65
 uses-sdk
 INJECTED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/tiejun/.android/build-cache/a91f0ebf01e5cd2aab1039c3553bf2a9bff13398/output/AndroidManifest.xml:5:5-7:41
@@ -258,7 +250,7 @@ ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/tiejun/.android/build-ca
 		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/tiejun/.android/build-cache/3aa110c9162a750b59a13a819275d4c5f31fbe65/output/AndroidManifest.xml:18:22-73
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/tiejun/.android/build-cache/3aa110c9162a750b59a13a819275d4c5f31fbe65/output/AndroidManifest.xml:22:5-80
-IMPLIED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-63:12 reason: org.osmdroid.library requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/tiejun/Desktop/final/habits_station/Habit_Station/app/src/main/AndroidManifest.xml:6:1-61:12 reason: org.osmdroid.library requested WRITE_EXTERNAL_STORAGE
 	android:name
 		ADDED from [org.osmdroid:osmdroid-android:5.6.5] /Users/tiejun/.android/build-cache/3aa110c9162a750b59a13a819275d4c5f31fbe65/output/AndroidManifest.xml:22:22-77
 uses-feature#android.hardware.location.network
