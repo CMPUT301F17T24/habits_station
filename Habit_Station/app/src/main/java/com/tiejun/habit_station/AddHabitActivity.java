@@ -24,7 +24,7 @@ import java.util.HashSet;
 /**
  * Activity to add habits
  *
- * @author yfeng
+ * @author xuanyi
  * @version 1.5
  * @see Habit
  * @see HabitList

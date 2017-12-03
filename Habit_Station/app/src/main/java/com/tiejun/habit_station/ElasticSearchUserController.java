@@ -36,6 +36,9 @@ import io.searchbox.indices.IndicesExists;
  * @version 1.0
  * @see User
  *
+ *
+ *  refer to Lab material ElascticSearch
+ *  https://github.com/xuanyi35/lonelyTwitter/blob/elasticsearch/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java
  */
 
 public class ElasticSearchUserController {

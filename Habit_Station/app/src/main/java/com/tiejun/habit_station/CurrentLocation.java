@@ -16,6 +16,9 @@ import org.osmdroid.util.GeoPoint;
 /**
  * The class used to get the current location
  *
+ * refer to  gitHub BugFree
+ * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/util/CurrentLocation.java
+ *
  * @author xuanyi
  * @version 1.0
  *

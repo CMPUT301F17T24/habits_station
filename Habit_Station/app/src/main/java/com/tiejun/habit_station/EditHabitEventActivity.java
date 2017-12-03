@@ -60,9 +60,20 @@ import java.util.concurrent.ExecutionException;
 /**
  * Activity to add, edit and delete habit events
  *
+ *
  * @author xuanyi
  * @version 2.0
  * @since 1.0
+ *
+ *
+ * Use GPS to get location:
+ * refer to github BugFree
+ * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/activity/CreateEditMoodActivity.java
+ *
+ * check Image size:
+ * refer to github BugFree
+ * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/module/Image.java
+ *
  *
  */
 
@@ -684,6 +695,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     /**
      * Grand the GPS permission
+     * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/activity/CreateEditMoodActivity.java
      */
     private void permissionLocationRequest() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -721,6 +733,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     /**
      * Using GPS to add current location.
+     * https://github.com/CMPUT301W17T01/BugFree/blob/master/app/src/main/java/com/example/mac/bugfree/activity/CreateEditMoodActivity.java
      */
     public void add_location() {
         try {

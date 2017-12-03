@@ -41,7 +41,28 @@
     <favorites_list name="Habit_Station" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ElasticSearchEventController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchEventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HabitEvent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="194" column="7" selection-start-line="194" selection-start-column="7" selection-end-line="194" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1965,16 +1986,11 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/User.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/LoadFile.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/AddHabitActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/FriendsStatusActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEventList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/MyProfileActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/CurrentLocation.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchEventController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchHabitController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchUserController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/FriendsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/FriendsExploreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitHistoryActivity.java" />
@@ -1999,11 +2015,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_habit.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ViewHabitActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/StatusActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitEventActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/LifeCircleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/NearbyActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEvent.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_view_event.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/AddHabitActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/CurrentLocation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitEventActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchUserController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchHabitController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchEventController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEvent.java" />
       </list>
     </option>
   </component>
@@ -2446,7 +2467,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1439" height="797" extended-state="1" />
+    <frame x="0" y="23" width="1439" height="797" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2463,7 +2484,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.50357145" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25984251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25984251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2545,38 +2566,10 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/LoadFile.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/OfflineEventController.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/SaveFile.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/CurrentLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/AddHabitActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2733">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/MyProfileActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="107" column="33" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchHabitController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="155" column="22" selection-start-line="155" selection-start-column="22" selection-end-line="155" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -2698,14 +2691,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchEventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="128" column="67" selection-start-line="128" selection-start-column="67" selection-end-line="128" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ViewTodayPlanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -2796,14 +2781,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="212" column="8" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/StatusActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
@@ -2859,26 +2836,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitEventActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="512" column="0" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEventLibraryActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-939">
           <caret line="154" column="25" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="205" column="31" selection-start-line="205" selection-start-column="31" selection-end-line="205" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -2892,6 +2853,72 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/AddHabitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="212" column="8" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/CurrentLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/EditHabitEventActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchHabitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#8097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="38" column="3" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/ElasticSearchEventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tiejun/habit_station/HabitEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="194" column="7" selection-start-line="194" selection-start-column="7" selection-end-line="194" selection-end-column="7" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

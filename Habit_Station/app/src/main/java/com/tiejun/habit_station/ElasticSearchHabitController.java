@@ -34,6 +34,8 @@ import io.searchbox.core.Update;
  * @version 1.0
  * @see Habit
  *
+ *  refer to Lab material ElascticSearch
+ *  https://github.com/xuanyi35/lonelyTwitter/blob/elasticsearch/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java
  */
 
 public class ElasticSearchHabitController {
