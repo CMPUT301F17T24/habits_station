@@ -118,14 +118,13 @@ public class ViewEventActivity extends AppCompatActivity {
 
         int eventIndex = intent.getIntExtra("select",0);
         habit_name = intent.getStringExtra("habit name");
-        FILENAME1 = userName+habit_name +".sav";
+        FILENAME1 = userName + habit_name +".sav";
 
 
         if( isNetworkAvailable(this) == false){
             fillist.clear();
             loadFromFile(FILENAME1);
         }else {
-
 
             String event_query = intent.getStringExtra("query");
             ElasticSearchEventController.GetEvents getHEvent

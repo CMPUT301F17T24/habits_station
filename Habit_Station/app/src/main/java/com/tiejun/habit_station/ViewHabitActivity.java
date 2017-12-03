@@ -141,7 +141,7 @@ public class ViewHabitActivity extends AppCompatActivity {
                     deleteHabitTask.execute(habit);
 
 
-                    Toast.makeText(getApplicationContext(), "Successfully deleted this event!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Successfully deleted this Habit!", Toast.LENGTH_SHORT).show();
 
                 }
 

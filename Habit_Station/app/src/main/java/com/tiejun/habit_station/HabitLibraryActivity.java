@@ -138,6 +138,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
         else if (item.getTitle().equals("View Habit Events")) {
             Intent i = new Intent(HabitLibraryActivity.this, HabitEventLibraryActivity .class);
 
+            Toast.makeText(this, "Wait, synchronizing ! ", Toast.LENGTH_LONG).show();
             selectedHabit = fillist.get(position);
             hName = selectedHabit.getTitle();
 

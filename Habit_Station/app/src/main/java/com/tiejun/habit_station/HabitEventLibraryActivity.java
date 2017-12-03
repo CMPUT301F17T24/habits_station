@@ -61,7 +61,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     //private static final String FILENAME = "habitEventLibrary.sav";// for save and load
     private String FILENAME  ;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -204,7 +203,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                             = new ElasticSearchEventController.AddEventTask();
                     addEventTask.execute(element);
                 }
-
             }
             else {   // elasticsearch
 
@@ -238,6 +236,47 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             title = (TextView) findViewById(R.id.title);
             title.setText(habit_name + " Library");
             saveInFile();
+
+            //////////// synchronize ///////
+            ArrayList<HabitEvent>  result = new ArrayList<HabitEvent>();
+            String event_query = "{\n" +
+                    "  \"query\": { \n" +
+                    "\"bool\": {\n"+
+                    "\"must\": [\n"+
+                    "{"+ " \"term\" : { \"uName\" : \"" + userName +  "\" }},\n" +
+                    "{"+ " \"match\" : {  \"eName\" : \"" + habit_name +  "\" }}\n" +
+                    "]"+
+                    "}"+
+                    "}"+
+                    "}";
+            ElasticSearchEventController.GetEvents getHEvent
+                    = new  ElasticSearchEventController.GetEvents();
+            getHEvent.execute(event_query);
+
+            try {
+                result.clear();
+                result.addAll(getHEvent.get());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            ////////// update  //////
+            for (HabitEvent element: result){
+                ElasticSearchEventController.DeleteEventTask deleteEventTask
+                        = new ElasticSearchEventController.DeleteEventTask();
+                deleteEventTask.execute(element);
+
+            }
+            for (HabitEvent element: fillist){
+                ElasticSearchEventController.AddEventTask addEventTask
+                        = new ElasticSearchEventController.AddEventTask();
+                addEventTask.execute(element);
+
+            }
+            ///////// finish synchronization //////////
+
         }
 
 
