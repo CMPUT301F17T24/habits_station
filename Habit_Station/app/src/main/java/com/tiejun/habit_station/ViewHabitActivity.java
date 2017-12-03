@@ -7,6 +7,7 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 import org.apache.commons.lang3.ObjectUtils;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -124,9 +126,21 @@ public class ViewHabitActivity extends AppCompatActivity {
                         deleteEventTask.execute(element);
 
                     }
+                    // delete corresponding file
+                    String FILENAME1 = habit.getuName()+habit.getTitle() +".sav";
+                    Context context = getApplicationContext();
+
+                    if (fileExists(context, FILENAME1)) {
+                        File file = context.getFileStreamPath(FILENAME1);
+                        file.delete();
+                    }
+
+                    ////
                     ElasticSearchHabitController.DeleteHabitTask deleteHabitTask
                             = new ElasticSearchHabitController.DeleteHabitTask();
                     deleteHabitTask.execute(habit);
+
+
                     Toast.makeText(getApplicationContext(), "Successfully deleted this event!", Toast.LENGTH_SHORT).show();
 
                 }
@@ -551,5 +565,23 @@ public class ViewHabitActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+
+
+    /**
+     * To check if the file ".sav" is exist
+     * @param context
+     * @param filename
+     * @return if it exists, return true. Vice Versa
+     */
+    private boolean fileExists(Context context, String filename) {
+        File file = context.getFileStreamPath(filename);
+        if (file == null || !file.exists()) {
+            return false;
+        }
+        return true;
+    }
 
 }

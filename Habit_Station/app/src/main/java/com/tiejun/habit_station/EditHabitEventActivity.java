@@ -18,6 +18,8 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.media.Image;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
@@ -34,9 +36,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.osmdroid.util.GeoPoint;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashSet;
@@ -70,6 +84,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
     private int imageByteCount;
 
     //
+    private static final String FILENAME2 = "habitLibrary.sav";// for save and load
+    //private static final String FILENAME1 = "habitEventLibrary.sav";// for save and load
+    private String FILENAME1;
+
 
     protected HabitEventList habitEventList = new HabitEventList();
     protected HabitEvent habitEvent;
@@ -78,6 +96,10 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
     private ArrayList<HabitEvent> fillist = new ArrayList<HabitEvent>();
 
+    //
+    private ArrayList<Habit> habits = new ArrayList<Habit>();
+
+    //
     public int do_year = 0,
             do_month = 0,
             do_day = 0;
@@ -104,24 +126,40 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         String habit_id = userName + habit_name.toUpperCase();
         Log.d("habitid", habit_id);
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
 
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
 
-        ElasticSearchHabitController.GetHabitTask getHabit
-                = new ElasticSearchHabitController.GetHabitTask();
-        getHabit.execute(habit_id);
+            loadFromFile(FILENAME2);
 
-        try {
-            habit = getHabit.get();  //other way later
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            Log.d("habitinfo", "???");
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-            Log.d("habitinfo", "???");
+            for (Habit element: habits){
+                String id = element.getuName()+element.getTitle().toUpperCase();
+                if (id.equals(habit_id)){
+                    habit = element;
+                }
+            }
+
         }
+        else {
 
+            ElasticSearchHabitController.GetHabitTask getHabit
+                    = new ElasticSearchHabitController.GetHabitTask();
+            getHabit.execute(habit_id);
 
-        Log.d("habitinfo", habit.getTitle());
+            try {
+                habit = getHabit.get();  //other way later
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                Log.d("habitinfo", "???");
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+                Log.d("habitinfo", "???");
+            }
+        }
 
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = getPlans(days);
@@ -284,18 +322,40 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
         info = (TextView) findViewById(R.id.info);
         String habit_id = userName + habit_name.toUpperCase();
-        Habit habit = new Habit();
-        ElasticSearchHabitController.GetHabitTask getHabit
-                = new ElasticSearchHabitController.GetHabitTask();
-        getHabit.execute(habit_id);
+        //Habit habit = new Habit();
+        /**
+         * a offline behaviour handler code
+         * use local buffer to show
+         */
+        if( isNetworkAvailable(this) == false){
 
-        try {
-            habit = getHabit.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
+            habits.clear();
+            loadFromFile(FILENAME2);
+
+            for (Habit element: habits){
+                String id = element.getuName()+element.getTitle().toUpperCase();
+                if (id.equals(habit_id)){
+                    habit = element;
+                }
+            }
+
         }
+
+        else {  // start of online block
+            ElasticSearchHabitController.GetHabitTask getHabit
+                    = new ElasticSearchHabitController.GetHabitTask();
+            getHabit.execute(habit_id);
+
+            try {
+                habit = getHabit.get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+    ///
 
         HashSet<Integer> days = habit.getRepeatWeekOfDay();
         ArrayList<String> sdays = getPlans(days);
@@ -304,20 +364,31 @@ public class EditHabitEventActivity extends AppCompatActivity {
 
 
         if (eventIndex >= 0) {    // if the event already exists, show its old info         edit, need info directly from event
-
-            ElasticSearchEventController.GetEvents getEvents
-                    = new ElasticSearchEventController.GetEvents();
-            getEvents.execute(event_query);
-            try {
-                fillist.clear();
-                fillist.addAll(getEvents.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+//
+            HabitEvent event;
+            if( isNetworkAvailable(this) == false){
+                FILENAME1 = userName + habit_name +".sav";
+                loadFromFile(FILENAME1);
+                event = fillist.get(eventIndex);
             }
+            else {
+                ElasticSearchEventController.GetEvents getEvents
+                        = new ElasticSearchEventController.GetEvents();
+                getEvents.execute(event_query);
+                try {
+                    fillist.clear();
+                    fillist.addAll(getEvents.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
 
-            HabitEvent event = fillist.get(eventIndex);
+                event = fillist.get(eventIndex);
+
+
+            }
+            //
             comment = (EditText) findViewById(R.id.comment);
             comment.setText(event.geteComment());
 
@@ -347,8 +418,7 @@ public class EditHabitEventActivity extends AppCompatActivity {
      */
     public boolean setEvent(String current_user, HabitEvent new_event, int eventIndex) {
 
-        Log.d("event", String.valueOf(eventIndex));
-
+        FILENAME1 = current_user+habit_name +".sav";
 
         String new_id = current_user + new_event.geteName()
                 + new_event.geteTime().get(Calendar.YEAR)
@@ -361,20 +431,26 @@ public class EditHabitEventActivity extends AppCompatActivity {
             Intent intent = getIntent();
             String event_query = intent.getStringExtra("query");
 
-            ElasticSearchEventController.GetEvents getEvents
-                    = new ElasticSearchEventController.GetEvents();
-            getEvents.execute(event_query);
-            try {
-                fillist.clear();
-                fillist.addAll(getEvents.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
+            HabitEvent old_event;
+            if( isNetworkAvailable(this) == false){
+                loadFromFile(FILENAME1);
+                old_event = fillist.get(eventIndex);
             }
+            else {
+                ElasticSearchEventController.GetEvents getEvents
+                        = new ElasticSearchEventController.GetEvents();
+                getEvents.execute(event_query);
+                try {
+                    fillist.clear();
+                    fillist.addAll(getEvents.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
 
-            HabitEvent old_event = fillist.get(eventIndex);
-
+                old_event = fillist.get(eventIndex);
+            }
             String old_id = current_user + old_event.geteName()
                     + old_event.geteTime().get(Calendar.YEAR)
                     + String.valueOf(old_event.geteTime().get(Calendar.MONTH) + 1)
@@ -386,16 +462,23 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 return false;
             } else {
 
-                ///////  delete old event /////
-                ElasticSearchEventController.DeleteEventTask deleteEventTask
-                        = new ElasticSearchEventController.DeleteEventTask();
-                deleteEventTask.execute(old_event);
+                if( isNetworkAvailable(this) == false) {
+                    fillist.remove(eventIndex);
+                    fillist.add(new_event);
+                    saveInFile();
+                }
+                else {         // online
+                    ///////  delete old event /////
+                    ElasticSearchEventController.DeleteEventTask deleteEventTask
+                            = new ElasticSearchEventController.DeleteEventTask();
+                    deleteEventTask.execute(old_event);
 
-                ////// add new event ///////
-                ElasticSearchEventController.AddEventTask addEventTask
-                        = new ElasticSearchEventController.AddEventTask();
-                addEventTask.execute(new_event);
-
+                    ////// add new event ///////
+                    ElasticSearchEventController.AddEventTask addEventTask
+                            = new ElasticSearchEventController.AddEventTask();
+                    addEventTask.execute(new_event);
+                }
+                saveInFile();
                 Toast.makeText(getApplicationContext(), "Successfully updated the event.", Toast.LENGTH_SHORT).show();
 
                 return true;
@@ -407,11 +490,24 @@ public class EditHabitEventActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "This event for today already exists !", Toast.LENGTH_SHORT).show();
                 return false;
             }
-            ElasticSearchEventController.AddEventTask addEventTask
-                    = new ElasticSearchEventController.AddEventTask();
-            addEventTask.execute(new_event);
-            Toast.makeText(getApplicationContext(), "Successfully added to history.", Toast.LENGTH_SHORT).show();
-            return true;
+
+            if( isNetworkAvailable(this) == false){
+                loadFromFile(FILENAME1);
+                fillist.add(new_event);
+                saveInFile();
+                Toast.makeText(getApplicationContext(), "Successfully added to history.", Toast.LENGTH_SHORT).show();
+                return true;
+
+            }
+            else{  // online
+                ElasticSearchEventController.AddEventTask addEventTask
+                        = new ElasticSearchEventController.AddEventTask();
+                addEventTask.execute(new_event);
+                saveInFile();
+                Toast.makeText(getApplicationContext(), "Successfully added to history.", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+
         }
 
     }
@@ -457,18 +553,37 @@ public class EditHabitEventActivity extends AppCompatActivity {
      * @return
      */
     private boolean existedEvent(String id) {
-        ElasticSearchEventController.IsExist isExist = new ElasticSearchEventController.IsExist();
-        isExist.execute(id);
+        if( isNetworkAvailable(this) == false){
+            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+            String userName = pref.getString("currentUser", "");
+            FILENAME1 = userName + habit_name +".sav";
+            loadFromFile(FILENAME1);
+            for (HabitEvent element: fillist){
+                String eid =element.getuName()+element.geteName()
+                        +element.geteTime().get(Calendar.YEAR)
+                        +String.valueOf(element.geteTime().get(Calendar.MONTH)+1)
+                        +element.geteTime().get(Calendar.DAY_OF_MONTH);
+                if (eid.equals(id)){
+                    return true;
+                }
 
-        try {
-            if (isExist.get()) {
-                return true;
-            } else {
-                return false;
             }
-        } catch (Exception e) {
             return false;
         }
+        else {
+            ElasticSearchEventController.IsExist isExist = new ElasticSearchEventController.IsExist();
+            isExist.execute(id);
+            try {
+                if (isExist.get()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } catch (Exception e) {
+                return false;
+            }
+        }
+
     }
 
     /**
@@ -626,4 +741,90 @@ public class EditHabitEventActivity extends AppCompatActivity {
         }
 
     }
+
+
+
+
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    /**
+     * a method to save in file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab exercise
+     */
+    private void saveInFile() {
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME1,
+                    Context.MODE_PRIVATE);
+            OutputStreamWriter writer = new OutputStreamWriter(fos);
+            Gson gson = new Gson();
+            gson.toJson(fillist, writer);
+            writer.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+
+            //e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException();
+            //e.printStackTrace();
+        }
+
+        Log.d("Error","done save in file");
+    }
+
+    /**
+     * a method to load from file
+     * source: https://github.com/wooloba/lonelyTwitter/blob/master/app/src/main/java/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+     * from old lab excercise
+     */
+    private void loadFromFile(String FILENAME) {
+        //ArrayList<String> tweets = new ArrayList<String>();
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            BufferedReader in = new BufferedReader(new InputStreamReader(fis));
+            Gson gson = new Gson();
+            if (FILENAME.equals(FILENAME1)){                  // load from event list
+                Type listType = new TypeToken<ArrayList<HabitEvent>>(){}.getType();
+                fillist = gson.fromJson(in, listType);
+            }
+            else{
+                Type listType = new TypeToken<ArrayList<Habit>>(){}.getType();
+                habits = gson.fromJson(in, listType);
+            }
+
+        } catch (FileNotFoundException e) {
+            //TODO Auto-generated catch block
+            if (FILENAME.equals(FILENAME1)) {
+                fillist = new ArrayList<HabitEvent>();
+            }
+            else{
+                habits = new ArrayList<Habit>();
+
+            }
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            throw new RuntimeException(e);
+            //e.printStackTrace();
+        }
+
+    }
+
+
+
+
+
 }
