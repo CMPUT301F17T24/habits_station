@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -28,7 +28,14 @@ import io.searchbox.core.SearchResult;
 import io.searchbox.core.Update;
 
 /**
- * Created by XuanyiWu on 2017-11-09.
+ * Elastic search controller for habits
+ *
+ * @author xuanyi
+ * @version 1.0
+ * @see Habit
+ *
+ *  refer to Lab material ElascticSearch
+ *  https://github.com/xuanyi35/lonelyTwitter/blob/elasticsearch/app/src/main/java/ca/ualberta/cs/lonelytwitter/ElasticsearchTweetController.java
  */
 
 public class ElasticSearchHabitController {
@@ -68,9 +75,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
-
-
+    /**
+     * The function which delete habit from elastic search
+     */
     public static class DeleteHabitTask extends AsyncTask<Habit, Void, Void> {
 
         @Override
@@ -99,11 +106,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
-
-
-
-
+    /**
+     * The function which update habit in elastic search
+     */
     public static class UpdateHabitTask extends  AsyncTask<Habit, Void, Void> {
         @Override
         protected Void doInBackground(Habit... habits) {
@@ -129,7 +134,9 @@ public class ElasticSearchHabitController {
         }
     }
 
-
+    /**
+     * The function which gets habit from elastic search
+     */
     public static class GetHabitTask extends AsyncTask<String, Void, Habit> {
         @Override
         protected Habit doInBackground(String... params) {
@@ -149,9 +156,9 @@ public class ElasticSearchHabitController {
 
     }
 
-
-
-
+    /**
+     * The function which check if habit is already existed in elastic search
+     */
     public static class IsExist extends AsyncTask<String, Void, Boolean> {
         @Override
         protected Boolean doInBackground(String... params){
@@ -177,7 +184,9 @@ public class ElasticSearchHabitController {
     }
 
 
-    // TODO we need a function which gets tweets from elastic search
+    /**
+     * The function which get a array list of habits from elastic search
+     */
     public static class GetHabits extends AsyncTask<String, Void, ArrayList<Habit>> {
         @Override
         protected ArrayList<Habit> doInBackground(String... search_parameters) {
@@ -215,11 +224,8 @@ public class ElasticSearchHabitController {
         }
     }
 
-
-
-
     /**
-     * Verify settings.
+     * Verify settings
      */
     public static void verifySettings() {
         if (client == null) {

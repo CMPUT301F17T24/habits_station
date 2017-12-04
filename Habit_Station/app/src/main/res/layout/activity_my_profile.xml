@@ -6,11 +6,117 @@
   ~
   -->
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tiejun.habit_station.MyProfileActivity">
+    tools:context="com.tiejun.habit_station.MyProfileActivity"
+    android:background="@drawable/bg"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp"
+    android:orientation="vertical"
+    android:weightSum="1">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_weight="0.09">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="0.20" />
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="306dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="@string/SearchUser"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/go"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/add"
+            tools:layout_editor_absoluteX="320dp"
+            tools:layout_editor_absoluteY="8dp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:layout_weight="0.20" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/friend"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:background="@drawable/friend_button"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="93dp" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.20" />
+
+    <Button
+        android:id="@+id/lifyCycle"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.01"
+        android:background="@drawable/lc_bt"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.20" />
+
+    <Button
+        android:id="@+id/nearby"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:background="@drawable/near_bt"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.20" />
+
+    <Button
+        android:id="@+id/recommand"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
+        android:background="@drawable/explore"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="93dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_weight="0.20" />
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="308dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+</LinearLayout>

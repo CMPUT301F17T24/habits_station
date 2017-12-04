@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -17,14 +17,22 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show today's plan of habits og the current user
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see Habit
+ * @see HabitList
+ * @since 1.0
+ *
+ */
 public class ViewTodayPlanActivity extends AppCompatActivity {
 
     private ListView today;
     protected ArrayAdapter<Habit> adapter;
     private ArrayList<Habit> fillist  = new ArrayList<Habit>();
     private String habit_query;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +74,5 @@ public class ViewTodayPlanActivity extends AppCompatActivity {
         today.setAdapter(adapter);
 
     }
-
-
+    
 }

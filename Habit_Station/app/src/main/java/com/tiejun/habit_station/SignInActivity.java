@@ -1,13 +1,16 @@
 /*
- * Copyright (c) 2017 TeamX, CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the Code of Student Behaviour at University of Alberta.
- * You can find a copy of lisense in this project. Otherwise please contact contact@abc.ca.
+ * You can find a copy of lisense in this project. Otherwise please contact xtie@ualberta.ca.
  */
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +24,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Sign in activity
+ *
+ * @author xtie
+ * @version 1.0
+ *
+ */
 public class SignInActivity extends AppCompatActivity {
     public UserList userList;
     public String userName;
@@ -41,14 +51,32 @@ public class SignInActivity extends AppCompatActivity {
                 TextView testView = (TextView) findViewById(R.id.username);
                 userName = testView.getText().toString();
 
-                if (! userName.equals(userName.toLowerCase())){
-                    testView.setError("NO Capital letter for user name. ");
+                if( isNetworkAvailable(getApplication()) == false){
+                    SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+                    String lastUserName = pref.getString("currentUser", "");
+                    // only the last user is allowed to do the offline login
+                    if (userName.equals(lastUserName)){
+                        Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                        Log.d("username", userName);
+                        storePreference(userName);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Offline login.", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Check your network.", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else if (existedUser(userName)) {
-                    Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
-                    Log.d("username", userName);
-                    storePreference(userName);
-                    startActivity(intent);
+                else {           // online
+                    if (!userName.equals(userName.toLowerCase())) {
+                        testView.setError("NO Capital letter for user name. ");
+                    } else if (existedUser(userName)) {
+                        Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                        Log.d("username", userName);
+                        storePreference(userName);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "online login.", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             }
         });
@@ -62,6 +90,12 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Check if the user has already created an account
+     *
+     * @param name username
+     * @return
+     */
     private boolean existedUser (String name) {
         ElasticSearchUserController.IsExist isExist = new ElasticSearchUserController.IsExist();
         isExist.execute(name);
@@ -82,6 +116,7 @@ public class SignInActivity extends AppCompatActivity {
     /**
      * This method stored the successfully login user's name in a local file
      * File explorer -> data -> data -> com.example.mac.bugfree -> sharef_prefs -> data.xml
+     *
      * @param name String of user name to be stored
      */
     private void storePreference(String name){
@@ -89,6 +124,20 @@ public class SignInActivity extends AppCompatActivity {
         editor.putString("currentUser",name);
         editor.apply();
     }
+
+
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
 
 
 
