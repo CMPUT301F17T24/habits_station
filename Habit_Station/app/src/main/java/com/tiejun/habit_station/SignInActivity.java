@@ -6,8 +6,11 @@
 
 package com.tiejun.habit_station;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,14 +51,32 @@ public class SignInActivity extends AppCompatActivity {
                 TextView testView = (TextView) findViewById(R.id.username);
                 userName = testView.getText().toString();
 
-                if (! userName.equals(userName.toLowerCase())){
-                    testView.setError("NO Capital letter for user name. ");
+                if( isNetworkAvailable(getApplication()) == false){
+                    SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+                    String lastUserName = pref.getString("currentUser", "");
+                    // only the last user is allowed to do the offline login
+                    if (userName.equals(lastUserName)){
+                        Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                        Log.d("username", userName);
+                        storePreference(userName);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Offline login.", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Check your network.", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else if (existedUser(userName)) {
-                    Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
-                    Log.d("username", userName);
-                    storePreference(userName);
-                    startActivity(intent);
+                else {           // online
+                    if (!userName.equals(userName.toLowerCase())) {
+                        testView.setError("NO Capital letter for user name. ");
+                    } else if (existedUser(userName)) {
+                        Intent intent = new Intent(SignInActivity.this, MainPageActivity.class);
+                        Log.d("username", userName);
+                        storePreference(userName);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "online login.", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             }
         });
@@ -103,6 +124,20 @@ public class SignInActivity extends AppCompatActivity {
         editor.putString("currentUser",name);
         editor.apply();
     }
+
+
+    /**
+     * a offline detecter
+     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
+     * @param c
+     * @return
+     */
+    private boolean isNetworkAvailable(Context c) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
 
 
 
