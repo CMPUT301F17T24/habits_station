@@ -11,11 +11,8 @@ package com.tiejun.habit_station;
  * Created by yfeng3 on 2017-10-21.
  */
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.location.Location;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import java.util.ArrayList;
 import java.util.Calendar;

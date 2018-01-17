@@ -126,6 +126,11 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
      * Highlight the events of the current user based on locations on the map (within 5km or not)
      */
     public void addMaker(){
+
+        if (currentLocation!=null){
+            mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude())).icon(BitmapDescriptorFactory.fromResource(R.drawable.arrow)));
+        }
+
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
         String MYhistory = "{\n" +
@@ -172,7 +177,7 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
                     } else {
                         double lat = geoPoint.getLatitude();
                         double lon = geoPoint.getLongitude();
-                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
+                        mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()).alpha(0.6f));
                     }
                 }
                 else{

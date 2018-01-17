@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,6 +23,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -46,6 +48,7 @@ public class HabitHistoryActivity extends AppCompatActivity {
     private CheckBox comment,type;
 
     private String query;
+    private int  click_item_index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +170,27 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        registerForContextMenu(history);
+        history.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+                click_item_index=position;
+                HabitEvent event = fillist.get(click_item_index);
+                String event_id = event.getuName() + event.geteName()
+                        + event.geteTime().get(Calendar.YEAR)
+                        + String.valueOf(event.geteTime().get(Calendar.MONTH) + 1)
+                        + event.geteTime().get(Calendar.DAY_OF_MONTH);
+                Intent i = new Intent(HabitHistoryActivity.this, ViewHistoryDetailActivity.class);
+                i.putExtra("id", event_id);
+                startActivity(i);
+
+            }
+        });
+
+
+
     }
 
 
