@@ -26,8 +26,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -40,6 +40,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * Activity to show habit event library
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 
 public class HabitEventLibraryActivity extends AppCompatActivity {
 
@@ -51,7 +58,8 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
     String habit_name;
     String event_query;
 
-    private static final String FILENAME = "habitEventLibrary.sav";// for save and load
+    //private static final String FILENAME = "habitEventLibrary.sav";// for save and load
+    private String FILENAME  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +67,7 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_habit_event_library);
         Intent intent = getIntent();
         habit_name = intent.getStringExtra("habit name");
+
 
         events = (ListView)findViewById(R.id.events);
         Button addButton = (Button) findViewById(R.id.add);
@@ -106,8 +115,6 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
 
@@ -144,46 +151,27 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
             startActivity(i);
         }
 
-        /*else if (item.getTitle() == "Delete") {
-            Toast.makeText(this, "Deleted", Toast.LENGTH_SHORT).show();
-
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
-
-            HabitEvent selected_event = fillist.get(position);
-
-            ElasticSearchEventController.DeleteEventTask deleteEventTask
-                    = new ElasticSearchEventController.DeleteEventTask();
-            deleteEventTask.execute(selected_event);
-
-            Toast.makeText(getApplicationContext(), "Successfully deleted the event! ", Toast.LENGTH_SHORT).show();
-
-            onStart();
-        }
-*/
-
-
         else {
             return false;
         }
         return true;
     }
 
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
 
+        SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
+        String userName = pref.getString("currentUser", "");
         /**
          * a offline behaviour handler code
          * use local buffer to show
          */
         if( isNetworkAvailable(this) == false){
-
+            click_item_index = -1;
             Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
-
+            FILENAME = userName+ habit_name +".sav";
             loadFromFile();
 
             adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
@@ -195,18 +183,11 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         }
 
         else {  // start of online block
-
             click_item_index = -1;
-            SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
-            String userName = pref.getString("currentUser", "");
+            userName = pref.getString("currentUser", "");
 
             Intent intent = getIntent();
             String habit_name = intent.getStringExtra("habit name");
-
-            Log.d("event", "library");
-            Log.d("username", userName);
-            Log.d("habitname is", habit_name);
-
 
             event_query = "{\n" +
                     "  \"query\": { \n" +
@@ -219,30 +200,77 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
                     "}" +
                     "}";
 
+            fillist.clear();
+            FILENAME = userName+habit_name +".sav";
+            loadFromFile();
+            if (fillist.size()!=0){  //load from file if file not null
+
+                for (HabitEvent element: fillist){
+
+                    ElasticSearchEventController.AddEventTask addEventTask
+                            = new ElasticSearchEventController.AddEventTask();
+                    addEventTask.execute(element);
+                }
+            }
+            else {   // elasticsearch
+
+                ElasticSearchEventController.GetEvents getHEvent
+                        = new ElasticSearchEventController.GetEvents();
+                getHEvent.execute(event_query);
+
+                try {
+                    fillist.clear();
+                    fillist.addAll(getHEvent.get());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+            adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
+            events.setAdapter(adapter);
+
+            title = (TextView) findViewById(R.id.title);
+            title.setText(habit_name + " Library");
+            saveInFile();
+
+            //////////// synchronize ///////
+            ArrayList<HabitEvent>  result = new ArrayList<HabitEvent>();
             ElasticSearchEventController.GetEvents getHEvent
-                    = new ElasticSearchEventController.GetEvents();
+                    = new  ElasticSearchEventController.GetEvents();
             getHEvent.execute(event_query);
 
             try {
-                fillist.clear();
-                fillist.addAll(getHEvent.get());
+                result.clear();
+                result.addAll(getHEvent.get());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
                 e.printStackTrace();
             }
 
+            ////////// update  //////
+            for (HabitEvent element: result){
+                ElasticSearchEventController.DeleteEventTask deleteEventTask
+                        = new ElasticSearchEventController.DeleteEventTask();
+                deleteEventTask.execute(element);
 
-            adapter = new ArrayAdapter<HabitEvent>(this, R.layout.list_habits, fillist);
-            events.setAdapter(adapter);
+            }
+            for (HabitEvent element: fillist){
+                ElasticSearchEventController.AddEventTask addEventTask
+                        = new ElasticSearchEventController.AddEventTask();
+                addEventTask.execute(element);
 
-            title = (TextView) findViewById(R.id.title);
-            title.setText(habit_name + " Library");
+            }
+            ///////// finish synchronization //////////
 
-            saveInFile();
+        }
 
-        }// end of online else block
+
     }
+
+
+
 
     /**
      * a offline detecter
@@ -316,6 +344,10 @@ public class HabitEventLibraryActivity extends AppCompatActivity {
         //return tweets.toArray(new String[tweets.size()]);
 
     }
+
+
+
+
 
 }
 

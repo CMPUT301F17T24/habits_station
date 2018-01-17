@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * Copyright (c) 2017 Team24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You may use,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -23,14 +23,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-//import com.google.android.gms.location.LocationListener;
-//import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-//import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -42,6 +39,14 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import static com.tiejun.habit_station.R.id.events;
+
+/**
+ * Activity to show the map with all habit events of a user
+ *
+ * @author yaozhi
+ * @version 1.0
+ *
+ */
 
 public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -57,6 +62,10 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
         mapFragment.getMapAsync(this);
     }
 
+    /**
+     * Check if the map is ready
+     * @param googleMap map
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mgoogleMap = googleMap;
@@ -77,6 +86,10 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
 
         setMarker();
     }
+
+    /**
+     * Set markers on the map with corresponding location of habit events
+     */
     public void setMarker() {
         getcLocation();
 
@@ -84,11 +97,15 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
             addMaker();
         }
         else {
-            Toast.makeText(this, "Cannot access current location, check you GPS.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Cannot access current location, check your GPS.", Toast.LENGTH_SHORT).show();
             //currentLocation = new GeoPoint(53.537519,-113.497412,0.0);
             addMaker();
         }
     }
+
+    /**
+     * Get current location
+     */
     public void getcLocation(){
         try {
             CurrentLocation locationListener = new CurrentLocation();
@@ -104,6 +121,10 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
             e.printStackTrace();
         }
     }
+
+    /**
+     * Highlight the events of the current user based on locations on the map (within 5km or not)
+     */
     public void addMaker(){
         SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
         String userName = pref.getString("currentUser", "");
@@ -153,16 +174,12 @@ public class MyEventMapActivity extends AppCompatActivity implements OnMapReadyC
                         double lon = geoPoint.getLongitude();
                         mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
                     }
-
                 }
                 else{
                     double lat = geoPoint.getLatitude();
                     double lon = geoPoint.getLongitude();
                     mgoogleMap.addMarker(new MarkerOptions().position(new LatLng(lat, lon)).title(habitEvent.geteName()));
                 }
-
-
-
             }
         }
     }

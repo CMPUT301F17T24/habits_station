@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
- * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
+ * You mayuse,distribute, or modify this code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
  */
@@ -23,6 +23,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
+
+/**
+ * Activity to show habit history
+ *
+ * @author xuanyi
+ * @version 1.5
+ * @see HabitEvent
+ * @see HabitEventList
+ * @since 1.0
+ *
+ */
 
 public class HabitHistoryActivity extends AppCompatActivity {
 
@@ -131,7 +142,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 ElasticSearchEventController.GetEvents getHistory
                         = new  ElasticSearchEventController.GetEvents();
                 getHistory.execute(query);
-
                 try {
 
                     fillist.clear();
@@ -147,8 +157,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
             }
         });
 
-
-
         final Button map = (Button) findViewById(R.id.historyMap);
 
         map.setOnClickListener(new View.OnClickListener() {
@@ -159,9 +167,6 @@ public class HabitHistoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
 

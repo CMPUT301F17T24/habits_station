@@ -24,11 +24,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -42,7 +41,13 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Handler;
 
-
+/**
+ * Activity to show habit library
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class HabitLibraryActivity extends AppCompatActivity {
 
     private ListView habitList;
@@ -55,9 +60,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
     private Habit selectedHabit = new Habit();   // used to delete
     private String hName ;
     private String MYhabits;
-
     private static final String FILENAME2 = "habitLibrary.sav";// for save and load
-    //private String userName;
 
 
     @Override
@@ -104,8 +107,6 @@ public class HabitLibraryActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
     @Override
@@ -115,7 +116,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
         menu.setHeaderTitle("Context Menu");
         menu.add(0, v.getId(), 0, "View Habit details");
         menu.add(0, v.getId(), 0, "View Habit Events");
-        menu.add(0, v.getId(), 0, "Delete");
+       // menu.add(0, v.getId(), 0, "Delete");
 
     }
 
@@ -137,6 +138,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
         else if (item.getTitle().equals("View Habit Events")) {
             Intent i = new Intent(HabitLibraryActivity.this, HabitEventLibraryActivity .class);
 
+            Toast.makeText(this, "Wait, synchronizing ! ", Toast.LENGTH_LONG).show();
             selectedHabit = fillist.get(position);
             hName = selectedHabit.getTitle();
 
@@ -145,7 +147,7 @@ public class HabitLibraryActivity extends AppCompatActivity {
             startActivity(i);
         }
 
-        else if (item.getTitle() == "Delete") {
+       /* else if (item.getTitle() == "Delete") {
 
 
             selectedHabit = fillist.get(position);
@@ -195,16 +197,13 @@ public class HabitLibraryActivity extends AppCompatActivity {
             Toast.makeText(this, "Successfully deleted the habit! ", Toast.LENGTH_LONG).show();
             onStart();
 
-        }
-
+        }*/
 
         else {
             return false;
         }
         return true;
     }
-
-
 
     @Override
     protected void onStart() {
@@ -218,17 +217,12 @@ public class HabitLibraryActivity extends AppCompatActivity {
         if( isNetworkAvailable(this) == false){
 
             loadFromFile();
-
-            //Log.d("MYhabits",fillist);
-
             Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
-
-            adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
-            habitList.setAdapter(adapter);
 
         }
 
         else {  // start of online else block
+            Log.d("search","eeeeeee");
             SharedPreferences pref = getSharedPreferences("data", MODE_PRIVATE);
             String userName = pref.getString("currentUser", "");
             MYhabits = "{\n" +
@@ -237,10 +231,10 @@ public class HabitLibraryActivity extends AppCompatActivity {
                     " 	}\n" +
                     "}";
 
-            Log.d("MYhabits", MYhabits);
+            Log.d("MYhabits",MYhabits);
 
             ElasticSearchHabitController.GetHabits getHabits
-                    = new ElasticSearchHabitController.GetHabits();
+                    = new  ElasticSearchHabitController.GetHabits();
             getHabits.execute(MYhabits);
 
             try {
@@ -251,15 +245,16 @@ public class HabitLibraryActivity extends AppCompatActivity {
             } catch (ExecutionException e) {
                 e.printStackTrace();
             }
+        }
 
+        adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
+        habitList.setAdapter(adapter);
+        saveInFile();
 
-            adapter = new ArrayAdapter<Habit>(this, R.layout.list_habits, fillist);
-            habitList.setAdapter(adapter);
+        //end of else blcok
 
-            saveInFile();
-
-        }//end of else blcok
     }
+
 
     /**
      * a offline detecter
@@ -328,6 +323,9 @@ public class HabitLibraryActivity extends AppCompatActivity {
         //return tweets.toArray(new String[tweets.size()]);
 
     }
+
+
+
 
 
 }

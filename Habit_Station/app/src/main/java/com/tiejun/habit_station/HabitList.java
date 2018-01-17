@@ -17,7 +17,7 @@ import java.util.Date;
 /**
  * a class for habit list
  *
- * @author Xtie
+ * @author xtie
  * @version 1.5
  * @see Habit
  * @since 1.0

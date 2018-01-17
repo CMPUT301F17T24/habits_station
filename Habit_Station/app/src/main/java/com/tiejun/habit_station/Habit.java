@@ -12,13 +12,9 @@ import java.util.Calendar;
 import java.util.HashSet;
 
 /**
- * Created by tiejun on 2017-10-13.
- */
-
-/**
  *  This class is used to create a Habit object
  *
- * @author Xtie
+ * @author xtie
  * @version 1.5
  * @see HabitList
  * @since 1.0
@@ -149,7 +145,7 @@ public class Habit implements Comparable<Habit> {
      */
     @Override
     public String toString() {
-        return this.uName +"  >>>  "+ this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + String.valueOf(startDate.get(Calendar.MONTH)+1) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
+        return this.uName +"  ★  "+ this.title + " \nstarts " + startDate.get(Calendar.YEAR)+"/" + String.valueOf(startDate.get(Calendar.MONTH)+1) + "/" + startDate.get(Calendar.DAY_OF_MONTH); //;formatter.format(startDate) + ".";
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Team 24,CMPUT301, University of Alberta - All Rights Reserved.
+ * Copyright (c) 2017 Team 24, CMPUT301, University of Alberta - All Rights Reserved.
  * You mayuse,distribute, or modify thid code under terms and condition of the Code of Student Behavior at University of Alberta.
  * You can find a copy of the license in this project. Otherwise please contact xuanyi@ualberta.ca.
  *
@@ -19,10 +19,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+/**
+ * Activity to follow another user, accept and ignore friend request
+ *
+ * @author xuanyi
+ * @version 1.0
+ * @see User
+ *
+ */
 
 public class FriendsActivity extends AppCompatActivity {
 
@@ -85,7 +93,6 @@ public class FriendsActivity extends AppCompatActivity {
         
     }
 
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
@@ -97,8 +104,6 @@ public class FriendsActivity extends AppCompatActivity {
         }
 
     }
-
-
 
     @Override
     public boolean onContextItemSelected(MenuItem item){
@@ -154,18 +159,12 @@ public class FriendsActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-
     @Override
     protected void onStart() {
         // TODO Auto-generated method stub
         super.onStart();
 
-
         adapter = new ArrayAdapter<String>(this, R.layout.list_habits, uNames);
         nameList.setAdapter(adapter);
-
-
     }
 }

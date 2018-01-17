@@ -7,19 +7,21 @@
 
 package com.tiejun.habit_station;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Toast;
 
+/**
+ * Activity to show main page of this application
+ *
+ * @author xuanyi
+ * @version 1.0
+ *
+ */
 public class MainPageActivity extends SignInActivity {
 
     @Override
@@ -67,31 +69,5 @@ public class MainPageActivity extends SignInActivity {
                 startActivity(intent);
             }
         });
-
-        /**
-         * a offline behaviour handler code
-         * show offline message
-         */
-        if( isNetworkAvailable(this) == false){
-
-            //Log.d("MYhabits",fillist);
-
-            Toast.makeText(getApplicationContext(), "You are now in offline mode.", Toast.LENGTH_SHORT).show();
-
-        }
-
-
-    }
-
-    /**
-     * a offline detecter
-     * Source: https://stackoverflow.com/questions/4238921/detect-whether-there-is-an-internet-connection-available-on-android
-     * @param c
-     * @return
-     */
-    private boolean isNetworkAvailable(Context c) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) c.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }
